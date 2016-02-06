@@ -90,8 +90,8 @@ SOURCES += \
     SolarCarHostTelemetry/SolarCarHostTelemetry.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
-    ViewLayer/CompactUI/CompactUI.cpp \
-    ViewLayer/CompactView/CompactView.cpp
+    ViewLayer/DashboardUI/DashboardUI.cpp \
+    ViewLayer/DashboardView/DashboardView.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -150,12 +150,12 @@ HEADERS  += \
     SolarCarHostTelemetry/SolarCarHostTelemetry.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
-    ViewLayer/CompactUI/CompactUI.h \
-    ViewLayer/CompactView/CompactView.h \
-    ViewLayer/CompactUI/I_CompactUI.h
+    ViewLayer/DashboardUI/DashboardUI.h \
+    ViewLayer/DashboardView/DashboardView.h \
+    ViewLayer/DashboardUI/I_DashboardUI.h
 
 FORMS    += \
-    CompactUI
+    DashboardUI
 
 RESOURCES += \
     uiresources.qrc

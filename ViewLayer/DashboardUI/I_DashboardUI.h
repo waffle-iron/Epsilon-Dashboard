@@ -3,9 +3,9 @@
 #include <QLabel>
 #include <QTextEdit>
 
-class I_CompactUI
+class I_DashboardUI
 {
 public:
-    virtual ~I_CompactUI() {}
+    virtual ~I_DashboardUI() {}
 
 };

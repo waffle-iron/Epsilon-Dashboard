@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CompactUI</class>
- <widget class="QWidget" name="CompactUI">
+ <class>DashboardUI</class>
+ <widget class="QWidget" name="DashboardUI">
   <property name="geometry">
    <rect>
     <x>0</x>

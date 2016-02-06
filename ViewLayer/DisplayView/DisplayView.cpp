@@ -24,9 +24,9 @@
  */
 
 #include "DisplayView.h"
-#include "../CompactUI/CompactUI.h"
+#include "../DashboardUI/DashboardUI.h"
 
-DisplayView::DisplayView(CompactUI& ui)
+DisplayView::DisplayView(DashboardUI& ui)
 : ui_(ui)
 {
     ui_.show();

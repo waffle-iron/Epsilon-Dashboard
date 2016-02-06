@@ -27,15 +27,15 @@
 
 #include <QObject>
 
-class CompactUI;
+class DashboardUI;
 
 class DisplayView : public QObject
 {
    Q_OBJECT
 public:
-   DisplayView(CompactUI& ui);
+   DisplayView(DashboardUI& ui);
    ~DisplayView();
 
 private:
-   CompactUI& ui_;
+   DashboardUI& ui_;
 };
