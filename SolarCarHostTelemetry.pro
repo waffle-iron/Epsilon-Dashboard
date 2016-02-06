@@ -155,7 +155,7 @@ HEADERS  += \
     ViewLayer/CompactUI/I_CompactUI.h
 
 FORMS    += \
-    CompactUI.ui
+    CompactUI
 
 RESOURCES += \
     uiresources.qrc
