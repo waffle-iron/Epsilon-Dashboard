@@ -3,25 +3,25 @@
 #
 #  Project created by QtCreator 2014-10-13T12:01:32
 #
-#  Schulich Delta Host Telemetry
+#  Gen 5 Dashboard
 #  Copyright (C) 2015 University of Calgary Solar Car Team
 #
-#  This file is part of the Schulich Delta Host Telemetry
+#  This file is part of the Gen 5 Dashboard
 #
-#  The Schulich Delta Host Telemetry is free software: 
+#  The Gen 5 Dashboard is free software: 
 #  you can redistribute it and/or modify it under the terms 
 #  of the GNU Affero General Public License as published by 
 #  the Free Software Foundation, either version 3 of the
 #  License, or (at your option) any later version.
 #
-#  The Schulich Delta Host Telemetry is distributed 
+#  The Gen 5 Dashboard is distributed 
 #  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
 #  without even the implied warranty of MERCHANTABILITY or 
 #  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
 #  General Public License for more details.
 #
 #  You should have received a copy of the GNU Affero General 
-#  Public License along with the Schulich Delta Host Telemetry.
+#  Public License along with the Gen 5 Dashboard.
 #  If not, see <http://www.gnu.org/licenses/>.
 #
 #  For further contact, email <software@calgarysolarcar.ca>
@@ -32,7 +32,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
-TARGET = ../release/SolarCarHostTelemetry
+TARGET = ../release/Gen5Dashboard
 TEMPLATE = app
 CONFIG += static
 
@@ -86,8 +86,8 @@ SOURCES += \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
-    SolarCarHostTelemetry/main.cpp \
-    SolarCarHostTelemetry/SolarCarHostTelemetry.cpp \
+    Gen5Dashboard/main.cpp \
+    Gen5Dashboard/Gen5Dashboard.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/CompactUI/CompactUI.cpp \
@@ -147,7 +147,7 @@ HEADERS  += \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
-    SolarCarHostTelemetry/SolarCarHostTelemetry.h \
+    Gen5Dashboard/Gen5Dashboard.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
     ViewLayer/CompactUI/CompactUI.h \
