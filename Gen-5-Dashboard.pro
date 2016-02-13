@@ -91,7 +91,8 @@ SOURCES += \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/DashboardUI/DashboardUI.cpp \
-    ViewLayer/DashboardView/DashboardView.cpp
+    ViewLayer/DashboardView/DashboardView.cpp \
+    widedash.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -152,7 +153,8 @@ HEADERS  += \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
     ViewLayer/DashboardUI/DashboardUI.h \
     ViewLayer/DashboardView/DashboardView.h \
-    ViewLayer/DashboardUI/I_DashboardUI.h
+    ViewLayer/DashboardUI/I_DashboardUI.h \
+    widedash.h
 
 FORMS    += \
     DashboardUI
