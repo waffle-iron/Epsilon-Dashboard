@@ -32,7 +32,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
-TARGET = ../release/SolarCarHostTelemetry
+TARGET = ../release/Gen5Dashboard
 TEMPLATE = app
 CONFIG += static
 
@@ -86,8 +86,8 @@ SOURCES += \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
-    SolarCarHostTelemetry/main.cpp \
-    SolarCarHostTelemetry/SolarCarHostTelemetry.cpp \
+    Gen5Dashboard/main.cpp \
+    Gen5Dashboard/Gen5Dashboard.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/DashboardUI/DashboardUI.cpp \
@@ -147,7 +147,7 @@ HEADERS  += \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
-    SolarCarHostTelemetry/SolarCarHostTelemetry.h \
+    Gen5Dashboard/Gen5Dashboard.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
     ViewLayer/DashboardUI/DashboardUI.h \
