@@ -91,8 +91,7 @@ SOURCES += \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/DashboardUI/DashboardUI.cpp \
-    ViewLayer/DashboardView/DashboardView.cpp \
-    widedash.cpp
+    ViewLayer/DashboardView/DashboardView.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -154,7 +153,6 @@ HEADERS  += \
     ViewLayer/DashboardUI/DashboardUI.h \
     ViewLayer/DashboardView/DashboardView.h \
     ViewLayer/DashboardUI/I_DashboardUI.h \
-    widedash.h
 
 FORMS    += \
     DashboardUI
