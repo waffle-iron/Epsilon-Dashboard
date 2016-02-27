@@ -23,7 +23,6 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include "DisplayView/DisplayView.h"
 #include "DashboardUI/DashboardUI.h"
 #include "DashboardView/DashboardView.h"
 #include "I_SolarCarWindow/I_SolarCarWindow.h"
@@ -33,17 +32,14 @@
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 : DashboardUI_(new DashboardUI())
 ,
-//  DashboardView_(new DashboardView(
-//      presenterContainer.batteryPresenter(),
-//      presenterContainer.vehiclePresenter(),
-//      presenterContainer.powerPresenter(),
-//      presenterContainer.communicationPresenter(),
-//      presenterContainer.faultsPresenter(),
-//      presenterContainer.mpptPresenter(),
-//      *DashboardUI_))
-DashboardView_(new DashboardView(*DashboardUI_))
-{
-}
+  DashboardView_(new DashboardView(
+      presenterContainer.batteryPresenter(),
+      presenterContainer.vehiclePresenter(),
+      presenterContainer.powerPresenter(),
+      presenterContainer.communicationPresenter(),
+      presenterContainer.faultsPresenter(),
+      presenterContainer.mpptPresenter(),
+      *DashboardUI_)){}
 
 ViewContainer::~ViewContainer()
 {

@@ -20,14 +20,13 @@ class DashboardView : public QObject
     Q_OBJECT
 
 public:
-//    DashboardView(BatteryPresenter& batteryPresenter,
-//                             VehiclePresenter& vehiclePresenter,
-//                             PowerPresenter& powerPresenter,
-//                             CommunicationPresenter& communicationPresenter,
-//                             FaultsPresenter& faultsPresenter,
-//                             MpptPresenter& mpptPresenter,
-//                             DashboardUI& ui);
-    DashboardView(DashboardUI& ui);
+    DashboardView(BatteryPresenter& batteryPresenter,
+                             VehiclePresenter& vehiclePresenter,
+                             PowerPresenter& powerPresenter,
+                             CommunicationPresenter& communicationPresenter,
+                             FaultsPresenter& faultsPresenter,
+                             MpptPresenter& mpptPresenter,
+                             DashboardUI& ui);
     ~DashboardView();
 
 private:
