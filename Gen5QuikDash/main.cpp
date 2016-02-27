@@ -23,26 +23,12 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include "DataLayer/DataContainer.h"
-#include "CommunicationLayer/CommunicationContainer.h"
-#include "BusinessLayer/BusinessContainer.h"
-#include "PresenterLayer/PresenterContainer.h"
-#include "ViewLayer/ViewContainer.h"
+#include "Gen5QuikDash.h"
+#include <QApplication>
 
-#include "Gen5Dashboard.h"
-
-Gen5Dashboard::Gen5Dashboard(int& argc, char** argv)
-: QApplication(argc, argv)
-, dataContainer_(new DataContainer())
-, communicationContainer_(new CommunicationContainer(*dataContainer_))
-, businessContainer_(new BusinessContainer(*communicationContainer_))
-, presenterContainer_(new PresenterContainer(*dataContainer_,
-      *communicationContainer_,
-      *businessContainer_))
-, viewContainer_(new ViewContainer(*presenterContainer_))
+int main(int argc, char *argv[])
 {
-}
-
-Gen5Dashboard::~Gen5Dashboard()
-{
+   QScopedPointer<Gen5QuikDash> app;
+   app.reset(new Gen5QuikDash(argc, argv));
+   return app->exec();
 }

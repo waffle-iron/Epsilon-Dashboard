@@ -3,25 +3,25 @@
 #
 #  Project created by QtCreator 2014-10-13T12:01:32
 #
-#  Gen 5 Dashboard
+#  Schulich Delta Host Telemetry
 #  Copyright (C) 2015 University of Calgary Solar Car Team
 #
-#  This file is part of the Gen 5 Dashboard
+#  This file is part of the Schulich Delta Host Telemetry
 #
-#  The Gen 5 Dashboard is free software: 
+#  The Schulich Delta Host Telemetry is free software: 
 #  you can redistribute it and/or modify it under the terms 
 #  of the GNU Affero General Public License as published by 
 #  the Free Software Foundation, either version 3 of the
 #  License, or (at your option) any later version.
 #
-#  The Gen 5 Dashboard is distributed 
+#  The Schulich Delta Host Telemetry is distributed 
 #  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
 #  without even the implied warranty of MERCHANTABILITY or 
 #  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
 #  General Public License for more details.
 #
 #  You should have received a copy of the GNU Affero General 
-#  Public License along with the Gen 5 Dashboard.
+#  Public License along with the Schulich Delta Host Telemetry.
 #  If not, see <http://www.gnu.org/licenses/>.
 #
 #  For further contact, email <software@calgarysolarcar.ca>
@@ -32,7 +32,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
-TARGET = ../release/Gen5Dashboard
+TARGET = ../release/Gen5QuikDash
 TEMPLATE = app
 CONFIG += static
 
@@ -86,12 +86,11 @@ SOURCES += \
     PresenterLayer/PowerPresenter/PowerPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
-    Gen5Dashboard/main.cpp \
-    Gen5Dashboard/Gen5Dashboard.cpp \
-    ViewLayer/DisplayView/DisplayView.cpp \
+    Gen5QuikDash/main.cpp \
+    Gen5QuikDash/Gen5QuikDash.cpp \
     ViewLayer/ViewContainer.cpp \
-    ViewLayer/CompactUI/CompactUI.cpp \
-    ViewLayer/CompactView/CompactView.cpp
+    ViewLayer/DashboardUI/DashboardUI.cpp \
+    ViewLayer/DashboardView/DashboardView.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -147,28 +146,18 @@ HEADERS  += \
     PresenterLayer/PowerPresenter/PowerPresenter.h \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
-    Gen5Dashboard/Gen5Dashboard.h \
-    ViewLayer/DisplayView/DisplayView.h \
+    Gen5QuikDash/Gen5QuikDash.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
-    ViewLayer/CompactUI/CompactUI.h \
-    ViewLayer/CompactView/CompactView.h \
-    ViewLayer/CompactUI/I_CompactUI.h
+    ViewLayer/DashboardUI/DashboardUI.h \
+    ViewLayer/DashboardView/DashboardView.h \
+    ViewLayer/DashboardUI/I_DashboardUI.h \
+    ViewLayer/ViewContainer.h \
 
 FORMS    += \
-    CompactUI.ui
+    DashboardUI
 
 RESOURCES += \
     uiresources.qrc
 
 DISTFILES += \
-    Resources/Background1.png \
-    Resources/MainTitleBar.png \
-    Resources/MenuButton.png \
-    Resources/Solar Car Team Logo.png \
-    Resources/Solar Car Team Symbol.png \
-    Resources/SubTitleBar.png \
     Resources/Solar Car Team Icon.ico \
-    Resources/Solar Car Team Logo.png \
-    Resources/Solar Car Team Symbol.png \
-    Resources/Solar Car Team Icon.ico \
-    Resources/BrowseButton.png

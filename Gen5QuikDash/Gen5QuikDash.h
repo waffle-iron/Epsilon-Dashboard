@@ -23,12 +23,27 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include "Gen5Dashboard.h"
-#include <QApplication>
+#pragma once
 
-int main(int argc, char *argv[])
+#include <QApplication>
+#include <QScopedPointer>
+
+class CommunicationContainer;
+class DataContainer;
+class BusinessContainer;
+class PresenterContainer;
+class ViewContainer;
+
+class Gen5QuikDash : public QApplication
 {
-   QScopedPointer<Gen5Dashboard> app;
-   app.reset(new Gen5Dashboard(argc, argv));
-   return app->exec();
-}
+public:
+   Gen5QuikDash(int &argc, char **argv);
+   ~Gen5QuikDash();
+
+private:
+   QScopedPointer<DataContainer> dataContainer_;
+   QScopedPointer<CommunicationContainer> communicationContainer_;
+   QScopedPointer<BusinessContainer> businessContainer_;
+   QScopedPointer<PresenterContainer> presenterContainer_;
+   QScopedPointer<ViewContainer> viewContainer_;
+};
