@@ -88,7 +88,6 @@ SOURCES += \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
     Gen5Dashboard/main.cpp \
     Gen5Dashboard/Gen5Dashboard.cpp \
-    ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/DashboardUI/DashboardUI.cpp \
     ViewLayer/DashboardView/DashboardView.cpp
@@ -148,11 +147,11 @@ HEADERS  += \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
     Gen5Dashboard/Gen5Dashboard.h \
-    ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
     ViewLayer/DashboardUI/DashboardUI.h \
     ViewLayer/DashboardView/DashboardView.h \
     ViewLayer/DashboardUI/I_DashboardUI.h \
+    ViewLayer/ViewContainer.h \
 
 FORMS    += \
     DashboardUI

@@ -32,15 +32,16 @@
 
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 : DashboardUI_(new DashboardUI())
-, DashboardView_(new DashboardView(
-      presenterContainer.batteryPresenter(),
-      presenterContainer.vehiclePresenter(),
-      presenterContainer.powerPresenter(),
-      presenterContainer.communicationPresenter(),
-      presenterContainer.faultsPresenter(),
-      presenterContainer.mpptPresenter(),
-      *DashboardUI_))
-, displayView_(new DisplayView(*DashboardUI_))
+,
+//  DashboardView_(new DashboardView(
+//      presenterContainer.batteryPresenter(),
+//      presenterContainer.vehiclePresenter(),
+//      presenterContainer.powerPresenter(),
+//      presenterContainer.communicationPresenter(),
+//      presenterContainer.faultsPresenter(),
+//      presenterContainer.mpptPresenter(),
+//      *DashboardUI_))
+DashboardView_(new DashboardView(*DashboardUI_))
 {
 }
 
