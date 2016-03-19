@@ -9,14 +9,14 @@
 #include <QDateTime>
 
 DashboardView::DashboardView(BatteryPresenter& batteryPresenter,
-                         VehiclePresenter& vehiclePresenter,
-                         PowerPresenter& powerPresenter,
-                         CommunicationPresenter& communicationPresenter,
-                         FaultsPresenter& faultsPresenter,
-                         MpptPresenter& mpptPresenter,
-                         DashboardUI& ui): ui_(ui)
+                             VehiclePresenter& vehiclePresenter,
+                             PowerPresenter& powerPresenter,
+                             CommunicationPresenter& communicationPresenter,
+                             FaultsPresenter& faultsPresenter,
+                             MpptPresenter& mpptPresenter,
+                             DashboardUI& ui): ui_(ui)
 {
-    ui_.show();
+	ui_.show();
 }
 
 

@@ -31,15 +31,15 @@
 
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
 : DashboardUI_(new DashboardUI())
-,
-  DashboardView_(new DashboardView(
+, DashboardView_(new DashboardView(
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
       presenterContainer.powerPresenter(),
       presenterContainer.communicationPresenter(),
       presenterContainer.faultsPresenter(),
       presenterContainer.mpptPresenter(),
-      *DashboardUI_)){}
+      *DashboardUI_))
+{}
 
 ViewContainer::~ViewContainer()
 {
