@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DisplayDashboardWidget</class>
+ <widget class="QWidget" name="DisplayDashboardWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: black;</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="leftScreenWidget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>800</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>800</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="1">
+       <widget class="QWidget" name="batteryFaultsWidget" native="true">
+        <layout class="QVBoxLayout" name="batteryFaultsLayout">
+         <item>
+          <widget class="QLabel" name="batteryFaultsTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;
+padding-top: 45px;</string>
+           </property>
+           <property name="text">
+            <string>B A T T E R Y   F A U L T S</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="batteryFaultsLabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(15,15,15);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QWidget" name="actualSpeedWidget" native="true">
+        <layout class="QHBoxLayout" name="actualSpeedLayout">
+         <item>
+          <widget class="QLabel" name="actualSpeedLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 64pt &quot;LCDMono&quot;;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>000</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="actualSpeedUnitsLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 75 bold 18pt &quot;Nimbus Sans L&quot;;
+padding-top:60px;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>KM/H</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="motorFaultsWidget" native="true">
+        <layout class="QVBoxLayout" name="motorFaultsLayout">
+         <item>
+          <widget class="QLabel" name="motorFaultsTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;
+padding-top:45px;</string>
+           </property>
+           <property name="text">
+            <string>M O T O R   F A U L T S</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="motorFaultsLabel">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(15,15,15);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QWidget" name="motorResetButton" native="true"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QWidget" name="motorPowerWidget" native="true">
+        <layout class="QGridLayout" name="motorPowerLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="motorPowerLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 24pt &quot;Burlingame Pro&quot;;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="motorPowerUnitsLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 75 10pt &quot;Arial Unicode MS&quot;;
+color: white;
+text-align:bottom;</string>
+           </property>
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="motorPowerTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;
+padding-bottom: 45px;</string>
+           </property>
+           <property name="text">
+            <string>M O T O R   P O W E R</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QWidget" name="leftTurnSignalWidget" native="true"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="arraysWidget" native="true">
+        <layout class="QGridLayout" name="arraysLayout">
+         <item row="0" column="0" colspan="2">
+          <widget class="QLabel" name="arraysTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;</string>
+           </property>
+           <property name="text">
+            <string>- A R R A Y S -</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QWidget" name="arrayTwoWidget" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="arrayTwoVoltageLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayTwoVoltageUnitsLabel">
+              <property name="text">
+               <string>V</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayTwoCurrentLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayTwoCurrentUnitsLabel">
+              <property name="text">
+               <string>A</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QWidget" name="arrayFourWidget" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="arrayFourVoltageLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arraryFourCurrentUnitsLabel">
+              <property name="text">
+               <string>V</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayFourCurrentLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayFourVoltageUnitsLabel">
+              <property name="text">
+               <string>A</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QWidget" name="arrayThreeWidget" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="arrayThreeVoltageLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayThreeVoltageUnitsLabel">
+              <property name="text">
+               <string>V</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayThreeCurrentLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayThreeCurrentUnitsLabel">
+              <property name="text">
+               <string>A</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QWidget" name="arrayOneWidget" native="true">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="arrayOneVoltageLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayOneVoltageUnitsLabel">
+              <property name="text">
+               <string>V</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayOneCurrentLabel">
+              <property name="text">
+               <string>879</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="arrayOneCurrentUnitsLabel">
+              <property name="text">
+               <string>A</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QWidget" name="setCurrentWidget" native="true">
+        <layout class="QGridLayout" name="setCurrentLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="setCurrentLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 24pt &quot;Burlingame Pro&quot;;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="setCurrentUnitsLabel">
+           <property name="styleSheet">
+            <string notr="true">font: 75 10pt &quot;Arial Unicode MS&quot;;
+color: white;
+text-align:bottom;</string>
+           </property>
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="setCurrentTitleLabel">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;
+padding-bottom: 45px;</string>
+           </property>
+           <property name="text">
+            <string>S E T   C U R R E N T</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="rightScreenWidget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>800</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>800</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="1">
+       <widget class="QWidget" name="lowHeadlightIndicatorWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QWidget" name="highHeadlightIndicatorWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <zorder>powerWidget</zorder>
+        <zorder>powerWidget</zorder>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QWidget" name="prechargeStateWidget" native="true">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QWidget" name="prechargeStateIconWidget" native="true"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="prechargeStateLabel">
+           <property name="text">
+            <string>RUN</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="prechargeStateTitleLabel">
+           <property name="text">
+            <string>P R E C H A R G E</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QWidget" name="stateOfChargeWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QWidget" name="stateOfChargeIconWidget" native="true">
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QProgressBar" name="stateOfChargeCapacityWidget">
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QProgressBar::chunk:horizontal{background: rgb(20,180,20);
+}
+QProgressBar:horizontal {
+background:white;
+padding:0px;
+text-align: center;
+}
+QProgressBar:horizontal::font {
+font: 18pt &quot;LCDMono&quot;;
+color: white;
+}</string>
+              </property>
+              <property name="value">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="stateOfChargeTitleLabel">
+           <property name="text">
+            <string>B A T T E R Y</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QWidget" name="cellWidget" native="true">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="5" column="1">
+          <widget class="QLabel" name="avgCellTemperatureTitleLabel">
+           <property name="text">
+            <string>A V G</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLabel" name="avgCellVoltageLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLabel" name="avgCellTemperatureUnitsLabel">
+           <property name="text">
+            <string>C</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="maxCellTemperatureTitleLabel">
+           <property name="text">
+            <string>M A X</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="lowestCellVoltageTitleLabel">
+           <property name="text">
+            <string>L O W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="maxCellTemperatureLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="maxCellTemperatureUnitsLabel">
+           <property name="text">
+            <string>C</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="lowestCellVoltageLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="avgCellTemperatureLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="lowestCellVoltageUnitsLabel">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="avgCellVoltageUnitsLabel">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLabel" name="avgCellVoltageTitleLabel">
+           <property name="text">
+            <string>A V G</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="4">
+          <widget class="QLabel" name="cellTitleWidget">
+           <property name="styleSheet">
+            <string notr="true">font: bold 10pt &quot;Arial Unicode MS&quot;;
+text-align:center;</string>
+           </property>
+           <property name="text">
+            <string>- C E L L -</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" rowspan="6">
+          <widget class="QWidget" name="thermometerWidget" native="true"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="rightTurnSignalWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QWidget" name="powerWidget" native="true">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="1" column="0" colspan="4">
+          <layout class="QGridLayout" name="powerInOutLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="powerInLabel">
+             <property name="text">
+              <string>879</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="powerOutLabel">
+             <property name="text">
+              <string>879</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="powerOutUnitsLabel">
+             <property name="text">
+              <string>W</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="powerInUnitsLabel">
+             <property name="text">
+              <string>W</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QLabel" name="powerInTitleLabel">
+             <property name="text">
+              <string>I N</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2" colspan="2">
+            <widget class="QLabel" name="powerOutTitleLabel">
+             <property name="text">
+              <string>O U T</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0" colspan="4">
+          <widget class="QLabel" name="netPowerTitleLabel">
+           <property name="text">
+            <string>N E T</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QLabel" name="netPowerLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2" colspan="2">
+          <widget class="QLabel" name="netPowerUnitsLabel">
+           <property name="text">
+            <string>W</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="4">
+          <widget class="QLabel" name="powerTitleLabel">
+           <property name="text">
+            <string>- P O W E R -</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QWidget" name="busWidget" native="true">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="0">
+          <widget class="QLabel" name="busVoltageLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="busVoltageUnitsLabel">
+           <property name="text">
+            <string>V</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="busCurrentLabel">
+           <property name="text">
+            <string>879</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="busCurrentUnitsLabel">
+           <property name="text">
+            <string>A</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="4">
+          <widget class="QLabel" name="busTitleLabel">
+           <property name="text">
+            <string>- B U S -</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
