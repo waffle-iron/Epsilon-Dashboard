@@ -90,8 +90,8 @@ SOURCES += \
     Gen5Dashboard/Gen5Dashboard.cpp \
     ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
-    ViewLayer/CompactUI/CompactUI.cpp \
-    ViewLayer/CompactView/CompactView.cpp
+    ViewLayer/DisplayDashboardUI/DisplayDashboardUI.cpp \
+    ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -150,12 +150,13 @@ HEADERS  += \
     Gen5Dashboard/Gen5Dashboard.h \
     ViewLayer/DisplayView/DisplayView.h \
     ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
-    ViewLayer/CompactUI/CompactUI.h \
-    ViewLayer/CompactView/CompactView.h \
-    ViewLayer/CompactUI/I_CompactUI.h
+    ViewLayer/DisplayDashboardView/DisplayDashboardView.h \
+    ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h \
+    ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h
 
 FORMS    += \
-    CompactUI.ui
+    CompactUI.ui \
+    DisplayDashboardUI.ui
 
 RESOURCES += \
     uiresources.qrc
