@@ -244,6 +244,8 @@ DIST          = Resources/Background1.png \
 		Team \
 		Icon.ico \
 		Resources/BrowseButton.png \
+		Resources/HighHeadlightIndicator.png \
+		Resources/LowHeadlightIndicator.png \
 		../../Qt/5.4/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.4/gcc_64/mkspecs/common/shell-unix.conf \
 		../../Qt/5.4/gcc_64/mkspecs/common/unix.conf \
@@ -797,16 +799,27 @@ compiler_rcc_clean:
 		Resources/ConnectionHealth0of5.png \
 		Resources/ConnectionHealth1of5.png \
 		Resources/Background1.png \
+		Resources/ArrayFourBackground.png \
+		Resources/TurnSignaLeft.png \
 		Resources/BrowseButton.png \
 		Resources/CloseButtonPressed.png \
 		Resources/MainTitleBar.png \
 		Resources/MenuButton.png \
+		Resources/Thermometer.bmp \
 		Resources/SubTitleBar.png \
+		Resources/MotorResetButton.png \
+		Resources/ArrayTwoBackground.png \
+		Resources/LowHeadlightIndicator.png \
 		Resources/CloseButtonHover.png \
+		Resources/HighHeadlightIndicator.png \
 		Resources/CloseButton.png \
 		Resources/ConnectionHealth5of5.png \
+		Resources/TurnSignalRight.png \
+		Resources/ArrayOneBackground.png \
+		Resources/Thermometer.png \
 		Resources/ConnectionHealth2of5.png \
 		Resources/ConnectionHealth3of5.png \
+		Resources/ArrayThreeBackground.png \
 		Resources/ConnectionHealth4of5.png \
 		Resources/Fonts/AvenirLTStd-Black.otf \
 		Resources/Fonts/AvenirLTStd-MediumOblique.otf \
@@ -6294,7 +6307,45 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QWidget \
-		../release/.ui/ui_DisplayDashboardUI.h
+		../release/.ui/ui_DisplayDashboardUI.h \
+		../../Qt/5.4/gcc_64/include/QtCore/QVariant \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QAction \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qicon.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QApplication \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QGridLayout \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qvalidator.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qregularexpression.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qslider.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qstyle.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QSpacerItem \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../release/.obj/DisplayDashboardUI.o ViewLayer/DisplayDashboardUI/DisplayDashboardUI.cpp
 
 ../release/.obj/DisplayDashboardView.o: ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp ViewLayer/DisplayDashboardView/DisplayDashboardView.h \

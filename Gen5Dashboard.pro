@@ -172,4 +172,6 @@ DISTFILES += \
     Resources/Solar Car Team Logo.png \
     Resources/Solar Car Team Symbol.png \
     Resources/Solar Car Team Icon.ico \
-    Resources/BrowseButton.png
+    Resources/BrowseButton.png \
+    Resources/HighHeadlightIndicator.png \
+    Resources/LowHeadlightIndicator.png
