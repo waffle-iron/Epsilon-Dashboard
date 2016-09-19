@@ -823,6 +823,7 @@ compiler_rcc_clean:
 		Resources/ConnectionHealth4of5.png \
 		Resources/Fonts/AvenirLTStd-Black.otf \
 		Resources/Fonts/AvenirLTStd-MediumOblique.otf \
+		Resources/Fonts/BurlingamePro-Light.otf \
 		Resources/Fonts/AvenirLTStd-HeavyOblique.otf \
 		Resources/Fonts/AvenirLTStd-Light.otf \
 		Resources/Fonts/AvenirLTStd-Medium.otf \
@@ -832,7 +833,15 @@ compiler_rcc_clean:
 		Resources/Fonts/AvenirLTStd-Book.otf \
 		Resources/Fonts/AvenirLTStd-BookOblique.otf \
 		Resources/Fonts/AvenirLTStd-Oblique.otf \
-		Resources/Fonts/AvenirLTStd-Heavy.otf
+		Resources/Fonts/AvenirLTStd-Heavy.otf \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDMN___.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDML___.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDM2L__.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDMB___.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDM2B__.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDMU___.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDM2N__.TTF \
+		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDM2U__.TTF
 	/home/sam/Qt/5.4/gcc_64/bin/rcc -name uiresources uiresources.qrc -o ../release/.rcc/qrc_uiresources.cpp
 
 compiler_moc_header_make_all: ../release/.moc/moc_LoggerService.cpp ../release/.moc/moc_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommDevice.cpp ../release/.moc/moc_RadioCommDevice.cpp ../release/.moc/moc_UdpMessageForwarder.cpp ../release/.moc/moc_BatteryPopulator.cpp ../release/.moc/moc_CmuPopulator.cpp ../release/.moc/moc_DriverDetailsPopulator.cpp ../release/.moc/moc_FaultsPopulator.cpp ../release/.moc/moc_KeyDriverControlPopulator.cpp ../release/.moc/moc_MpptPopulator.cpp ../release/.moc/moc_I_PacketChecksumChecker.cpp ../release/.moc/moc_PacketChecksumChecker.cpp ../release/.moc/moc_I_PacketDecoder.cpp ../release/.moc/moc_PacketDecoder.cpp ../release/.moc/moc_I_PacketSynchronizer.cpp ../release/.moc/moc_PacketSynchronizer.cpp ../release/.moc/moc_I_PacketUnstuffer.cpp ../release/.moc/moc_PacketUnstuffer.cpp ../release/.moc/moc_I_BatteryData.cpp ../release/.moc/moc_I_FaultsData.cpp ../release/.moc/moc_I_MpptData.cpp ../release/.moc/moc_MpptData.cpp ../release/.moc/moc_I_PowerData.cpp ../release/.moc/moc_I_VehicleData.cpp ../release/.moc/moc_BatteryPresenter.cpp ../release/.moc/moc_CommunicationPresenter.cpp ../release/.moc/moc_FaultsPresenter.cpp ../release/.moc/moc_MpptPresenter.cpp ../release/.moc/moc_PowerPresenter.cpp ../release/.moc/moc_VehiclePresenter.cpp ../release/.moc/moc_DisplayView.cpp ../release/.moc/moc_I_SolarCarWindow.cpp ../release/.moc/moc_DisplayDashboardView.cpp ../release/.moc/moc_DisplayDashboardUI.cpp

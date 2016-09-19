@@ -59,5 +59,5 @@ public:
     QLabel& netPowerLabel();
 
 private:
-    Ui::DisplayDashboardUI *ui;
+    Ui::DisplayDashboardUI *ui_;
 };

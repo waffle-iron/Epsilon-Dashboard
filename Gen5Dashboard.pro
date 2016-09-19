@@ -155,7 +155,6 @@ HEADERS  += \
     ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h
 
 FORMS    += \
-    CompactUI.ui \
     DisplayDashboardUI.ui
 
 RESOURCES += \
