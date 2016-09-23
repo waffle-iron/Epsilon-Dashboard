@@ -6,7 +6,6 @@
 #include "PresenterLayer/PowerPresenter/PowerPresenter.h"
 #include "PresenterLayer/VehiclePresenter/VehiclePresenter.h"
 #include "ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h"
-#include <QDateTime>
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
                          VehiclePresenter& vehiclePresenter,
@@ -23,6 +22,7 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
    , mpptPresenter_(mpptPresenter)
    , ui_(ui)
 {
+    ui_.show();
 }
 DisplayDashboardView::~DisplayDashboardView()
 {

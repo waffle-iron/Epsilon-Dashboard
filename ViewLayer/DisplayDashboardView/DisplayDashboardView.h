@@ -37,7 +37,4 @@ private:
     MpptPresenter& mpptPresenter_;
 
     I_DisplayDashboardUI& ui_;
-
-private slots:
-
 };

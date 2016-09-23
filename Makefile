@@ -130,7 +130,8 @@ SOURCES       = BusinessLayer/BusinessContainer.cpp \
 		../release/.moc/moc_DisplayView.cpp \
 		../release/.moc/moc_I_SolarCarWindow.cpp \
 		../release/.moc/moc_DisplayDashboardView.cpp \
-		../release/.moc/moc_DisplayDashboardUI.cpp
+		../release/.moc/moc_DisplayDashboardUI.cpp \
+		../release/.moc/moc_I_DisplayDashboardUI.cpp
 OBJECTS       = ../release/.obj/BusinessContainer.o \
 		../release/.obj/LoggerService.o \
 		../release/.obj/CommunicationsMonitoringService.o \
@@ -214,7 +215,8 @@ OBJECTS       = ../release/.obj/BusinessContainer.o \
 		../release/.obj/moc_DisplayView.o \
 		../release/.obj/moc_I_SolarCarWindow.o \
 		../release/.obj/moc_DisplayDashboardView.o \
-		../release/.obj/moc_DisplayDashboardUI.o
+		../release/.obj/moc_DisplayDashboardUI.o \
+		../release/.obj/moc_I_DisplayDashboardUI.o
 DIST          = Resources/Background1.png \
 		Resources/MainTitleBar.png \
 		Resources/MenuButton.png \
@@ -497,7 +499,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ../release/.ui/ui_CompactUI.h ../release/.ui/ui_DisplayDashboardUI.h $(OBJECTS)  
+$(TARGET): ../release/.ui/ui_DisplayDashboardUI.h $(OBJECTS)  
 	@test -d ../release/ || mkdir -p ../release/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -771,7 +773,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents uiresources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents BusinessLayer/BusinessContainer.h BusinessLayer/LoggerService/LoggerService.h BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.h BusinessLayer/CommunicationsMonitoringService/I_CommunicationsMonitoringService.h CommunicationLayer/CommDeviceControl/I_CommDevice.h CommunicationLayer/CommDeviceControl/RadioCommDevice.h CommunicationLayer/CommDeviceControl/UdpMessageForwarder.h CommunicationLayer/CommunicationContainer.h CommunicationLayer/DataPopulators/BatteryPopulator.h CommunicationLayer/DataPopulators/CmuPopulator.h CommunicationLayer/DataPopulators/DriverDetailsPopulator.h CommunicationLayer/DataPopulators/FaultsPopulator.h CommunicationLayer/DataPopulators/KeyDriverControlPopulator.h CommunicationLayer/DataPopulators/MpptPopulator.h CommunicationLayer/MessagingFramework/BatteryDataMessage.h CommunicationLayer/MessagingFramework/BatteryFaults.h CommunicationLayer/MessagingFramework/CmuDataMessage.h CommunicationLayer/MessagingFramework/DriverControlDetails.h CommunicationLayer/MessagingFramework/FaultsMessage.h CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.h CommunicationLayer/MessagingFramework/LimitFlags.h CommunicationLayer/MessagingFramework/MessageDecodingHelpers.h CommunicationLayer/MessagingFramework/MessageDefines.h CommunicationLayer/MessagingFramework/MotorFaults.h CommunicationLayer/MessagingFramework/MpptDataMessage.h CommunicationLayer/MessagingFramework/MpptDefines.h CommunicationLayer/PacketChecksumChecker/I_PacketChecksumChecker.h CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.h CommunicationLayer/PacketDecoder/I_PacketDecoder.h CommunicationLayer/PacketDecoder/PacketDecoder.h CommunicationLayer/PacketSynchronizer/I_PacketSynchronizer.h CommunicationLayer/PacketSynchronizer/PacketSynchronizer.h CommunicationLayer/PacketUnstuffer/I_DataInjectionService.h CommunicationLayer/PacketUnstuffer/I_PacketUnstuffer.h CommunicationLayer/PacketUnstuffer/PacketUnstuffer.h DataLayer/BatteryData/BatteryData.h DataLayer/BatteryData/I_BatteryData.h DataLayer/DataContainer.h DataLayer/FaultsData/FaultsData.h DataLayer/FaultsData/I_FaultsData.h DataLayer/MpptData/I_MpptData.h DataLayer/MpptData/MpptData.h DataLayer/PowerData/I_PowerData.h DataLayer/PowerData/PowerData.h DataLayer/VehicleData/I_VehicleData.h DataLayer/VehicleData/VehicleData.h PresenterLayer/BatteryPresenter/BatteryPresenter.h PresenterLayer/CommunicationPresenter/CommunicationPresenter.h PresenterLayer/FaultsPresenter/FaultsPresenter.h PresenterLayer/MpptPresenter/MpptPresenter.h PresenterLayer/PowerPresenter/PowerPresenter.h PresenterLayer/PresenterContainer.h PresenterLayer/VehiclePresenter/VehiclePresenter.h Gen5Dashboard/Gen5Dashboard.h ViewLayer/DisplayView/DisplayView.h ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h ViewLayer/DisplayDashboardView/DisplayDashboardView.h ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h $(DISTDIR)/
 	$(COPY_FILE) --parents BusinessLayer/BusinessContainer.cpp BusinessLayer/LoggerService/LoggerService.cpp BusinessLayer/CommunicationsMonitoringService/CommunicationsMonitoringService.cpp CommunicationLayer/CommDeviceControl/RadioCommDevice.cpp CommunicationLayer/CommDeviceControl/UdpMessageForwarder.cpp CommunicationLayer/CommunicationContainer.cpp CommunicationLayer/DataPopulators/BatteryPopulator.cpp CommunicationLayer/DataPopulators/CmuPopulator.cpp CommunicationLayer/DataPopulators/DriverDetailsPopulator.cpp CommunicationLayer/DataPopulators/FaultsPopulator.cpp CommunicationLayer/DataPopulators/KeyDriverControlPopulator.cpp CommunicationLayer/DataPopulators/MpptPopulator.cpp CommunicationLayer/MessagingFramework/BatteryDataMessage.cpp CommunicationLayer/MessagingFramework/BatteryFaults.cpp CommunicationLayer/MessagingFramework/CmuDataMessage.cpp CommunicationLayer/MessagingFramework/DriverControlDetails.cpp CommunicationLayer/MessagingFramework/FaultsMessage.cpp CommunicationLayer/MessagingFramework/KeyDriverControlTelemetry.cpp CommunicationLayer/MessagingFramework/LimitFlags.cpp CommunicationLayer/MessagingFramework/MessageDecodingHelpers.cpp CommunicationLayer/MessagingFramework/MessageDefines.cpp CommunicationLayer/MessagingFramework/MotorFaults.cpp CommunicationLayer/MessagingFramework/MpptDataMessage.cpp CommunicationLayer/MessagingFramework/MpptDefines.cpp CommunicationLayer/PacketChecksumChecker/PacketChecksumChecker.cpp CommunicationLayer/PacketDecoder/PacketDecoder.cpp CommunicationLayer/PacketSynchronizer/PacketSynchronizer.cpp CommunicationLayer/PacketUnstuffer/PacketUnstuffer.cpp DataLayer/BatteryData/BatteryData.cpp DataLayer/DataContainer.cpp DataLayer/FaultsData/FaultsData.cpp DataLayer/MpptData/MpptData.cpp DataLayer/PowerData/PowerData.cpp DataLayer/VehicleData/VehicleData.cpp PresenterLayer/BatteryPresenter/BatteryPresenter.cpp PresenterLayer/CommunicationPresenter/CommunicationPresenter.cpp PresenterLayer/FaultsPresenter/FaultsPresenter.cpp PresenterLayer/MpptPresenter/MpptPresenter.cpp PresenterLayer/PowerPresenter/PowerPresenter.cpp PresenterLayer/PresenterContainer.cpp PresenterLayer/VehiclePresenter/VehiclePresenter.cpp Gen5Dashboard/main.cpp Gen5Dashboard/Gen5Dashboard.cpp ViewLayer/DisplayView/DisplayView.cpp ViewLayer/ViewContainer.cpp ViewLayer/DisplayDashboardUI/DisplayDashboardUI.cpp ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents CompactUI.ui DisplayDashboardUI.ui $(DISTDIR)/
+	$(COPY_FILE) --parents DisplayDashboardUI.ui $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -844,9 +846,9 @@ compiler_rcc_clean:
 		Resources/Fonts/lcd_lcd_mono/LCDMonoWinTT/LCDM2U__.TTF
 	/home/sam/Qt/5.4/gcc_64/bin/rcc -name uiresources uiresources.qrc -o ../release/.rcc/qrc_uiresources.cpp
 
-compiler_moc_header_make_all: ../release/.moc/moc_LoggerService.cpp ../release/.moc/moc_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommDevice.cpp ../release/.moc/moc_RadioCommDevice.cpp ../release/.moc/moc_UdpMessageForwarder.cpp ../release/.moc/moc_BatteryPopulator.cpp ../release/.moc/moc_CmuPopulator.cpp ../release/.moc/moc_DriverDetailsPopulator.cpp ../release/.moc/moc_FaultsPopulator.cpp ../release/.moc/moc_KeyDriverControlPopulator.cpp ../release/.moc/moc_MpptPopulator.cpp ../release/.moc/moc_I_PacketChecksumChecker.cpp ../release/.moc/moc_PacketChecksumChecker.cpp ../release/.moc/moc_I_PacketDecoder.cpp ../release/.moc/moc_PacketDecoder.cpp ../release/.moc/moc_I_PacketSynchronizer.cpp ../release/.moc/moc_PacketSynchronizer.cpp ../release/.moc/moc_I_PacketUnstuffer.cpp ../release/.moc/moc_PacketUnstuffer.cpp ../release/.moc/moc_I_BatteryData.cpp ../release/.moc/moc_I_FaultsData.cpp ../release/.moc/moc_I_MpptData.cpp ../release/.moc/moc_MpptData.cpp ../release/.moc/moc_I_PowerData.cpp ../release/.moc/moc_I_VehicleData.cpp ../release/.moc/moc_BatteryPresenter.cpp ../release/.moc/moc_CommunicationPresenter.cpp ../release/.moc/moc_FaultsPresenter.cpp ../release/.moc/moc_MpptPresenter.cpp ../release/.moc/moc_PowerPresenter.cpp ../release/.moc/moc_VehiclePresenter.cpp ../release/.moc/moc_DisplayView.cpp ../release/.moc/moc_I_SolarCarWindow.cpp ../release/.moc/moc_DisplayDashboardView.cpp ../release/.moc/moc_DisplayDashboardUI.cpp
+compiler_moc_header_make_all: ../release/.moc/moc_LoggerService.cpp ../release/.moc/moc_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommDevice.cpp ../release/.moc/moc_RadioCommDevice.cpp ../release/.moc/moc_UdpMessageForwarder.cpp ../release/.moc/moc_BatteryPopulator.cpp ../release/.moc/moc_CmuPopulator.cpp ../release/.moc/moc_DriverDetailsPopulator.cpp ../release/.moc/moc_FaultsPopulator.cpp ../release/.moc/moc_KeyDriverControlPopulator.cpp ../release/.moc/moc_MpptPopulator.cpp ../release/.moc/moc_I_PacketChecksumChecker.cpp ../release/.moc/moc_PacketChecksumChecker.cpp ../release/.moc/moc_I_PacketDecoder.cpp ../release/.moc/moc_PacketDecoder.cpp ../release/.moc/moc_I_PacketSynchronizer.cpp ../release/.moc/moc_PacketSynchronizer.cpp ../release/.moc/moc_I_PacketUnstuffer.cpp ../release/.moc/moc_PacketUnstuffer.cpp ../release/.moc/moc_I_BatteryData.cpp ../release/.moc/moc_I_FaultsData.cpp ../release/.moc/moc_I_MpptData.cpp ../release/.moc/moc_MpptData.cpp ../release/.moc/moc_I_PowerData.cpp ../release/.moc/moc_I_VehicleData.cpp ../release/.moc/moc_BatteryPresenter.cpp ../release/.moc/moc_CommunicationPresenter.cpp ../release/.moc/moc_FaultsPresenter.cpp ../release/.moc/moc_MpptPresenter.cpp ../release/.moc/moc_PowerPresenter.cpp ../release/.moc/moc_VehiclePresenter.cpp ../release/.moc/moc_DisplayView.cpp ../release/.moc/moc_I_SolarCarWindow.cpp ../release/.moc/moc_DisplayDashboardView.cpp ../release/.moc/moc_DisplayDashboardUI.cpp ../release/.moc/moc_I_DisplayDashboardUI.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) ../release/.moc/moc_LoggerService.cpp ../release/.moc/moc_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommDevice.cpp ../release/.moc/moc_RadioCommDevice.cpp ../release/.moc/moc_UdpMessageForwarder.cpp ../release/.moc/moc_BatteryPopulator.cpp ../release/.moc/moc_CmuPopulator.cpp ../release/.moc/moc_DriverDetailsPopulator.cpp ../release/.moc/moc_FaultsPopulator.cpp ../release/.moc/moc_KeyDriverControlPopulator.cpp ../release/.moc/moc_MpptPopulator.cpp ../release/.moc/moc_I_PacketChecksumChecker.cpp ../release/.moc/moc_PacketChecksumChecker.cpp ../release/.moc/moc_I_PacketDecoder.cpp ../release/.moc/moc_PacketDecoder.cpp ../release/.moc/moc_I_PacketSynchronizer.cpp ../release/.moc/moc_PacketSynchronizer.cpp ../release/.moc/moc_I_PacketUnstuffer.cpp ../release/.moc/moc_PacketUnstuffer.cpp ../release/.moc/moc_I_BatteryData.cpp ../release/.moc/moc_I_FaultsData.cpp ../release/.moc/moc_I_MpptData.cpp ../release/.moc/moc_MpptData.cpp ../release/.moc/moc_I_PowerData.cpp ../release/.moc/moc_I_VehicleData.cpp ../release/.moc/moc_BatteryPresenter.cpp ../release/.moc/moc_CommunicationPresenter.cpp ../release/.moc/moc_FaultsPresenter.cpp ../release/.moc/moc_MpptPresenter.cpp ../release/.moc/moc_PowerPresenter.cpp ../release/.moc/moc_VehiclePresenter.cpp ../release/.moc/moc_DisplayView.cpp ../release/.moc/moc_I_SolarCarWindow.cpp ../release/.moc/moc_DisplayDashboardView.cpp ../release/.moc/moc_DisplayDashboardUI.cpp
+	-$(DEL_FILE) ../release/.moc/moc_LoggerService.cpp ../release/.moc/moc_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommunicationsMonitoringService.cpp ../release/.moc/moc_I_CommDevice.cpp ../release/.moc/moc_RadioCommDevice.cpp ../release/.moc/moc_UdpMessageForwarder.cpp ../release/.moc/moc_BatteryPopulator.cpp ../release/.moc/moc_CmuPopulator.cpp ../release/.moc/moc_DriverDetailsPopulator.cpp ../release/.moc/moc_FaultsPopulator.cpp ../release/.moc/moc_KeyDriverControlPopulator.cpp ../release/.moc/moc_MpptPopulator.cpp ../release/.moc/moc_I_PacketChecksumChecker.cpp ../release/.moc/moc_PacketChecksumChecker.cpp ../release/.moc/moc_I_PacketDecoder.cpp ../release/.moc/moc_PacketDecoder.cpp ../release/.moc/moc_I_PacketSynchronizer.cpp ../release/.moc/moc_PacketSynchronizer.cpp ../release/.moc/moc_I_PacketUnstuffer.cpp ../release/.moc/moc_PacketUnstuffer.cpp ../release/.moc/moc_I_BatteryData.cpp ../release/.moc/moc_I_FaultsData.cpp ../release/.moc/moc_I_MpptData.cpp ../release/.moc/moc_MpptData.cpp ../release/.moc/moc_I_PowerData.cpp ../release/.moc/moc_I_VehicleData.cpp ../release/.moc/moc_BatteryPresenter.cpp ../release/.moc/moc_CommunicationPresenter.cpp ../release/.moc/moc_FaultsPresenter.cpp ../release/.moc/moc_MpptPresenter.cpp ../release/.moc/moc_PowerPresenter.cpp ../release/.moc/moc_VehiclePresenter.cpp ../release/.moc/moc_DisplayView.cpp ../release/.moc/moc_I_SolarCarWindow.cpp ../release/.moc/moc_DisplayDashboardView.cpp ../release/.moc/moc_DisplayDashboardUI.cpp ../release/.moc/moc_I_DisplayDashboardUI.cpp
 ../release/.moc/moc_LoggerService.cpp: ../../Qt/5.4/gcc_64/include/QtCore/QObject \
 		../../Qt/5.4/gcc_64/include/QtCore/qobject.h \
 		../../Qt/5.4/gcc_64/include/QtCore/qobjectdefs.h \
@@ -3021,14 +3023,6 @@ compiler_moc_header_clean:
 		CommunicationLayer/MessagingFramework/LimitFlags.h \
 		CommunicationLayer/MessagingFramework/MotorFaults.h \
 		ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/DisplayDashboardView/DisplayDashboardView.h
@@ -3139,14 +3133,6 @@ compiler_moc_header_clean:
 		../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
@@ -3154,14 +3140,120 @@ compiler_moc_header_clean:
 		ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h
 	/home/sam/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/home/sam/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/home/sam/SolarCar/Epsilon-Dashboard -I/home/sam/Qt/5.4/gcc_64/include -I/home/sam/Qt/5.4/gcc_64/include/QtWidgets -I/home/sam/Qt/5.4/gcc_64/include/QtGui -I/home/sam/Qt/5.4/gcc_64/include/QtSerialPort -I/home/sam/Qt/5.4/gcc_64/include/QtNetwork -I/home/sam/Qt/5.4/gcc_64/include/QtCore ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h -o ../release/.moc/moc_DisplayDashboardUI.cpp
 
+../release/.moc/moc_I_DisplayDashboardUI.cpp: ../../Qt/5.4/gcc_64/include/QtWidgets/QLabel \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qlabel.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qwidget.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qglobal.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qconfig.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qfeatures.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qtypetraits.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qlogging.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qflags.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_mips.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_x86.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qatomic_unix.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qmutex.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qobject.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qstring.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qchar.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qlist.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qiterator.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qisenum.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qmargins.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qrect.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qsize.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qpoint.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpalette.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qcolor.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qrgb.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qdatastream.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qpair.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qregexp.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qbrush.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qvector.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qmatrix.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpolygon.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qregion.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qline.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qtransform.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpainterpath.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qimage.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpixelformat.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qpixmap.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qhash.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qfont.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qfontinfo.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qcursor.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qkeysequence.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qevent.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qvariant.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qmap.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qdebug.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qlocale.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qset.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qurl.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qurlquery.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qfile.h \
+		../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
+		../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
+		ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h
+	/home/sam/Qt/5.4/gcc_64/bin/moc $(DEFINES) -I/home/sam/Qt/5.4/gcc_64/mkspecs/linux-g++ -I/home/sam/SolarCar/Epsilon-Dashboard -I/home/sam/Qt/5.4/gcc_64/include -I/home/sam/Qt/5.4/gcc_64/include/QtWidgets -I/home/sam/Qt/5.4/gcc_64/include/QtGui -I/home/sam/Qt/5.4/gcc_64/include/QtSerialPort -I/home/sam/Qt/5.4/gcc_64/include/QtNetwork -I/home/sam/Qt/5.4/gcc_64/include/QtCore ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h -o ../release/.moc/moc_I_DisplayDashboardUI.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ../release/.ui/ui_CompactUI.h ../release/.ui/ui_DisplayDashboardUI.h
+compiler_uic_make_all: ../release/.ui/ui_DisplayDashboardUI.h
 compiler_uic_clean:
-	-$(DEL_FILE) ../release/.ui/ui_CompactUI.h ../release/.ui/ui_DisplayDashboardUI.h
-../release/.ui/ui_CompactUI.h: CompactUI.ui
-	/home/sam/Qt/5.4/gcc_64/bin/uic CompactUI.ui -o ../release/.ui/ui_CompactUI.h
-
+	-$(DEL_FILE) ../release/.ui/ui_DisplayDashboardUI.h
 ../release/.ui/ui_DisplayDashboardUI.h: DisplayDashboardUI.ui
 	/home/sam/Qt/5.4/gcc_64/bin/uic DisplayDashboardUI.ui -o ../release/.ui/ui_DisplayDashboardUI.h
 
@@ -6054,14 +6146,6 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
@@ -6176,14 +6260,6 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
@@ -6304,14 +6380,6 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		../../Qt/5.4/gcc_64/include/QtCore/qfiledevice.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qvector2d.h \
 		../../Qt/5.4/gcc_64/include/QtGui/qtouchdevice.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
@@ -6340,6 +6408,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		../../Qt/5.4/gcc_64/include/QtWidgets/QHeaderView \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qheaderview.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
 		../../Qt/5.4/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../Qt/5.4/gcc_64/include/QtCore/qitemselectionmodel.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -6468,14 +6537,6 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		CommunicationLayer/MessagingFramework/LimitFlags.h \
 		CommunicationLayer/MessagingFramework/MotorFaults.h \
 		ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/QTextEdit \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qtextedit.h \
-		../../Qt/5.4/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextdocument.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.4/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.4/gcc_64/include/QtWidgets/QProgressBar \
 		../../Qt/5.4/gcc_64/include/QtWidgets/qprogressbar.h \
 		PresenterLayer/BatteryPresenter/BatteryPresenter.h \
@@ -6483,9 +6544,7 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 		PresenterLayer/FaultsPresenter/FaultsPresenter.h \
 		PresenterLayer/MpptPresenter/MpptPresenter.h \
 		PresenterLayer/PowerPresenter/PowerPresenter.h \
-		PresenterLayer/VehiclePresenter/VehiclePresenter.h \
-		../../Qt/5.4/gcc_64/include/QtCore/QDateTime \
-		../../Qt/5.4/gcc_64/include/QtCore/qdatetime.h
+		PresenterLayer/VehiclePresenter/VehiclePresenter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../release/.obj/DisplayDashboardView.o ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp
 
 ../release/.obj/qrc_uiresources.o: ../release/.rcc/qrc_uiresources.cpp 
@@ -6598,6 +6657,9 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 
 ../release/.obj/moc_DisplayDashboardUI.o: ../release/.moc/moc_DisplayDashboardUI.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../release/.obj/moc_DisplayDashboardUI.o ../release/.moc/moc_DisplayDashboardUI.cpp
+
+../release/.obj/moc_I_DisplayDashboardUI.o: ../release/.moc/moc_I_DisplayDashboardUI.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../release/.obj/moc_I_DisplayDashboardUI.o ../release/.moc/moc_I_DisplayDashboardUI.cpp
 
 ####### Install
 

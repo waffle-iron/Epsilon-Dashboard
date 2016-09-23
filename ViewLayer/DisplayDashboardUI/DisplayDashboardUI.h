@@ -6,7 +6,7 @@
 namespace Ui {
     class DisplayDashboardUI;
 }
-class DisplayDashboardUI : public I_SolarCarWindow, public I_DisplayDashboardUI
+class DisplayDashboardUI : public I_DisplayDashboardUI
 {
     Q_OBJECT
 

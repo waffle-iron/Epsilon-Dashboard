@@ -40,7 +40,6 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
       presenterContainer.faultsPresenter(),
       presenterContainer.mpptPresenter(),
       *DisplayDashboardUI_))
-, displayView_(new DisplayView(*DisplayDashboardUI_))
 {
 }
 

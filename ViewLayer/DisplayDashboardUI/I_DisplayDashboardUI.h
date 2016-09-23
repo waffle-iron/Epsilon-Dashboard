@@ -1,11 +1,11 @@
 #pragma once
 
 #include <QLabel>
-#include <QTextEdit>
 #include <QProgressBar>
 
-class I_DisplayDashboardUI
+class I_DisplayDashboardUI : public QWidget
 {
+    Q_OBJECT
 public:
     virtual ~I_DisplayDashboardUI() {}
 
