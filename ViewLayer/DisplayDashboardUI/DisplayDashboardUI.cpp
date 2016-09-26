@@ -17,44 +17,44 @@ QLabel& DisplayDashboardUI::actualSpeedLabel()
     return *ui_->actualSpeedLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayOneVoltageLabel()
+QLabel& DisplayDashboardUI::array0VoltageLabel()
 {
-    return *ui_->arrayOneVoltageLabel;
+    return *ui_->array0VoltageLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayTwoVoltageLabel()
+QLabel& DisplayDashboardUI::array1VoltageLabel()
 {
-    return *ui_->arrayTwoVoltageLabel;
+    return *ui_->array1VoltageLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayThreeVoltageLabel()
+QLabel& DisplayDashboardUI::array2VoltageLabel()
 {
-    return *ui_->arrayThreeVoltageLabel;
+    return *ui_->array2VoltageLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayFourVoltageLabel()
+QLabel& DisplayDashboardUI::array3VoltageLabel()
 {
-    return *ui_->arrayFourVoltageLabel;
+    return *ui_->array3VoltageLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayOneCurrentLabel()
+QLabel& DisplayDashboardUI::array0CurrentLabel()
 {
-    return *ui_->arrayOneCurrentLabel;
+    return *ui_->array0CurrentLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayTwoCurrentLabel()
+QLabel& DisplayDashboardUI::array1CurrentLabel()
 {
-    return *ui_->arrayTwoCurrentLabel;
+    return *ui_->array1CurrentLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayThreeCurrentLabel()
+QLabel& DisplayDashboardUI::array2CurrentLabel()
 {
-    return *ui_->arrayThreeCurrentLabel;
+    return *ui_->array2CurrentLabel;
 }
 
-QLabel& DisplayDashboardUI::arrayFourCurrentLabel()
+QLabel& DisplayDashboardUI::array3CurrentLabel()
 {
-    return *ui_->arrayFourCurrentLabel;
+    return *ui_->array3CurrentLabel;
 }
 
 QLabel& DisplayDashboardUI::setCurrentLabel()

@@ -168,7 +168,7 @@ color: rgb(100,100,100);
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QWidget" name="arrayTwoWidget" native="true">
+          <widget class="QWidget" name="array1Widget" native="true">
            <property name="minimumSize">
             <size>
              <width>124</width>
@@ -195,7 +195,7 @@ color: rgb(100,100,100);
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="arrayTwoVoltageLabel">
+             <widget class="QLabel" name="array1VoltageLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -207,7 +207,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayTwoVoltageUnitsLabel">
+             <widget class="QLabel" name="array1VoltageUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -218,7 +218,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayTwoCurrentLabel">
+             <widget class="QLabel" name="array1CurrentLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -230,7 +230,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayTwoCurrentUnitsLabel">
+             <widget class="QLabel" name="array1CurrentUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -244,7 +244,7 @@ background: none;</string>
           </widget>
          </item>
          <item row="2" column="2">
-          <widget class="QWidget" name="arrayFourWidget" native="true">
+          <widget class="QWidget" name="array3Widget" native="true">
            <property name="minimumSize">
             <size>
              <width>124</width>
@@ -272,7 +272,7 @@ background: none;</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="arrayFourVoltageLabel">
+             <widget class="QLabel" name="array3VoltageLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -284,7 +284,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arraryFourCurrentUnitsLabel">
+             <widget class="QLabel" name="array3CurrentUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -295,7 +295,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayFourCurrentLabel">
+             <widget class="QLabel" name="array3CurrentLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -307,7 +307,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayFourVoltageUnitsLabel">
+             <widget class="QLabel" name="array3VoltageUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -321,7 +321,7 @@ background: none;</string>
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QWidget" name="arrayThreeWidget" native="true">
+          <widget class="QWidget" name="array2Widget" native="true">
            <property name="minimumSize">
             <size>
              <width>124</width>
@@ -354,7 +354,7 @@ background: none;</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="arrayThreeVoltageLabel">
+             <widget class="QLabel" name="array2VoltageLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -366,7 +366,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayThreeVoltageUnitsLabel">
+             <widget class="QLabel" name="array2VoltageUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -377,7 +377,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayThreeCurrentLabel">
+             <widget class="QLabel" name="array2CurrentLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -389,7 +389,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayThreeCurrentUnitsLabel">
+             <widget class="QLabel" name="array2CurrentUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -403,7 +403,7 @@ background: none;</string>
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QWidget" name="arrayOneWidget" native="true">
+          <widget class="QWidget" name="array0Widget" native="true">
            <property name="minimumSize">
             <size>
              <width>124</width>
@@ -436,7 +436,7 @@ background: none;</string>
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="arrayOneVoltageLabel">
+             <widget class="QLabel" name="array0VoltageLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -448,7 +448,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayOneVoltageUnitsLabel">
+             <widget class="QLabel" name="array0VoltageUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>
@@ -459,7 +459,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayOneCurrentLabel">
+             <widget class="QLabel" name="array0CurrentLabel">
               <property name="styleSheet">
                <string notr="true">font: 18pt &quot;Burlingame Pro&quot;;
 color:white;
@@ -471,7 +471,7 @@ background: none;</string>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="arrayOneCurrentUnitsLabel">
+             <widget class="QLabel" name="array0CurrentUnitsLabel">
               <property name="styleSheet">
                <string notr="true">color: white;
 background: none;</string>

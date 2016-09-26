@@ -23,10 +23,8 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include "DisplayView/DisplayView.h"
 #include "DisplayDashboardUI/DisplayDashboardUI.h"
 #include "DisplayDashboardView/DisplayDashboardView.h"
-#include "I_SolarCarWindow/I_SolarCarWindow.h"
 #include "PresenterLayer/PresenterContainer.h"
 #include "ViewContainer.h"
 

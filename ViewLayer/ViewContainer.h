@@ -27,7 +27,6 @@
 
 #include <QScopedPointer>
 
-class DisplayView;
 class DisplayDashboardUI;
 class DisplayDashboardView;
 class PresenterContainer;
@@ -41,5 +40,4 @@ public:
 private:
    DisplayDashboardUI* DisplayDashboardUI_;
    QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
-   QScopedPointer<DisplayView> displayView_;
 };

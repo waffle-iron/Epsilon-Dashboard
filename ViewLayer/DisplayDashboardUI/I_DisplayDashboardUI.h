@@ -11,15 +11,15 @@ public:
 
     virtual QLabel& actualSpeedLabel() = 0;
 
-    virtual QLabel& arrayOneVoltageLabel() = 0;
-    virtual QLabel& arrayTwoVoltageLabel() = 0;
-    virtual QLabel& arrayThreeVoltageLabel() = 0;
-    virtual QLabel& arrayFourVoltageLabel() = 0;
+    virtual QLabel& array0VoltageLabel() = 0;
+    virtual QLabel& array1VoltageLabel() = 0;
+    virtual QLabel& array2VoltageLabel() = 0;
+    virtual QLabel& array3VoltageLabel() = 0;
 
-    virtual QLabel& arrayOneCurrentLabel() = 0;
-    virtual QLabel& arrayTwoCurrentLabel() = 0;
-    virtual QLabel& arrayThreeCurrentLabel() = 0;
-    virtual QLabel& arrayFourCurrentLabel() = 0;
+    virtual QLabel& array0CurrentLabel() = 0;
+    virtual QLabel& array1CurrentLabel() = 0;
+    virtual QLabel& array2CurrentLabel() = 0;
+    virtual QLabel& array3CurrentLabel() = 0;
 
     virtual QLabel& setCurrentLabel() = 0;
     virtual QLabel& motorPowerLabel() = 0;

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "I_DisplayDashboardUI.h"
-#include "../I_SolarCarWindow/I_SolarCarWindow.h"
 
 namespace Ui {
     class DisplayDashboardUI;
@@ -16,15 +15,15 @@ public:
 
     QLabel& actualSpeedLabel();
 
-    QLabel& arrayOneVoltageLabel();
-    QLabel& arrayTwoVoltageLabel();
-    QLabel& arrayThreeVoltageLabel();
-    QLabel& arrayFourVoltageLabel();
+    QLabel& array0VoltageLabel();
+    QLabel& array1VoltageLabel();
+    QLabel& array2VoltageLabel();
+    QLabel& array3VoltageLabel();
 
-    QLabel& arrayOneCurrentLabel();
-    QLabel& arrayTwoCurrentLabel();
-    QLabel& arrayThreeCurrentLabel();
-    QLabel& arrayFourCurrentLabel();
+    QLabel& array0CurrentLabel();
+    QLabel& array1CurrentLabel();
+    QLabel& array2CurrentLabel();
+    QLabel& array3CurrentLabel();
 
     QLabel& setCurrentLabel();
     QLabel& motorPowerLabel();
