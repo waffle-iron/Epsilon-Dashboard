@@ -88,10 +88,9 @@ SOURCES += \
     PresenterLayer/VehiclePresenter/VehiclePresenter.cpp \
     Gen5Dashboard/main.cpp \
     Gen5Dashboard/Gen5Dashboard.cpp \
-    ViewLayer/DisplayView/DisplayView.cpp \
     ViewLayer/ViewContainer.cpp \
-    ViewLayer/CompactUI/CompactUI.cpp \
-    ViewLayer/CompactView/CompactView.cpp
+    ViewLayer/DisplayDashboardUI/DisplayDashboardUI.cpp \
+    ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp
 
 HEADERS  += \
     BusinessLayer/BusinessContainer.h \
@@ -148,14 +147,13 @@ HEADERS  += \
     PresenterLayer/PresenterContainer.h \
     PresenterLayer/VehiclePresenter/VehiclePresenter.h \
     Gen5Dashboard/Gen5Dashboard.h \
-    ViewLayer/DisplayView/DisplayView.h \
-    ViewLayer/I_SolarCarWindow/I_SolarCarWindow.h \
-    ViewLayer/CompactUI/CompactUI.h \
-    ViewLayer/CompactView/CompactView.h \
-    ViewLayer/CompactUI/I_CompactUI.h
+    ViewLayer/ViewContainer.h \
+    ViewLayer/DisplayDashboardView/DisplayDashboardView.h \
+    ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h \
+    ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h
 
 FORMS    += \
-    CompactUI.ui
+    DisplayDashboardUI.ui
 
 RESOURCES += \
     uiresources.qrc
@@ -171,4 +169,6 @@ DISTFILES += \
     Resources/Solar Car Team Logo.png \
     Resources/Solar Car Team Symbol.png \
     Resources/Solar Car Team Icon.ico \
-    Resources/BrowseButton.png
+    Resources/BrowseButton.png \
+    Resources/HighHeadlightIndicator.png \
+    Resources/LowHeadlightIndicator.png

@@ -23,24 +23,21 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include "DisplayView/DisplayView.h"
-#include "CompactUI/CompactUI.h"
-#include "CompactView/CompactView.h"
-#include "I_SolarCarWindow/I_SolarCarWindow.h"
+#include "DisplayDashboardUI/DisplayDashboardUI.h"
+#include "DisplayDashboardView/DisplayDashboardView.h"
 #include "PresenterLayer/PresenterContainer.h"
 #include "ViewContainer.h"
 
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
-: compactUI_(new CompactUI())
-, compactView_(new CompactView(
+: DisplayDashboardUI_(new DisplayDashboardUI())
+, DisplayDashboardView_(new DisplayDashboardView(
       presenterContainer.batteryPresenter(),
       presenterContainer.vehiclePresenter(),
       presenterContainer.powerPresenter(),
       presenterContainer.communicationPresenter(),
       presenterContainer.faultsPresenter(),
       presenterContainer.mpptPresenter(),
-      *compactUI_))
-, displayView_(new DisplayView(*compactUI_))
+      *DisplayDashboardUI_))
 {
 }
 
