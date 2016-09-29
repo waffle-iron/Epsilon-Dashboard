@@ -22,7 +22,7 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
    , mpptPresenter_(mpptPresenter)
    , ui_(ui)
 {
-    ui_.show();
+    ui_.showMaximized();
 }
 DisplayDashboardView::~DisplayDashboardView()
 {

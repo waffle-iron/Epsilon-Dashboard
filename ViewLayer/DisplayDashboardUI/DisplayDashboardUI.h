@@ -18,12 +18,10 @@ public:
     QLabel& array0VoltageLabel();
     QLabel& array1VoltageLabel();
     QLabel& array2VoltageLabel();
-    QLabel& array3VoltageLabel();
 
     QLabel& array0CurrentLabel();
     QLabel& array1CurrentLabel();
     QLabel& array2CurrentLabel();
-    QLabel& array3CurrentLabel();
 
     QLabel& setCurrentLabel();
     QLabel& motorPowerLabel();
