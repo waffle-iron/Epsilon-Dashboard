@@ -8,7 +8,14 @@ before_install:
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
 
+install:
+    - wget 'https://sourceforge.net/projects/astyle/files/latest/download'
+    - tar -zxvf download
+    - (cd astyle/build/gcc && make release && sudo make install)
+    - rm astyle -rf
+
 script: 
+    - "! (astyle *.h *.c -r --dry-run --options=astylerc | grep Formatted)"
     - qmake
     - make
 
