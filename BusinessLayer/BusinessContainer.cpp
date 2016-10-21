@@ -4,11 +4,11 @@
 #include "LoggerService/LoggerService.h"
 
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer)
-: loggerService_(new LoggerService(
-   communicationContainer.packetSynchronizer(),
-   communicationContainer.packetDecoder()))
-, communicationsMonitoringService_(new CommunicationsMonitoringService(
-   communicationContainer.packetChecksumChecker()))
+    : loggerService_(new LoggerService(
+                         communicationContainer.packetSynchronizer(),
+                         communicationContainer.packetDecoder()))
+    , communicationsMonitoringService_(new CommunicationsMonitoringService(
+                                           communicationContainer.packetChecksumChecker()))
 {
 }
 
@@ -18,5 +18,5 @@ BusinessContainer::~BusinessContainer()
 
 I_CommunicationsMonitoringService& BusinessContainer::communicationsMonitoringService()
 {
-   return *communicationsMonitoringService_;
+    return *communicationsMonitoringService_;
 }

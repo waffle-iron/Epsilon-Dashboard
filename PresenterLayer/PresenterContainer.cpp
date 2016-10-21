@@ -10,16 +10,16 @@
 #include "VehiclePresenter/VehiclePresenter.h"
 
 PresenterContainer::PresenterContainer(DataContainer& dataContainer,
-      CommunicationContainer& communicationContainer,
-      BusinessContainer& businessContainer)
-: batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
-, communicationPresenter_(new CommunicationPresenter(
-   communicationContainer.commDevice(),
-   businessContainer.communicationsMonitoringService()))
-, vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
-, mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
-, powerPresenter_(new PowerPresenter(dataContainer.powerData()))
-, faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
+                                       CommunicationContainer& communicationContainer,
+                                       BusinessContainer& businessContainer)
+    : batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
+    , communicationPresenter_(new CommunicationPresenter(
+                                  communicationContainer.commDevice(),
+                                  businessContainer.communicationsMonitoringService()))
+    , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
+    , mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
+    , powerPresenter_(new PowerPresenter(dataContainer.powerData()))
+    , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
 {
 }
 
@@ -29,30 +29,30 @@ PresenterContainer::~PresenterContainer()
 
 BatteryPresenter& PresenterContainer::batteryPresenter()
 {
-   return *batteryPresenter_;
+    return *batteryPresenter_;
 }
 
 CommunicationPresenter& PresenterContainer::communicationPresenter()
 {
-   return *communicationPresenter_;
+    return *communicationPresenter_;
 }
 
 VehiclePresenter& PresenterContainer::vehiclePresenter()
 {
-   return *vehiclePresenter_;
+    return *vehiclePresenter_;
 }
 
 MpptPresenter& PresenterContainer::mpptPresenter()
 {
-   return *mpptPresenter_;
+    return *mpptPresenter_;
 }
 
 PowerPresenter& PresenterContainer::powerPresenter()
 {
-   return *powerPresenter_;
+    return *powerPresenter_;
 }
 
 FaultsPresenter& PresenterContainer::faultsPresenter()
 {
-   return *faultsPresenter_;
+    return *faultsPresenter_;
 }

@@ -4,14 +4,14 @@
 
 class FakeConnectionService : public I_ConnectionService
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   FakeConnectionService();
+    FakeConnectionService();
 
-   bool isConnected();
-   void emitSignalConnectionSucceeded();
+    bool isConnected();
+    void emitSignalConnectionSucceeded();
 
 public slots:
-   void connectDataSource(QString portName, int baudRate);
-   void disconnectDataSource();
+    void connectDataSource(QString portName, int baudRate);
+    void disconnectDataSource();
 };

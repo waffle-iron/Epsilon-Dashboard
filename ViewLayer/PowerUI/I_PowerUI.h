@@ -14,7 +14,7 @@
 class I_PowerUI
 {
 public:
-	virtual ~I_PowerUI() {}
+    virtual ~I_PowerUI() {}
 
     virtual QPushButton& connectButton() = 0;
     virtual QLabel& setConnectionStatus() = 0;
@@ -34,7 +34,7 @@ public:
 
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;
-    virtual QLabel& setActualSpeed() = 0;    
+    virtual QLabel& setActualSpeed() = 0;
     virtual QLabel& setBusCurrent() = 0;
     virtual QLabel& setBusVoltage() = 0;
     virtual QLabel& setBatteryCurrent() = 0;
@@ -88,12 +88,12 @@ public:
 
     virtual QStackedWidget& setGraphsStackedWidget() = 0;
     /*
-    virtual QwtPlotCurve& setPositiveBusCurrentCurve() = 0; 
-    virtual QwtPlotCurve& setNegativeBusCurrentCurve() = 0; 
-    virtual QwtPlotCurve& setBusVoltageCurve() = 0; 
-    virtual QwtPlotCurve& setBusPowerCurve() = 0; 
-    virtual QwtPlotCurve& setSetSpeedCurve() = 0; 
-    virtual QwtPlotCurve& setActualSpeedCurve() = 0; 
+    virtual QwtPlotCurve& setPositiveBusCurrentCurve() = 0;
+    virtual QwtPlotCurve& setNegativeBusCurrentCurve() = 0;
+    virtual QwtPlotCurve& setBusVoltageCurve() = 0;
+    virtual QwtPlotCurve& setBusPowerCurve() = 0;
+    virtual QwtPlotCurve& setSetSpeedCurve() = 0;
+    virtual QwtPlotCurve& setActualSpeedCurve() = 0;
     virtual QwtPlotCurve& setSetCurrentCurve() = 0;
     virtual QwtPlotCurve& setMod0CellTempCurve() = 0;
     virtual QwtPlotCurve& setMod1CellTempCurve() = 0;

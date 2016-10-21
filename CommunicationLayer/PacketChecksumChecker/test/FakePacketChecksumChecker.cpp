@@ -10,5 +10,5 @@ FakePacketChecksumChecker::~FakePacketChecksumChecker()
 
 void FakePacketChecksumChecker::emitValidDataReceived(QByteArray validData)
 {
-   emit validDataReceived(validData);
+    emit validDataReceived(validData);
 }

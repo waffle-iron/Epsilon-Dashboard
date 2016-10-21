@@ -6,16 +6,16 @@
 class BatteryDataMessage
 {
 public:
-   BatteryDataMessage(const QByteArray& messageData);
+    BatteryDataMessage(const QByteArray& messageData);
 
-   float batteryVoltage() const;
-   float batteryCurrent() const;
-   float stateOfCharge() const;
-   float balanceStateOfCharge() const;
-   bool secondaryBatteryUnderVoltage() const;
+    float batteryVoltage() const;
+    float batteryCurrent() const;
+    float stateOfCharge() const;
+    float balanceStateOfCharge() const;
+    bool secondaryBatteryUnderVoltage() const;
 
-   QString toString() const;
+    QString toString() const;
 
 private:
-   const QByteArray messageData_;
+    const QByteArray messageData_;
 };

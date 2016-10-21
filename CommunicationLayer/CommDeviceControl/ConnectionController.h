@@ -5,25 +5,25 @@
 
 class ConnectionController : public I_ConnectionService
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   ConnectionController(
-      I_ConnectionService& serial,
-      I_ConnectionService& udp);
-   virtual ~ConnectionController();
+    ConnectionController(
+        I_ConnectionService& serial,
+        I_ConnectionService& udp);
+    virtual ~ConnectionController();
 
 public:
-   void setDeviceType(CommDefines::Type type);
+    void setDeviceType(CommDefines::Type type);
 
-   bool connectToDataSource();
-   void disconnectFromDataSource();
+    bool connectToDataSource();
+    void disconnectFromDataSource();
 
 private:
-   void connectToConnectionService(I_ConnectionService& service);
-   void disconnectFromConnectionService(I_ConnectionService& service);
+    void connectToConnectionService(I_ConnectionService& service);
+    void disconnectFromConnectionService(I_ConnectionService& service);
 
 private:
-   CommDefines::Type type_;
-   I_ConnectionService& serial_;
-   I_ConnectionService& udp_;
+    CommDefines::Type type_;
+    I_ConnectionService& serial_;
+    I_ConnectionService& udp_;
 };

@@ -8,12 +8,12 @@ class I_CommunicationsMonitoringService;
 class BusinessContainer
 {
 public:
-   explicit BusinessContainer(CommunicationContainer& communicationContainer);
-   ~BusinessContainer();
+    explicit BusinessContainer(CommunicationContainer& communicationContainer);
+    ~BusinessContainer();
 
-   I_CommunicationsMonitoringService& communicationsMonitoringService();
+    I_CommunicationsMonitoringService& communicationsMonitoringService();
 
 private:
-   QScopedPointer<LoggerService> loggerService_;
-   QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;
+    QScopedPointer<LoggerService> loggerService_;
+    QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;
 };

@@ -4,21 +4,21 @@
 
 namespace Ui
 {
-   class PlaybackUI;
+    class PlaybackUI;
 }
 
 class PlaybackUI : public I_PlaybackUI
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   PlaybackUI();
-   virtual ~PlaybackUI();
+    PlaybackUI();
+    virtual ~PlaybackUI();
 
-   QLabel& playbackTimeLabel();
-   QSlider& playbackPositionSlider();
-   QPushButton& openButton();
-   QPushButton& exitButton();
+    QLabel& playbackTimeLabel();
+    QSlider& playbackPositionSlider();
+    QPushButton& openButton();
+    QPushButton& exitButton();
 
 private:
-   Ui::PlaybackUI* ui_;
+    Ui::PlaybackUI* ui_;
 };

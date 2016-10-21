@@ -7,19 +7,19 @@ class I_BatteryData;
 
 class MpptGraphsPresenter : public I_GraphsPresenter
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit MpptGraphsPresenter(const I_MpptData& mpptData);
+    explicit MpptGraphsPresenter(const I_MpptData& mpptData);
 
-	void startUpdating();
-	void stopUpdating();
+    void startUpdating();
+    void stopUpdating();
 
 public slots:
-	void updateGraphData();
+    void updateGraphData();
 
 private:
-	const I_MpptData& mpptData_;
+    const I_MpptData& mpptData_;
 
 signals:
-	void ivCurveUpdated();
+    void ivCurveUpdated();
 }

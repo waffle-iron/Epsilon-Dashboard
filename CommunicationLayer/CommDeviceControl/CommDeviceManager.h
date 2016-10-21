@@ -8,19 +8,19 @@ class QUdpSocket;
 
 class CommDeviceManager : public I_CommDevice
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   CommDeviceManager(QUdpSocket& udpDevice, QIODevice& serialDevice);
-   virtual ~CommDeviceManager();
+    CommDeviceManager(QUdpSocket& udpDevice, QIODevice& serialDevice);
+    virtual ~CommDeviceManager();
 
-   void connectToDevice(CommDefines::Type type);
-   void disconnectFromDevices();
+    void connectToDevice(CommDefines::Type type);
+    void disconnectFromDevices();
 
 private slots:
-   void handleUdpDataIncoming();
-   void handleSerialDataIncoming();
+    void handleUdpDataIncoming();
+    void handleSerialDataIncoming();
 
 private:
-   QUdpSocket& udpSocket_;
-   QIODevice& serialDevice_;
+    QUdpSocket& udpSocket_;
+    QIODevice& serialDevice_;
 };

@@ -8,17 +8,17 @@ class I_DataInjectionService;
 
 class PlaybackService : public I_PlaybackService
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   explicit PlaybackService(I_DataInjectionService& injectionService);
-   virtual ~PlaybackService();
+    explicit PlaybackService(I_DataInjectionService& injectionService);
+    virtual ~PlaybackService();
 
-   void loadFile(const QString& fileName);
-   void loadPosition(int position);
+    void loadFile(const QString& fileName);
+    void loadPosition(int position);
 
 private:
-   void injectPriorMessagesBeforePosition(int position);
+    void injectPriorMessagesBeforePosition(int position);
 
-   I_DataInjectionService& injectionService_;
-   QList<QPair<QDateTime, QByteArray> > data_;
+    I_DataInjectionService& injectionService_;
+    QList<QPair<QDateTime, QByteArray>> data_;
 };

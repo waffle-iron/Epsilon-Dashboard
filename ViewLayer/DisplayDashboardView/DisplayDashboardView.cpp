@@ -8,19 +8,19 @@
 #include "ViewLayer/DisplayDashboardUI/I_DisplayDashboardUI.h"
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
-                         VehiclePresenter& vehiclePresenter,
-                         PowerPresenter& powerPresenter,
-                         CommunicationPresenter& communicationPresenter,
-                         FaultsPresenter& faultsPresenter,
-                         MpptPresenter& mpptPresenter,
-                         I_DisplayDashboardUI& ui)
-   : batteryPresenter_(batteryPresenter)
-   , vehiclePresenter_(vehiclePresenter)
-   , powerPresenter_(powerPresenter)
-   , communicationPresenter_(communicationPresenter)
-   , faultsPresenter_(faultsPresenter)
-   , mpptPresenter_(mpptPresenter)
-   , ui_(ui)
+        VehiclePresenter& vehiclePresenter,
+        PowerPresenter& powerPresenter,
+        CommunicationPresenter& communicationPresenter,
+        FaultsPresenter& faultsPresenter,
+        MpptPresenter& mpptPresenter,
+        I_DisplayDashboardUI& ui)
+    : batteryPresenter_(batteryPresenter)
+    , vehiclePresenter_(vehiclePresenter)
+    , powerPresenter_(powerPresenter)
+    , communicationPresenter_(communicationPresenter)
+    , faultsPresenter_(faultsPresenter)
+    , mpptPresenter_(mpptPresenter)
+    , ui_(ui)
 {
     ui_.showMaximized();
 }

@@ -5,22 +5,21 @@
 #include <QApplication>
 
 EscapeDialogView::EscapeDialogView(EscapeDialog& ui, I_PlaybackUI& playbackUi)
-: ui_(ui)
-, playbackUi_(playbackUi)
+    : ui_(ui)
+    , playbackUi_(playbackUi)
 {
-   connect(&ui.settingsSelectionPushButton(), SIGNAL(clicked()),
-      this, SLOT(handleSettingsSelectionPushButtonClicked()));
-   connect(&ui.aboutSelectionPushButton(), SIGNAL(clicked()),
-      this, SLOT(handleAboutSelectionPushButtonClicked()));
-   connect(&ui.closePushButton(), SIGNAL(clicked()),
-      this, SLOT(handleClosePushButtonClicked()));
-   connect(&ui.exitPushButton(), SIGNAL(clicked()),
-      this, SLOT(handleExitPushButtonClicked()));
-   connect(&ui.okPushButton(), SIGNAL(clicked()),
-      this, SLOT(handleOkPushButtonClicked()));
-   connect(&ui.playbackModePushButton(), SIGNAL(clicked()),
-      this, SLOT(handleRequestToOpenPlaybackMode()));
-
+    connect(&ui.settingsSelectionPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleSettingsSelectionPushButtonClicked()));
+    connect(&ui.aboutSelectionPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleAboutSelectionPushButtonClicked()));
+    connect(&ui.closePushButton(), SIGNAL(clicked()),
+            this, SLOT(handleClosePushButtonClicked()));
+    connect(&ui.exitPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleExitPushButtonClicked()));
+    connect(&ui.okPushButton(), SIGNAL(clicked()),
+            this, SLOT(handleOkPushButtonClicked()));
+    connect(&ui.playbackModePushButton(), SIGNAL(clicked()),
+            this, SLOT(handleRequestToOpenPlaybackMode()));
 }
 
 EscapeDialogView::~EscapeDialogView()
@@ -63,11 +62,12 @@ void EscapeDialogView::saveChanges()
 
 void EscapeDialogView::handleRequestToOpenPlaybackMode()
 {
-   if(!playbackUi_.isVisible()){
-      Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
-      playbackUi_.setWindowFlags(windowFlags);
-      ui_.hide();
-      playbackUi_.show();
-   }
+    if (!playbackUi_.isVisible())
+    {
+        Qt::WindowFlags windowFlags = Qt::Tool | Qt::WindowStaysOnTopHint;
+        playbackUi_.setWindowFlags(windowFlags);
+        ui_.hide();
+        playbackUi_.show();
+    }
 }
 

@@ -6,16 +6,16 @@ class I_CommDevice;
 
 class UdpMessageForwarder : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   UdpMessageForwarder(const I_CommDevice& device);
-   virtual ~UdpMessageForwarder();
+    UdpMessageForwarder(const I_CommDevice& device);
+    virtual ~UdpMessageForwarder();
 
 private slots:
-   void forwardData(QByteArray data);
+    void forwardData(QByteArray data);
 
 private:
-   const I_CommDevice& device_;
+    const I_CommDevice& device_;
 
-   QUdpSocket socket_;
+    QUdpSocket socket_;
 };
