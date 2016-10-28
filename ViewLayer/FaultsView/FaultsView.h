@@ -11,22 +11,22 @@ class FaultsUI;
 
 class FaultsView : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
     FaultsView(FaultsPresenter& presenter, FaultsUI& ui);
     ~FaultsView();
 
 private:
-   bool isLabelRed(QLabel&);
+    bool isLabelRed(QLabel&);
 
-   FaultsPresenter& faultsPresenter_;
-   FaultsUI& ui_;
+    FaultsPresenter& faultsPresenter_;
+    FaultsUI& ui_;
 
 private slots:
-   void motorOneFaultsReceived(MotorFaults motorFaults);
-   void motorOneLimitFlagsReceived(LimitFlags limitFlags);
-   void motorTwoFaultsReceived(MotorFaults motorFaults);
-   void motorTwoLimitFlagsReceived(LimitFlags limitFlags);
-   void batteryFaultsReceived(BatteryFaults batteryFaults);
+    void motorOneFaultsReceived(MotorFaults motorFaults);
+    void motorOneLimitFlagsReceived(LimitFlags limitFlags);
+    void motorTwoFaultsReceived(MotorFaults motorFaults);
+    void motorTwoLimitFlagsReceived(LimitFlags limitFlags);
+    void batteryFaultsReceived(BatteryFaults batteryFaults);
 };
 

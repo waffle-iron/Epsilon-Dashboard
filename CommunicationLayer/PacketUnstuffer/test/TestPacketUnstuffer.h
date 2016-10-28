@@ -8,16 +8,16 @@
 
 class TestPacketUnstuffer : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 private slots:
-   void init();
-   void cleanup();
+    void init();
+    void cleanup();
 
-   void willNotUnstuffPacketsUnderMinimumSize();
-   void willUnstuffPackets();
-   void willUnstuffPackets_data();
+    void willNotUnstuffPacketsUnderMinimumSize();
+    void willUnstuffPackets();
+    void willUnstuffPackets_data();
 
 private:
-   QScopedPointer<FakePacketSynchronizer> synchronizer_;
-   QScopedPointer<PacketUnstuffer> patient_;
+    QScopedPointer<FakePacketSynchronizer> synchronizer_;
+    QScopedPointer<PacketUnstuffer> patient_;
 };

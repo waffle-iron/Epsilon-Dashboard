@@ -2,9 +2,9 @@
 #include "ui_PlaybackUI.h"
 
 PlaybackUI::PlaybackUI()
-: ui_(new Ui::PlaybackUI)
+    : ui_(new Ui::PlaybackUI)
 {
-   ui_->setupUi(this);
+    ui_->setupUi(this);
 }
 
 PlaybackUI::~PlaybackUI()
@@ -13,20 +13,20 @@ PlaybackUI::~PlaybackUI()
 
 QLabel& PlaybackUI::playbackTimeLabel()
 {
-   return *ui_->playbackTimeLabel;
+    return *ui_->playbackTimeLabel;
 }
 
 QSlider& PlaybackUI::playbackPositionSlider()
 {
-   return *ui_->playbackPositionSlider;
+    return *ui_->playbackPositionSlider;
 }
 
 QPushButton& PlaybackUI::openButton()
 {
-   return *ui_->openButton;
+    return *ui_->openButton;
 }
 
 QPushButton& PlaybackUI::exitButton()
 {
-   return *ui_->exitButton;
+    return *ui_->exitButton;
 }

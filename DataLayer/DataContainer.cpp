@@ -6,11 +6,11 @@
 #include "VehicleData/VehicleData.h"
 
 DataContainer::DataContainer()
-: mpptData_(new MpptData())
-, vehicleData_(new VehicleData())
-, powerData_(new PowerData())
-, batteryData_(new BatteryData())
-, faultsData_(new FaultsData())
+    : mpptData_(new MpptData())
+    , vehicleData_(new VehicleData())
+    , powerData_(new PowerData())
+    , batteryData_(new BatteryData())
+    , faultsData_(new FaultsData())
 {
 }
 
@@ -20,25 +20,25 @@ DataContainer::~DataContainer()
 
 I_MpptData& DataContainer::mpptData()
 {
-   return *mpptData_;
+    return *mpptData_;
 }
 
 I_PowerData& DataContainer::powerData()
 {
-   return *powerData_;
+    return *powerData_;
 }
 
 I_VehicleData& DataContainer::vehicleData()
 {
-   return *vehicleData_;
+    return *vehicleData_;
 }
 
 I_BatteryData& DataContainer::batteryData()
 {
-   return *batteryData_;
+    return *batteryData_;
 }
 
 I_FaultsData& DataContainer::faultsData()
 {
-   return *faultsData_;
+    return *faultsData_;
 }

@@ -7,12 +7,12 @@
 
 class I_PlaybackUI : public QWidget
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   virtual ~I_PlaybackUI() {}
+    virtual ~I_PlaybackUI() {}
 
-   virtual QLabel& playbackTimeLabel() = 0;
-   virtual QSlider& playbackPositionSlider() = 0;
-   virtual QPushButton& openButton() = 0;
-   virtual QPushButton& exitButton() = 0;
+    virtual QLabel& playbackTimeLabel() = 0;
+    virtual QSlider& playbackPositionSlider() = 0;
+    virtual QPushButton& openButton() = 0;
+    virtual QPushButton& exitButton() = 0;
 };

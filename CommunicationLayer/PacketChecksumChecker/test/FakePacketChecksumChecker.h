@@ -4,10 +4,10 @@
 
 class FakePacketChecksumChecker : public I_PacketChecksumChecker
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   FakePacketChecksumChecker();
-   virtual ~FakePacketChecksumChecker();
+    FakePacketChecksumChecker();
+    virtual ~FakePacketChecksumChecker();
 
-   void emitValidDataReceived(QByteArray validData);
+    void emitValidDataReceived(QByteArray validData);
 };

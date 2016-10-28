@@ -2,7 +2,7 @@
 #include "ui_DisplayDashboardUI.h"
 
 DisplayDashboardUI::DisplayDashboardUI()
-    :ui_(new Ui::DisplayDashboardUI)
+    : ui_(new Ui::DisplayDashboardUI)
 {
     ui_->setupUi(this);
     QWidget::setWindowFlags(Qt::FramelessWindowHint);

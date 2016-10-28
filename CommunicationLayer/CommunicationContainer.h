@@ -14,16 +14,16 @@ class I_CommDevice;
 class CommunicationContainer
 {
 public:
-   explicit CommunicationContainer(DataContainer& dataContainer);
-   ~CommunicationContainer();
+    explicit CommunicationContainer(DataContainer& dataContainer);
+    ~CommunicationContainer();
 
-   I_PacketSynchronizer& packetSynchronizer();
-   I_PacketDecoder& packetDecoder();
-   I_PacketChecksumChecker& packetChecksumChecker();
-   I_DataInjectionService& dataInjectionService();
-   I_CommDevice& commDevice();
+    I_PacketSynchronizer& packetSynchronizer();
+    I_PacketDecoder& packetDecoder();
+    I_PacketChecksumChecker& packetChecksumChecker();
+    I_DataInjectionService& dataInjectionService();
+    I_CommDevice& commDevice();
 
 private:
-   // This is using the PIMPL design pattern, refer to http://c2.com/cgi/wiki?PimplIdiom
-   QScopedPointer<CommunicationContainerPrivate> impl_;
+    // This is using the PIMPL design pattern, refer to http://c2.com/cgi/wiki?PimplIdiom
+    QScopedPointer<CommunicationContainerPrivate> impl_;
 };

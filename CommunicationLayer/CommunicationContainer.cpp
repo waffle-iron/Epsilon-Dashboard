@@ -19,53 +19,53 @@
 class CommunicationContainerPrivate
 {
 public:
-   CommunicationContainerPrivate(DataContainer& dataContainer)
-   : radioConnectionService(serialPort)
-   , messageForwarder(radioConnectionService)
-   , packetSynchronizer(radioConnectionService)
-   , packetUnstuffer(packetSynchronizer)
-   , packetChecksumChecker(packetUnstuffer)
-   , packetDecoder(packetChecksumChecker)
-   , keyDriverControlPopulator(
-      packetDecoder,
-      dataContainer.vehicleData(),
-      dataContainer.powerData())
-   , driverDetailsPopulator(
-      packetDecoder,
-      dataContainer.vehicleData(),
-      dataContainer.powerData())
-   , faultsPopulator(
-      packetDecoder,
-      dataContainer.faultsData())
-   , batteryPopulator(
-      packetDecoder,
-      dataContainer.batteryData())
-   , cmuPopulator(
-      packetDecoder,
-      dataContainer.batteryData())
-   , mpptPopulator(
-      packetDecoder,
-      dataContainer.mpptData())
-   {
-   }
+    CommunicationContainerPrivate(DataContainer& dataContainer)
+        : radioConnectionService(serialPort)
+        , messageForwarder(radioConnectionService)
+        , packetSynchronizer(radioConnectionService)
+        , packetUnstuffer(packetSynchronizer)
+        , packetChecksumChecker(packetUnstuffer)
+        , packetDecoder(packetChecksumChecker)
+        , keyDriverControlPopulator(
+              packetDecoder,
+              dataContainer.vehicleData(),
+              dataContainer.powerData())
+        , driverDetailsPopulator(
+              packetDecoder,
+              dataContainer.vehicleData(),
+              dataContainer.powerData())
+        , faultsPopulator(
+              packetDecoder,
+              dataContainer.faultsData())
+        , batteryPopulator(
+              packetDecoder,
+              dataContainer.batteryData())
+        , cmuPopulator(
+              packetDecoder,
+              dataContainer.batteryData())
+        , mpptPopulator(
+              packetDecoder,
+              dataContainer.mpptData())
+    {
+    }
 
-   QSerialPort serialPort;
-   RadioCommDevice radioConnectionService;
-   UdpMessageForwarder messageForwarder;
-   PacketSynchronizer packetSynchronizer;
-   PacketUnstuffer packetUnstuffer;
-   PacketChecksumChecker packetChecksumChecker;
-   PacketDecoder packetDecoder;
-   KeyDriverControlPopulator keyDriverControlPopulator;
-   DriverDetailsPopulator driverDetailsPopulator;
-   FaultsPopulator faultsPopulator;
-   BatteryPopulator batteryPopulator;
-   CmuPopulator cmuPopulator;
-   MpptPopulator mpptPopulator;
+    QSerialPort serialPort;
+    RadioCommDevice radioConnectionService;
+    UdpMessageForwarder messageForwarder;
+    PacketSynchronizer packetSynchronizer;
+    PacketUnstuffer packetUnstuffer;
+    PacketChecksumChecker packetChecksumChecker;
+    PacketDecoder packetDecoder;
+    KeyDriverControlPopulator keyDriverControlPopulator;
+    DriverDetailsPopulator driverDetailsPopulator;
+    FaultsPopulator faultsPopulator;
+    BatteryPopulator batteryPopulator;
+    CmuPopulator cmuPopulator;
+    MpptPopulator mpptPopulator;
 };
 
 CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
-: impl_(new CommunicationContainerPrivate(dataContainer))
+    : impl_(new CommunicationContainerPrivate(dataContainer))
 {
 }
 
@@ -75,25 +75,25 @@ CommunicationContainer::~CommunicationContainer()
 
 I_CommDevice& CommunicationContainer::commDevice()
 {
-   return impl_->radioConnectionService;
+    return impl_->radioConnectionService;
 }
 
 I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
 {
-   return impl_->packetSynchronizer;
+    return impl_->packetSynchronizer;
 }
 
 I_DataInjectionService& CommunicationContainer::dataInjectionService()
 {
-   return impl_->packetUnstuffer;
+    return impl_->packetUnstuffer;
 }
 
 I_PacketDecoder& CommunicationContainer::packetDecoder()
 {
-   return impl_->packetDecoder;
+    return impl_->packetDecoder;
 }
 
 I_PacketChecksumChecker& CommunicationContainer::packetChecksumChecker()
 {
-   return impl_->packetChecksumChecker;
+    return impl_->packetChecksumChecker;
 }

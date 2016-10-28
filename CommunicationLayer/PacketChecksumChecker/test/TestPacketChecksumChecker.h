@@ -8,19 +8,19 @@
 
 class TestPacketChecksumChecker : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 private slots:
-   void init();
-   void cleanup();
+    void init();
+    void cleanup();
 
-   void willValidateChecksumOfPacket();
-   void willValidateChecksumOfPacket_data();
-   void willNotValidateIfChecksumIsIncorrect();
-
-private:
-   QByteArray calculateChecksumAndAddToData(const QByteArray& data);
+    void willValidateChecksumOfPacket();
+    void willValidateChecksumOfPacket_data();
+    void willNotValidateIfChecksumIsIncorrect();
 
 private:
-   QScopedPointer<FakePacketUnstuffer> unstuffer_;
-   QScopedPointer<PacketChecksumChecker> patient_;
+    QByteArray calculateChecksumAndAddToData(const QByteArray& data);
+
+private:
+    QScopedPointer<FakePacketUnstuffer> unstuffer_;
+    QScopedPointer<PacketChecksumChecker> patient_;
 };

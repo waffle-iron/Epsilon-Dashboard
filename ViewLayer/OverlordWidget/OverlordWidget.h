@@ -11,15 +11,15 @@ class CommunicationPresenter;
 
 class OverlordWidget : public QWidget, public I_OverlordWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-    explicit OverlordWidget(QList<I_SolarCarWindow*> viewWindows, 
+    explicit OverlordWidget(QList<I_SolarCarWindow*> viewWindows,
                             EscapeDialog* escapeDialog,
-                            QWidget *parent = 0);
-	  ~OverlordWidget();
+                            QWidget* parent = 0);
+    ~OverlordWidget();
 
-    void keyPressEvent(QKeyEvent * event);
-    
+    void keyPressEvent(QKeyEvent* event);
+
     QString changeState();
     QString getState();
 
@@ -31,8 +31,8 @@ private:
     QTabWidget* createTabWidget();
     void addFonts();
 
-     QList<I_SolarCarWindow*> viewWindows_;
-     QString state_;
-     EscapeDialog* escapeDialog_;
-     CommunicationPresenter* communicationPresenter_;
+    QList<I_SolarCarWindow*> viewWindows_;
+    QString state_;
+    EscapeDialog* escapeDialog_;
+    CommunicationPresenter* communicationPresenter_;
 };

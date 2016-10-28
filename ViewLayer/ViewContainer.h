@@ -9,10 +9,10 @@ class PresenterContainer;
 class ViewContainer
 {
 public:
-   explicit ViewContainer(PresenterContainer& presenterContainer);
-   ~ViewContainer();
+    explicit ViewContainer(PresenterContainer& presenterContainer);
+    ~ViewContainer();
 
 private:
-   DisplayDashboardUI* DisplayDashboardUI_;
-   QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
+    DisplayDashboardUI* DisplayDashboardUI_;
+    QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
 };

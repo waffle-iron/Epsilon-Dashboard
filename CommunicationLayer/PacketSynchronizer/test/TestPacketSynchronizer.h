@@ -9,23 +9,23 @@
 
 class TestPacketSynchronizer : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 private slots:
-   void init();
-   void cleanup();
+    void init();
+    void cleanup();
 
-   void willHandleIncomingSerialData();
-   void willHandleIncomingSerialData_data();
+    void willHandleIncomingSerialData();
+    void willHandleIncomingSerialData_data();
 
-   void willNotEmitPacketIfNotCompletePacket();
-   void willNotEmitPacketIfNotCompletePacket_data();
-   void willNotEmitIfNotConnected();
+    void willNotEmitPacketIfNotCompletePacket();
+    void willNotEmitPacketIfNotCompletePacket_data();
+    void willNotEmitIfNotConnected();
 
-   void willHandleIncomingDataSplitBetweenReads();
-   void willHandleMultiplePacketsInOneRead();
+    void willHandleIncomingDataSplitBetweenReads();
+    void willHandleMultiplePacketsInOneRead();
 
 private:
-   QScopedPointer<FakeConnectionService> connectionService_;
-   QScopedPointer<FakeSerialPort> serialPort_;
-   QScopedPointer<PacketSynchronizer> patient_;
+    QScopedPointer<FakeConnectionService> connectionService_;
+    QScopedPointer<FakeSerialPort> serialPort_;
+    QScopedPointer<PacketSynchronizer> patient_;
 };

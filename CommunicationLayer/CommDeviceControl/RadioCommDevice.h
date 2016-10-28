@@ -6,18 +6,18 @@
 
 class RadioCommDevice : public I_CommDevice
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   RadioCommDevice(QSerialPort& serialPort);
-   virtual ~RadioCommDevice();
+    RadioCommDevice(QSerialPort& serialPort);
+    virtual ~RadioCommDevice();
 
 private slots:
-   void handleSerialDataIncoming();
-   bool connectToDataSource();
+    void handleSerialDataIncoming();
+    bool connectToDataSource();
 
 private:
-   void setSerialParameters(QString serialPortName, int baudRate);
+    void setSerialParameters(QString serialPortName, int baudRate);
 
 private:
-   QSerialPort& serialPort_;
+    QSerialPort& serialPort_;
 };

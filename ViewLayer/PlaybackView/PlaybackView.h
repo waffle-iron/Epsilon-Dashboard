@@ -10,21 +10,21 @@ class PlaybackPresenter;
 
 class PlaybackView : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   PlaybackView(PlaybackPresenter& playbackPresenter, I_PlaybackUI& ui);
-   virtual ~PlaybackView();
+    PlaybackView(PlaybackPresenter& playbackPresenter, I_PlaybackUI& ui);
+    virtual ~PlaybackView();
 
 private slots:
-   void handleOpenFile();
-   void handleCloseButton();
-   void handleSliderRangesUpdated(int min, int max);
-   void handleDateUpdated(const QDateTime& date);
-   void handleTimeout();
+    void handleOpenFile();
+    void handleCloseButton();
+    void handleSliderRangesUpdated(int min, int max);
+    void handleDateUpdated(const QDateTime& date);
+    void handleTimeout();
 
 private:
-   PlaybackPresenter& playbackPresenter_;
-   I_PlaybackUI& ui_;
-   int lastPosition_;
-   QScopedPointer<QTimer> sliderUpdateTimer_;
+    PlaybackPresenter& playbackPresenter_;
+    I_PlaybackUI& ui_;
+    int lastPosition_;
+    QScopedPointer<QTimer> sliderUpdateTimer_;
 };
