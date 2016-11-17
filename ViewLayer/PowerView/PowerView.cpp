@@ -1,28 +1,3 @@
-/**
- *  Gen 5 Dashboard
- *  Copyright (C) 2015 University of Calgary Solar Car Team
- *
- *  This file is part of the Gen 5 Dashboard
- *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
- *  the Free Software Foundation, either version 3 of the
- *  License, or (at your option) any later version.
- *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
- *  General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General 
- *  Public License along with the Gen 5 Dashboard.
- *  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further contact, email <software@calgarysolarcar.ca>
- */
-
 #include "CommunicationLayer/CommDeviceControl/CommDefines.h"
 #include "PowerView.h"
 #include "PresenterLayer/BatteryPresenter/BatteryPresenter.h"
@@ -43,20 +18,18 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
                      PowerGraphsPresenter& graphsPresenter,
                      CommunicationPresenter& communicationPresenter,
                      PowerUI& ui)
-: batteryPresenter_(batteryPresenter)
-, vehiclePresenter_(vehiclePresenter)
-, powerPresenter_(powerPresenter)
-, graphsPresenter_(graphsPresenter)
-, communicationPresenter_(communicationPresenter)
-, ui_(ui)
+    : batteryPresenter_(batteryPresenter)
+    , vehiclePresenter_(vehiclePresenter)
+    , powerPresenter_(powerPresenter)
+    , graphsPresenter_(graphsPresenter)
+    , communicationPresenter_(communicationPresenter)
+    , ui_(ui)
 {
-
 #ifdef _WIN32
     ui_.getSerialPortName().setText("COM");
 #else
     ui_.getSerialPortName().setText("/dev/ttyUSB0");
 #endif
-
     connect(&vehiclePresenter_, SIGNAL(driverSetSpeedMetersPerSecondReceived(double)),
             this, SLOT(driverSetSpeedMetersPerSecondReceived(double)));
     connect(&vehiclePresenter_, SIGNAL(driverSetCurrentReceived(double)),
@@ -71,7 +44,6 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(batteryCurrentReceived(double)));
     connect(&batteryPresenter_, SIGNAL(batteryVoltageReceived(double)),
             this, SLOT(batteryVoltageReceived(double)));
-
     connect(&communicationPresenter_, SIGNAL(secondsSinceLastPacketReceivedUpdated(int)),
             this, SLOT(secondsSinceLastPacketUpdated(int)));
     connect(&communicationPresenter_, SIGNAL(packetsReceivedInLastMinuteUpdated(int)),
@@ -82,7 +54,6 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(validPacketsInLastMinuteUpdated(int)));
     connect(&communicationPresenter_, SIGNAL(invalidPacketsReceivedInLastMinuteUpdated(int)),
             this, SLOT(invalidPacketsInLastMinuteUpdated(int)));
-
     connect(&batteryPresenter_, SIGNAL(mod0CellTemperatureReceived(double)),
             this, SLOT(mod0CellTemperatureReceived(double)));
     connect(&batteryPresenter_, SIGNAL(mod0CellVoltagesReceived(QList<double>)),
@@ -107,7 +78,6 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(mod3CellVoltagesReceived(QList<double>)));
     connect(&batteryPresenter_, SIGNAL(mod3CellVoltagesReceived(QList<double>)),
             this, SLOT(highlightMinMaxVoltages()));
-
     connect(&graphsPresenter_, SIGNAL(busCurrentGraphDataUpdated(PowerGraphData)),
             this, SLOT(updateBusCurrentGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(busVoltageGraphDataUpdated(PowerGraphData)),
@@ -124,7 +94,6 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(updateBatteryCellVoltageGraph(PowerGraphData)));
     connect(&graphsPresenter_, SIGNAL(batteryPowerGraphUpdated(PowerGraphData)),
             this, SLOT(updateBatteryPowerGraph(PowerGraphData)));
-
     connect(&ui.connectButton(), SIGNAL(clicked()),
             this, SLOT(handleConnectButtonClicked()));
     connect(&ui.busGraphButton(), SIGNAL(clicked()),
@@ -133,24 +102,25 @@ PowerView::PowerView(BatteryPresenter& batteryPresenter,
             this, SLOT(handleDriverGraphButtonClicked()));
     connect(&ui.batteryGraphButton(), SIGNAL(clicked()),
             this, SLOT(handleBatteryGraphButtonClicked()));
-
     connect(&ui.getConnectionType(), SIGNAL(currentIndexChanged(QString)),
             this, SLOT(toggleSerialParameters(QString)));
     connect(&communicationPresenter_, SIGNAL(connectionSucceeded()),
             this, SLOT(connectionSucceeded()));
     connect(&communicationPresenter_, SIGNAL(connectionFailed(QString)),
             this, SLOT(connectionFailed(QString)));
-
     ui_.getSerialParametersWidget().hide();
 }
 
 bool PowerView::isValuesGarbage(QList<double> values)
 {
-    foreach(double value, values){
-        if(value < -10000 || value > 10000){
+    foreach (double value, values)
+    {
+        if (value < -10000 || value > 10000)
+        {
             return true;
         }
     }
+
     return false;
 }
 
@@ -173,7 +143,7 @@ void PowerView::vehicleVelocityMetersPerSecondReceived(double vehicleVelocityMet
 }
 void PowerView::busCurrentAReceived(double busCurrentA)
 {
-   ui_.setBusCurrent().setNum(busCurrentA);
+    ui_.setBusCurrent().setNum(busCurrentA);
 }
 void PowerView::busVoltageReceived(double busVoltage)
 {
@@ -197,7 +167,8 @@ void PowerView::mod0CellTemperatureReceived(double mod0PcbTemperature)
 
 void PowerView::mod0CellVoltagesReceived(QList<double> cellVoltages)
 {
-    if (isValuesGarbage(cellVoltages)){
+    if (isValuesGarbage(cellVoltages))
+    {
         ui_.setBatteryCMU1Cell1Voltage().setText("Err");
         ui_.setBatteryCMU1Cell2Voltage().setText("Err");
         ui_.setBatteryCMU1Cell3Voltage().setText("Err");
@@ -206,7 +177,9 @@ void PowerView::mod0CellVoltagesReceived(QList<double> cellVoltages)
         ui_.setBatteryCMU1Cell6Voltage().setText("Err");
         ui_.setBatteryCMU1Cell7Voltage().setText("Err");
         ui_.setBatteryCMU1Cell8Voltage().setText("Err");
-    } else {
+    }
+    else
+    {
         ui_.setBatteryCMU1Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
         ui_.setBatteryCMU1Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
         ui_.setBatteryCMU1Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
@@ -220,12 +193,13 @@ void PowerView::mod0CellVoltagesReceived(QList<double> cellVoltages)
 
 void PowerView::mod1CellTemperatureReceived(double mod1PcbTemperature)
 {
-     ui_.setBatteryCMU2Temp().setNum(mod1PcbTemperature);
+    ui_.setBatteryCMU2Temp().setNum(mod1PcbTemperature);
 }
 
 void PowerView::mod1CellVoltagesReceived(QList<double> cellVoltages)
 {
-    if (isValuesGarbage(cellVoltages)){
+    if (isValuesGarbage(cellVoltages))
+    {
         ui_.setBatteryCMU2Cell1Voltage().setText("Err");
         ui_.setBatteryCMU2Cell2Voltage().setText("Err");
         ui_.setBatteryCMU2Cell3Voltage().setText("Err");
@@ -234,7 +208,9 @@ void PowerView::mod1CellVoltagesReceived(QList<double> cellVoltages)
         ui_.setBatteryCMU2Cell6Voltage().setText("Err");
         ui_.setBatteryCMU2Cell7Voltage().setText("Err");
         ui_.setBatteryCMU2Cell8Voltage().setText("Err");
-    } else {
+    }
+    else
+    {
         ui_.setBatteryCMU2Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
         ui_.setBatteryCMU2Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
         ui_.setBatteryCMU2Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
@@ -253,7 +229,8 @@ void PowerView::mod2CellTemperatureReceived(double mod2PcbTemperature)
 
 void PowerView::mod2CellVoltagesReceived(QList<double> cellVoltages)
 {
-    if (isValuesGarbage(cellVoltages)){
+    if (isValuesGarbage(cellVoltages))
+    {
         ui_.setBatteryCMU3Cell1Voltage().setText("Err");
         ui_.setBatteryCMU3Cell2Voltage().setText("Err");
         ui_.setBatteryCMU3Cell3Voltage().setText("Err");
@@ -262,7 +239,9 @@ void PowerView::mod2CellVoltagesReceived(QList<double> cellVoltages)
         ui_.setBatteryCMU3Cell6Voltage().setText("Err");
         ui_.setBatteryCMU3Cell7Voltage().setText("Err");
         ui_.setBatteryCMU3Cell8Voltage().setText("Err");
-    } else {
+    }
+    else
+    {
         ui_.setBatteryCMU3Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
         ui_.setBatteryCMU3Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
         ui_.setBatteryCMU3Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
@@ -281,7 +260,8 @@ void PowerView::mod3CellTemperatureReceived(double mod3PcbTemperature)
 
 void PowerView::mod3CellVoltagesReceived(QList<double> cellVoltages)
 {
-    if (isValuesGarbage(cellVoltages)){
+    if (isValuesGarbage(cellVoltages))
+    {
         ui_.setBatteryCMU4Cell1Voltage().setText("Err");
         ui_.setBatteryCMU4Cell2Voltage().setText("Err");
         ui_.setBatteryCMU4Cell3Voltage().setText("Err");
@@ -290,7 +270,9 @@ void PowerView::mod3CellVoltagesReceived(QList<double> cellVoltages)
         ui_.setBatteryCMU4Cell6Voltage().setText("Err");
         ui_.setBatteryCMU4Cell7Voltage().setText("Err");
         ui_.setBatteryCMU4Cell8Voltage().setText("Err");
-    } else {
+    }
+    else
+    {
         ui_.setBatteryCMU4Cell1Voltage().setText(QString::number(cellVoltages[0], 'f', 3));
         ui_.setBatteryCMU4Cell2Voltage().setText(QString::number(cellVoltages[1], 'f', 3));
         ui_.setBatteryCMU4Cell3Voltage().setText(QString::number(cellVoltages[2], 'f', 3));
@@ -309,24 +291,27 @@ void PowerView::highlightMinMaxVoltages()
     QLabel* newMinVoltageLabel = ui_.batteryCMUCellVoltageLabels()[0];
     double newMinVoltage = newMinVoltageLabel->text().toFloat();
 
-    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    foreach (QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
     {
         double cursorVoltage = cursorVoltageLabel->text().toFloat();
         cursorVoltageLabel->setStyleSheet("");
-        if(cursorVoltage > 0)
+
+        if (cursorVoltage > 0)
         {
-            if(cursorVoltage > newMaxVoltage)
+            if (cursorVoltage > newMaxVoltage)
             {
                 newMaxVoltageLabel = cursorVoltageLabel;
                 newMaxVoltage = cursorVoltage;
             }
-            if(cursorVoltage < newMinVoltage)
+
+            if (cursorVoltage < newMinVoltage)
             {
                 newMinVoltageLabel = cursorVoltageLabel;
                 newMinVoltage = cursorVoltage;
             }
         }
     }
+
     newMaxVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
     newMinVoltageLabel->setStyleSheet("font-weight: bold; background-color: rgb(100, 100, 100);");
     highlightUntrustedVoltages();
@@ -334,9 +319,9 @@ void PowerView::highlightMinMaxVoltages()
 
 void PowerView::highlightUntrustedVoltages()
 {
-    foreach(QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
+    foreach (QLabel* cursorVoltageLabel, ui_.batteryCMUCellVoltageLabels())
     {
-        if(cursorVoltageLabel->text().toFloat() < 0)
+        if (cursorVoltageLabel->text().toFloat() < 0)
         {
             QString stylesheet = cursorVoltageLabel->styleSheet();
             cursorVoltageLabel->setStyleSheet(stylesheet + "color: yellow");
@@ -356,16 +341,16 @@ void PowerView::updateBusVoltageGraph(PowerGraphData graphData)
 }
 void PowerView::updateBusPowerGraph(PowerGraphData graphData)
 {
-   // ui_.setBusPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    // ui_.setBusPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateDriverSpeedGraph(PowerGraphData graphData)
 {
-   /* ui_.setSetSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
-    ui_.setActualSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);*/
+    /* ui_.setSetSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+     ui_.setActualSpeedCurve().setSamples(graphData.xData(), graphData.yDataSets()[1]);*/
 }
 void PowerView::updateDriverCurrentGraph(PowerGraphData graphData)
 {
-   // ui_.setSetCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    // ui_.setSetCurrentCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 void PowerView::updateBatteryCellTempGraph(PowerGraphData graphData)
 {
@@ -384,29 +369,30 @@ void PowerView::updateBatteryCellVoltageGraph(PowerGraphData graphData)
 }
 void PowerView::updateBatteryPowerGraph(PowerGraphData graphData)
 {
-   // ui_.setBatteryPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
+    // ui_.setBatteryPowerCurve().setSamples(graphData.xData(), graphData.yDataSets()[0]);
 }
 
 void PowerView::secondsSinceLastPacketUpdated(int secondsSinceLastPacket)
 {
     ui_.secondsSinceLastPacket().setNum(secondsSinceLastPacket);
-    if(secondsSinceLastPacket <= 1)
+
+    if (secondsSinceLastPacket <= 1)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth5of5.png);");
     }
-    else if(secondsSinceLastPacket <= 2)
+    else if (secondsSinceLastPacket <= 2)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth4of5.png);");
     }
-    else if(secondsSinceLastPacket <= 3)
+    else if (secondsSinceLastPacket <= 3)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth3of5.png);");
     }
-    else if(secondsSinceLastPacket <= 4)
+    else if (secondsSinceLastPacket <= 4)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth2of5.png);");
     }
-    else if(secondsSinceLastPacket <= 10)
+    else if (secondsSinceLastPacket <= 10)
     {
         ui_.setConnectionHealth().setStyleSheet("background: url(:/Resources/ConnectionHealth1of5.png);");
     }
@@ -439,21 +425,23 @@ void PowerView::invalidPacketsInLastMinuteUpdated(int invalidPacketsInLastMinute
 
 void PowerView::handleConnectButtonClicked()
 {
-    if(ui_.connectButton().text() == "Connect"){
+    if (ui_.connectButton().text() == "Connect")
+    {
         ui_.setConnectionStatus().setText("Connecting...");
         ui_.setConnectionStatus().setStyleSheet("text-align: centre; color: yellow; background-color: rgb(70,70,70);");
-        if(ui_.getConnectionType().currentText() == "User")
+
+        if (ui_.getConnectionType().currentText() == "User")
         {
             communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
-                ui_.getUdpPortNumber().value());
+                    ui_.getUdpPortNumber().value());
             communicationPresenter_.connectToDataSource((CommDefines::Udp));
         }
-        else if(ui_.getConnectionType().currentText() == "Host")
+        else if (ui_.getConnectionType().currentText() == "Host")
         {
             communicationPresenter_.setMulticastNetwork(ui_.getUdpGroupAddress().text(),
-                ui_.getUdpPortNumber().value());
+                    ui_.getUdpPortNumber().value());
             communicationPresenter_.setSerialParameters(ui_.getSerialPortName().text(),
-                ui_.getBaudRate().text().toDouble());
+                    ui_.getBaudRate().text().toDouble());
             communicationPresenter_.connectToDataSource(CommDefines::Serial);
         }
         else
@@ -461,7 +449,8 @@ void PowerView::handleConnectButtonClicked()
             qDebug() << "Connect button selecting connection type error, check PowerView.cpp";
         }
     }
-    else if(ui_.connectButton().text() == "Disconnect"){
+    else if (ui_.connectButton().text() == "Disconnect")
+    {
         communicationPresenter_.disconnectFromDataSource();
         graphsPresenter_.stopUpdating();
     }
@@ -476,13 +465,13 @@ void PowerView::handleBusGraphButtonClicked()
 void PowerView::handleDriverGraphButtonClicked()
 {
     ui_.setGraphsStackedWidget().setCurrentIndex(1); // Driver Graphs Index
-        selectGraphButton(&ui_.driverGraphButton());
+    selectGraphButton(&ui_.driverGraphButton());
 }
 
 void PowerView::handleBatteryGraphButtonClicked()
 {
     ui_.setGraphsStackedWidget().setCurrentIndex(2); // Battery Graphs Index
-        selectGraphButton(&ui_.batteryGraphButton());
+    selectGraphButton(&ui_.batteryGraphButton());
 }
 void PowerView::selectGraphButton(QPushButton* selectedGraph)
 {
@@ -490,42 +479,42 @@ void PowerView::selectGraphButton(QPushButton* selectedGraph)
     graphButtons.append(&ui_.batteryGraphButton());
     graphButtons.append(&ui_.busGraphButton());
     graphButtons.append(&ui_.driverGraphButton());
-
-    const char *GRAPH_BUTTON_PRESSED =
-    "QPushButton {"
+    const char* GRAPH_BUTTON_PRESSED =
+        "QPushButton {"
         "background-color: rgb(130,130,130);"
         "border-radius: 1px;"
         "padding: 3px;"
-    "}"
-    "QPushButton:hover:!pressed {"
+        "}"
+        "QPushButton:hover:!pressed {"
         "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                          "stop: 0 rgb(130,130,130), stop: 1 rgb(150,150,150));"
-    "}";
-
-    const char *GRAPH_BUTTON_UNPRESSED =
-    "QPushButton {"
+        "stop: 0 rgb(130,130,130), stop: 1 rgb(150,150,150));"
+        "}";
+    const char* GRAPH_BUTTON_UNPRESSED =
+        "QPushButton {"
         "background-color: rgb(90, 90, 90);"
         "border-radius: 1px;"
         "padding: 3px;"
-    "}"
-    "QPushButton:hover:!pressed {"
+        "}"
+        "QPushButton:hover:!pressed {"
         "background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,"
-                                          "stop: 0 rgb(90, 90, 90), stop: 1 rgb(120,120,120));"
-    "}";
-    foreach(QPushButton* button, graphButtons)
+        "stop: 0 rgb(90, 90, 90), stop: 1 rgb(120,120,120));"
+        "}";
+
+    foreach (QPushButton* button, graphButtons)
     {
         button->setStyleSheet(GRAPH_BUTTON_UNPRESSED);
     }
+
     selectedGraph->setStyleSheet(GRAPH_BUTTON_PRESSED);
 }
 
 void PowerView::toggleSerialParameters(QString connectionType)
 {
-    if(connectionType == "Host")
+    if (connectionType == "Host")
     {
         ui_.getSerialParametersWidget().show();
     }
-    else 
+    else
     {
         ui_.getSerialParametersWidget().hide();
     }

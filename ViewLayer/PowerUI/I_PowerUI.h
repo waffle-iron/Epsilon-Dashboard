@@ -1,28 +1,3 @@
-/**
- *  Gen 5 Dashboard
- *  Copyright (C) 2015 University of Calgary Solar Car Team
- *
- *  This file is part of the Gen 5 Dashboard
- *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
- *  the Free Software Foundation, either version 3 of the
- *  License, or (at your option) any later version.
- *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
- *  General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General 
- *  Public License along with the Gen 5 Dashboard.
- *  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further contact, email <software@calgarysolarcar.ca>
- */
-
 #pragma once
 
 //#include "qwt_plot.h"
@@ -39,7 +14,7 @@
 class I_PowerUI
 {
 public:
-	virtual ~I_PowerUI() {}
+    virtual ~I_PowerUI() {}
 
     virtual QPushButton& connectButton() = 0;
     virtual QLabel& setConnectionStatus() = 0;
@@ -59,7 +34,7 @@ public:
 
     virtual QLabel& setSetSpeed() = 0;
     virtual QLabel& setSetCurrent() = 0;
-    virtual QLabel& setActualSpeed() = 0;    
+    virtual QLabel& setActualSpeed() = 0;
     virtual QLabel& setBusCurrent() = 0;
     virtual QLabel& setBusVoltage() = 0;
     virtual QLabel& setBatteryCurrent() = 0;
@@ -113,12 +88,12 @@ public:
 
     virtual QStackedWidget& setGraphsStackedWidget() = 0;
     /*
-    virtual QwtPlotCurve& setPositiveBusCurrentCurve() = 0; 
-    virtual QwtPlotCurve& setNegativeBusCurrentCurve() = 0; 
-    virtual QwtPlotCurve& setBusVoltageCurve() = 0; 
-    virtual QwtPlotCurve& setBusPowerCurve() = 0; 
-    virtual QwtPlotCurve& setSetSpeedCurve() = 0; 
-    virtual QwtPlotCurve& setActualSpeedCurve() = 0; 
+    virtual QwtPlotCurve& setPositiveBusCurrentCurve() = 0;
+    virtual QwtPlotCurve& setNegativeBusCurrentCurve() = 0;
+    virtual QwtPlotCurve& setBusVoltageCurve() = 0;
+    virtual QwtPlotCurve& setBusPowerCurve() = 0;
+    virtual QwtPlotCurve& setSetSpeedCurve() = 0;
+    virtual QwtPlotCurve& setActualSpeedCurve() = 0;
     virtual QwtPlotCurve& setSetCurrentCurve() = 0;
     virtual QwtPlotCurve& setMod0CellTempCurve() = 0;
     virtual QwtPlotCurve& setMod1CellTempCurve() = 0;

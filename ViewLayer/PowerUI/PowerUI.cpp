@@ -1,39 +1,13 @@
-/**
- *  Gen 5 Dashboard
- *  Copyright (C) 2015 University of Calgary Solar Car Team
- *
- *  This file is part of the Gen 5 Dashboard
- *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
- *  the Free Software Foundation, either version 3 of the
- *  License, or (at your option) any later version.
- *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
- *  General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General 
- *  Public License along with the Gen 5 Dashboard.
- *  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further contact, email <software@calgarysolarcar.ca>
- */
-
 #include "PowerUI.h"
 #include "ui_PowerUI.h"
 //#include <qwt_legend.h>
 #include <QDebug>
 
 
-PowerUI::PowerUI() 
-: ui_(new Ui::PowerUI)
+PowerUI::PowerUI()
+    : ui_(new Ui::PowerUI)
 {
     ui_->setupUi(this);
- 
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell3Voltage);
@@ -42,7 +16,6 @@ PowerUI::PowerUI()
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell6Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell7Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU1Cell8Voltage);
-
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell3Voltage);
@@ -51,7 +24,6 @@ PowerUI::PowerUI()
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell6Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell7Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU2Cell8Voltage);
-
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell3Voltage);
@@ -60,7 +32,6 @@ PowerUI::PowerUI()
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell6Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell7Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU3Cell8Voltage);
-
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell1Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell2Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell3Voltage);
@@ -69,7 +40,6 @@ PowerUI::PowerUI()
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell6Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell7Voltage);
     batteryCMUCellVoltageLabels_.append(ui_->batteryCMU4Cell8Voltage);
-
     /*positiveBusCurrentCurve_ = new QwtPlotCurve("Positive Bus Current");
     negativeBusCurrentCurve_ = new QwtPlotCurve("Negative Bus Current");
     busVoltageCurve_ = new QwtPlotCurve("Bus Voltage");
@@ -100,7 +70,7 @@ void PowerUI::hideHeaderBar()
 
 QPushButton& PowerUI::connectButton()
 {
-   return *ui_->connectButton;
+    return *ui_->connectButton;
 }
 QLabel& PowerUI::setConnectionStatus()
 {
@@ -128,11 +98,11 @@ QWidget& PowerUI::getSerialParametersWidget()
 }
 QLineEdit& PowerUI::getSerialPortName()
 {
-   return *ui_->serialPortName;
+    return *ui_->serialPortName;
 }
 QLineEdit& PowerUI::getBaudRate()
 {
-   return *ui_->baudrate;
+    return *ui_->baudrate;
 }
 
 QLabel& PowerUI::secondsSinceLastPacket()
@@ -168,7 +138,7 @@ QLabel& PowerUI::setSetCurrent()
 QLabel& PowerUI::setActualSpeed()
 {
     return *ui_->actualSpeed;
-}    
+}
 
 QLabel& PowerUI::setBusCurrent()
 {
@@ -363,27 +333,27 @@ QStackedWidget& PowerUI::setGraphsStackedWidget()
 /*QwtPlotCurve& PowerUI::setPositiveBusCurrentCurve()
 {
     return *positiveBusCurrentCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setNegativeBusCurrentCurve()
 {
     return *negativeBusCurrentCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setBusVoltageCurve()
 {
     return *busVoltageCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setBusPowerCurve()
 {
     return *busPowerCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setSetSpeedCurve()
 {
     return *setSpeedCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setActualSpeedCurve()
 {
     return *actualSpeedCurve_;
-} 
+}
 QwtPlotCurve& PowerUI::setSetCurrentCurve()
 {
     return *setCurrentCurve_;
@@ -431,9 +401,7 @@ void PowerUI::setupGraphs()
     int MAX_BATTERY_CELL_TEMP = 80; // Degrees Celsius
     int MAX_BATTERY_CELL_VOLTAGE = 4500; // Millivolts
     int MAX_BATTERY_POWER = 1000;
-
-    int MAX_SECONDS_ELAPSED = 60; 
-
+    int MAX_SECONDS_ELAPSED = 60;
     /*ui_->busCurrentGraph->setTitle("Bus Current Graph");
     ui_->busCurrentGraph->setAxisTitle(QwtPlot::yLeft, "Current (A)");
     ui_->busCurrentGraph->setAxisScale(QwtPlot::yLeft, 0, MAX_BUS_CURRENT, MAX_BUS_CURRENT/5);

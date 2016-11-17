@@ -1,43 +1,19 @@
-/**
- *  Gen 5 Dashboard
- *  Copyright (C) 2015 University of Calgary Solar Car Team
- *
- *  This file is part of the Gen 5 Dashboard
- *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
- *  the Free Software Foundation, either version 3 of the
- *  License, or (at your option) any later version.
- *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
- *  General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General 
- *  Public License along with the Gen 5 Dashboard.
- *  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further contact, email <software@calgarysolarcar.ca>
- */
-
 #pragma once
 
 #include <QMainWindow>
 #include "../I_SolarCarWindow/I_SolarCarWindow.h"
 #include "I_PowerUI.h"
-namespace Ui {
-	class PowerUI;
+namespace Ui
+{
+    class PowerUI;
 }
 
 class PowerUI : public I_SolarCarWindow, public I_PowerUI
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit PowerUI();
-	~PowerUI();
+    explicit PowerUI();
+    ~PowerUI();
 
     void hideHeaderBar();
 
@@ -113,12 +89,12 @@ public:
 
     QStackedWidget& setGraphsStackedWidget();
     /*
-    QwtPlotCurve& setPositiveBusCurrentCurve(); 
-    QwtPlotCurve& setNegativeBusCurrentCurve(); 
-    QwtPlotCurve& setBusVoltageCurve(); 
-    QwtPlotCurve& setBusPowerCurve(); 
-    QwtPlotCurve& setSetSpeedCurve(); 
-    QwtPlotCurve& setActualSpeedCurve(); 
+    QwtPlotCurve& setPositiveBusCurrentCurve();
+    QwtPlotCurve& setNegativeBusCurrentCurve();
+    QwtPlotCurve& setBusVoltageCurve();
+    QwtPlotCurve& setBusPowerCurve();
+    QwtPlotCurve& setSetSpeedCurve();
+    QwtPlotCurve& setActualSpeedCurve();
     QwtPlotCurve& setSetCurrentCurve();
     QwtPlotCurve& setMod0CellTempCurve();
     QwtPlotCurve& setMod1CellTempCurve();
@@ -128,26 +104,26 @@ public:
     QwtPlotCurve& setMinCellVoltageCurve();
     QwtPlotCurve& setAvgCellVoltageCurve();
     QwtPlotCurve& setBatteryPowerCurve();*/
-    
+
 private:
-   Ui::PowerUI *ui_;
-   QList<QLabel*> batteryCMUCellVoltageLabels_;
-   /*
-   QwtPlotCurve* positiveBusCurrentCurve_;
-   QwtPlotCurve* negativeBusCurrentCurve_;
-   QwtPlotCurve* busVoltageCurve_;
-   QwtPlotCurve* busPowerCurve_;
-   QwtPlotCurve* setSpeedCurve_;
-   QwtPlotCurve* actualSpeedCurve_;
-   QwtPlotCurve* setCurrentCurve_;
-   QwtPlotCurve* mod0CellTempCurve_;
-   QwtPlotCurve* mod1CellTempCurve_;
-   QwtPlotCurve* mod2CellTempCurve_;
-   QwtPlotCurve* mod3CellTempCurve_;
-   QwtPlotCurve* maxCellVoltageCurve_;
-   QwtPlotCurve* minCellVoltageCurve_;
-   QwtPlotCurve* avgCellVoltageCurve_;
-   QwtPlotCurve* batteryPowerCurve_;*/
-   void setupGraphs();
+    Ui::PowerUI* ui_;
+    QList<QLabel*> batteryCMUCellVoltageLabels_;
+    /*
+    QwtPlotCurve* positiveBusCurrentCurve_;
+    QwtPlotCurve* negativeBusCurrentCurve_;
+    QwtPlotCurve* busVoltageCurve_;
+    QwtPlotCurve* busPowerCurve_;
+    QwtPlotCurve* setSpeedCurve_;
+    QwtPlotCurve* actualSpeedCurve_;
+    QwtPlotCurve* setCurrentCurve_;
+    QwtPlotCurve* mod0CellTempCurve_;
+    QwtPlotCurve* mod1CellTempCurve_;
+    QwtPlotCurve* mod2CellTempCurve_;
+    QwtPlotCurve* mod3CellTempCurve_;
+    QwtPlotCurve* maxCellVoltageCurve_;
+    QwtPlotCurve* minCellVoltageCurve_;
+    QwtPlotCurve* avgCellVoltageCurve_;
+    QwtPlotCurve* batteryPowerCurve_;*/
+    void setupGraphs();
 
 };

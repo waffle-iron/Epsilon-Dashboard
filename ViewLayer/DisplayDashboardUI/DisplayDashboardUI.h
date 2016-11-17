@@ -2,7 +2,8 @@
 
 #include "I_DisplayDashboardUI.h"
 
-namespace Ui {
+namespace Ui
+{
     class DisplayDashboardUI;
 }
 class DisplayDashboardUI : public I_DisplayDashboardUI
@@ -56,5 +57,5 @@ public:
     QLabel& netPowerLabel();
 
 private:
-    Ui::DisplayDashboardUI *ui_;
+    Ui::DisplayDashboardUI* ui_;
 };
