@@ -1,20 +1,28 @@
 #pragma once
 
 #include <QObject>
-#include "CommunicationLayer/PacketDecoder/I_PacketDecoder.h"
-#include "DataLayer/FaultsData/I_FaultsData.h"
+
+class I_JsonInterpreter;
+class I_FaultsData;
+class MotorFaults;
+class LimitFlags;
+class BatteryFaults;
 
 class FaultsPopulator : public QObject
 {
     Q_OBJECT
 public:
-    FaultsPopulator(I_PacketDecoder& packetDecoder,
+    FaultsPopulator(I_JsonInterpreter& jsonInterpreter,
                     I_FaultsData& faultsData);
+    virtual ~FaultsPopulator() {}
 
 public slots:
-    void populateData(const FaultsMessage&);
+    void populateData(const QJsonObject&);
 
 private:
-    I_PacketDecoder& packetDecoder_;
-    I_FaultsData& faultsData_;
+    I_JsonInterpreter& jsonInterpreter_;
+    I_FaultsData& faultsData_; 
+    MotorFaults getMotorFaults(const QString& motorNumber, const QJsonObject& data);
+    LimitFlags getLimitFlags(const QString& motorNumber, const QJsonObject& data);
+    BatteryFaults getBatteryFaults(const QJsonObject& data);
 };

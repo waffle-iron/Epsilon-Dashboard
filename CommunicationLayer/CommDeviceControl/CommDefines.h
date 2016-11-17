@@ -2,9 +2,8 @@
 
 namespace CommDefines
 {
-    enum Type
-    {
-        Udp,
-        Serial
-    };
+   enum Type
+   {
+      Udp
+   };
 }

@@ -1,24 +1,24 @@
+<<<<<<< Updated upstream
 #include <QtSerialPort/QSerialPort>
+=======
+>>>>>>> Stashed changes
 #include <QUdpSocket>
 
 #include "../DataLayer/DataContainer.h"
-#include "CommDeviceControl/RadioCommDevice.h"
-#include "CommDeviceControl/UdpMessageForwarder.h"
 #include "CommunicationContainer.h"
+#include "CommDeviceControl/ConnectionController.h"
+#include "CommDeviceControl/CommDeviceManager.h"
+#include "CommDeviceControl/UdpConnectionService.h"
 #include "DataPopulators/BatteryPopulator.h"
-#include "DataPopulators/CmuPopulator.h"
-#include "DataPopulators/DriverDetailsPopulator.h"
 #include "DataPopulators/FaultsPopulator.h"
-#include "DataPopulators/KeyDriverControlPopulator.h"
-#include "DataPopulators/MpptPopulator.h"
-#include "PacketChecksumChecker/PacketChecksumChecker.h"
-#include "PacketDecoder/PacketDecoder.h"
-#include "PacketSynchronizer/PacketSynchronizer.h"
-#include "PacketUnstuffer/PacketUnstuffer.h"
+#include "DataPopulators/VehiclePopulator.h"
+#include "DataPopulators/PowerPopulator.h"
+#include "JsonInterpreter/JsonInterpreter.h"
 
 class CommunicationContainerPrivate
 {
 public:
+<<<<<<< Updated upstream
     CommunicationContainerPrivate(DataContainer& dataContainer)
         : radioConnectionService(serialPort)
         , messageForwarder(radioConnectionService)
@@ -62,6 +62,37 @@ public:
     BatteryPopulator batteryPopulator;
     CmuPopulator cmuPopulator;
     MpptPopulator mpptPopulator;
+=======
+   CommunicationContainerPrivate(DataContainer& dataContainer)
+   : udpConnectionService_(udpSocket_)
+   , commDeviceManager_(udpSocket_)
+   , connectionController_(udpConnectionService_)
+   , jsonInterpreter_(commDeviceManager_)
+   , batteryPopulator_(
+      jsonInterpreter_,
+      dataContainer.batteryData())
+   , faultsPopulator_(
+      jsonInterpreter_,
+      dataContainer.faultsData())
+   , powerPopulator_(
+      jsonInterpreter_,
+      dataContainer.powerData())
+   , vehiclePopulator_(
+      jsonInterpreter_,
+      dataContainer.vehicleData())
+   {
+   }
+
+   QUdpSocket udpSocket_;
+   UdpConnectionService udpConnectionService_;
+   CommDeviceManager commDeviceManager_;
+   ConnectionController connectionController_;
+   JsonInterpreter jsonInterpreter_;
+   BatteryPopulator batteryPopulator_;
+   FaultsPopulator faultsPopulator_;
+   PowerPopulator powerPopulator_;
+   VehiclePopulator vehiclePopulator_;
+>>>>>>> Stashed changes
 };
 
 CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
@@ -73,6 +104,7 @@ CommunicationContainer::~CommunicationContainer()
 {
 }
 
+<<<<<<< Updated upstream
 I_CommDevice& CommunicationContainer::commDevice()
 {
     return impl_->radioConnectionService;
@@ -81,19 +113,36 @@ I_CommDevice& CommunicationContainer::commDevice()
 I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
 {
     return impl_->packetSynchronizer;
+=======
+ConnectionController& CommunicationContainer::connectionController()
+{
+   return impl_->connectionController_;
+>>>>>>> Stashed changes
 }
 
-I_DataInjectionService& CommunicationContainer::dataInjectionService()
+UdpConnectionService& CommunicationContainer::udpConnectionService()
 {
+<<<<<<< Updated upstream
     return impl_->packetUnstuffer;
+=======
+   return impl_->udpConnectionService_;
+>>>>>>> Stashed changes
 }
 
-I_PacketDecoder& CommunicationContainer::packetDecoder()
+I_JsonInterpreter& CommunicationContainer::jsonInterpreter()
 {
+<<<<<<< Updated upstream
     return impl_->packetDecoder;
+=======
+   return impl_->jsonInterpreter_;
+>>>>>>> Stashed changes
 }
 
-I_PacketChecksumChecker& CommunicationContainer::packetChecksumChecker()
+CommDeviceManager& CommunicationContainer::commDeviceManager()
 {
+<<<<<<< Updated upstream
     return impl_->packetChecksumChecker;
+=======
+   return impl_->commDeviceManager_;
+>>>>>>> Stashed changes
 }
