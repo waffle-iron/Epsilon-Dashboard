@@ -7,11 +7,14 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer)
     : DisplayDashboardUI_(new DisplayDashboardUI())
     , DisplayDashboardView_(new DisplayDashboardView(
                                 presenterContainer.batteryPresenter(),
-                                presenterContainer.vehiclePresenter(),
-                                presenterContainer.powerPresenter(),
-                                presenterContainer.communicationPresenter(),
-                                presenterContainer.faultsPresenter(),
+                                presenterContainer.batteryFaultsPresenter(),
+                                presenterContainer.cmuPresenter(),
+                                presenterContainer.driverControlsPresenter(),
+                                presenterContainer.keyMotorPresenter(),
+                                presenterContainer.lightsPresenter(),
                                 presenterContainer.mpptPresenter(),
+                                presenterContainer.motorDetailsPresenter(),
+                                presenterContainer.motorFaultsPresenter(),
                                 *DisplayDashboardUI_))
 {
 }

@@ -8,26 +8,26 @@ public:
     LightsData();
     virtual ~LightsData();
 
-    bool lights_LowBeams() const;
-    bool lights_HighBeams() const;
-    bool lights_Brakes() const;
-    bool lights_LeftSignal() const;
-    bool lights_RightSignal() const;
-    bool lights_BmsStrobeLight() const;
+    bool lowBeams() const;
+    bool highBeams() const;
+    bool brakes() const;
+    bool leftSignal() const;
+    bool rightSignal() const;
+    bool bmsStrobeLight() const;
 
-    void setLights_LowBeams(bool lights_LowBeams);
-    void setLights_HighBeams(bool lights_HighBeams);
-    void setLights_Brakes(bool lights_Brakes);
-    void setLights_LeftSignal(bool lights_LeftSignal);
-    void setLights_RightSignal(bool lights_RightSignal);
-    void setLights_BmsStrobeLight(bool lights_BmsStrobeLight);
+    void setlowBeams(bool lowBeams);
+    void sethighBeams(bool highBeams);
+    void setbrakes(bool brakes);
+    void setleftSignal(bool leftSignal);
+    void setrightSignal(bool rightSignal);
+    void setBmsStrobeLight(bool bmsStrobeLight);
 
 private:
-    bool lights_LowBeams_;
-    bool lights_HighBeams_;
-    bool lights_Brakes_;
-    bool lights_LeftSignal_;
-    bool lights_RightSignal_;
-    bool lights_BmsStrobeLight_;
+    bool lowBeams_;
+    bool highBeams_;
+    bool brakes_;
+    bool leftSignal_;
+    bool rightSignal_;
+    bool bmsStrobeLight_;
 };
 

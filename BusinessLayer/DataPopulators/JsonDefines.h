@@ -33,130 +33,81 @@ const QString DATA_TYPE = "datatype";
 const QString PACKETTITLE = "PacketTitle";
 const QString TIMESTAMP = "TimeStamp";
 
-const QString KEYMOTOR_ZERO_ALIVE = "Alive";
-const QString KEYMOTOR_ZERO_SETCURRENT = "SetCurrent";
-const QString KEYMOTOR_ZERO_SETVELOCITY = "SetVelocity";
-const QString KEYMOTOR_ZERO_BUSCURRENT = "BusCurrent";
-const QString KEYMOTOR_ZERO_BUSVOLTAGE = "BusVoltage";
-const QString KEYMOTOR_ZERO_VEHICLEVELOCITY = "VehicleVelocity";
+const QString KEYMOTOR = "KeyMotor";
+const QString KEYMOTOR_ALIVE = "Alive";
+const QString KEYMOTOR_SETCURRENT = "SetCurrent";
+const QString KEYMOTOR_SETVELOCITY = "SetVelocity";
+const QString KEYMOTOR_BUSCURRENT = "BusCurrent";
+const QString KEYMOTOR_BUSVOLTAGE = "BusVoltage";
+const QString KEYMOTOR_VEHICLEVELOCITY = "VehicleVelocity";
+
+const QString MOTORDETAILS = "MotorDetails";
+const QString MOTORDETAILS_PHASECCURRENT = "PhaseCCurrent";
+const QString MOTORDETAILS_PHASEBCURRENT = "PhaseBCurrent";
+const QString MOTORDETAILS_MOTORVOLTAGEREAL = "MotorVoltageReal";
+const QString MOTORDETAILS_MOTORVOLTAGEIMAGINARY = "MotorVoltageImaginary";
+const QString MOTORDETAILS_MOTORCURRENTREAL = "MotorCurrentReal";
+const QString MOTORDETAILS_MOTORCURRENTIMAGINARY = "MotorCurrentImaginary";
+const QString MOTORDETAILS_BACKEMFREAL = "BackEmfReal";
+const QString MOTORDETAILS_VOLTAGERAIL15VSUPPLY = "VoltageRail15VSupply";
+const QString MOTORDETAILS_VOLTAGERAIL3VSUPPLY = "VoltageRail3VSupply";
+const QString MOTORDETAILS_VOLTAGERAIL1VSUPPLY = "VoltageRail1VSupply";
+const QString MOTORDETAILS_HEATSINKTEMP = "HeatSinkTemp";
+const QString MOTORDETAILS_MOTORTEMP = "MotorTemp";
+const QString MOTORDETAILS_DSPBOARDTEMP = "DspBoardTemp";
+const QString MOTORDETAILS_DCBUSAMPHOURS = "DcBusAmpHours";
+const QString MOTORDETAILS_ODOMETER = "Odometer";
+const QString MOTORDETAILS_SLIPSPEED = "SlipSpeed";
 
 
-
-const QString KEYMOTOR_ONE_ALIVE = "Alive";
-const QString KEYMOTOR_ONE_SETCURRENT = "SetCurrent";
-const QString KEYMOTOR_ONE_SETVELOCITY = "SetVelocity";
-const QString KEYMOTOR_ONE_BUSCURRENT = "BusCurrent";
-const QString KEYMOTOR_ONE_BUSVOLTAGE = "BusVoltage";
-const QString KEYMOTOR_ONE_VEHICLEVELOCITY = "VehicleVelocity";
-
-
-
-const QString MOTORDETAILS_ZERO_PHASECCURRENT = "PhaseCCurrent";
-const QString MOTORDETAILS_ZERO_PHASEBCURRENT = "PhaseBCurrent";
-const QString MOTORDETAILS_ZERO_MOTORVOLTAGEREAL = "MotorVoltageReal";
-const QString MOTORDETAILS_ZERO_MOTORVOLTAGEIMAGINARY = "MotorVoltageImaginary";
-const QString MOTORDETAILS_ZERO_MOTORCURRENTREAL = "MotorCurrentReal";
-const QString MOTORDETAILS_ZERO_MOTORCURRENTIMAGINARY = "MotorCurrentImaginary";
-const QString MOTORDETAILS_ZERO_BACKEMFREAL = "BackEmfReal";
-const QString MOTORDETAILS_ZERO_VOLTAGERAIL15VSUPPLY = "VoltageRail15VSupply";
-const QString MOTORDETAILS_ZERO_VOLTAGERAIL3VSUPPLY = "VoltageRail3VSupply";
-const QString MOTORDETAILS_ZERO_VOLTAGERAIL1VSUPPLY = "VoltageRail1VSupply";
-const QString MOTORDETAILS_ZERO_HEATSINKTEMP = "HeatSinkTemp";
-const QString MOTORDETAILS_ZERO_MOTORTEMP = "MotorTemp";
-const QString MOTORDETAILS_ZERO_DSPBOARDTEMP = "DspBoardTemp";
-const QString MOTORDETAILS_ZERO_DCBUSAMPHOURS = "DcBusAmpHours";
-const QString MOTORDETAILS_ZERO_ODOMETER = "Odometer";
-const QString MOTORDETAILS_ZERO_SLIPSPEED = "SlipSpeed";
+const QString DRIVERCONTROLS = "DriverControl";
+const QString DRIVERCONTROLS_ALIVE = "Alive";
+const QString DRIVERCONTROLS_HEADLIGHTSOFF = "HeadlightsOff";
+const QString DRIVERCONTROLS_HEADLIGHTSLOW = "HeadlightsLow";
+const QString DRIVERCONTROLS_HEADLIGHTSHIGH = "HeadlightsHigh";
+const QString DRIVERCONTROLS_SIGNALRIGHT = "SignalRight";
+const QString DRIVERCONTROLS_SIGNALLEFT = "SignalLeft";
+const QString DRIVERCONTROLS_HAZARD = "Hazard";
+const QString DRIVERCONTROLS_INTERIOR = "Interior";
+const QString DRIVERCONTROLS_AUX = "Aux";
+const QString DRIVERCONTROLS_VOLUMEUP = "VolumeUp";
+const QString DRIVERCONTROLS_VOLUMEDOWN = "VolumeDown";
+const QString DRIVERCONTROLS_NEXTSONG = "NextSong";
+const QString DRIVERCONTROLS_PREVSONG = "PrevSong";
+const QString DRIVERCONTROLS_ACCELERATION = "Acceleration";
+const QString DRIVERCONTROLS_REGENBRAKING = "RegenBraking";
+const QString DRIVERCONTROLS_BRAKES = "Brakes";
+const QString DRIVERCONTROLS_FORWARD = "Forward";
+const QString DRIVERCONTROLS_REVERSE = "Reverse";
+const QString DRIVERCONTROLS_PUSHTOTALK = "PushToTalk";
+const QString DRIVERCONTROLS_HORN = "Horn";
+const QString DRIVERCONTROLS_RESET = "Reset";
 
 
+const QString MOTORFAULTS = "MotorFaults";
+const QString MOTORFAULTS_ERRORFLAGS = "ErrorFlags";
+const QString MOTORFAULTS_ERRORFLAGS_MOTOROVERSPEED = "MotorOverSpeed";
+const QString MOTORFAULTS_ERRORFLAGS_SOFTWAREOVERCURRENT = "SoftwareOverCurrent";
+const QString MOTORFAULTS_ERRORFLAGS_DCBUSOVERVOLTAGE = "DcBusOverVoltage";
+const QString MOTORFAULTS_ERRORFLAGS_BADMOTORPOSITIONHALLSEQUENCE = "BadMotorPositionHallSequence";
+const QString MOTORFAULTS_ERRORFLAGS_WATCHDOGCAUSEDLASTRESET = "WatchdogCausedLastReset";
+const QString MOTORFAULTS_ERRORFLAGS_CONFIGREADERROR = "ConfigReadError";
+const QString MOTORFAULTS_ERRORFLAGS_RAIL15VUNDERVOLTAGELOCKOUT = "Rail15VUnderVoltageLockOut";
+const QString MOTORFAULTS_ERRORFLAGS_DESATURATIONFAULT = "DesaturationFault";
 
-const QString MOTORDETAILS_ONE_PHASECCURRENT = "PhaseCCurrent";
-const QString MOTORDETAILS_ONE_PHASEBCURRENT = "PhaseBCurrent";
-const QString MOTORDETAILS_ONE_MOTORVOLTAGEREAL = "MotorVoltageReal";
-const QString MOTORDETAILS_ONE_MOTORVOLTAGEIMAGINARY = "MotorVoltageImaginary";
-const QString MOTORDETAILS_ONE_MOTORCURRENTREAL = "MotorCurrentReal";
-const QString MOTORDETAILS_ONE_MOTORCURRENTIMAGINARY = "MotorCurrentImaginary";
-const QString MOTORDETAILS_ONE_BACKEMFREAL = "BackEmfReal";
-const QString MOTORDETAILS_ONE_VOLTAGERAIL15VSUPPLY = "VoltageRail15VSupply";
-const QString MOTORDETAILS_ONE_VOLTAGERAIL3VSUPPLY = "VoltageRail3VSupply";
-const QString MOTORDETAILS_ONE_VOLTAGERAIL1VSUPPLY = "VoltageRail1VSupply";
-const QString MOTORDETAILS_ONE_HEATSINKTEMP = "HeatSinkTemp";
-const QString MOTORDETAILS_ONE_MOTORTEMP = "MotorTemp";
-const QString MOTORDETAILS_ONE_DSPBOARDTEMP = "DspBoardTemp";
-const QString MOTORDETAILS_ONE_DCBUSAMPHOURS = "DcBusAmpHours";
-const QString MOTORDETAILS_ONE_ODOMETER = "Odometer";
-const QString MOTORDETAILS_ONE_SLIPSPEED = "SlipSpeed";
-
-
-
-const QString DRIVERCONTROL_ALIVE = "Alive";
-const QString DRIVERCONTROL_HEADLIGHTSOFF = "HeadlightsOff";
-const QString DRIVERCONTROL_HEADLIGHTSLOW = "HeadlightsLow";
-const QString DRIVERCONTROL_HEADLIGHTSHIGH = "HeadlightsHigh";
-const QString DRIVERCONTROL_SIGNALRIGHT = "SignalRight";
-const QString DRIVERCONTROL_SIGNALLEFT = "SignalLeft";
-const QString DRIVERCONTROL_HAZARD = "Hazard";
-const QString DRIVERCONTROL_INTERIOR = "Interior";
-const QString DRIVERCONTROL_AUX = "Aux";
-const QString DRIVERCONTROL_VOLUMEUP = "VolumeUp";
-const QString DRIVERCONTROL_VOLUMEDOWN = "VolumeDown";
-const QString DRIVERCONTROL_NEXTSONG = "NextSong";
-const QString DRIVERCONTROL_PREVSONG = "PrevSong";
-const QString DRIVERCONTROL_ACCELERATION = "Acceleration";
-const QString DRIVERCONTROL_REGENBRAKING = "RegenBraking";
-const QString DRIVERCONTROL_BRAKES = "Brakes";
-const QString DRIVERCONTROL_FORWARD = "Forward";
-const QString DRIVERCONTROL_REVERSE = "Reverse";
-const QString DRIVERCONTROL_PUSHTOTALK = "PushToTalk";
-const QString DRIVERCONTROL_HORN = "Horn";
-const QString DRIVERCONTROL_RESET = "Reset";
+const QString MOTORFAULTS_LIMITFLAGS = "LimitFlags";
+const QString MOTORFAULTS_LIMITFLAGS_OUTPUTVOLTAGEPWM = "OutputVoltagePwm";
+const QString MOTORFAULTS_LIMITFLAGS_MOTORCURRENT = "MotorCurrent";
+const QString MOTORFAULTS_LIMITFLAGS_VELOCITY = "Velocity";
+const QString MOTORFAULTS_LIMITFLAGS_BUSCURRENT = "BusCurrent";
+const QString MOTORFAULTS_LIMITFLAGS_BUSVOLTAGEUPPER = "BusVoltageUpper";
+const QString MOTORFAULTS_LIMITFLAGS_BUSVOLTAGELOWER = "BusVoltageLower";
+const QString MOTORFAULTS_LIMITFLAGS_IPMORMOTORTEMPERATURE = "IpmOrMotorTemperature";
+const QString MOTORFAULTS_RXERRORCOUNT = "RxErrorCount";
+const QString MOTORFAULTS_TXERRORCOUNT = "TxErrorCount";
 
 
-
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_MOTOROVERSPEED = "MotorOverSpeed";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_SOFTWAREOVERCURRENT = "SoftwareOverCurrent";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_DCBUSOVERVOLTAGE = "DcBusOverVoltage";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_BADMOTORPOSITIONHALLSEQUENCE = "BadMotorPositionHallSequence";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_WATCHDOGCAUSEDLASTRESET = "WatchdogCausedLastReset";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_CONFIGREADERROR = "ConfigReadError";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_RAIL15VUNDERVOLTAGELOCKOUT = "Rail15VUnderVoltageLockOut";
-const QString MOTORFAULTS_ZERO_ERRORFLAGS_DESATURATIONFAULT = "DesaturationFault";
-
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_OUTPUTVOLTAGEPWM = "OutputVoltagePwm";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_MOTORCURRENT = "MotorCurrent";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_VELOCITY = "Velocity";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_BUSCURRENT = "BusCurrent";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_BUSVOLTAGEUPPER = "BusVoltageUpper";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_BUSVOLTAGELOWER = "BusVoltageLower";
-const QString MOTORFAULTS_ZERO_LIMITFLAGS_IPMORMOTORTEMPERATURE = "IpmOrMotorTemperature";
-
-const QString MOTORFAULTS_ZERO_RXERRORCOUNT = "RxErrorCount";
-const QString MOTORFAULTS_ZERO_TXERRORCOUNT = "TxErrorCount";
-
-
-
-const QString MOTORFAULTS_ONE_ERRORFLAGS_MOTOROVERSPEED = "MotorOverSpeed";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_SOFTWAREOVERCURRENT = "SoftwareOverCurrent";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_DCBUSOVERVOLTAGE = "DcBusOverVoltage";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_BADMOTORPOSITIONHALLSEQUENCE = "BadMotorPositionHallSequence";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_WATCHDOGCAUSEDLASTRESET = "WatchdogCausedLastReset";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_CONFIGREADERROR = "ConfigReadError";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_RAIL15VUNDERVOLTAGELOCKOUT = "Rail15VUnderVoltageLockOut";
-const QString MOTORFAULTS_ONE_ERRORFLAGS_DESATURATIONFAULT = "DesaturationFault";
-
-const QString MOTORFAULTS_ONE_LIMITFLAGS_OUTPUTVOLTAGEPWM = "OutputVoltagePwm";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_MOTORCURRENT = "MotorCurrent";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_VELOCITY = "Velocity";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_BUSCURRENT = "BusCurrent";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_BUSVOLTAGEUPPER = "BusVoltageUpper";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_BUSVOLTAGELOWER = "BusVoltageLower";
-const QString MOTORFAULTS_ONE_LIMITFLAGS_IPMORMOTORTEMPERATURE = "IpmOrMotorTemperature";
-
-const QString MOTORFAULTS_ONE_RXERRORCOUNT = "RxErrorCount";
-const QString MOTORFAULTS_ONE_TXERRORCOUNT = "TxErrorCount";
-
-
-
+const QString BATTERYFAULTS = "BatteryFaults";
 const QString BATTERYFAULTS_CELLOVERVOLTAGE = "CellOverVoltage";
 const QString BATTERYFAULTS_CELLUNDERVOLTAGE = "CellUnderVoltage";
 const QString BATTERYFAULTS_CELLOVERTEMP = "CellOverTemp";
@@ -171,7 +122,7 @@ const QString BATTERYFAULTS_CONTACTORSTUCK = "ContactorStuck";
 const QString BATTERYFAULTS_CMUDETECTEDEXTRACELL = "CMUDetectedExtraCell";
 
 
-
+const QString BATTERY = "Battery";
 const QString BATTERY_ALIVE = "Alive";
 const QString BATTERY_PACKSOCAMPHOURS = "PackSocAmpHours";
 const QString BATTERY_PACKSOCPERCENTAGE = "PackSocPercentage";
@@ -192,16 +143,22 @@ const QString BATTERY_PRECHARGESTATE = "PrechargeState";
 const QString BATTERY_PRECHARGETIMERELAPSED = "PrechargeTimerElapsed";
 const QString BATTERY_PRECHARGETIMERCOUNT = "PrechargeTimerCount";
 
+const QString BATTERY_LOWESTCELLVOLTAGE = "LowestCellVoltage";
 const QString BATTERY_LOWESTCELLVOLTAGE_VOLTAGE = "Voltage";
 const QString BATTERY_LOWESTCELLVOLTAGE_CMUNUMBER = "CmuNumber";
 const QString BATTERY_LOWESTCELLVOLTAGE_CELLNUMBER = "CellNumber";
+
+const QString BATTERY_LOWESTCELLTEMP = "LowestCellTemp";
 const QString BATTERY_LOWESTCELLTEMP_TEMPERATURE = "Temperature";
 const QString BATTERY_LOWESTCELLTEMP_CMUNUMBER = "CmuNumber";
 const QString BATTERY_LOWESTCELLTEMP_CELLNUMBER = "CellNumber";
 
+const QString BATTERY_HIGHESTCELLVOLTAGE = "HighestCellVoltage";
 const QString BATTERY_HIGHESTCELLVOLTAGE_VOLTAGE = "Voltage";
 const QString BATTERY_HIGHESTCELLVOLTAGE_CMUNUMBER = "CmuNumber";
 const QString BATTERY_HIGHESTCELLVOLTAGE_CELLNUMBER = "CellNumber";
+
+const QString BATTERY_HIGHESTCELLTEMP = "HighestCellTemp";
 const QString BATTERY_HIGHESTCELLTEMP_TEMPERATURE = "Temperature";
 const QString BATTERY_HIGHESTCELLTEMP_CMUNUMBER = "CmuNumber";
 const QString BATTERY_HIGHESTCELLTEMP_CELLNUMBER = "CellNumber";
@@ -213,42 +170,20 @@ const QString BATTERY_FAN1SPEED = "Fan1Speed";
 const QString BATTERY_FANCONTACTORSCURRENT = "FanContactorsCurrent";
 const QString BATTERY_CMUCURRENT = "CmuCurrent";
 
-const QString CMU_ZERO_VOLTAGES[] = {"One","Two","Three","Four","Five","Six","Seven","Eight"};
-const QString CMU_ZERO_PCBTEMP = "PcbTemp";
-const QString CMU_ZERO_CELLTEMPS[] = {"One","Two","Three","Four","Five","Six","Seven","Eight",
-									"Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen"};
-const QString CMU_ONE_VOLTAGES[] = {"One","Two","Three","Four","Five","Six","Seven","Eight"};
-const QString CMU_ONE_PCBTEMP = "PcbTemp";
-const QString CMU_ONE_CELLTEMPS[] = {"One","Two","Three","Four","Five","Six","Seven","Eight",
-									"Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen"};
-const QString CMU_TWO_VOLTAGES[] = {"One","Two","Three","Four","Five","Six","Seven","Eight"};
-const QString CMU_TWO_PCBTEMP = "PcbTemp";
-const QString CMU_TWO_CELLTEMPS[] = {"One","Two","Three","Four","Five","Six","Seven","Eight",
-									"Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen"};
-const QString CMU_THREE_VOLTAGES[] = {"One","Two","Three","Four","Five","Six","Seven","Eight"};
-const QString CMU_THREE_PCBTEMP = "PcbTemp";
-const QString CMU_THREE_CELLTEMPS[] = {"One","Two","Three","Four","Five","Six","Seven","Eight",
-									"Nine","Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen"};
+const QString CMU = "CMU";
+const QString CMU_VOLTAGES = "Voltages";
+const QString CMU_PCBTEMP = "PcbTemp";
+const QString CMU_CELLTEMPS = "CellTemps";
 
-const QString MPPT_ZERO_ALIVE = "Alive";
-const QString MPPT_ZERO_ARRAYVOLTAGE = "ArrayVoltage";
-const QString MPPT_ZERO_ARRAYCURRENT = "ArrayCurrent";
-const QString MPPT_ZERO_BATTERYVOLTAGE = "BatteryVoltage";
-const QString MPPT_ZERO_TEMPERATURE = "Temperature";
+const QString MPPT = "MPPT";
+const QString MPPT_ALIVE = "Alive";
+const QString MPPT_ARRAYVOLTAGE = "ArrayVoltage";
+const QString MPPT_ARRAYCURRENT = "ArrayCurrent";
+const QString MPPT_BATTERYVOLTAGE = "BatteryVoltage";
+const QString MPPT_TEMPERATURE = "Temperature";
 
-const QString MPPT_ONE_ALIVE = "Alive";
-const QString MPPT_ONE_ARRAYVOLTAGE = "ArrayVoltage";
-const QString MPPT_ONE_ARRAYCURRENT = "ArrayCurrent";
-const QString MPPT_ONE_BATTERYVOLTAGE = "BatteryVoltage";
-const QString MPPT_ONE_TEMPERATURE = "Temperature";
 
-const QString MPPT_TWO_ALIVE = "Alive";
-const QString MPPT_TWO_ARRAYVOLTAGE = "ArrayVoltage";
-const QString MPPT_TWO_ARRAYCURRENT = "ArrayCurrent";
-const QString MPPT_TWO_BATTERYVOLTAGE = "BatteryVoltage";
-const QString MPPT_TWO_TEMPERATURE = "Temperature";
-
-																										
+const QString LIGHTS = "Lights";
 const QString LIGHTS_LOWBEAMS = "LowBeams";
 const QString LIGHTS_HIGHBEAMS = "HighBeams";
 const QString LIGHTS_BRAKES = "Brakes";

@@ -28,61 +28,65 @@
 
 #include "BatteryPopulator.h"
 
-#include "CommunicationLayer/JsonInterpreter/I_JsonInterpreter.h"
-#include "CommunicationLayer/JsonInterpreter/JsonDefines.h"
+#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "BusinessLayer/DataPopulators/JsonDefines.h"
 #include "DataLayer/BatteryData/I_BatteryData.h"
 
-BatteryPopulator::BatteryPopulator(I_JsonInterpreter& jsonInterpreter,
+BatteryPopulator::BatteryPopulator(I_JsonReceiver& jsonReceiver,
                                    I_BatteryData& batteryData)
-    : jsonInterpreter_(jsonInterpreter)
+    : jsonReceiver_(jsonReceiver)
     , batteryData_(batteryData)
 {
-    connect(&jsonInterpreter_, SIGNAL(batteryDataReceived(const QJsonObject&)),
+    connect(&jsonReceiver_, SIGNAL(dataReceived(const QJsonObject&)),
             this, SLOT(populateData(const QJsonObject&)));
 }
 
 void BatteryPopulator::populateData(const QJsonObject& data)
 {
-    batteryData_.setBatteryVoltage(data[JsonFormat::BATTERY_VOLTAGE].toDouble());
-    batteryData_.setBatteryCurrent(data[JsonFormat::BATTERY_CURRENT].toDouble());
-    
-    batteryData_.setMod0PcbTemperature(data[JsonFormat::MOD_0].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod0CellTemperature(data[JsonFormat::MOD_0].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod0CellVoltages = data[JsonFormat::MOD_0].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod0CellVoltages;
-    foreach(const QJsonValue& value, jsonMod0CellVoltages)
-    {
-        mod0CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod0CellVoltages(mod0CellVoltages);
+    QJsonValue value = data.value(JsonFormat::BATTERY);
+    batteryData_.setAlive(value.toObject().value(JsonFormat::BATTERY_ALIVE).toBool());
+    batteryData_.setPackSocAmpHours(value.toObject().value(JsonFormat::BATTERY_PACKSOCAMPHOURS).toDouble());
+    batteryData_.setPackSocPercentage(value.toObject().value(JsonFormat::BATTERY_PACKSOCPERCENTAGE).toDouble());
+    batteryData_.setPackBalanceSocAmpHours(value.toObject().value(JsonFormat::BATTERY_PACKBALANCESOCAMPHOURS).toDouble());
+    batteryData_.setPackBalanceSocPercentage(value.toObject().value(JsonFormat::BATTERY_PACKBALANCESOCPERCENTAGE).toDouble());
+    batteryData_.setChargingCellVoltageError(value.toObject().value(JsonFormat::BATTERY_CHARGINGCELLVOLTAGEERROR).toDouble());
+    batteryData_.setCellTempMargin(value.toObject().value(JsonFormat::BATTERY_CELLTEMPMARGIN).toDouble());
+    batteryData_.setDischargingCellVoltageError(value.toObject().value(JsonFormat::BATTERY_DISCHARGINGCELLVOLTAGEERROR).toDouble());
+    batteryData_.setTotalPackCapacity(value.toObject().value(JsonFormat::BATTERY_TOTALPACKCAPACITY).toDouble());
+    batteryData_.setPrechargeContactor0DriverStatus(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR0DRIVERSTATUS).toBool());
+    batteryData_.setPrechargeContactor1DriverStatus(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR1DRIVERSTATUS).toBool());
+    batteryData_.setPrechargeContactor2DriverStatus(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR2DRIVERSTATUS).toBool());
+    batteryData_.setPrechargeContactor0DriverError(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR0DRIVERERROR).toBool());
+    batteryData_.setPrechargeContactor1DriverError(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR1DRIVERERROR).toBool());
+    batteryData_.setPrechargeContactor2DriverError(value.toObject().value(JsonFormat::BATTERY_PRECHARGECONTACTOR2DRIVERERROR).toBool());
+    batteryData_.setContactorSupplyOk(value.toObject().value(JsonFormat::BATTERY_CONTACTORSUPPLYOK).toBool());
+    batteryData_.setPrechargeState(value.toObject().value(JsonFormat::BATTERY_PRECHARGESTATE).toString());
+    batteryData_.setPrechargeTimerElapsed(value.toObject().value(JsonFormat::BATTERY_PRECHARGETIMERELAPSED).toBool());
+    batteryData_.setPrechargeTimerCount(value.toObject().value(JsonFormat::BATTERY_PRECHARGETIMERCOUNT).toDouble());
+    batteryData_.setVoltage(value.toObject().value(JsonFormat::BATTERY_VOLTAGE).toDouble());
+    batteryData_.setCurrent(value.toObject().value(JsonFormat::BATTERY_CURRENT).toDouble());
+    batteryData_.setFan0Speed(value.toObject().value(JsonFormat::BATTERY_FAN0SPEED).toDouble());
+    batteryData_.setFan1Speed(value.toObject().value(JsonFormat::BATTERY_FAN1SPEED).toDouble());
+    batteryData_.setFanContactorsCurrent(value.toObject().value(JsonFormat::BATTERY_FANCONTACTORSCURRENT).toDouble());
+    batteryData_.setCmuCurrent(value.toObject().value(JsonFormat::BATTERY_CMUCURRENT).toDouble());
 
-    batteryData_.setMod1PcbTemperature(data[JsonFormat::MOD_1].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod1CellTemperature(data[JsonFormat::MOD_1].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod1CellVoltages = data[JsonFormat::MOD_1].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod1CellVoltages;
-    foreach(const QJsonValue& value, jsonMod1CellVoltages)
-    {
-        mod1CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod1CellVoltages(mod1CellVoltages);
+    QJsonValue subValue = value.toObject().value(JsonFormat::BATTERY_LOWESTCELLVOLTAGE);
+    batteryData_.setLowestCellVoltage_Voltage(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLVOLTAGE_VOLTAGE).toDouble());
+    batteryData_.setLowestCellVoltage_CmuNumber(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLVOLTAGE_CMUNUMBER).toInt());
+    batteryData_.setLowestCellVoltage_CellNumber(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLVOLTAGE_CELLNUMBER).toInt());
 
-    batteryData_.setMod2PcbTemperature(data[JsonFormat::MOD_2].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod2CellTemperature(data[JsonFormat::MOD_2].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod2CellVoltages = data[JsonFormat::MOD_2].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod2CellVoltages;
-    foreach(const QJsonValue& value, jsonMod2CellVoltages)
-    {
-        mod2CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod2CellVoltages(mod2CellVoltages);
+    subValue = value.toObject().value(JsonFormat::BATTERY_LOWESTCELLTEMP);
+    batteryData_.setLowestCellTemp_Temperature(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLTEMP_TEMPERATURE).toDouble());
+    batteryData_.setLowestCellTemp_CmuNumber(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLTEMP_CMUNUMBER).toInt());
+    batteryData_.setLowestCellTemp_CellNumber(subValue.toObject().value(JsonFormat::BATTERY_LOWESTCELLTEMP_CELLNUMBER).toInt());
 
-    batteryData_.setMod3PcbTemperature(data[JsonFormat::MOD_3].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod3CellTemperature(data[JsonFormat::MOD_3].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod3CellVoltages = data[JsonFormat::MOD_3].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod3CellVoltages;
-    foreach(const QJsonValue& value, jsonMod3CellVoltages)
-    {
-        mod3CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod3CellVoltages(mod3CellVoltages);
+    subValue = value.toObject().value(JsonFormat::BATTERY_HIGHESTCELLVOLTAGE);
+    batteryData_.setHighestCellVoltage_Voltage(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLVOLTAGE_VOLTAGE).toDouble());
+    batteryData_.setHighestCellVoltage_CmuNumber(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLVOLTAGE_CMUNUMBER).toInt());
+    batteryData_.setHighestCellVoltage_CellNumber(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLVOLTAGE_CELLNUMBER).toInt());
+
+    subValue = value.toObject().value(JsonFormat::BATTERY_HIGHESTCELLTEMP);
+    batteryData_.setHighestCellTemp_Temperature(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLTEMP_TEMPERATURE).toDouble());
+    batteryData_.setHighestCellTemp_CmuNumber(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLTEMP_CMUNUMBER).toInt());
+    batteryData_.setHighestCellTemp_CellNumber(subValue.toObject().value(JsonFormat::BATTERY_HIGHESTCELLTEMP_CELLNUMBER).toInt());
 }

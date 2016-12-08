@@ -1,33 +1,37 @@
 #include "CommunicationsMonitoringService.h"
-#include "CommunicationLayer/PacketChecksumChecker/I_PacketChecksumChecker.h"
+#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include <QDebug>
 
-CommunicationsMonitoringService::CommunicationsMonitoringService(I_PacketChecksumChecker& packetChecksumChecker)
-    : packetChecksumChecker_(packetChecksumChecker)
-    , secondsSinceLastPacketReceived_(0)
-    , packetsReceivedInLastMinute_(0)
-    , secondsSinceLastValidPacketReceived_(0)
-    , validPacketsReceivedInLastMinute_(0)
-    , invalidPacketsReceivedInLastMinute_(0)
+CommunicationsMonitoringService::CommunicationsMonitoringService(I_JsonReceiver& jsonReceiver)
+: jsonReceiver_(jsonReceiver)
+, secondsSinceLastPacketReceived_(0)
+, packetsReceivedInLastMinute_(0)
+, secondsSinceLastValidPacketReceived_(0)
+, validPacketsReceivedInLastMinute_(0)
+, invalidPacketsReceivedInLastMinute_(0)
 {
-    connect(&packetChecksumChecker_, SIGNAL(validDataReceived(QByteArray)),
+    /*
+    connect(&jsonReceiver_, SIGNAL(packetInterpreted(const KeyDriverControlTelemetry&)),
             this, SLOT(validPacketReceived()));
-    connect(&packetChecksumChecker_, SIGNAL(invalidDataReceived()),
+    connect(&jsonReceiver_, SIGNAL(packetInterpreted(const DriverControlDetails&)),
+            this, SLOT(validPacketReceived()));
+    connect(&jsonReceiver_, SIGNAL(packetInterpreted(const FaultsMessage&)),
+            this, SLOT(validPacketReceived()));
+    connect(&jsonReceiver_, SIGNAL(packetInterpreted(const BatteryDataMessage&)),
+            this, SLOT(validPacketReceived()));
+    connect(&jsonReceiver_, SIGNAL(packetInterpreted(const CmuDataMessage&)),
+            this, SLOT(validPacketReceived()));*/
+    connect(&jsonReceiver_, SIGNAL(invalidDataReceived()),
             this, SLOT(invalidPacketReceived()));
     connect(&updateTimer_, SIGNAL(timeout()),
             this, SLOT(update()));
+
     updateTimer_.setInterval(1000); // update every second
     updateTimer_.setSingleShot(false);
-    start();
 }
 
 void CommunicationsMonitoringService::start()
 {
-    secondsSinceLastPacketReceived_ = 0;
-    packetsReceivedInLastMinute_ = 0;
-    secondsSinceLastValidPacketReceived_ = 0;
-    validPacketsReceivedInLastMinute_ = 0;
-    invalidPacketsReceivedInLastMinute_ = 0;
     updateTimer_.start();
 }
 
@@ -41,6 +45,7 @@ void CommunicationsMonitoringService::validPacketReceived()
     validPacketsReceivedInLastMinute_++;
     secondsSinceLastValidPacketReceived_ = 0;
     QTimer::singleShot(60000, this, SLOT(decrementValidPacketsReceivedInLastMinute()));
+
     packetsReceivedInLastMinute_++;
     secondsSinceLastPacketReceived_ = 0;
     QTimer::singleShot(60000, this, SLOT(decrementPacketsReceivedInLastMinute()));
@@ -49,6 +54,7 @@ void CommunicationsMonitoringService::invalidPacketReceived()
 {
     invalidPacketsReceivedInLastMinute_++;
     QTimer::singleShot(60000, this, SLOT(decrementInvalidPacketsReceivedInLastMinute()));
+
     packetsReceivedInLastMinute_++;
     secondsSinceLastPacketReceived_ = 0;
     QTimer::singleShot(60000, this, SLOT(decrementPacketsReceivedInLastMinute()));
@@ -58,6 +64,7 @@ void CommunicationsMonitoringService::update()
 {
     secondsSinceLastPacketReceived_++;
     secondsSinceLastValidPacketReceived_++;
+
     emit secondsSinceLastPacketReceivedUpdate(secondsSinceLastPacketReceived_);
     emit packetsReceivedInLastMinuteUpdate(packetsReceivedInLastMinute_);
     emit secondsSinceLastValidPacketReceivedUpdate(secondsSinceLastValidPacketReceived_);
@@ -77,3 +84,4 @@ void CommunicationsMonitoringService::decrementInvalidPacketsReceivedInLastMinut
 {
     invalidPacketsReceivedInLastMinute_--;
 }
+

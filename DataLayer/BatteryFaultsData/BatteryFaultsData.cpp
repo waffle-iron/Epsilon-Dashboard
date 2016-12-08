@@ -9,113 +9,134 @@ BatteryFaultsData::~BatteryFaultsData()
 {
 }
 
-bool BatteryFaultsData::batteryFaults_CellOverVoltage() const
+bool BatteryFaultsData::cellOverVoltage() const
 {
-    return batteryFaults_CellOverVoltage_;
-}
-bool BatteryFaultsData::batteryFaults_CellUnderVoltage() const
-{
-    return batteryFaults_CellUnderVoltage_;
-}
-bool BatteryFaultsData::batteryFaults_CellOverTemp() const
-{
-    return batteryFaults_CellOverTemp_;
-}
-bool BatteryFaultsData::batteryFaults_MeasurementUntrusted() const
-{
-    return batteryFaults_MeasurementUntrusted_;
-}
-bool BatteryFaultsData::batteryFaults_CMUCommTimeout() const
-{
-    return batteryFaults_CMUCommTimeout_;
-}
-bool BatteryFaultsData::batteryFaults_BMUSetupMode() const
-{
-    return batteryFaults_BMUSetupMode_;
-}
-bool BatteryFaultsData::batteryFaults_CMUCANBusPowerStatus() const
-{
-    return batteryFaults_CMUCANBusPowerStatus_;
-}
-bool BatteryFaultsData::batteryFaults_PackIsolationFailure() const
-{
-    return batteryFaults_PackIsolationFailure_;
-}
-bool BatteryFaultsData::batteryFaults_SoftwareOverCurrent() const
-{
-    return batteryFaults_SoftwareOverCurrent_;
-}
-bool BatteryFaultsData::batteryFaults_CAN12VSupplyLow() const
-{
-    return batteryFaults_CAN12VSupplyLow_;
-}
-bool BatteryFaultsData::batteryFaults_ContactorStuck() const
-{
-    return batteryFaults_ContactorStuck_;
-}
-bool BatteryFaultsData::batteryFaults_CMUDetectedExtraCell() const
-{
-    return batteryFaults_CMUDetectedExtraCell_;
+   return cellOverVoltage_;
 }
 
+bool BatteryFaultsData::cellUnderVoltage() const
+{
+   return cellUnderVoltage_;
+}
 
-void BatteryFaultsData::setBatteryFaults_CellOverVoltage(bool batteryFaults_CellOverVoltage)
+bool BatteryFaultsData::cellOverTemperature() const
 {
-    batteryFaults_CellOverVoltage_ = batteryFaults_CellOverVoltage;
-    emit batteryFaults_CellOverVoltageReceived(batteryFaults_CellOverVoltage_);
+   return cellOverTemperature_;
 }
-void BatteryFaultsData::setBatteryFaults_CellUnderVoltage(bool batteryFaults_CellUnderVoltage)
+
+bool BatteryFaultsData::measurementUntrusted() const
 {
-    batteryFaults_CellUnderVoltage_ = batteryFaults_CellUnderVoltage;
-    emit batteryFaults_CellUnderVoltageReceived(batteryFaults_CellUnderVoltage_);
+   return measurementUntrusted_;
 }
-void BatteryFaultsData::setBatteryFaults_CellOverTemp(bool batteryFaults_CellOverTemp)
+
+bool BatteryFaultsData::cmuCommTimeout() const
 {
-    batteryFaults_CellOverTemp_ = batteryFaults_CellOverTemp;
-    emit batteryFaults_CellOverTempReceived(batteryFaults_CellOverTemp_);
+   return cmuCommTimeout_;
 }
-void BatteryFaultsData::setBatteryFaults_MeasurementUntrusted(bool batteryFaults_MeasurementUntrusted)
+
+bool BatteryFaultsData::vehicleCommTimeout() const
 {
-    batteryFaults_MeasurementUntrusted_ = batteryFaults_MeasurementUntrusted;
-    emit batteryFaults_MeasurementUntrustedReceived(batteryFaults_MeasurementUntrusted_);
+   return vehicleCommTimeout_;
 }
-void BatteryFaultsData::setBatteryFaults_CMUCommTimeout(bool batteryFaults_CMUCommTimeout)
+
+bool BatteryFaultsData::bmuIsInSetupMode() const
 {
-    batteryFaults_CMUCommTimeout_ = batteryFaults_CMUCommTimeout;
-    emit batteryFaults_CMUCommTimeoutReceived(batteryFaults_CMUCommTimeout_);
+   return bmuIsInSetupMode_;
 }
-void BatteryFaultsData::setBatteryFaults_BMUSetupMode(bool batteryFaults_BMUSetupMode)
+
+bool BatteryFaultsData::cmuCanBusPowerStatus() const
 {
-    batteryFaults_BMUSetupMode_ = batteryFaults_BMUSetupMode;
-    emit batteryFaults_BMUSetupModeReceived(batteryFaults_BMUSetupMode_);
+   // Note: This fault flag actually means everything is okay.
+   return !cmuCanBusPowerStatus_;
 }
-void BatteryFaultsData::setBatteryFaults_CMUCANBusPowerStatus(bool batteryFaults_CMUCANBusPowerStatus)
+
+bool BatteryFaultsData::packIsolationTestFailure() const
 {
-    batteryFaults_CMUCANBusPowerStatus_ = batteryFaults_CMUCANBusPowerStatus;
-    emit batteryFaults_CMUCANBusPowerStatusReceived(batteryFaults_CMUCANBusPowerStatus_);
+   return packIsolationTestFailure_;
 }
-void BatteryFaultsData::setBatteryFaults_PackIsolationFailure(bool batteryFaults_PackIsolationFailure)
+
+bool BatteryFaultsData::softwareOverCurrentMeasured() const
 {
-    batteryFaults_PackIsolationFailure_ = batteryFaults_PackIsolationFailure;
-    emit batteryFaults_PackIsolationFailureReceived(batteryFaults_PackIsolationFailure_);
+   return softwareOverCurrentMeasured_;
 }
-void BatteryFaultsData::setBatteryFaults_SoftwareOverCurrent(bool batteryFaults_SoftwareOverCurrent)
+
+bool BatteryFaultsData::canSupplyIsLow() const
 {
-    batteryFaults_SoftwareOverCurrent_ = batteryFaults_SoftwareOverCurrent;
-    emit batteryFaults_SoftwareOverCurrentReceived(batteryFaults_SoftwareOverCurrent_);
+   return canSupplyIsLow_;
 }
-void BatteryFaultsData::setBatteryFaults_CAN12VSupplyLow(bool batteryFaults_CAN12VSupplyLow)
+
+bool BatteryFaultsData::contactorIsStuck() const
 {
-    batteryFaults_CAN12VSupplyLow_ = batteryFaults_CAN12VSupplyLow;
-    emit batteryFaults_CAN12VSupplyLowReceived(batteryFaults_CAN12VSupplyLow_);
+   return contactorIsStuck_;
 }
-void BatteryFaultsData::setBatteryFaults_ContactorStuck(bool batteryFaults_ContactorStuck)
+
+bool BatteryFaultsData::cmuDetectedExtraCellPresent() const
 {
-    batteryFaults_ContactorStuck_ = batteryFaults_ContactorStuck;
-    emit batteryFaults_ContactorStuckReceived(batteryFaults_ContactorStuck_);
+   return cmuDetectedExtraCellPresent_;
 }
-void BatteryFaultsData::setBatteryFaults_CMUDetectedExtraCell(bool batteryFaults_CMUDetectedExtraCell)
+
+void BatteryFaultsData::setCellOverVoltage(bool cellOverVoltage)
 {
-    batteryFaults_CMUDetectedExtraCell_ = batteryFaults_CMUDetectedExtraCell;
-    emit batteryFaults_CMUDetectedExtraCellReceived(batteryFaults_CMUDetectedExtraCell_);
+   cellOverVoltage_ = cellOverVoltage;
 }
+
+void BatteryFaultsData::setCellUnderVoltage(bool cellUnderVoltage)
+{
+   cellUnderVoltage_ = cellUnderVoltage;
+}
+
+void BatteryFaultsData::setCellOverTemperature(bool cellOverTemperature)
+{
+   cellOverTemperature_ = cellOverTemperature;
+}
+
+void BatteryFaultsData::setMeasurementUntrusted(bool measurementUntrusted)
+{
+   measurementUntrusted_ = measurementUntrusted;
+}
+
+void BatteryFaultsData::setCmuCommTimeout(bool cmuCommTimeout)
+{
+   cmuCommTimeout_ = cmuCommTimeout;
+}
+
+void BatteryFaultsData::setVehicleCommTimeout(bool vehicleCommTimeout)
+{
+   vehicleCommTimeout_ = vehicleCommTimeout;
+}
+
+void BatteryFaultsData::setBmuIsInSetupMode(bool bmuIsInSetupMode)
+{
+   bmuIsInSetupMode_ = bmuIsInSetupMode;
+}
+
+void BatteryFaultsData::setCmuCanBusPowerStatus(bool cmuCanBusPowerStatus)
+{
+   cmuCanBusPowerStatus_ = cmuCanBusPowerStatus;
+}
+
+void BatteryFaultsData::setPackIsolationTestFailure(bool packIsolationTestFailure)
+{
+   packIsolationTestFailure_ = packIsolationTestFailure;
+}
+
+void BatteryFaultsData::setSoftwareOverCurrentMeasured(bool softwareOverCurrentMeasured)
+{
+   softwareOverCurrentMeasured_ = softwareOverCurrentMeasured;
+}
+
+void BatteryFaultsData::setCanSupplyIsLow(bool canSupplyIsLow)
+{
+   canSupplyIsLow_ = canSupplyIsLow;
+}
+
+void BatteryFaultsData::setContactorIsStuck(bool contactorIsStuck)
+{
+   contactorIsStuck_ = contactorIsStuck;
+}
+
+void BatteryFaultsData::setCmuDetectedExtraCellPresent(bool cmuDetectedExtraCellPresent)
+{
+   cmuDetectedExtraCellPresent_ = cmuDetectedExtraCellPresent;
+}
+

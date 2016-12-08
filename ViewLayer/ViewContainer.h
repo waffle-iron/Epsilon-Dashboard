@@ -2,7 +2,7 @@
 
 #include <QScopedPointer>
 
-class DisplayDashboardUI;
+class I_DisplayDashboardUI;
 class DisplayDashboardView;
 class PresenterContainer;
 
@@ -13,6 +13,6 @@ public:
     ~ViewContainer();
 
 private:
-    DisplayDashboardUI* DisplayDashboardUI_;
+    I_DisplayDashboardUI* DisplayDashboardUI_;
     QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
 };

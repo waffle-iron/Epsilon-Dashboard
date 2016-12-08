@@ -23,10 +23,7 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
-#include <QDebug>
-#include <QJsonObject>
-#include <QJsonDocument>
-#include <QJsonParseError>
+
 
 #include "JsonReceiver.h"
 
@@ -47,5 +44,5 @@ void JsonReceiver::handleIncomingData(const QByteArray& data)
         emit invalidDataReceived();
         return;
     }
-    emit dataReceived();
+    emit dataReceived(parsedData);
 }

@@ -9,58 +9,58 @@ LightsData::~LightsData()
 {
 }
 
-bool LightsData::lights_LowBeams() const
+bool LightsData::lowBeams() const
 {
-    return lights_LowBeams_;
+    return lowBeams_;
 }
-bool LightsData::lights_HighBeams() const
+bool LightsData::highBeams() const
 {
-    return lights_HighBeams_;
+    return highBeams_;
 }
-bool LightsData::lights_Brakes() const
+bool LightsData::brakes() const
 {
-    return lights_Brakes_;
+    return brakes_;
 }
-bool LightsData::lights_LeftSignal() const
+bool LightsData::leftSignal() const
 {
-    return lights_LeftSignal_;
+    return leftSignal_;
 }
-bool LightsData::lights_RightSignal() const
+bool LightsData::rightSignal() const
 {
-    return lights_RightSignal_;
+    return rightSignal_;
 }
-bool LightsData::lights_BmsStrobeLight() const
+bool LightsData::bmsStrobeLight() const
 {
-    return lights_BmsStrobeLight_;
+    return bmsStrobeLight_;
 }
 
-void LightsData::setLights_LowBeams(bool lights_LowBeams)
+void LightsData::setlowBeams(bool lowBeams)
 {
-    lights_LowBeams_ = lights_LowBeams;
-    emit lights_LowBeamsReceived(lights_LowBeams_);
+    lowBeams_ = lowBeams;
+    emit lowBeamsReceived(lowBeams_);
 }
-void LightsData::setLights_HighBeams(bool lights_HighBeams)
+void LightsData::sethighBeams(bool highBeams)
 {
-    lights_HighBeams_ = lights_HighBeams;
-    emit lights_HighBeamsReceived(lights_HighBeams_);
+    highBeams_ = highBeams;
+    emit highBeamsReceived(highBeams_);
 }
-void LightsData::setLights_Brakes(bool lights_Brakes)
+void LightsData::setbrakes(bool brakes)
 {
-    lights_Brakes_ = lights_Brakes;
-    emit lights_BrakesReceived(lights_Brakes_);
+    brakes_ = brakes;
+    emit brakesReceived(brakes_);
 }
-void LightsData::setLights_LeftSignal(bool lights_LeftSignal)
+void LightsData::setleftSignal(bool leftSignal)
 {
-    lights_LeftSignal_ = lights_LeftSignal;
-    emit lights_LeftSignalReceived(lights_LeftSignal_);
+    leftSignal_ = leftSignal;
+    emit leftSignalReceived(leftSignal_);
 }
-void LightsData::setLights_RightSignal(bool lights_RightSignal)
+void LightsData::setrightSignal(bool rightSignal)
 {
-    lights_RightSignal_ = lights_RightSignal;
-    emit lights_RightSignalReceived(lights_RightSignal_);
+    rightSignal_ = rightSignal;
+    emit rightSignalReceived(rightSignal_);
 }
-void LightsData::setLights_BmsStrobeLight(bool lights_BmsStrobeLight)
+void LightsData::setBmsStrobeLight(bool bmsStrobeLight)
 {
-    lights_BmsStrobeLight_ = lights_BmsStrobeLight;
-    emit lights_BmsStrobeLightReceived(lights_BmsStrobeLight_);
+    bmsStrobeLight_ = bmsStrobeLight;
+    emit bmsStrobeLightReceived(bmsStrobeLight_);
 }

@@ -1,201 +1,201 @@
-#include "KeyMotorData.h"
+#include "DriverControlsData.h"
 #include <QDebug>
 
-KeyMotorData::KeyMotorData()
+DriverControlsData::DriverControlsData()
 {
 }
 
-KeyMotorData::~KeyMotorData()
+DriverControlsData::~DriverControlsData()
 {
 }
 
-bool DriverControlsData::driverControls_Alive() const
+bool DriverControlsData::alive() const
 {
-    driverControls_Alive_;
+    return alive_;
 }
-bool DriverControlsData::driverControls_HeadlightsOff() const
+bool DriverControlsData::headlightsOff() const
 {
-    driverControls_HeadlightsOff_;
+    return headlightsOff_;
 }
-bool DriverControlsData::driverControls_HeadlightsLow() const
+bool DriverControlsData::headlightsLow() const
 {
-    driverControls_HeadlightsLow_;
+    return headlightsLow_;
 }
-bool DriverControlsData::driverControls_HeadlightsHigh() const
+bool DriverControlsData::headlightsHigh() const
 {
-    driverControls_HeadlightsHigh_;
+    return headlightsHigh_;
 }
-bool DriverControlsData::driverControls_SignalRight() const
+bool DriverControlsData::signalRight() const
 {
-    driverControls_SignalRight_;
+    return signalRight_;
 }
-bool DriverControlsData::driverControls_SignalLeft() const
+bool DriverControlsData::signalLeft() const
 {
-    driverControls_SignalLeft_;
+    return signalLeft_;
 }
-bool DriverControlsData::driverControls_Hazard() const
+bool DriverControlsData::hazard() const
 {
-    driverControls_Hazard_;
+    return hazard_;
 }
-bool DriverControlsData::driverControls_Interior() const
+bool DriverControlsData::interior() const
 {
-    driverControls_Interior_;
+    return interior_;
 }
-bool DriverControlsData::driverControls_Aux() const
+bool DriverControlsData::aux() const
 {
-    driverControls_Aux_;
+    return aux_;
 }
-bool DriverControlsData::driverControls_VolumeUp() const
+bool DriverControlsData::volumeUp() const
 {
-    driverControls_VolumeUp_;
+    return volumeUp_;
 }
-bool DriverControlsData::driverControls_VolumeDown() const
+bool DriverControlsData::volumeDown() const
 {
-    driverControls_VolumeDown_;
+    return volumeDown_;
 }
-bool DriverControlsData::driverControls_NextSong() const
+bool DriverControlsData::nextSong() const
 {
-    driverControls_NextSong_;
+    return nextSong_;
 }
-bool DriverControlsData::driverControls_PrevSong() const
+bool DriverControlsData::prevSong() const
 {
-    driverControls_PrevSong_;
+    return prevSong_;
 }
-double DriverControlsData::driverControls_Acceleration() const
+double DriverControlsData::acceleration() const
 {
-    driverControls_Acceleration_;
+    return acceleration_;
 }
-double DriverControlsData::driverControls_RegenBraking() const
+double DriverControlsData::regenBraking() const
 {
-    driverControls_RegenBraking_;
+    return regenBraking_;
 }
-bool DriverControlsData::driverControls_Brakes() const
+bool DriverControlsData::brakes() const
 {
-    driverControls_Brakes_;
+    return brakes_;
 }
-bool DriverControlsData::driverControls_Forward() const
+bool DriverControlsData::forward() const
 {
-    driverControls_Forward_;
+    return forward_;
 }
-bool DriverControlsData::driverControls_Reverse() const
+bool DriverControlsData::reverse() const
 {
-    driverControls_Reverse_;
+    return reverse_;
 }
-bool DriverControlsData::driverControls_PushToTalk() const
+bool DriverControlsData::pushToTalk() const
 {
-    driverControls_PushToTalk_;
+    return pushToTalk_;
 }
-bool DriverControlsData::driverControls_Horn() const
+bool DriverControlsData::horn() const
 {
-    driverControls_Horn_;
+    return horn_;
 }
-bool DriverControlsData::driverControls_Reset() const
+bool DriverControlsData::reset() const
 {
-    driverControls_Reset_;
+    return reset_;
 }
 
-void driverControlsData::setDriverControls_Alive(bool driverControls_Alive)
+void DriverControlsData::setAlive(bool alive)
 {
-    driverControls_Alive_ = driverControls_Alive;
-    emit driverControls_AliveReceived(driverControls_Alive_);
+    alive_ = alive;
+    emit aliveReceived(alive_);
 }
-void DriverControlsData::setDriverControls_HeadlightsOff(bool driverControls_HeadlightsOff)
+void DriverControlsData::setHeadlightsOff(bool headlightsOff)
 {
-    driverControls_HeadlightsOff_ = driverControls_HeadlightsOff;
-    emit driverControls_HeadlightsOffReceived(driverControls_HeadlightsOff_);
+    headlightsOff_ = headlightsOff;
+    emit headlightsOffReceived(headlightsOff_);
 }
-void DriverControlsData::setDriverControls_HeadlightsLow(bool driverControls_HeadlightsLow)
+void DriverControlsData::setHeadlightsLow(bool headlightsLow)
 {
-    driverControls_HeadlightsLow_ = driverControls_HeadlightsLow;
-    emit driverControls_HeadlightsLowReceived(driverControls_HeadlightsLow_);
+    headlightsLow_ = headlightsLow;
+    emit headlightsLowReceived(headlightsLow_);
 }
-void DriverControlsData::setDriverControls_HeadlightsHigh(bool driverControls_HeadlightsHigh)
+void DriverControlsData::setHeadlightsHigh(bool headlightsHigh)
 {
-    driverControls_HeadlightsHigh_ = driverControls_HeadlightsHigh;
-    emit driverControls_HeadlightsHighReceived(driverControls_HeadlightsHigh_);
+    headlightsHigh_ = headlightsHigh;
+    emit headlightsHighReceived(headlightsHigh_);
 }
-void DriverControlsData::setDriverControls_SignalRight(bool driverControls_SignalRight)
+void DriverControlsData::setSignalRight(bool signalRight)
 {
-    driverControls_SignalRight_ = driverControls_SignalRight;
-    emit driverControls_SignalRightReceived(driverControls_SignalRight_);
+    signalRight_ = signalRight;
+    emit signalRightReceived(signalRight_);
 }
-void DriverControlsData::setDriverControls_SignalLeft(bool driverControls_SignalLeft)
+void DriverControlsData::setSignalLeft(bool signalLeft)
 {
-    driverControls_SignalLeft_ = driverControls_SignalLeft;
-    emit driverControls_SignalLeftReceived(driverControls_SignalLeft_);
+    signalLeft_ = signalLeft;
+    emit signalLeftReceived(signalLeft_);
 }
-void DriverControlsData::setDriverControls_Hazard(bool driverControls_Hazard)
+void DriverControlsData::setHazard(bool hazard)
 {
-    driverControls_Hazard_ = driverControls_Hazard;
-    emit driverControls_HazardReceived(driverControls_Hazard_);
+    hazard_ = hazard;
+    emit hazardReceived(hazard_);
 }
-void DriverControlsData::setDriverControls_Interior(bool driverControls_Interior)
+void DriverControlsData::setInterior(bool interior)
 {
-    driverControls_Interior_ = driverControls_Interior;
-    emit driverControls_InteriorReceived(driverControls_Interior_);
+    interior_ = interior;
+    emit interiorReceived(interior_);
 }
-void DriverControlsData::setDriverControls_Aux(bool driverControls_Aux)
+void DriverControlsData::setAux(bool aux)
 {
-    driverControls_Aux_ = driverControls_Aux;
-    emit driverControls_AuxReceived(driverControls_Aux_);
+    aux_ = aux;
+    emit auxReceived(aux_);
 }
-void DriverControlsData::setDriverControls_VolumeUp(bool driverControls_VolumeUp)
+void DriverControlsData::setVolumeUp(bool volumeUp)
 {
-    driverControls_VolumeUp_ = driverControls_VolumeUp;
-    emit driverControls_VolumeUpReceived(driverControls_VolumeUp_);
+    volumeUp_ = volumeUp;
+    emit volumeUpReceived(volumeUp_);
 }
-void DriverControlsData::setDriverControls_VolumeDown(bool driverControls_VolumeDown)
+void DriverControlsData::setVolumeDown(bool volumeDown)
 {
-    driverControls_VolumeDown_ = driverControls_VolumeDown;
-    emit driverControls_VolumeDownReceived(driverControls_VolumeDown_);
+    volumeDown_ = volumeDown;
+    emit volumeDownReceived(volumeDown_);
 }
-void DriverControlsData::setDriverControls_NextSong(bool driverControls_NextSong)
+void DriverControlsData::setNextSong(bool nextSong)
 {
-    driverControls_NextSong_ = driverControls_NextSong;
-    emit driverControls_NextSongReceived(driverControls_NextSong_);
+    nextSong_ = nextSong;
+    emit nextSongReceived(nextSong_);
 }
-void DriverControlsData::setDriverControls_PrevSong(bool driverControls_PrevSong)
+void DriverControlsData::setPrevSong(bool prevSong)
 {
-    driverControls_PrevSong_ = driverControls_PrevSong;
-    emit driverControls_PrevSongReceived(driverControls_PrevSong_);
+    prevSong_ = prevSong;
+    emit prevSongReceived(prevSong_);
 }
-void DriverControlsData::setDriverControls_Acceleration(double driverControls_Acceleration)
+void DriverControlsData::setAcceleration(double acceleration)
 {
-    driverControls_Acceleration_ = driverControls_Acceleration;
-    emit driverControls_AccelerationReceived(driverControls_Acceleration_);
+    acceleration_ = acceleration;
+    emit accelerationReceived(acceleration_);
 }
-void DriverControlsData::setDriverControls_RegenBraking(double driverControls_RegenBraking)
+void DriverControlsData::setRegenBraking(double regenBraking)
 {
-    driverControls_RegenBraking_ = driverControls_RegenBraking;
-    emit driverControls_RegenBrakingReceived(driverControls_RegenBraking_);
+    regenBraking_ = regenBraking;
+    emit regenBrakingReceived(regenBraking_);
 }
-void DriverControlsData::setDriverControls_Brakes(bool driverControls_Brakes)
+void DriverControlsData::setBrakes(bool brakes)
 {
-    driverControls_Brakes_ = driverControls_Brakes;
-    emit driverControls_BrakesReceived(driverControls_Brakes_);
+    brakes_ = brakes;
+    emit brakesReceived(brakes_);
 }
-void DriverControlsData::setDriverControls_Forward(bool driverControls_Forward)
+void DriverControlsData::setForward(bool forward)
 {
-    driverControls_Forward_ = driverControls_Forward;
-    emit driverControls_ForwardReceived(driverControls_Forward_);
+    forward_ = forward;
+    emit forwardReceived(forward_);
 }
-void DriverControlsData::setDriverControls_Reverse(bool driverControls_Reverse)
+void DriverControlsData::setReverse(bool reverse)
 {
-    driverControls_Reverse_ = driverControls_Reverse;
-    emit driverControls_ReverseReceived(driverControls_Reverse_);
+    reverse_ = reverse;
+    emit reverseReceived(reverse_);
 }
-void DriverControlsData::setDriverControls_PushToTalk(bool driverControls_PushToTalk)
+void DriverControlsData::setPushToTalk(bool pushToTalk)
 {
-    driverControls_PushToTalk_ = driverControls_PushToTalk;
-    emit driverControls_PushToTalkReceived(driverControls_PushToTalk_);
+    pushToTalk_ = pushToTalk;
+    emit pushToTalkReceived(pushToTalk_);
 }
-void DriverControlsData::setDriverControls_Horn(bool driverControls_Horn)
+void DriverControlsData::setHorn(bool horn)
 {
-    driverControls_Horn_ = driverControls_Horn;
-    emit driverControls_HornReceived(driverControls_Horn_);
+    horn_ = horn;
+    emit hornReceived(horn_);
 }
-void DriverControlsData::setDriverControls_Reset(bool driverControls_Reset)
+void DriverControlsData::setReset(bool reset)
 {
-    driverControls_Reset_ = driverControls_Reset;
-    emit driverControls_ResetReceived(driverControls_Reset_);
+    reset_ = reset;
+    emit resetReceived(reset_);
 }

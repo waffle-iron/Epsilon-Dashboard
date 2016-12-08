@@ -9,399 +9,337 @@ BatteryData::~BatteryData()
 {
 }
 
-bool BatteryData::battery_Alive() const
+bool BatteryData::alive() const
 {
-    return battery_Alive_;
+    return alive_;
 }
-double BatteryData::battery_PackSocAmpHours() const
+double BatteryData::packSocAmpHours() const
 {
-    return battery_PackSocAmpHours_;
+    return packSocAmpHours_;
 }
-double BatteryData::battery_PackSocPercentage() const
+double BatteryData::packSocPercentage() const
 {
-    return battery_PackSocPercentage_;
+    return packSocPercentage_;
 }
-double BatteryData::battery_PackBalanceSocAmpHours() const
+double BatteryData::packBalanceSocAmpHours() const
 {
-    return battery_PackBalanceSocAmpHours_;
+    return packBalanceSocAmpHours_;
 }
-double BatteryData::battery_PackBalanceSocPercentage() const
+double BatteryData::packBalanceSocPercentage() const
 {
-    return battery_PackBalanceSocPercentage_;
+    return packBalanceSocPercentage_;
 }
-double BatteryData::battery_ChargingCellVoltageError() const
+double BatteryData::chargingCellVoltageError() const
 {
-    return battery_ChargingCellVoltageError_;
+    return chargingCellVoltageError_;
 }
-double BatteryData::battery_CellTempMargin() const
+double BatteryData::cellTempMargin() const
 {
-    return battery_CellTempMargin_;
+    return cellTempMargin_;
 }
-double BatteryData::battery_DischargingCellVoltageError() const
+double BatteryData::dischargingCellVoltageError() const
 {
-    return battery_DischargingCellVoltageError_;
+    return dischargingCellVoltageError_;
 }
-double BatteryData::battery_TotalPackCapacity() const
+double BatteryData::totalPackCapacity() const
 {
-    return battery_TotalPackCapacity_;
+    return totalPackCapacity_;
 }
-bool BatteryData::battery_PrechargeContactor0DriverStatus() const
+bool BatteryData::prechargeContactor0DriverStatus() const
 {
-    return battery_PrechargeContactor0DriverStatus_;
+    return prechargeContactor0DriverStatus_;
 }
-bool BatteryData::battery_PrechargeContactor1DriverStatus() const
+bool BatteryData::prechargeContactor1DriverStatus() const
 {
-    return battery_PrechargeContactor1DriverStatus_;
+    return prechargeContactor1DriverStatus_;
 }
-bool BatteryData::battery_PrechargeContactor2DriverStatus() const
+bool BatteryData::prechargeContactor2DriverStatus() const
 {
-    return battery_PrechargeContactor2DriverStatus_;
+    return prechargeContactor2DriverStatus_;
 }
-bool BatteryData::battery_PrechargeContactor0DriverError() const
+bool BatteryData::prechargeContactor0DriverError() const
 {
-    return battery_PrechargeContactor0DriverError_;
+    return prechargeContactor0DriverError_;
 }
-bool BatteryData::battery_PrechargeContactor1DriverError() const
+bool BatteryData::prechargeContactor1DriverError() const
 {
-    return battery_PrechargeContactor1DriverError_;
+    return prechargeContactor1DriverError_;
 }
-bool BatteryData::battery_PrechargeContactor2DriverError() const
+bool BatteryData::prechargeContactor2DriverError() const
 {
-    return battery_PrechargeContactor2DriverError_;
+    return prechargeContactor2DriverError_;
 }
-bool BatteryData::battery_ContactorSupplyOk() const
+bool BatteryData::contactorSupplyOk() const
 {
-    return battery_ContactorSupplyOk_;
+    return contactorSupplyOk_;
 }
-QString BatteryData::battery_PrechargeState() const
+QString BatteryData::prechargeState() const
 {
-    return battery_PrechargeState_;
+    return prechargeState_;
 }
-bool BatteryData::battery_PrechargeTimerElapsed() const
+bool BatteryData::prechargeTimerElapsed() const
 {
-    return battery_PrechargeTimerElapsed_;
+    return prechargeTimerElapsed_;
 }
-double BatteryData::battery_PrechargeTimerCount() const
+double BatteryData::prechargeTimerCount() const
 {
-    return battery_PrechargeTimerCount_;
+    return prechargeTimerCount_;
 }
-double BatteryData::battery_LowestCellVoltage_Voltage() const
+double BatteryData::lowestCellVoltage_Voltage() const
 {
-    return battery_LowestCellVoltage_Voltage_;
+    return lowestCellVoltage_Voltage_;
 }
-int BatteryData::battery_LowestCellVoltage_CmuNumber() const
+int BatteryData::lowestCellVoltage_CmuNumber() const
 {
-    return battery_LowestCellVoltage_CmuNumber_;
+    return lowestCellVoltage_CmuNumber_;
 }
-int BatteryData::battery_LowestCellVoltage_CellNumber() const
+int BatteryData::lowestCellVoltage_CellNumber() const
 {
-    return battery_LowestCellVoltage_CellNumber_;
+    return lowestCellVoltage_CellNumber_;
 }
-double BatteryData::battery_LowestCellTemp_Temperature() const
+double BatteryData::lowestCellTemp_Temperature() const
 {
-    return battery_LowestCellTemp_Temperature_;
+    return lowestCellTemp_Temperature_;
 }
-int BatteryData::battery_LowestCellTemp_CmuNumber() const
+int BatteryData::lowestCellTemp_CmuNumber() const
 {
-    return battery_LowestCellTemp_CmuNumber_;
+    return lowestCellTemp_CmuNumber_;
 }
-int BatteryData::battery_LowestCellTemp_CellNumber() const
+int BatteryData::lowestCellTemp_CellNumber() const
 {
-    return battery_LowestCellTemp_CellNumber_;
+    return lowestCellTemp_CellNumber_;
 }
-double BatteryData::battery_HighestCellVoltage_Voltage() const
+double BatteryData::highestCellVoltage_Voltage() const
 {
-    return battery_HighestCellVoltage_Voltage_;
+    return highestCellVoltage_Voltage_;
 }
-int BatteryData::battery_HighestCellVoltage_CmuNumber() const
+int BatteryData::highestCellVoltage_CmuNumber() const
 {
-    return battery_HighestCellVoltage_CmuNumber_;
+    return highestCellVoltage_CmuNumber_;
 }
-int BatteryData::battery_HighestCellVoltage_CellNumber() const
+int BatteryData::highestCellVoltage_CellNumber() const
 {
-    return battery_HighestCellVoltage_CellNumber_;
+    return highestCellVoltage_CellNumber_;
 }
-double BatteryData::battery_HighestCellTemp_Temperature() const
+double BatteryData::highestCellTemp_Temperature() const
 {
-    return battery_HighestCellTemp_Temperature_;
+    return highestCellTemp_Temperature_;
 }
-int BatteryData::battery_HighestCellTemp_CmuNumber() const
+int BatteryData::highestCellTemp_CmuNumber() const
 {
-    return battery_HighestCellTemp_CmuNumber_;
+    return highestCellTemp_CmuNumber_;
 }
-int BatteryData::battery_HighestCellTemp_CellNumber() const
+int BatteryData::highestCellTemp_CellNumber() const
 {
-    return battery_HighestCellTemp_CellNumber_;
+    return highestCellTemp_CellNumber_;
 }
-double BatteryData::battery_Voltage() const
+double BatteryData::voltage() const
 {
-    return battery_Voltage_;
+    return voltage_;
 }
-double BatteryData::battery_Current() const
+double BatteryData::current() const
 {
-    return battery_Current_;
+    return current_;
 }
-double BatteryData::battery_Fan0Speed() const
+double BatteryData::fan0Speed() const
 {
-    return battery_Fan0Speed_;
+    return fan0Speed_;
 }
-double BatteryData::battery_Fan1Speed() const
+double BatteryData::fan1Speed() const
 {
-    return battery_Fan1Speed_;
+    return fan1Speed_;
 }
-double BatteryData::battery_FanContactorsCurrent() const
+double BatteryData::fanContactorsCurrent() const
 {
-    return battery_FanContactorsCurrent_;
+    return fanContactorsCurrent_;
 }
-double BatteryData::battery_CmuCurrent() const
+double BatteryData::cmuCurrent() const
 {
-    return battery_CmuCurrent_;
+    return cmuCurrent_;
 }
 
-void BatteryData::setBattery_Alive(bool battery_Alive)
+void BatteryData::setAlive(bool alive)
 {
-    battery_Alive_ = battery_Alive;
-    emit battery_AliveReceived(battery_Alive_);
+    alive_ = alive;
+    emit aliveReceived(alive_);
 }
-void BatteryData::setBattery_PackSocAmpHours(double battery_PackSocAmpHours)
+void BatteryData::setPackSocAmpHours(double packSocAmpHours)
 {
-    battery_PackSocAmpHours_ = battery_PackSocAmpHours;
-    emit battery_PackSocAmpHoursReceived(battery_PackSocAmpHours_);
+    packSocAmpHours_ = packSocAmpHours;
+    emit packSocAmpHoursReceived(packSocAmpHours_);
 }
-void BatteryData::setBattery_PackSocPercentage(double battery_PackSocPercentage)
+void BatteryData::setPackSocPercentage(double packSocPercentage)
 {
-    battery_PackSocPercentage_ = battery_PackSocPercentage;
-    emit battery_PackSocPercentageReceived(battery_PackSocPercentage_);
+    packSocPercentage_ = packSocPercentage;
+    emit packSocPercentageReceived(packSocPercentage_);
 }
-void BatteryData::setBattery_PackBalanceSocAmpHours(double battery_PackBalanceSocAmpHours)
+void BatteryData::setPackBalanceSocAmpHours(double packBalanceSocAmpHours)
 {
-    battery_PackBalanceSocAmpHours_ = battery_PackBalanceSocAmpHours;
-    emit battery_PackBalanceSocAmpHoursReceived(battery_PackBalanceSocAmpHours_);
+    packBalanceSocAmpHours_ = packBalanceSocAmpHours;
+    emit packBalanceSocAmpHoursReceived(packBalanceSocAmpHours_);
 }
-void BatteryData::setBattery_PackBalanceSocPercentage(double battery_PackBalanceSocPercentage)
+void BatteryData::setPackBalanceSocPercentage(double packBalanceSocPercentage)
 {
-    battery_PackBalanceSocPercentage_ = battery_PackBalanceSocPercentage;
-    emit battery_PackBalanceSocPercentageReceived(battery_PackBalanceSocPercentage_);
+    packBalanceSocPercentage_ = packBalanceSocPercentage;
+    emit packBalanceSocPercentageReceived(packBalanceSocPercentage_);
 }
-void BatteryData::setBattery_ChargingCellVoltageError(double battery_ChargingCellVoltageError)
+void BatteryData::setChargingCellVoltageError(double chargingCellVoltageError)
 {
-    battery_ChargingCellVoltageError_ = battery_ChargingCellVoltageError;
-    emit battery_ChargingCellVoltageErrorReceived(battery_ChargingCellVoltageError_);
+    chargingCellVoltageError_ = chargingCellVoltageError;
+    emit chargingCellVoltageErrorReceived(chargingCellVoltageError_);
 }
-void BatteryData::setBattery_CellTempMargin(double battery_CellTempMargin)
+void BatteryData::setCellTempMargin(double cellTempMargin)
 {
-    battery_CellTempMargin_ = battery_CellTempMargin;
-    emit battery_CellTempMarginReceived(battery_CellTempMargin_);
+    cellTempMargin_ = cellTempMargin;
+    emit cellTempMarginReceived(cellTempMargin_);
 }
-void BatteryData::setBattery_DischargingCellVoltageError(double battery_DischargingCellVoltageError)
+void BatteryData::setDischargingCellVoltageError(double dischargingCellVoltageError)
 {
-    battery_DischargingCellVoltageError_ = battery_DischargingCellVoltageError;
-    emit battery_DischargingCellVoltageErrorReceived(battery_DischargingCellVoltageError_);
+    dischargingCellVoltageError_ = dischargingCellVoltageError;
+    emit dischargingCellVoltageErrorReceived(dischargingCellVoltageError_);
 }
-void BatteryData::setBattery_TotalPackCapacity(double battery_TotalPackCapacity)
+void BatteryData::setTotalPackCapacity(double totalPackCapacity)
 {
-    battery_TotalPackCapacity_ = battery_TotalPackCapacity;
-    emit battery_TotalPackCapacityReceived(battery_TotalPackCapacity_);
+    totalPackCapacity_ = totalPackCapacity;
+    emit totalPackCapacityReceived(totalPackCapacity_);
 }
-void BatteryData::setBattery_PrechargeContactor0DriverStatus(bool battery_PrechargeContactor0DriverStatus)
+void BatteryData::setPrechargeContactor0DriverStatus(bool prechargeContactor0DriverStatus)
 {
-    battery_PrechargeContactor0DriverStatus_ = battery_PrechargeContactor0DriverStatus;
-    emit battery_PrechargeContactor0DriverStatusReceived(battery_PrechargeContactor0DriverStatus_);
+    prechargeContactor0DriverStatus_ = prechargeContactor0DriverStatus;
+    emit prechargeContactor0DriverStatusReceived(prechargeContactor0DriverStatus_);
 }
-void BatteryData::setBattery_PrechargeContactor1DriverStatus(bool battery_PrechargeContactor1DriverStatus)
+void BatteryData::setPrechargeContactor1DriverStatus(bool prechargeContactor1DriverStatus)
 {
-    battery_PrechargeContactor1DriverStatus_ = battery_PrechargeContactor1DriverStatus;
-    emit battery_PrechargeContactor1DriverStatusReceived(battery_PrechargeContactor1DriverStatus_);
+    prechargeContactor1DriverStatus_ = prechargeContactor1DriverStatus;
+    emit prechargeContactor1DriverStatusReceived(prechargeContactor1DriverStatus_);
 }
-void BatteryData::setBattery_PrechargeContactor2DriverStatus(bool battery_PrechargeContactor2DriverStatus)
+void BatteryData::setPrechargeContactor2DriverStatus(bool prechargeContactor2DriverStatus)
 {
-    battery_PrechargeContactor2DriverStatus_ = battery_PrechargeContactor2DriverStatus;
-    emit battery_PrechargeContactor2DriverStatusReceived(battery_PrechargeContactor2DriverStatus_);
+    prechargeContactor2DriverStatus_ = prechargeContactor2DriverStatus;
+    emit prechargeContactor2DriverStatusReceived(prechargeContactor2DriverStatus_);
 }
-void BatteryData::setBattery_PrechargeContactor0DriverError(bool battery_PrechargeContactor0DriverError)
+void BatteryData::setPrechargeContactor0DriverError(bool prechargeContactor0DriverError)
 {
-    battery_PrechargeContactor0DriverError_ = battery_PrechargeContactor0DriverError;
-    emit battery_PrechargeContactor0DriverErrorReceived(battery_PrechargeContactor0DriverError_);
+    prechargeContactor0DriverError_ = prechargeContactor0DriverError;
+    emit prechargeContactor0DriverErrorReceived(prechargeContactor0DriverError_);
 }
-void BatteryData::setBattery_PrechargeContactor1DriverError(bool battery_PrechargeContactor1DriverError)
+void BatteryData::setPrechargeContactor1DriverError(bool prechargeContactor1DriverError)
 {
-    battery_PrechargeContactor1DriverError_ = battery_PrechargeContactor1DriverError;
-    emit battery_PrechargeContactor1DriverErrorReceived(battery_PrechargeContactor1DriverError_);
+    prechargeContactor1DriverError_ = prechargeContactor1DriverError;
+    emit prechargeContactor1DriverErrorReceived(prechargeContactor1DriverError_);
 }
-void BatteryData::setBattery_PrechargeContactor2DriverError(bool battery_PrechargeContactor2DriverError)
+void BatteryData::setPrechargeContactor2DriverError(bool prechargeContactor2DriverError)
 {
-    battery_PrechargeContactor2DriverError_ = battery_PrechargeContactor2DriverError;
-    emit battery_PrechargeContactor2DriverErrorReceived(battery_PrechargeContactor2DriverError_);
+    prechargeContactor2DriverError_ = prechargeContactor2DriverError;
+    emit prechargeContactor2DriverErrorReceived(prechargeContactor2DriverError_);
 }
-void BatteryData::setBattery_ContactorSupplyOk(bool battery_ContactorSupplyOk)
+void BatteryData::setContactorSupplyOk(bool contactorSupplyOk)
 {
-    battery_ContactorSupplyOk_ = battery_ContactorSupplyOk;
-    emit battery_ContactorSupplyOkReceived(battery_ContactorSupplyOk_);
+    contactorSupplyOk_ = contactorSupplyOk;
+    emit contactorSupplyOkReceived(contactorSupplyOk_);
 }
-void BatteryData::setBattery_PrechargeState(QString battery_PrechargeState)
+void BatteryData::setPrechargeState(QString prechargeState)
 {
-    battery_PrechargeState_ = battery_PrechargeState;
-    emit battery_PrechargeStateReceived(battery_PrechargeState_);
+    prechargeState_ = prechargeState;
+    emit prechargeStateReceived(prechargeState_);
 }
-void BatteryData::setBattery_PrechargeTimerElapsed(bool battery_PrechargeTimerElapsed)
+void BatteryData::setPrechargeTimerElapsed(bool prechargeTimerElapsed)
 {
-    battery_PrechargeTimerElapsed_ = battery_PrechargeTimerElapsed;
-    emit battery_PrechargeTimerElapsedReceived(battery_PrechargeTimerElapsed_);
+    prechargeTimerElapsed_ = prechargeTimerElapsed;
+    emit prechargeTimerElapsedReceived(prechargeTimerElapsed_);
 }
-void BatteryData::setBattery_PrechargeTimerCount(double battery_PrechargeTimerCount)
+void BatteryData::setPrechargeTimerCount(double prechargeTimerCount)
 {
-    battery_PrechargeTimerCount_ = battery_PrechargeTimerCount;
-    emit battery_PrechargeTimerCountReceived(battery_PrechargeTimerCount_);
+    prechargeTimerCount_ = prechargeTimerCount;
+    emit prechargeTimerCountReceived(prechargeTimerCount_);
 }
-void BatteryData::setBattery_LowestCellVoltage_Voltage(double battery_LowestCellVoltage_Voltage)
+void BatteryData::setLowestCellVoltage_Voltage(double lowestCellVoltage_Voltage)
 {
-    battery_LowestCellVoltage_Voltage_ = battery_LowestCellVoltage_Voltage;
-    emit battery_LowestCellVoltage_VoltageReceived(battery_LowestCellVoltage_Voltage_);
+    lowestCellVoltage_Voltage_ = lowestCellVoltage_Voltage;
+    emit lowestCellVoltage_VoltageReceived(lowestCellVoltage_Voltage_);
 }
-void BatteryData::setBattery_LowestCellVoltage_CmuNumber(int battery_LowestCellVoltage_CmuNumber)
+void BatteryData::setLowestCellVoltage_CmuNumber(int lowestCellVoltage_CmuNumber)
 {
-    battery_LowestCellVoltage_CmuNumber_ = battery_LowestCellVoltage_CmuNumber;
-    emit battery_LowestCellVoltage_CmuNumberReceived(battery_LowestCellVoltage_CmuNumber_);
+    lowestCellVoltage_CmuNumber_ = lowestCellVoltage_CmuNumber;
+    emit lowestCellVoltage_CmuNumberReceived(lowestCellVoltage_CmuNumber_);
 }
-void BatteryData::setBattery_LowestCellVoltage_CellNumber(int battery_LowestCellVoltage_CellNumber)
+void BatteryData::setLowestCellVoltage_CellNumber(int lowestCellVoltage_CellNumber)
 {
-    battery_LowestCellVoltage_CellNumber_ = battery_LowestCellVoltage_CellNumber;
-    emit battery_LowestCellVoltage_CellNumberReceived(battery_LowestCellVoltage_CellNumber_);
+    lowestCellVoltage_CellNumber_ = lowestCellVoltage_CellNumber;
+    emit lowestCellVoltage_CellNumberReceived(lowestCellVoltage_CellNumber_);
 }
-void BatteryData::setBattery_LowestCellTemp_Temperature(double battery_LowestCellTemp_Temperature)
+void BatteryData::setLowestCellTemp_Temperature(double lowestCellTemp_Temperature)
 {
-    battery_LowestCellTemp_Temperature_ = battery_LowestCellTemp_Temperature;
-    emit battery_LowestCellTemp_TemperatureReceived(battery_LowestCellTemp_Temperature_);
+    lowestCellTemp_Temperature_ = lowestCellTemp_Temperature;
+    emit lowestCellTemp_TemperatureReceived(lowestCellTemp_Temperature_);
 }
-void BatteryData::setBattery_LowestCellTemp_CmuNumber(int battery_LowestCellTemp_CmuNumber)
+void BatteryData::setLowestCellTemp_CmuNumber(int lowestCellTemp_CmuNumber)
 {
-    battery_LowestCellTemp_CmuNumber_ = battery_LowestCellTemp_CmuNumber;
-    emit battery_LowestCellTemp_CmuNumberReceived(battery_LowestCellTemp_CmuNumber_);
+    lowestCellTemp_CmuNumber_ = lowestCellTemp_CmuNumber;
+    emit lowestCellTemp_CmuNumberReceived(lowestCellTemp_CmuNumber_);
 }
-void BatteryData::setBattery_LowestCellTemp_CellNumber(int battery_LowestCellTemp_CellNumber)
+void BatteryData::setLowestCellTemp_CellNumber(int lowestCellTemp_CellNumber)
 {
-    battery_LowestCellTemp_CellNumber_ = battery_LowestCellTemp_CellNumber;
-    emit battery_LowestCellTemp_CellNumberReceived(battery_LowestCellTemp_CellNumber_);
+    lowestCellTemp_CellNumber_ = lowestCellTemp_CellNumber;
+    emit lowestCellTemp_CellNumberReceived(lowestCellTemp_CellNumber_);
 }
-void BatteryData::setBattery_HighestCellVoltage_Voltage(double battery_HighestCellVoltage_Voltage)
+void BatteryData::setHighestCellVoltage_Voltage(double highestCellVoltage_Voltage)
 {
-    battery_HighestCellVoltage_Voltage_ = battery_HighestCellVoltage_Voltage;
-    emit battery_HighestCellVoltage_VoltageReceived(battery_HighestCellVoltage_Voltage_);
+    highestCellVoltage_Voltage_ = highestCellVoltage_Voltage;
+    emit highestCellVoltage_VoltageReceived(highestCellVoltage_Voltage_);
 }
-void BatteryData::setBattery_HighestCellVoltage_CmuNumber(int battery_HighestCellVoltage_CmuNumber)
+void BatteryData::setHighestCellVoltage_CmuNumber(int highestCellVoltage_CmuNumber)
 {
-    battery_HighestCellVoltage_CmuNumber_ = battery_HighestCellVoltage_CmuNumber;
-    emit battery_HighestCellVoltage_CmuNumberReceived(battery_HighestCellVoltage_CmuNumber_);
+    highestCellVoltage_CmuNumber_ = highestCellVoltage_CmuNumber;
+    emit highestCellVoltage_CmuNumberReceived(highestCellVoltage_CmuNumber_);
 }
-void BatteryData::setBattery_HighestCellVoltage_CellNumber(int battery_HighestCellVoltage_CellNumber)
+void BatteryData::setHighestCellVoltage_CellNumber(int highestCellVoltage_CellNumber)
 {
-    battery_HighestCellVoltage_CellNumber_ = battery_HighestCellVoltage_CellNumber;
-    emit battery_HighestCellVoltage_CellNumberReceived(battery_HighestCellVoltage_CellNumber_);
+    highestCellVoltage_CellNumber_ = highestCellVoltage_CellNumber;
+    emit highestCellVoltage_CellNumberReceived(highestCellVoltage_CellNumber_);
 }
-void BatteryData::setBattery_HighestCellTemp_Temperature(double battery_HighestCellTemp_Temperature)
+void BatteryData::setHighestCellTemp_Temperature(double highestCellTemp_Temperature)
 {
-    battery_HighestCellTemp_Temperature_ = battery_HighestCellTemp_Temperature;
-    emit battery_HighestCellTemp_TemperatureReceived(battery_HighestCellTemp_Temperature_);
+    highestCellTemp_Temperature_ = highestCellTemp_Temperature;
+    emit highestCellTemp_TemperatureReceived(highestCellTemp_Temperature_);
 }
-void BatteryData::setBattery_HighestCellTemp_CmuNumber(int battery_HighestCellTemp_CmuNumber)
+void BatteryData::setHighestCellTemp_CmuNumber(int highestCellTemp_CmuNumber)
 {
-    battery_HighestCellTemp_CmuNumber_ = battery_HighestCellTemp_CmuNumber;
-    emit battery_HighestCellTemp_CmuNumberReceived(battery_HighestCellTemp_CmuNumber_);
+    highestCellTemp_CmuNumber_ = highestCellTemp_CmuNumber;
+    emit highestCellTemp_CmuNumberReceived(highestCellTemp_CmuNumber_);
 }
-void BatteryData::setBattery_HighestCellTemp_CellNumber(int battery_HighestCellTemp_CellNumber)
+void BatteryData::setHighestCellTemp_CellNumber(int highestCellTemp_CellNumber)
 {
-    battery_HighestCellTemp_CellNumber_ = battery_HighestCellTemp_CellNumber;
-    emit battery_HighestCellTemp_CellNumberReceived(battery_HighestCellTemp_CellNumber_);
+    highestCellTemp_CellNumber_ = highestCellTemp_CellNumber;
+    emit highestCellTemp_CellNumberReceived(highestCellTemp_CellNumber_);
 }
-void BatteryData::setBattery_Voltage(double battery_Voltage)
+void BatteryData::setVoltage(double voltage)
 {
-    battery_Voltage_ = battery_Voltage;
-    emit battery_VoltageReceived(battery_Voltage_);
+    voltage_ = voltage;
+    emit voltageReceived(voltage_);
 }
-void BatteryData::setBattery_Current(double battery_Current)
+void BatteryData::setCurrent(double current)
 {
-    battery_Current_ = battery_Current;
-    emit battery_CurrentReceived(battery_Current_);
+    current_ = current;
+    emit currentReceived(current_);
 }
-void BatteryData::setBattery_Fan0Speed(double battery_Fan0Speed)
+void BatteryData::setFan0Speed(double fan0Speed)
 {
-    battery_Fan0Speed_ = battery_Fan0Speed;
-    emit battery_Fan0SpeedReceived(battery_Fan0Speed_);
+    fan0Speed_ = fan0Speed;
+    emit fan0SpeedReceived(fan0Speed_);
 }
-void BatteryData::setBattery_Fan1Speed(double battery_Fan1Speed)
+void BatteryData::setFan1Speed(double fan1Speed)
 {
-    battery_Fan1Speed_ = battery_Fan1Speed;
-    emit battery_Fan1SpeedReceived(battery_Fan1Speed_);
+    fan1Speed_ = fan1Speed;
+    emit fan1SpeedReceived(fan1Speed_);
 }
-void BatteryData::setBattery_FanContactorsCurrent(double battery_FanContactorsCurrent)
+void BatteryData::setFanContactorsCurrent(double fanContactorsCurrent)
 {
-    battery_FanContactorsCurrent_ = battery_FanContactorsCurrent;
-    emit battery_FanContactorsCurrentReceived(battery_FanContactorsCurrent_);
+    fanContactorsCurrent_ = fanContactorsCurrent;
+    emit fanContactorsCurrentReceived(fanContactorsCurrent_);
 }
-void BatteryData::setBattery_CmuCurrent(double battery_CmuCurrent)
+void BatteryData::setCmuCurrent(double cmuCurrent)
 {
-    battery_CmuCurrent_ = battery_CmuCurrent;
-    emit battery_CmuCurrentReceived(battery_CmuCurrent_);
-}
-
-void KeyMotorData::setKeyMotorZero_Alive(bool KeyMotorZero_Alive)
-{
-    KeyMotorZero_Alive_   = KeyMotorZero_Alive;
-    emit keyMotorZero_AliveReceived(keyMotorZero_Alive_);
-}
-void KeyMotorData::setKeyMotorZero_SetCurrent(double KeyMotorZero_SetCurrent)
-{
-    KeyMotorZero_SetCurrent_   = KeyMotorZero_SetCurrent;
-    emit keyMotorZero_SetCurrentReceived(keyMotorZero_SetCurrent_);
-}
-void KeyMotorData::setKeyMotorZero_SetVelocity(double KeyMotorZero_SetVelocity)
-{
-    KeyMotorZero_SetVelocity_   = KeyMotorZero_SetVelocity;
-    emit keyMotorZero_SetVelocityReceived(keyMotorZero_SetVelocity_);
-}
-void KeyMotorData::setKeyMotorZero_BusCurrent(double KeyMotorZero_BusCurrent)
-{
-    KeyMotorZero_BusCurrent_   = KeyMotorZero_BusCurrent;
-    emit keyMotorZero_BusCurrentReceived(keyMotorZero_BusCurrent_);
-}
-void KeyMotorData::setKeyMotorZero_BusVelocity(double KeyMotorZero_BusVelocity)
-{
-    KeyMotorZero_BusVelocity_   = KeyMotorZero_BusVelocity;
-    emit keyMotorZero_BusVelocityReceived(keyMotorZero_BusVelocity_);
-}
-void KeyMotorData::setKeyMotorZero_VehicleVelocity(double KeyMotorZero_VehicleVelocity)
-{
-    KeyMotorZero_VehicleVelocity_   = KeyMotorZero_VehicleVelocity;
-    emit keyMotorZero_VehicleVelocityReceived(keyMotorZero_VehicleVelocity_);
-}
-
-void KeyMotorData::setKeyMotorOne_Alive(bool KeyMotorOne_Alive)
-{
-    KeyMotorOne_Alive_   = KeyMotorOne_Alive;
-    emit keyMotorOne_AliveReceived(keyMotorOne_Alive_);
-}
-void KeyMotorData::setKeyMotorOne_SetCurrent(double KeyMotorOne_SetCurrent)
-{
-    KeyMotorOne_SetCurrent_   = KeyMotorOne_SetCurrent;
-    emit keyMotorOne_SetCurrentReceived(keyMotorOne_SetCurrent_);
-}
-void KeyMotorData::setKeyMotorOne_SetVelocity(double KeyMotorOne_SetVelocity)
-{
-    KeyMotorOne_SetVelocity_   = KeyMotorOne_SetVelocity;
-    emit keyMotorOne_SetVelocityReceived(keyMotorOne_SetVelocity_);
-}
-void KeyMotorData::setKeyMotorOne_BusCurrent(double KeyMotorOne_BusCurrent)
-{
-    KeyMotorOne_BusCurrent_   = KeyMotorOne_BusCurrent;
-    emit keyMotorOne_BusCurrentReceived(keyMotorOne_BusCurrent_);
-}
-void KeyMotorData::setKeyMotorOne_BusVelocity(double KeyMotorOne_BusVelocity)
-{
-    KeyMotorOne_BusVelocity_   = KeyMotorOne_BusVelocity;
-    emit keyMotorOne_BusVelocityReceived(keyMotorOne_BusVelocity_);
-}
-void KeyMotorData::setKeyMotorOne_VehicleVelocity(double KeyMotorOne_VehicleVelocity)
-{
-    KeyMotorOne_VehicleVelocity_   = KeyMotorOne_VehicleVelocity;
-    emit keyMotorOne_VehicleVelocityReceived(keyMotorOne_VehicleVelocity_);
+    cmuCurrent_ = cmuCurrent;
+    emit cmuCurrentReceived(cmuCurrent_);
 }

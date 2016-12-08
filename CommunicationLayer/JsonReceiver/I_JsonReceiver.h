@@ -1,6 +1,10 @@
 #pragma once
 
 #include <QObject>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonParseError>
+#include <QJsonObject>
 
 class I_JsonReceiver : public QObject
 {

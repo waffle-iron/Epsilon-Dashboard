@@ -5,47 +5,49 @@
 class BatteryFaultsData : public I_BatteryFaultsData
 {
 public:
-    BatteryFaultsData();
-    virtual ~BatteryFaultsData();
+   BatteryFaultsData();
+   virtual ~BatteryFaultsData();
 
-    bool batteryFaults_CellOverVoltage() const;
-    bool batteryFaults_CellUnderVoltage() const;
-    bool batteryFaults_CellOverTemp() const;
-    bool batteryFaults_MeasurementUntrusted() const;
-    bool batteryFaults_CMUCommTimeout() const;
-    bool batteryFaults_BMUSetupMode() const;
-    bool batteryFaults_CMUCANBusPowerStatus() const;
-    bool batteryFaults_PackIsolationFailure() const;
-    bool batteryFaults_SoftwareOverCurrent() const;
-    bool batteryFaults_CAN12VSupplyLow() const;
-    bool batteryFaults_ContactorStuck() const;
-    bool batteryFaults_CMUDetectedExtraCell() const;
+   bool cellOverVoltage() const;
+   bool cellUnderVoltage() const;
+   bool cellOverTemperature() const;
+   bool measurementUntrusted() const;
+   bool cmuCommTimeout() const;
+   bool vehicleCommTimeout() const;
+   bool bmuIsInSetupMode() const;
+   bool cmuCanBusPowerStatus() const;
+   bool packIsolationTestFailure() const;
+   bool softwareOverCurrentMeasured() const;
+   bool canSupplyIsLow() const;
+   bool contactorIsStuck() const;
+   bool cmuDetectedExtraCellPresent() const;
 
-    void setBatteryFaults_CellOverVoltage(bool batteryFaults_CellOverVoltage);
-    void setBatteryFaults_CellUnderVoltage(bool batteryFaults_CellUnderVoltage);
-    void setBatteryFaults_CellOverTemp(bool batteryFaults_CellOverTemp);
-    void setBatteryFaults_MeasurementUntrusted(bool batteryFaults_MeasurementUntrusted);
-    void setBatteryFaults_CMUCommTimeout(bool batteryFaults_CMUCommTimeout);
-    void setBatteryFaults_BMUSetupMode(bool batteryFaults_BMUSetupMode);
-    void setBatteryFaults_CMUCANBusPowerStatus(bool batteryFaults_CMUCANBusPowerStatus);
-    void setBatteryFaults_PackIsolationFailure(bool batteryFaults_PackIsolationFailure);
-    void setBatteryFaults_SoftwareOverCurrent(bool batteryFaults_SoftwareOverCurrent);
-    void setBatteryFaults_CAN12VSupplyLow(bool batteryFaults_CAN12VSupplyLow);
-    void setBatteryFaults_ContactorStuck(bool batteryFaults_ContactorStuck);
-    void setBatteryFaults_CMUDetectedExtraCell(bool batteryFaults_CMUDetectedExtraCell);
+   void setCellOverVoltage(bool cellOverVoltage);
+   void setCellUnderVoltage(bool cellUnderVoltage);
+   void setCellOverTemperature(bool cellOverTemperature);
+   void setMeasurementUntrusted(bool measurementUntrusted);
+   void setCmuCommTimeout(bool cmuCommTimeout);
+   void setVehicleCommTimeout(bool vehicleCommTimeout);
+   void setBmuIsInSetupMode(bool bmuIsInSetupMode);
+   void setCmuCanBusPowerStatus(bool cmuCanBusPowerStatus);
+   void setPackIsolationTestFailure(bool packIsolationTestFailure);
+   void setSoftwareOverCurrentMeasured(bool softwareOverCurrentMeasured);
+   void setCanSupplyIsLow(bool canSupplyIsLow);
+   void setContactorIsStuck(bool contactorIsStuck);
+   void setCmuDetectedExtraCellPresent(bool cmuDetectedExtraCellPresent);
 
 private:
-    bool batteryFaults_CellOverVoltage_;
-    bool batteryFaults_CellUnderVoltage_;
-    bool batteryFaults_CellOverTemp_;
-    bool batteryFaults_MeasurementUntrusted_;
-    bool batteryFaults_CMUCommTimeout_;
-    bool batteryFaults_BMUSetupMode_;
-    bool batteryFaults_CMUCANBusPowerStatus_;
-    bool batteryFaults_PackIsolationFailure_;
-    bool batteryFaults_SoftwareOverCurrent_;
-    bool batteryFaults_CAN12VSupplyLow_;
-    bool batteryFaults_ContactorStuck_;
-    bool batteryFaults_CMUDetectedExtraCell_;
+   bool cellOverVoltage_;
+   bool cellUnderVoltage_;
+   bool cellOverTemperature_;
+   bool measurementUntrusted_;
+   bool cmuCommTimeout_;
+   bool vehicleCommTimeout_;
+   bool bmuIsInSetupMode_;
+   bool cmuCanBusPowerStatus_;
+   bool packIsolationTestFailure_;
+   bool softwareOverCurrentMeasured_;
+   bool canSupplyIsLow_;
+   bool contactorIsStuck_;
+   bool cmuDetectedExtraCellPresent_;
 };
-

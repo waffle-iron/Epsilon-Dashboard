@@ -5,48 +5,27 @@
 #include "CommDeviceControl/ConnectionController.h"
 #include "CommDeviceControl/CommDeviceManager.h"
 #include "CommDeviceControl/UdpConnectionService.h"
-#include "DataPopulators/BatteryPopulator.h"
-#include "DataPopulators/FaultsPopulator.h"
-#include "DataPopulators/VehiclePopulator.h"
-#include "DataPopulators/PowerPopulator.h"
-#include "JsonInterpreter/JsonInterpreter.h"
+#include "JsonReceiver/JsonReceiver.h"
 
 class CommunicationContainerPrivate
 {
 public:
-   CommunicationContainerPrivate(DataContainer& dataContainer)
+   CommunicationContainerPrivate()
    : udpConnectionService_(udpSocket_)
    , commDeviceManager_(udpSocket_)
    , connectionController_(udpConnectionService_)
-   , jsonInterpreter_(commDeviceManager_)
-   , batteryPopulator_(
-      jsonInterpreter_,
-      dataContainer.batteryData())
-   , faultsPopulator_(
-      jsonInterpreter_,
-      dataContainer.faultsData())
-   , powerPopulator_(
-      jsonInterpreter_,
-      dataContainer.powerData())
-   , vehiclePopulator_(
-      jsonInterpreter_,
-      dataContainer.vehicleData())
+   , jsonReceiver_(commDeviceManager_)
    {
    }
-
    QUdpSocket udpSocket_;
    UdpConnectionService udpConnectionService_;
    CommDeviceManager commDeviceManager_;
    ConnectionController connectionController_;
-   JsonInterpreter jsonInterpreter_;
-   BatteryPopulator batteryPopulator_;
-   FaultsPopulator faultsPopulator_;
-   PowerPopulator powerPopulator_;
-   VehiclePopulator vehiclePopulator_;
+   JsonReceiver jsonReceiver_;
 };
 
-CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
-: impl_(new CommunicationContainerPrivate(dataContainer))
+CommunicationContainer::CommunicationContainer()
+: impl_(new CommunicationContainerPrivate())
 {
 }
 
@@ -64,9 +43,9 @@ UdpConnectionService& CommunicationContainer::udpConnectionService()
    return impl_->udpConnectionService_;
 }
 
-I_JsonInterpreter& CommunicationContainer::jsonInterpreter()
+I_JsonReceiver& CommunicationContainer::jsonReceiver()
 {
-   return impl_->jsonInterpreter_;
+   return impl_->jsonReceiver_;
 }
 
 CommDeviceManager& CommunicationContainer::commDeviceManager()

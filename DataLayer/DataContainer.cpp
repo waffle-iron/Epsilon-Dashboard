@@ -12,11 +12,11 @@
 DataContainer::DataContainer()
     : batteryData_(new BatteryData())
     , batteryFaultsData_(new BatteryFaultsData())
-    , CMUData_(new CMUData())
+    , cmuData_(new CMUData())
     , driverControlsData_(new DriverControlsData())
     , keyMotorData_(new KeyMotorData())
     , lightsData_(new LightsData())
-    , MPPTData_(new MPPTData())
+    , mpptData_(new MPPTData())
     , motorDetailsData_(new MotorDetailsData())
     , motorFaultsData_(new MotorFaultsData())
 {
@@ -36,9 +36,9 @@ I_BatteryFaultsData& DataContainer::batteryFaultsData()
     return *batteryFaultsData_;
 }
 
-I_CMUData& DataContainer::CMUData()
+I_CMUData& DataContainer::cmuData()
 {
-    return *CMUData_;
+    return *cmuData_;
 }
 
 I_DriverControlsData& DataContainer::driverControlsData()
@@ -56,9 +56,9 @@ I_LightsData& DataContainer::lightsData()
     return *lightsData_;
 }
 
-I_MPPTData& DataContainer::MPPTData()
+I_MPPTData& DataContainer::mpptData()
 {
-    return *MPPTData_;
+    return *mpptData_;
 }
 
 I_MotorDetailsData& DataContainer::motorDetailsData()

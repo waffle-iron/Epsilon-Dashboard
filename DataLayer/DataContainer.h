@@ -20,22 +20,22 @@ public:
 
     I_BatteryData& batteryData();
     I_BatteryFaultsData& batteryFaultsData();
-    I_CMUData& CMUData();
+    I_CMUData& cmuData();
     I_DriverControlsData& driverControlsData();
     I_KeyMotorData& keyMotorData();
     I_LightsData& lightsData();
-    I_MPPTData& MPPTData();
+    I_MPPTData& mpptData();
     I_MotorDetailsData& motorDetailsData();
     I_MotorFaultsData& motorFaultsData();
 
 private:
     QScopedPointer<I_BatteryData> batteryData_;
     QScopedPointer<I_BatteryFaultsData> batteryFaultsData_;
-    QScopedPointer<I_CMUData> CMUData_;
+    QScopedPointer<I_CMUData> cmuData_;
     QScopedPointer<I_DriverControlsData> driverControlsData_;
     QScopedPointer<I_KeyMotorData> keyMotorData_;
     QScopedPointer<I_LightsData> lightsData_;
-    QScopedPointer<I_MPPTData> MPPTData_;
+    QScopedPointer<I_MPPTData> mpptData_;
     QScopedPointer<I_MotorDetailsData> motorDetailsData_;
     QScopedPointer<I_MotorFaultsData> motorFaultsData_;
 };

@@ -1,15 +1,16 @@
 #pragma once
 
+#include "I_CommunicationsMonitoringService.h"
 #include <QObject>
 #include <QTimer>
-#include "I_CommunicationsMonitoringService.h"
-class I_PacketChecksumChecker;
+
+class I_JsonReceiver;
 
 class CommunicationsMonitoringService : public I_CommunicationsMonitoringService
 {
     Q_OBJECT
 public:
-    CommunicationsMonitoringService(I_PacketChecksumChecker& packetChecksumChecker);
+    CommunicationsMonitoringService(I_JsonReceiver& jsonReceiver);
     virtual ~CommunicationsMonitoringService() {}
 
     void start();
@@ -24,7 +25,7 @@ private slots:
     void decrementInvalidPacketsReceivedInLastMinute();
 
 private:
-    I_PacketChecksumChecker& packetChecksumChecker_;
+    I_JsonReceiver& jsonReceiver_;    
 
     QTimer updateTimer_;
     int secondsSinceLastPacketReceived_;
@@ -32,4 +33,5 @@ private:
     int secondsSinceLastValidPacketReceived_;
     int validPacketsReceivedInLastMinute_;
     int invalidPacketsReceivedInLastMinute_;
+
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QString>
 
 class I_BatteryFaultsData : public QObject
 {
@@ -9,43 +10,46 @@ class I_BatteryFaultsData : public QObject
 public:
     virtual ~I_BatteryFaultsData() {}
 
-    virtual bool batteryFaults_CellOverVoltage() const = 0;
-    virtual bool batteryFaults_CellUnderVoltage() const = 0;
-    virtual bool batteryFaults_CellOverTemp() const = 0;
-    virtual bool batteryFaults_MeasurementUntrusted() const = 0;
-    virtual bool batteryFaults_CMUCommTimeout() const = 0;
-    virtual bool batteryFaults_BMUSetupMode() const = 0;
-    virtual bool batteryFaults_CMUCANBusPowerStatus() const = 0;
-    virtual bool batteryFaults_PackIsolationFailure() const = 0;
-    virtual bool batteryFaults_SoftwareOverCurrent() const = 0;
-    virtual bool batteryFaults_CAN12VSupplyLow() const = 0;
-    virtual bool batteryFaults_ContactorStuck() const = 0;
-    virtual bool batteryFaults_CMUDetectedExtraCell() const = 0;
+   virtual bool cellOverVoltage() const = 0;
+   virtual bool cellUnderVoltage() const = 0;
+   virtual bool cellOverTemperature() const = 0;
+   virtual bool measurementUntrusted() const = 0;
+   virtual bool cmuCommTimeout() const = 0;
+   virtual bool vehicleCommTimeout() const = 0;
+   virtual bool bmuIsInSetupMode() const = 0;
+   virtual bool cmuCanBusPowerStatus() const = 0;
+   virtual bool packIsolationTestFailure() const = 0;
+   virtual bool softwareOverCurrentMeasured() const = 0;
+   virtual bool canSupplyIsLow() const = 0;
+   virtual bool contactorIsStuck() const = 0;
+   virtual bool cmuDetectedExtraCellPresent() const = 0;
 
-    virtual void setBatteryFaults_CellOverVoltage(bool batteryFaults_CellOverVoltage) = 0;
-    virtual void setBatteryFaults_CellUnderVoltage(bool batteryFaults_CellUnderVoltage) = 0;
-    virtual void setBatteryFaults_CellOverTemp(bool batteryFaults_CellOverTemp) = 0;
-    virtual void setBatteryFaults_MeasurementUntrusted(bool batteryFaults_MeasurementUntrusted) = 0;
-    virtual void setBatteryFaults_CMUCommTimeout(bool batteryFaults_CMUCommTimeout) = 0;
-    virtual void setBatteryFaults_BMUSetupMode(bool batteryFaults_BMUSetupMode) = 0;
-    virtual void setBatteryFaults_CMUCANBusPowerStatus(bool batteryFaults_CMUCANBusPowerStatus) = 0;
-    virtual void setBatteryFaults_PackIsolationFailure(bool batteryFaults_PackIsolationFailure) = 0;
-    virtual void setBatteryFaults_SoftwareOverCurrent(bool batteryFaults_SoftwareOverCurrent) = 0;
-    virtual void setBatteryFaults_CAN12VSupplyLow(bool batteryFaults_CAN12VSupplyLow) = 0;
-    virtual void setBatteryFaults_ContactorStuck(bool batteryFaults_ContactorStuck) = 0;
-    virtual void setBatteryFaults_CMUDetectedExtraCell(bool batteryFaults_CMUDetectedExtraCell) = 0;
+   virtual void setCellOverVoltage(bool cellOverVoltage) = 0;
+   virtual void setCellUnderVoltage(bool cellUnderVoltage) = 0;
+   virtual void setCellOverTemperature(bool cellOverTemperature) = 0;
+   virtual void setMeasurementUntrusted(bool measurementUntrusted) = 0;
+   virtual void setCmuCommTimeout(bool cmuCommTimeout) = 0;
+   virtual void setVehicleCommTimeout(bool vehicleCommTimeout) = 0;
+   virtual void setBmuIsInSetupMode(bool bmuIsInSetupMode) = 0;
+   virtual void setCmuCanBusPowerStatus(bool cmuCanBusPowerStatus) = 0;
+   virtual void setPackIsolationTestFailure(bool packIsolationTestFailure) = 0;
+   virtual void setSoftwareOverCurrentMeasured(bool softwareOverCurrentMeasured) = 0;
+   virtual void setCanSupplyIsLow(bool canSupplyIsLow) = 0;
+   virtual void setContactorIsStuck(bool contactorIsStuck) = 0;
+   virtual void setCmuDetectedExtraCellPresent(bool cmuDetectedExtraCellPresent) = 0;
 
 signals:
-    void batteryFaults_CellOverVoltageReceived(bool batteryFaults_CellOverVoltage);
-    void batteryFaults_CellUnderVoltageReceived(bool batteryFaults_CellUnderVoltage);
-    void batteryFaults_CellOverTempReceived(bool batteryFaults_CellOverTemp);
-    void batteryFaults_MeasurementUntrustedReceived(bool batteryFaults_MeasurementUntrusted);
-    void batteryFaults_CMUCommTimeoutReceived(bool batteryFaults_CMUCommTimeout);
-    void batteryFaults_BMUSetupModeReceived(bool batteryFaults_BMUSetupMode);
-    void batteryFaults_CMUCANBusPowerStatusReceived(bool batteryFaults_CMUCANBusPowerStatus);
-    void batteryFaults_PackIsolationFailureReceived(bool batteryFaults_PackIsolationFailure);
-    void batteryFaults_SoftwareOverCurrentReceived(bool batteryFaults_SoftwareOverCurrent);
-    void batteryFaults_CAN12VSupplyLowReceived(bool batteryFaults_CAN12VSupplyLow);
-    void batteryFaults_ContactorStuckReceived(bool batteryFaults_ContactorStuck);
-    void batteryFaults_CMUDetectedExtraCellReceived(bool batteryFaults_CMUDetectedExtraCell);
+    void cellOverVoltageReceived(bool cellOverVoltage);
+    void cellUnderVoltageReceived(bool cellUnderVoltage);
+    void cellOverTemperatureReceived(bool cellOverTemperature);
+    void measurementUntrustedReceived(bool measurementUntrusted);
+    void cmuCommTimeoutReceived(bool cmuCommTimeout);
+    void vehicleCommTimeoutReceived(bool vehicleCommTimeout);
+    void bmuIsInSetupModeReceived(bool bmuIsInSetupMode);
+    void cmuCanBusPowerStatusReceived(bool cmuCanBusPowerStatus);
+    void packIsolationTestFailureReceived(bool packIsolationTestFailure);
+    void softwareOverCurrentMeasuredReceived(bool softwareOverCurrentMeasured);
+    void canSupplyIsLowReceived(bool canSupplyIsLow);
+    void contactorIsStuckReceived(bool contactorIsStuck);
+    void cmuDetectedExtraCellPresentReceived(bool cmuDetectedExtraCellPresent);
 };

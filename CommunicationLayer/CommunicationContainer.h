@@ -2,21 +2,21 @@
 
 #include <QScopedPointer>
 
-class DataContainer;
+class BusinessContainer;
 class CommunicationContainerPrivate;
 class ConnectionController;
 
 class CommDeviceManager;
-class I_JsonInterpreter;
+class I_JsonReceiver;
 class UdpConnectionService;
 
 class CommunicationContainer
 {
 public:
-   explicit CommunicationContainer(DataContainer& dataContainer);
+   explicit CommunicationContainer();
    ~CommunicationContainer();
 
-   I_JsonInterpreter& jsonInterpreter();
+   I_JsonReceiver& jsonReceiver();
    ConnectionController& connectionController();
    UdpConnectionService& udpConnectionService();
    CommDeviceManager& commDeviceManager();

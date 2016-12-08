@@ -9,11 +9,9 @@
 Gen5Dashboard::Gen5Dashboard(int& argc, char** argv)
     : QApplication(argc, argv)
     , dataContainer_(new DataContainer())
-    , communicationContainer_(new CommunicationContainer(*dataContainer_))
-    , businessContainer_(new BusinessContainer(*communicationContainer_))
-    , presenterContainer_(new PresenterContainer(*dataContainer_,
-                          *communicationContainer_,
-                          *businessContainer_))
+    , communicationContainer_(new CommunicationContainer())
+    , businessContainer_(new BusinessContainer(*communicationContainer_, *dataContainer_))
+    , presenterContainer_(new PresenterContainer(*dataContainer_))
     , viewContainer_(new ViewContainer(*presenterContainer_))
 {
 }

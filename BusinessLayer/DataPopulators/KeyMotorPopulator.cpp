@@ -30,59 +30,54 @@
 
 #include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
-#include "DataLayer/KeyMotorData/I_KeyMotorData.h"
 
-BatteryPopulator::BatteryPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_BatteryData& batteryData)
+KeyMotorPopulator::KeyMotorPopulator(I_JsonReceiver& jsonReceiver,
+                                   I_KeyMotorData& keyMotorData)
     : jsonReceiver_(jsonReceiver)
-    , keyMotorData_(batteryData)
+    , keyMotorData_(keyMotorData)
 {
     connect(&jsonReceiver_, SIGNAL(dataReceived(const QJsonObject&)),
             this, SLOT(populateData(const QJsonObject&)));
 }
 
-void keyMotorPopulator::populateData(const QJsonObject& data)
-{
-    batteryData_.setBatteryVoltage(data[JsonFormat::BATTERY_VOLTAGE].toDouble());
-    batteryData_.setBatteryCurrent(data[JsonFormat::BATTERY_CURRENT].toDouble());
-    
-    batteryData_.setMod0PcbTemperature(data[JsonFormat::MOD_0].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod0CellTemperature(data[JsonFormat::MOD_0].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod0CellVoltages = data[JsonFormat::MOD_0].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod0CellVoltages;
-    foreach(const QJsonValue& value, jsonMod0CellVoltages)
-    {
-        mod0CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod0CellVoltages(mod0CellVoltages);
+void KeyMotorPopulator::populateData(const QJsonObject& data)
+{   
+    KeyMotor motorZero;
+    KeyMotor motorOne;
 
-    batteryData_.setMod1PcbTemperature(data[JsonFormat::MOD_1].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod1CellTemperature(data[JsonFormat::MOD_1].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod1CellVoltages = data[JsonFormat::MOD_1].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod1CellVoltages;
-    foreach(const QJsonValue& value, jsonMod1CellVoltages)
-    {
-        mod1CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod1CellVoltages(mod1CellVoltages);
+    QList<bool> aliveList;
+    QList<double> setCurrentList;
+    QList<double> setVelocityList;
+    QList<double> busCurrentList;
+    QList<double> busVelocityList;
+    QList<double> vehicleVelocityList;
 
-    batteryData_.setMod2PcbTemperature(data[JsonFormat::MOD_2].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod2CellTemperature(data[JsonFormat::MOD_2].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod2CellVoltages = data[JsonFormat::MOD_2].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod2CellVoltages;
-    foreach(const QJsonValue& value, jsonMod2CellVoltages)
+    QJsonValue value = data.value(JsonFormat::KEYMOTOR);
+    QJsonArray array = value.toArray();
+    foreach(const QJsonValue & v, array)
     {
-        mod2CellVoltages.append(value.toDouble());
+        aliveList.append(v.toObject().value(JsonFormat::KEYMOTOR_ALIVE).toBool());
+        setCurrentList.append(v.toObject().value(JsonFormat::KEYMOTOR_SETCURRENT).toDouble());
+        setVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_SETVELOCITY).toDouble());
+        busCurrentList.append(v.toObject().value(JsonFormat::KEYMOTOR_BUSCURRENT).toDouble());
+        busVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_BUSVOLTAGE).toDouble());
+        vehicleVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_VEHICLEVELOCITY).toDouble());
     }
-    batteryData_.setMod2CellVoltages(mod2CellVoltages);
 
-    batteryData_.setMod3PcbTemperature(data[JsonFormat::MOD_3].toObject()[JsonFormat::PCB_TEMPERATURE].toDouble());
-    batteryData_.setMod3CellTemperature(data[JsonFormat::MOD_3].toObject()[JsonFormat::CELL_TEMPERATURE].toDouble());
-    QJsonArray jsonMod3CellVoltages = data[JsonFormat::MOD_3].toObject()[JsonFormat::CELL_VOLTAGES].toArray();
-    QList<double> mod3CellVoltages;
-    foreach(const QJsonValue& value, jsonMod3CellVoltages)
-    {
-        mod3CellVoltages.append(value.toDouble());
-    }
-    batteryData_.setMod3CellVoltages(mod3CellVoltages);
+    motorZero.setAlive(aliveList.value(0));
+    motorZero.setSetCurrent(setCurrentList.value(0));
+    motorZero.setSetVelocity(setVelocityList.value(0));
+    motorZero.setBusCurrent(busCurrentList.value(0));
+    motorZero.setBusVelocity(busVelocityList.value(0));
+    motorZero.setVehicleVelocity(vehicleVelocityList.value(0));
+
+    motorOne.setAlive(aliveList.value(1));
+    motorOne.setSetCurrent(setCurrentList.value(1));
+    motorOne.setSetVelocity(setVelocityList.value(1));
+    motorOne.setBusCurrent(busCurrentList.value(1));
+    motorOne.setBusVelocity(busVelocityList.value(1));
+    motorOne.setVehicleVelocity(vehicleVelocityList.value(1));
+
+    keyMotorData_.setMotorZero(motorZero);
+    keyMotorData_.setMotorOne(motorOne);
 }
