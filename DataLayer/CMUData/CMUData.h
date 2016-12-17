@@ -17,11 +17,15 @@ public:
     void setCmuOne(CMU cmuOne);
     void setCmuTwo(CMU cmuTwo);
     void setCmuThree(CMU cmuThree);
-
 private:
     CMU cmuZero_;
     CMU cmuOne_;
     CMU cmuTwo_;
     CMU cmuThree_;
+
+    double findMaxCellTemp();
+    double findLowestVoltage();
+    double findAverageCellTemp();
+    double findAverageVoltage();
 };
 

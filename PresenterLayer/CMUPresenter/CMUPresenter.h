@@ -19,4 +19,8 @@ signals:
     void cmuOneReceived(CMU cmuOne);
     void cmuTwoReceived(CMU cmuTwo);
     void cmuThreeReceived(CMU cmuThree);
+    void cmuMaxCellTempReceived(double maxCellTemp);
+    void cmuLowestCellVoltageReceived(double lowestCellVoltage);
+    void cmuAverageCellTempReceived(double averageCellTemp);
+    void cmuAverageVoltageReceived(double averageVoltage);
 };

@@ -37,6 +37,7 @@ SOURCES += \
     CommunicationLayer/JsonReceiver/JsonReceiver.cpp \
     DataLayer/BatteryData/BatteryData.cpp \
     DataLayer/BatteryFaultsData/BatteryFaultsData.cpp \
+    DataLayer/BatteryFaultsData/BatteryFaults.cpp \
     DataLayer/CMUData/CMUData.cpp \
     DataLayer/CMUData/CMU.cpp \
     DataLayer/DriverControlsData/DriverControlsData.cpp \
@@ -93,6 +94,7 @@ HEADERS  += \
     DataLayer/BatteryData/BatteryData.h \
     DataLayer/BatteryData/I_BatteryData.h \
     DataLayer/BatteryFaultsData/BatteryFaultsData.h \
+    DataLayer/BatteryFaultsData/BatteryFaults.h \
     DataLayer/BatteryFaultsData/I_BatteryFaultsData.h \
     DataLayer/CMUData/CMUData.h \
     DataLayer/CMUData/I_CMUData.h \

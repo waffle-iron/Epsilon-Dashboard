@@ -2,6 +2,12 @@
 
 KeyMotor::KeyMotor()
 {
+    alive_ = false;
+    setCurrent_ = 0;
+    setVelocity_ = 0;
+    busCurrent_ = 0;
+    busVoltage_ = 0;
+    vehicleVelocity_ = 0;
 }
 
 KeyMotor::~KeyMotor()
@@ -24,9 +30,9 @@ double KeyMotor::busCurrent() const
 {
 	return busCurrent_;
 }
-double KeyMotor::busVelocity() const
+double KeyMotor::busVoltage() const
 {
-	return busVelocity_;
+	return busVoltage_;
 }
 double KeyMotor::vehicleVelocity() const
 {
@@ -49,9 +55,9 @@ void KeyMotor::setBusCurrent(double busCurrent)
 {
 	busCurrent_ = busCurrent;
 }
-void KeyMotor::setBusVelocity(double busVelocity)
+void KeyMotor::setBusVoltage(double busVoltage)
 {
-	busVelocity_ = busVelocity;
+	busVoltage_ = busVoltage;
 }
 void KeyMotor::setVehicleVelocity(double vehicleVelocity)
 {

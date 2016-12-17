@@ -75,6 +75,8 @@ void BatteryPresenter::relayBatteryData()
         this, SIGNAL(voltageReceived(double)));
     connect(&batteryData_, SIGNAL(currentReceived(double)),
         this, SIGNAL(currentReceived(double)));
+    connect(&batteryData_, SIGNAL(netPowerReceived(double)),
+        this, SIGNAL(netPowerReceived(double)));
     connect(&batteryData_, SIGNAL(fan0SpeedReceived(double)),
         this, SIGNAL(fan0SpeedReceived(double)));
     connect(&batteryData_, SIGNAL(fan1SpeedReceived(double)),

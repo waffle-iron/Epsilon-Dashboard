@@ -1249,6 +1249,17 @@ color:white;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QProgressBar:horizontal {
+background:white;
+padding:0px;
+text-align: center;
+}
+QProgressBar:horizontal::font {
+font: 20pt &quot;LCDMono&quot;;
+color: white;
+}</string>
+             </property>
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <property name="spacing">
                <number>0</number>
@@ -1284,15 +1295,6 @@ color:white;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QProgressBar::chunk:horizontal{background: rgb(20,180,20);
-}
-QProgressBar:horizontal {
-background:white;
-padding:0px;
-text-align: center;
-}
-QProgressBar:horizontal::font {
-font: 20pt &quot;LCDMono&quot;;
-color: white;
 }</string>
                 </property>
                 <property name="value">

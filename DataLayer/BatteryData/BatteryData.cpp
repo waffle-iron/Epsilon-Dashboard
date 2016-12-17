@@ -141,6 +141,10 @@ double BatteryData::current() const
 {
     return current_;
 }
+double BatteryData::netPower() const
+{
+    return netPower_;
+}
 double BatteryData::fan0Speed() const
 {
     return fan0Speed_;
@@ -316,12 +320,16 @@ void BatteryData::setHighestCellTemp_CellNumber(int highestCellTemp_CellNumber)
 void BatteryData::setVoltage(double voltage)
 {
     voltage_ = voltage;
+    netPower_ = voltage * current_;
     emit voltageReceived(voltage_);
+    emit netPowerReceived(netPower_);
 }
 void BatteryData::setCurrent(double current)
 {
     current_ = current;
+    netPower_ = voltage_ * current;
     emit currentReceived(current_);
+    emit netPowerReceived(netPower_);
 }
 void BatteryData::setFan0Speed(double fan0Speed)
 {

@@ -48,6 +48,7 @@ signals:
     void highestCellTemp_CellNumberReceived(int highestCellTemp_CellNumber);
     void voltageReceived(double voltage);
     void currentReceived(double current);
+    void netPowerReceived(double netPower);
     void fan0SpeedReceived(double fan0Speed);
     void fan1SpeedReceived(double fan1Speed);
     void fanContactorsCurrentReceived(double fanContactorsCurrent);

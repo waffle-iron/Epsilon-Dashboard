@@ -43,6 +43,7 @@ public:
     virtual int highestCellTemp_CellNumber() const = 0;
     virtual double voltage() const = 0;
     virtual double current() const = 0;
+    virtual double netPower() const = 0;
     virtual double fan0Speed() const = 0;
     virtual double fan1Speed() const = 0;
     virtual double fanContactorsCurrent() const = 0;
@@ -120,6 +121,7 @@ signals:
     void highestCellTemp_CellNumberReceived(int highestCellTemp_CellNumber);
     void voltageReceived(double voltage);
     void currentReceived(double current);
+    void netPowerReceived(double power);
     void fan0SpeedReceived(double fan0Speed);
     void fan1SpeedReceived(double fan1Speed);
     void fanContactorsCurrentReceived(double fanContactorsCurrent);

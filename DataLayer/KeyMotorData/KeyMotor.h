@@ -13,14 +13,14 @@ public:
     double setCurrent() const;
     double setVelocity() const;
     double busCurrent() const;
-    double busVelocity() const;
+    double busVoltage() const;
     double vehicleVelocity() const;
 
    	void setAlive(bool alive);
     void setSetCurrent(double setCurrent);
     void setSetVelocity(double setVelocity);
     void setBusCurrent(double busCurrent);
-    void setBusVelocity(double busVelocity);
+    void setBusVoltage(double busVoltage);
     void setVehicleVelocity(double vehicleVelocity);
 
 private:
@@ -28,6 +28,6 @@ private:
 	double setCurrent_;
 	double setVelocity_;
 	double busCurrent_;
-	double busVelocity_;
+	double busVoltage_;
 	double vehicleVelocity_;
 };

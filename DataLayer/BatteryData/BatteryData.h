@@ -41,6 +41,7 @@ public:
     int highestCellTemp_CellNumber() const;
     double voltage() const;
     double current() const;
+    double netPower() const;
     double fan0Speed() const;
     double fan1Speed() const;
     double fanContactorsCurrent() const;
@@ -118,6 +119,7 @@ private:
     int highestCellTemp_CellNumber_;
     double voltage_;
     double current_;
+    double netPower_;
     double fan0Speed_;
     double fan1Speed_;
     double fanContactorsCurrent_;

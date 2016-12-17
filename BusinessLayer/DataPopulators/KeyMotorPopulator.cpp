@@ -49,7 +49,7 @@ void KeyMotorPopulator::populateData(const QJsonObject& data)
     QList<double> setCurrentList;
     QList<double> setVelocityList;
     QList<double> busCurrentList;
-    QList<double> busVelocityList;
+    QList<double> busVoltageList;
     QList<double> vehicleVelocityList;
 
     QJsonValue value = data.value(JsonFormat::KEYMOTOR);
@@ -60,7 +60,7 @@ void KeyMotorPopulator::populateData(const QJsonObject& data)
         setCurrentList.append(v.toObject().value(JsonFormat::KEYMOTOR_SETCURRENT).toDouble());
         setVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_SETVELOCITY).toDouble());
         busCurrentList.append(v.toObject().value(JsonFormat::KEYMOTOR_BUSCURRENT).toDouble());
-        busVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_BUSVOLTAGE).toDouble());
+        busVoltageList.append(v.toObject().value(JsonFormat::KEYMOTOR_BUSVOLTAGE).toDouble());
         vehicleVelocityList.append(v.toObject().value(JsonFormat::KEYMOTOR_VEHICLEVELOCITY).toDouble());
     }
 
@@ -68,14 +68,14 @@ void KeyMotorPopulator::populateData(const QJsonObject& data)
     motorZero.setSetCurrent(setCurrentList.value(0));
     motorZero.setSetVelocity(setVelocityList.value(0));
     motorZero.setBusCurrent(busCurrentList.value(0));
-    motorZero.setBusVelocity(busVelocityList.value(0));
+    motorZero.setBusVoltage(busVoltageList.value(0));
     motorZero.setVehicleVelocity(vehicleVelocityList.value(0));
 
     motorOne.setAlive(aliveList.value(1));
     motorOne.setSetCurrent(setCurrentList.value(1));
     motorOne.setSetVelocity(setVelocityList.value(1));
     motorOne.setBusCurrent(busCurrentList.value(1));
-    motorOne.setBusVelocity(busVelocityList.value(1));
+    motorOne.setBusVoltage(busVoltageList.value(1));
     motorOne.setVehicleVelocity(vehicleVelocityList.value(1));
 
     keyMotorData_.setMotorZero(motorZero);
