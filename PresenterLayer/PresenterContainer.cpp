@@ -1,25 +1,26 @@
-#include "BatteryPresenter/BatteryPresenter.h"
-#include "BusinessLayer/BusinessContainer.h"
-#include "CommunicationLayer/CommunicationContainer.h"
-#include "CommunicationPresenter/CommunicationPresenter.h"
 #include "DataLayer/DataContainer.h"
-#include "FaultsPresenter/FaultsPresenter.h"
-#include "MpptPresenter/MpptPresenter.h"
-#include "PowerPresenter/PowerPresenter.h"
 #include "PresenterContainer.h"
-#include "VehiclePresenter/VehiclePresenter.h"
 
-PresenterContainer::PresenterContainer(DataContainer& dataContainer,
-                                       CommunicationContainer& communicationContainer,
-                                       BusinessContainer& businessContainer)
+#include "BatteryPresenter/BatteryPresenter.h"
+#include "BatteryFaultsPresenter/BatteryFaultsPresenter.h"
+#include "CMUPresenter/CMUPresenter.h"
+#include "DriverControlsPresenter/DriverControlsPresenter.h"
+#include "KeyMotorPresenter/KeyMotorPresenter.h"
+#include "LightsPresenter/LightsPresenter.h"
+#include "MPPTPresenter/MPPTPresenter.h"
+#include "MotorDetailsPresenter/MotorDetailsPresenter.h"
+#include "MotorFaultsPresenter/MotorFaultsPresenter.h"
+
+PresenterContainer::PresenterContainer(DataContainer& dataContainer)
     : batteryPresenter_(new BatteryPresenter(dataContainer.batteryData()))
-    , communicationPresenter_(new CommunicationPresenter(
-                                  communicationContainer.commDevice(),
-                                  businessContainer.communicationsMonitoringService()))
-    , vehiclePresenter_(new VehiclePresenter(dataContainer.vehicleData()))
-    , mpptPresenter_(new MpptPresenter(dataContainer.mpptData()))
-    , powerPresenter_(new PowerPresenter(dataContainer.powerData()))
-    , faultsPresenter_(new FaultsPresenter(dataContainer.faultsData()))
+    , batteryFaultsPresenter_(new BatteryFaultsPresenter(dataContainer.batteryFaultsData()))
+    , cmuPresenter_(new CMUPresenter(dataContainer.cmuData()))
+    , driverControlsPresenter_(new DriverControlsPresenter(dataContainer.driverControlsData()))
+    , keyMotorPresenter_(new KeyMotorPresenter(dataContainer.keyMotorData()))
+    , lightsPresenter_(new LightsPresenter(dataContainer.lightsData()))
+    , mpptPresenter_(new MPPTPresenter(dataContainer.mpptData()))
+    , motorDetailsPresenter_(new MotorDetailsPresenter(dataContainer.motorDetailsData()))
+    , motorFaultsPresenter_(new MotorFaultsPresenter(dataContainer.motorFaultsData()))
 {
 }
 
@@ -31,28 +32,36 @@ BatteryPresenter& PresenterContainer::batteryPresenter()
 {
     return *batteryPresenter_;
 }
-
-CommunicationPresenter& PresenterContainer::communicationPresenter()
+BatteryFaultsPresenter& PresenterContainer::batteryFaultsPresenter()
 {
-    return *communicationPresenter_;
+    return *batteryFaultsPresenter_;
 }
-
-VehiclePresenter& PresenterContainer::vehiclePresenter()
+CMUPresenter& PresenterContainer::cmuPresenter()
 {
-    return *vehiclePresenter_;
+    return *cmuPresenter_;
 }
-
-MpptPresenter& PresenterContainer::mpptPresenter()
+DriverControlsPresenter& PresenterContainer::driverControlsPresenter()
+{
+    return *driverControlsPresenter_;
+}
+KeyMotorPresenter& PresenterContainer::keyMotorPresenter()
+{
+    return *keyMotorPresenter_;
+}
+LightsPresenter& PresenterContainer::lightsPresenter()
+{
+    return *lightsPresenter_;
+}
+MPPTPresenter& PresenterContainer::mpptPresenter()
 {
     return *mpptPresenter_;
 }
-
-PowerPresenter& PresenterContainer::powerPresenter()
+MotorDetailsPresenter& PresenterContainer::motorDetailsPresenter()
 {
-    return *powerPresenter_;
+    return *motorDetailsPresenter_;
+}
+MotorFaultsPresenter& PresenterContainer::motorFaultsPresenter()
+{
+    return *motorFaultsPresenter_;
 }
 
-FaultsPresenter& PresenterContainer::faultsPresenter()
-{
-    return *faultsPresenter_;
-}

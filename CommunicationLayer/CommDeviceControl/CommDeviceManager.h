@@ -10,7 +10,7 @@ class CommDeviceManager : public I_CommDevice
 {
     Q_OBJECT
 public:
-    CommDeviceManager(QUdpSocket& udpDevice, QIODevice& serialDevice);
+    CommDeviceManager(QUdpSocket& udpDevice);
     virtual ~CommDeviceManager();
 
     void connectToDevice(CommDefines::Type type);
@@ -18,9 +18,7 @@ public:
 
 private slots:
     void handleUdpDataIncoming();
-    void handleSerialDataIncoming();
 
 private:
     QUdpSocket& udpSocket_;
-    QIODevice& serialDevice_;
 };

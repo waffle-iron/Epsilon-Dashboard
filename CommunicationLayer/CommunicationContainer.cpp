@@ -1,71 +1,31 @@
-#include <QtSerialPort/QSerialPort>
 #include <QUdpSocket>
 
 #include "../DataLayer/DataContainer.h"
-#include "CommDeviceControl/RadioCommDevice.h"
-#include "CommDeviceControl/UdpMessageForwarder.h"
 #include "CommunicationContainer.h"
-#include "DataPopulators/BatteryPopulator.h"
-#include "DataPopulators/CmuPopulator.h"
-#include "DataPopulators/DriverDetailsPopulator.h"
-#include "DataPopulators/FaultsPopulator.h"
-#include "DataPopulators/KeyDriverControlPopulator.h"
-#include "DataPopulators/MpptPopulator.h"
-#include "PacketChecksumChecker/PacketChecksumChecker.h"
-#include "PacketDecoder/PacketDecoder.h"
-#include "PacketSynchronizer/PacketSynchronizer.h"
-#include "PacketUnstuffer/PacketUnstuffer.h"
+#include "CommDeviceControl/ConnectionController.h"
+#include "CommDeviceControl/CommDeviceManager.h"
+#include "CommDeviceControl/UdpConnectionService.h"
+#include "JsonReceiver/JsonReceiver.h"
 
 class CommunicationContainerPrivate
 {
 public:
-    CommunicationContainerPrivate(DataContainer& dataContainer)
-        : radioConnectionService(serialPort)
-        , messageForwarder(radioConnectionService)
-        , packetSynchronizer(radioConnectionService)
-        , packetUnstuffer(packetSynchronizer)
-        , packetChecksumChecker(packetUnstuffer)
-        , packetDecoder(packetChecksumChecker)
-        , keyDriverControlPopulator(
-              packetDecoder,
-              dataContainer.vehicleData(),
-              dataContainer.powerData())
-        , driverDetailsPopulator(
-              packetDecoder,
-              dataContainer.vehicleData(),
-              dataContainer.powerData())
-        , faultsPopulator(
-              packetDecoder,
-              dataContainer.faultsData())
-        , batteryPopulator(
-              packetDecoder,
-              dataContainer.batteryData())
-        , cmuPopulator(
-              packetDecoder,
-              dataContainer.batteryData())
-        , mpptPopulator(
-              packetDecoder,
-              dataContainer.mpptData())
+    CommunicationContainerPrivate()
+        : udpConnectionService_(udpSocket_)
+        , commDeviceManager_(udpSocket_)
+        , connectionController_(udpConnectionService_)
+        , jsonReceiver_(commDeviceManager_)
     {
     }
-
-    QSerialPort serialPort;
-    RadioCommDevice radioConnectionService;
-    UdpMessageForwarder messageForwarder;
-    PacketSynchronizer packetSynchronizer;
-    PacketUnstuffer packetUnstuffer;
-    PacketChecksumChecker packetChecksumChecker;
-    PacketDecoder packetDecoder;
-    KeyDriverControlPopulator keyDriverControlPopulator;
-    DriverDetailsPopulator driverDetailsPopulator;
-    FaultsPopulator faultsPopulator;
-    BatteryPopulator batteryPopulator;
-    CmuPopulator cmuPopulator;
-    MpptPopulator mpptPopulator;
+    QUdpSocket udpSocket_;
+    UdpConnectionService udpConnectionService_;
+    CommDeviceManager commDeviceManager_;
+    ConnectionController connectionController_;
+    JsonReceiver jsonReceiver_;
 };
 
-CommunicationContainer::CommunicationContainer(DataContainer& dataContainer)
-    : impl_(new CommunicationContainerPrivate(dataContainer))
+CommunicationContainer::CommunicationContainer()
+    : impl_(new CommunicationContainerPrivate())
 {
 }
 
@@ -73,27 +33,22 @@ CommunicationContainer::~CommunicationContainer()
 {
 }
 
-I_CommDevice& CommunicationContainer::commDevice()
+ConnectionController& CommunicationContainer::connectionController()
 {
-    return impl_->radioConnectionService;
+    return impl_->connectionController_;
 }
 
-I_PacketSynchronizer& CommunicationContainer::packetSynchronizer()
+UdpConnectionService& CommunicationContainer::udpConnectionService()
 {
-    return impl_->packetSynchronizer;
+    return impl_->udpConnectionService_;
 }
 
-I_DataInjectionService& CommunicationContainer::dataInjectionService()
+I_JsonReceiver& CommunicationContainer::jsonReceiver()
 {
-    return impl_->packetUnstuffer;
+    return impl_->jsonReceiver_;
 }
 
-I_PacketDecoder& CommunicationContainer::packetDecoder()
+CommDeviceManager& CommunicationContainer::commDeviceManager()
 {
-    return impl_->packetDecoder;
-}
-
-I_PacketChecksumChecker& CommunicationContainer::packetChecksumChecker()
-{
-    return impl_->packetChecksumChecker;
+    return impl_->commDeviceManager_;
 }

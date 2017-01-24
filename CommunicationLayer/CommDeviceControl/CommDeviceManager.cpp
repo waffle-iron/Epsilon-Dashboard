@@ -3,9 +3,8 @@
 #include "CommDeviceManager.h"
 #include <QDebug>
 
-CommDeviceManager::CommDeviceManager(QUdpSocket& udpSocket, QIODevice& serialDevice)
+CommDeviceManager::CommDeviceManager(QUdpSocket& udpSocket)
     : udpSocket_(udpSocket)
-    , serialDevice_(serialDevice)
 {
 }
 
@@ -21,16 +20,13 @@ void CommDeviceManager::connectToDevice(CommDefines::Type type)
     {
         connect(&udpSocket_, SIGNAL(readyRead()), this, SLOT(handleUdpDataIncoming()), Qt::UniqueConnection);
     }
-    else
-    {
-        connect(&serialDevice_, SIGNAL(readyRead()), this, SLOT(handleSerialDataIncoming()), Qt::UniqueConnection);
-    }
+
+    // potential to add bluetooth here as a different input device
 }
 
 void CommDeviceManager::disconnectFromDevices()
 {
     disconnect(&udpSocket_, 0, this, 0);
-    disconnect(&serialDevice_, 0, this, 0);
 }
 
 void CommDeviceManager::handleUdpDataIncoming()
@@ -46,16 +42,4 @@ void CommDeviceManager::handleUdpDataIncoming()
             emit dataReceived(datagram);
         }
     }
-}
-
-void CommDeviceManager::handleSerialDataIncoming()
-{
-    QByteArray incomingData = serialDevice_.readAll();
-
-    if (incomingData.isEmpty())
-    {
-        return;
-    }
-
-    emit dataReceived(incomingData);
 }

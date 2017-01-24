@@ -1,10 +1,7 @@
 #include "ConnectionController.h"
 
-ConnectionController::ConnectionController(
-    I_ConnectionService& serial,
-    I_ConnectionService& udp)
-    : type_(CommDefines::Serial)
-    , serial_(serial)
+ConnectionController::ConnectionController(I_ConnectionService& udp)
+    : type_(CommDefines::Udp)
     , udp_(udp)
 {
 }
@@ -21,25 +18,14 @@ void ConnectionController::setDeviceType(CommDefines::Type type)
 bool ConnectionController::connectToDataSource()
 {
     disconnectFromDataSource();
-
-    if (type_ == CommDefines::Udp)
-    {
-        connectToConnectionService(udp_);
-        return udp_.connectToDataSource();
-    }
-    else
-    {
-        connectToConnectionService(serial_);
-        return serial_.connectToDataSource();
-    }
+    connectToConnectionService(udp_);
+    return udp_.connectToDataSource();
 }
 
 void ConnectionController::disconnectFromDataSource()
 {
     udp_.disconnectFromDataSource();
-    serial_.disconnectFromDataSource();
     disconnectFromConnectionService(udp_);
-    disconnectFromConnectionService(serial_);
 }
 
 void ConnectionController::connectToConnectionService(I_ConnectionService& service)
