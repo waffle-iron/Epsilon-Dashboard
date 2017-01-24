@@ -16,52 +16,52 @@
 class BusinessContainerPrivate
 {
 public:
-	BusinessContainerPrivate(CommunicationContainer& communicationContainer, DataContainer& dataContainer)
-	: jsonReceiver_(communicationContainer.jsonReceiver())
-	, batteryPopulator_(
-		jsonReceiver_,
-		dataContainer.batteryData())
-	, batteryFaultsPopulator_(
-		jsonReceiver_,
-		dataContainer.batteryFaultsData())
-	, cmuPopulator_(
-		jsonReceiver_,
-		dataContainer.cmuData())
-	, driverControlsPopulator_(
-		jsonReceiver_,
-		dataContainer.driverControlsData())
-	, keyMotorPopulator_(
-		jsonReceiver_,
-		dataContainer.keyMotorData())
-	, lightsPopulator_(
-		jsonReceiver_,
-		dataContainer.lightsData())
-	, mpptPopulator_(
-		jsonReceiver_,
-		dataContainer.mpptData())
-	, motorDetailsPopulator_(
-		jsonReceiver_,
-		dataContainer.motorDetailsData())
-	, motorFaultsPopulator_(
-		jsonReceiver_,
-		dataContainer.motorFaultsData())
-	{
-	}
-	I_JsonReceiver& jsonReceiver_;
-	BatteryPopulator batteryPopulator_;
-	BatteryFaultsPopulator batteryFaultsPopulator_;
-	CMUPopulator cmuPopulator_;
-	DriverControlsPopulator driverControlsPopulator_;
-	KeyMotorPopulator keyMotorPopulator_;
-	LightsPopulator lightsPopulator_;
-	MPPTPopulator mpptPopulator_;
-	MotorDetailsPopulator motorDetailsPopulator_;
-	MotorFaultsPopulator motorFaultsPopulator_;
+    BusinessContainerPrivate(CommunicationContainer& communicationContainer, DataContainer& dataContainer)
+        : jsonReceiver_(communicationContainer.jsonReceiver())
+        , batteryPopulator_(
+              jsonReceiver_,
+              dataContainer.batteryData())
+        , batteryFaultsPopulator_(
+              jsonReceiver_,
+              dataContainer.batteryFaultsData())
+        , cmuPopulator_(
+              jsonReceiver_,
+              dataContainer.cmuData())
+        , driverControlsPopulator_(
+              jsonReceiver_,
+              dataContainer.driverControlsData())
+        , keyMotorPopulator_(
+              jsonReceiver_,
+              dataContainer.keyMotorData())
+        , lightsPopulator_(
+              jsonReceiver_,
+              dataContainer.lightsData())
+        , mpptPopulator_(
+              jsonReceiver_,
+              dataContainer.mpptData())
+        , motorDetailsPopulator_(
+              jsonReceiver_,
+              dataContainer.motorDetailsData())
+        , motorFaultsPopulator_(
+              jsonReceiver_,
+              dataContainer.motorFaultsData())
+    {
+    }
+    I_JsonReceiver& jsonReceiver_;
+    BatteryPopulator batteryPopulator_;
+    BatteryFaultsPopulator batteryFaultsPopulator_;
+    CMUPopulator cmuPopulator_;
+    DriverControlsPopulator driverControlsPopulator_;
+    KeyMotorPopulator keyMotorPopulator_;
+    LightsPopulator lightsPopulator_;
+    MPPTPopulator mpptPopulator_;
+    MotorDetailsPopulator motorDetailsPopulator_;
+    MotorFaultsPopulator motorFaultsPopulator_;
 };
 BusinessContainer::BusinessContainer(CommunicationContainer& communicationContainer, DataContainer& dataContainer)
-	: communicationsMonitoringService_(new CommunicationsMonitoringService(
-	communicationContainer.jsonReceiver()))
-	, impl_(new BusinessContainerPrivate(communicationContainer, dataContainer))
+    : communicationsMonitoringService_(new CommunicationsMonitoringService(
+                                           communicationContainer.jsonReceiver()))
+    , impl_(new BusinessContainerPrivate(communicationContainer, dataContainer))
 {
 }
 
@@ -72,5 +72,5 @@ BusinessContainer::~BusinessContainer()
 
 I_CommunicationsMonitoringService& BusinessContainer::communicationsMonitoringService()
 {
-	return *communicationsMonitoringService_;
+    return *communicationsMonitoringService_;
 }

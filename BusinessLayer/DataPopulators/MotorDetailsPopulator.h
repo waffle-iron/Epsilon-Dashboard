@@ -36,7 +36,7 @@ class MotorDetailsPopulator : public QObject
     Q_OBJECT
 public:
     MotorDetailsPopulator(I_JsonReceiver& jsonReceiver,
-                     I_MotorDetailsData& motorDetailsData);
+                          I_MotorDetailsData& motorDetailsData);
     virtual ~MotorDetailsPopulator() {}
 
 public slots:

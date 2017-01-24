@@ -36,7 +36,7 @@ class KeyMotorPopulator : public QObject
     Q_OBJECT
 public:
     KeyMotorPopulator(I_JsonReceiver& jsonReceiver,
-                     I_KeyMotorData& keyMotorData);
+                      I_KeyMotorData& keyMotorData);
     virtual ~KeyMotorPopulator() {}
 
 public slots:

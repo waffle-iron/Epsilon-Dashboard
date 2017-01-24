@@ -4,19 +4,19 @@
  *
  *  This file is part of the Gen 5 Dashboard
  *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
+ *  The Gen 5 Dashboard is free software:
+ *  you can redistribute it and/or modify it under the terms
+ *  of the GNU Affero General Public License as published by
  *  the Free Software Foundation, either version 3 of the
  *  License, or (at your option) any later version.
  *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
+ *  The Gen 5 Dashboard is distributed
+ *  in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  without even the implied warranty of MERCHANTABILITY or
+ *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero
  *  General Public License for more details.
  *
- *  You should have received a copy of the GNU Affero General 
+ *  You should have received a copy of the GNU Affero General
  *  Public License along with the Gen 5 Dashboard.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -31,17 +31,17 @@ class I_PacketSynchronizer;
 
 class PacketUnstuffer : public I_PacketUnstuffer, public I_DataInjectionService
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   explicit PacketUnstuffer(const I_PacketSynchronizer& packetSynchronizer);
-   virtual ~PacketUnstuffer();
+    explicit PacketUnstuffer(const I_PacketSynchronizer& packetSynchronizer);
+    virtual ~PacketUnstuffer();
 
-   void injectFramedData(const QByteArray& data);
+    void injectFramedData(const QByteArray& data);
 
 private slots:
-   void handleFramedPacket(QByteArray packet);
+    void handleFramedPacket(QByteArray packet);
 
 private:
-   bool isPacketAtLeastMinimumSize(const QByteArray& packet);
-   QByteArray unstuffPacket(const QByteArray& encodedData);
+    bool isPacketAtLeastMinimumSize(const QByteArray& packet);
+    QByteArray unstuffPacket(const QByteArray& encodedData);
 };

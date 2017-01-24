@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 MPPTPopulator::MPPTPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_MPPTData& mpptData)
+                             I_MPPTData& mpptData)
     : jsonReceiver_(jsonReceiver)
     , mpptData_(mpptData)
 {
@@ -41,20 +41,19 @@ MPPTPopulator::MPPTPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void MPPTPopulator::populateData(const QJsonObject& data)
-{   
+{
     MPPT mpptZero;
     MPPT mpptOne;
-	MPPT mpptTwo;
-
+    MPPT mpptTwo;
     QList<bool> aliveList;
     QList<double> arrayVoltageList;
     QList<double> arrayCurrentList;
     QList<double> batteryVoltageList;
     QList<double> temperatureList;
-
     QJsonValue value = data.value(JsonFormat::MPPT);
     QJsonArray array = value.toArray();
-    foreach(const QJsonValue & v, array)
+
+    foreach (const QJsonValue& v, array)
     {
         aliveList.append(v.toObject().value(JsonFormat::MPPT_ALIVE).toBool());
         arrayVoltageList.append(v.toObject().value(JsonFormat::MPPT_ARRAYVOLTAGE).toDouble());
@@ -62,24 +61,22 @@ void MPPTPopulator::populateData(const QJsonObject& data)
         batteryVoltageList.append(v.toObject().value(JsonFormat::MPPT_BATTERYVOLTAGE).toDouble());
         temperatureList.append(v.toObject().value(JsonFormat::MPPT_TEMPERATURE).toDouble());
     }
+
     mpptZero.setAlive(aliveList.value(0));
     mpptZero.setArrayVoltage(arrayVoltageList.value(0));
     mpptZero.setArrayCurrent(arrayCurrentList.value(0));
     mpptZero.setBatteryVoltage(batteryVoltageList.value(0));
     mpptZero.setTemperature(temperatureList.value(0));
-
     mpptOne.setAlive(aliveList.value(1));
     mpptOne.setArrayVoltage(arrayVoltageList.value(1));
     mpptOne.setArrayCurrent(arrayCurrentList.value(1));
     mpptOne.setBatteryVoltage(batteryVoltageList.value(1));
     mpptOne.setTemperature(temperatureList.value(1));
-
     mpptTwo.setAlive(aliveList.value(2));
     mpptTwo.setArrayVoltage(arrayVoltageList.value(2));
     mpptTwo.setArrayCurrent(arrayCurrentList.value(2));
     mpptTwo.setBatteryVoltage(batteryVoltageList.value(2));
     mpptTwo.setTemperature(temperatureList.value(2));
-
     mpptData_.setMpptZero(mpptZero);
     mpptData_.setMpptOne(mpptOne);
     mpptData_.setMpptTwo(mpptTwo);

@@ -41,77 +41,77 @@ DisplayDashboardView::~DisplayDashboardView()
 void DisplayDashboardView::connectBattery(BatteryPresenter& batteryPresenter)
 {
     connect(&batteryPresenter, SIGNAL(aliveReceived(bool)),
-        this, SLOT(aliveReceived(bool)));
+            this, SLOT(aliveReceived(bool)));
     connect(&batteryPresenter, SIGNAL(packSocPercentageReceived(double)),
-        this, SLOT(packSocPercentageReceived(double)));
+            this, SLOT(packSocPercentageReceived(double)));
     connect(&batteryPresenter, SIGNAL(prechargeStateReceived(QString)),
-        this, SLOT(prechargeStateReceived(QString)));
+            this, SLOT(prechargeStateReceived(QString)));
     connect(&batteryPresenter, SIGNAL(prechargeTimerElapsedReceived(bool)),
-        this, SLOT(prechargeTimerElapsedReceived(bool)));
+            this, SLOT(prechargeTimerElapsedReceived(bool)));
     connect(&batteryPresenter, SIGNAL(prechargeTimerCountReceived(double)),
-        this, SLOT(prechargeTimerCountReceived(double)));
+            this, SLOT(prechargeTimerCountReceived(double)));
     connect(&batteryPresenter, SIGNAL(netPowerReceived(double)),
-        this, SLOT(netPowerReceived(double)));
+            this, SLOT(netPowerReceived(double)));
 }
 
 void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryFaultsPresenter)
 {
     connect(&batteryFaultsPresenter, SIGNAL(batteryFaultsReceived(BatteryFaults)),
-        this, SLOT(batteryFaultsReceived(BatteryFaults)));
+            this, SLOT(batteryFaultsReceived(BatteryFaults)));
 }
 
 void DisplayDashboardView::connectCMU(CMUPresenter& cmuPresenter)
 {
     connect(&cmuPresenter, SIGNAL(cmuMaxCellTempReceived(double)),
-        this, SLOT(cmuMaxCellTempReceived(double)));
+            this, SLOT(cmuMaxCellTempReceived(double)));
     connect(&cmuPresenter, SIGNAL(cmuLowestCellVoltageReceived(double)),
-        this, SLOT(cmuLowestCellVoltageReceived(double)));
+            this, SLOT(cmuLowestCellVoltageReceived(double)));
     connect(&cmuPresenter, SIGNAL(cmuAverageCellTempReceived(double)),
-        this, SLOT(cmuAverageCellTempReceived(double)));
+            this, SLOT(cmuAverageCellTempReceived(double)));
     connect(&cmuPresenter, SIGNAL(cmuCellVoltageReceived(double)),
-        this, SLOT(cmuCellVoltageReceived(double)));
+            this, SLOT(cmuCellVoltageReceived(double)));
 }
 
 void DisplayDashboardView::connectDriverControls(DriverControlsPresenter& driverControlsPresenter)
 {
     connect(&driverControlsPresenter, SIGNAL(resetReceived(bool)),
-        this, SLOT(resetReceived(bool)));
+            this, SLOT(resetReceived(bool)));
 }
 
 void DisplayDashboardView::connectKeyMotor(KeyMotorPresenter& keyMotorPresenter)
 {
     connect(&keyMotorPresenter, SIGNAL(motorSetCurrentReceived(double setCurrent)),
-        this, SLOT(motorSetCurrentReceived(double setCurrent)));
+            this, SLOT(motorSetCurrentReceived(double setCurrent)));
     connect(&keyMotorPresenter, SIGNAL(motorActualSpeedReceived(double actualSpeed)),
-        this, SLOT(motorActualSpeedReceived(double actualSpeed)));
+            this, SLOT(motorActualSpeedReceived(double actualSpeed)));
     connect(&keyMotorPresenter, SIGNAL(motorBusVoltageReceived(double busVoltage)),
-        this, SLOT(motorBusVoltageReceived(double busVoltage)));
+            this, SLOT(motorBusVoltageReceived(double busVoltage)));
     connect(&keyMotorPresenter, SIGNAL(motorBusCurrentReceived(double busCurrent)),
-        this, SLOT(motorBusCurrentReceived(double busCurrent)));
+            this, SLOT(motorBusCurrentReceived(double busCurrent)));
 }
 
 void DisplayDashboardView::connectLights(LightsPresenter& lightsPresenter)
 {
     connect(&lightsPresenter, SIGNAL(lowBeamsReceived(bool)),
-        this, SLOT(lowBeamsReceived(bool)));
+            this, SLOT(lowBeamsReceived(bool)));
     connect(&lightsPresenter, SIGNAL(highBeamsReceived(bool)),
-        this, SLOT(highBeamsReceived(bool)));
+            this, SLOT(highBeamsReceived(bool)));
     connect(&lightsPresenter, SIGNAL(leftSignalReceived(bool)),
-        this, SLOT(leftSignalReceived(bool)));
+            this, SLOT(leftSignalReceived(bool)));
     connect(&lightsPresenter, SIGNAL(rightSignalReceived(bool)),
-        this, SLOT(rightSignalReceived(bool)));
+            this, SLOT(rightSignalReceived(bool)));
 }
 
 void DisplayDashboardView::connectMPPT(MPPTPresenter& mpptPresenter)
 {
     connect(&mpptPresenter, SIGNAL(mpptZeroReceived(MPPT)),
-        this, SLOT(mpptZeroReceived(MPPT)));
+            this, SLOT(mpptZeroReceived(MPPT)));
     connect(&mpptPresenter, SIGNAL(mpptOneReceived(MPPT)),
-        this, SLOT(mpptOneReceived(MPPT)));
+            this, SLOT(mpptOneReceived(MPPT)));
     connect(&mpptPresenter, SIGNAL(mpptTwoReceived(MPPT)),
-        this, SLOT(mpptTwoReceived(MPPT)));
+            this, SLOT(mpptTwoReceived(MPPT)));
     connect(&mpptPresenter, SIGNAL(mpptPowerReceived(double)),
-        this, SLOT(mpptPowerReceived(double)));
+            this, SLOT(mpptPowerReceived(double)));
 }
 
 void DisplayDashboardView::connectMotorDetails(MotorDetailsPresenter& motorDetailsPresenter)
@@ -121,62 +121,59 @@ void DisplayDashboardView::connectMotorDetails(MotorDetailsPresenter& motorDetai
 void DisplayDashboardView::connectMotorFaults(MotorFaultsPresenter& motorFaultsPresenter)
 {
     connect(&motorFaultsPresenter, SIGNAL(motorOneErrorFlagsReceived(ErrorFlags)),
-         this, SLOT(motorOneErrorFlagsReceived(ErrorFlags)));
+            this, SLOT(motorOneErrorFlagsReceived(ErrorFlags)));
     connect(&motorFaultsPresenter, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)),
-         this, SLOT(motorOneLimitFlagsReceived(LimitFlags)));
+            this, SLOT(motorOneLimitFlagsReceived(LimitFlags)));
     connect(&motorFaultsPresenter, SIGNAL(motorTwoErrorFlagsReceived(ErrorFlags)),
-         this, SLOT(motorTwoErrorFlagsReceived(ErrorFlags)));
+            this, SLOT(motorTwoErrorFlagsReceived(ErrorFlags)));
     connect(&motorFaultsPresenter, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)),
-         this, SLOT(motorTwoLimitFlagsReceived(LimitFlags)));
+            this, SLOT(motorTwoLimitFlagsReceived(LimitFlags)));
 }
 
 void DisplayDashboardView::aliveReceived(bool)
 {
-
 }
 void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
-    if(packSocPercentage > 85)
+
+    if (packSocPercentage > 85)
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(20,180,20)");
     }
-    else if((packSocPercentage > 70) && (packSocPercentage <= 85))
+    else if ((packSocPercentage > 70) && (packSocPercentage <= 85))
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(90,190,20)");
     }
-    else if((packSocPercentage > 55) && (packSocPercentage <= 70))
+    else if ((packSocPercentage > 55) && (packSocPercentage <= 70))
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(160,200,20)");
     }
-    else if((packSocPercentage > 40) && (packSocPercentage <= 55))
+    else if ((packSocPercentage > 40) && (packSocPercentage <= 55))
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,210,20)");
     }
-    else if((packSocPercentage > 25) && (packSocPercentage <= 40))
+    else if ((packSocPercentage > 25) && (packSocPercentage <= 40))
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,150,20)");
     }
-    else if((packSocPercentage > 10) && (packSocPercentage <= 25))
+    else if ((packSocPercentage > 10) && (packSocPercentage <= 25))
     {
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,90,20)");
     }
     else
     {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,20,20)"); 
+        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,20,20)");
     }
 }
 void DisplayDashboardView::prechargeStateReceived(QString prechargeState)
 {
-
 }
 void DisplayDashboardView::prechargeTimerElapsedReceived(bool prechargeTimerElapsed)
 {
-
 }
 void DisplayDashboardView::prechargeTimerCountReceived(double prechargeTimerCount)
 {
-
 }
 
 void DisplayDashboardView::netPowerReceived(double netPower)
@@ -187,7 +184,6 @@ void DisplayDashboardView::netPowerReceived(double netPower)
 
 void DisplayDashboardView::batteryFaultsReceived(BatteryFaults)
 {
-
 }
 
 void DisplayDashboardView::cmuMaxCellTempReceived(double maxCellTemp)
@@ -209,7 +205,7 @@ void DisplayDashboardView::cmuAverageVoltageReceived(double averageVoltage)
 
 void DisplayDashboardView::resetReceived(bool reset)
 {
-    if(reset)
+    if (reset)
     {
         ui_.motorResetButtonWidget().setStyleSheet("background: url(:/Resources/MotorResetButton.png)");
     }
@@ -237,7 +233,7 @@ void DisplayDashboardView::motorBusCurrentReceived(double busCurrent)
 
 void DisplayDashboardView::lowBeamsReceived(bool lowBeams)
 {
-    if(lowBeams)
+    if (lowBeams)
     {
         ui_.lowHeadlightIndicatorWidget().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
     }
@@ -248,7 +244,7 @@ void DisplayDashboardView::lowBeamsReceived(bool lowBeams)
 }
 void DisplayDashboardView::highBeamsReceived(bool highBeams)
 {
-    if(highBeams)
+    if (highBeams)
     {
         ui_.highHeadlightIndicatorWidget().setStyleSheet("background: url(:/Resources/HighHeadlightIndicator.png)");
     }
@@ -259,7 +255,7 @@ void DisplayDashboardView::highBeamsReceived(bool highBeams)
 }
 void DisplayDashboardView::leftSignalReceived(bool leftSignal)
 {
-    if(leftSignal)
+    if (leftSignal)
     {
         ui_.leftTurnSignalWidget().setStyleSheet("background: url(:/Resources/TurnSignaLeft.png);");
     }
@@ -270,7 +266,7 @@ void DisplayDashboardView::leftSignalReceived(bool leftSignal)
 }
 void DisplayDashboardView::rightSignalReceived(bool rightSignal)
 {
-    if(rightSignal)
+    if (rightSignal)
     {
         ui_.rightTurnSignalWidget().setStyleSheet("background: url(:/Resources/TurnSignaRight.png);");
     }
@@ -302,17 +298,13 @@ void DisplayDashboardView::mpptPowerReceived(double mpptPower)
 
 void DisplayDashboardView::motorOneErrorFlagsReceived(ErrorFlags motorOneErrorFlags)
 {
-
 }
 void DisplayDashboardView::motorOneLimitFlagsReceived(LimitFlags motorOneLimitFlags)
 {
-
 }
 void DisplayDashboardView::motorTwoErrorFlagsReceived(ErrorFlags motorTwoErrorFlags)
 {
-
 }
 void DisplayDashboardView::motorTwoLimitFlagsReceived(LimitFlags motorTwoLimitFlags)
 {
-
 }

@@ -22,7 +22,7 @@ public:
     void setTemperature(double temperature);
 
 private:
-	bool alive_;
+    bool alive_;
     double arrayVoltage_;
     double arrayCurrent_;
     double batteryVoltage_;

@@ -4,19 +4,19 @@
  *
  *  This file is part of the Gen 5 Dashboard
  *
- *  The Gen 5 Dashboard is free software: 
- *  you can redistribute it and/or modify it under the terms 
- *  of the GNU Affero General Public License as published by 
+ *  The Gen 5 Dashboard is free software:
+ *  you can redistribute it and/or modify it under the terms
+ *  of the GNU Affero General Public License as published by
  *  the Free Software Foundation, either version 3 of the
  *  License, or (at your option) any later version.
  *
- *  The Gen 5 Dashboard is distributed 
- *  in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- *  without even the implied warranty of MERCHANTABILITY or 
- *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
+ *  The Gen 5 Dashboard is distributed
+ *  in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  without even the implied warranty of MERCHANTABILITY or
+ *  FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero
  *  General Public License for more details.
  *
- *  You should have received a copy of the GNU Affero General 
+ *  You should have received a copy of the GNU Affero General
  *  Public License along with the Gen 5 Dashboard.
  *  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -34,23 +34,23 @@
 
 class TestPacketSynchronizer : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 private slots:
-   void init();
-   void cleanup();
+    void init();
+    void cleanup();
 
-   void willHandleIncomingSerialData();
-   void willHandleIncomingSerialData_data();
+    void willHandleIncomingSerialData();
+    void willHandleIncomingSerialData_data();
 
-   void willNotEmitPacketIfNotCompletePacket();
-   void willNotEmitPacketIfNotCompletePacket_data();
-   void willNotEmitIfNotConnected();
+    void willNotEmitPacketIfNotCompletePacket();
+    void willNotEmitPacketIfNotCompletePacket_data();
+    void willNotEmitIfNotConnected();
 
-   void willHandleIncomingDataSplitBetweenReads();
-   void willHandleMultiplePacketsInOneRead();
+    void willHandleIncomingDataSplitBetweenReads();
+    void willHandleMultiplePacketsInOneRead();
 
 private:
-   QScopedPointer<FakeConnectionService> connectionService_;
-   QScopedPointer<FakeSerialPort> serialPort_;
-   QScopedPointer<PacketSynchronizer> patient_;
+    QScopedPointer<FakeConnectionService> connectionService_;
+    QScopedPointer<FakeSerialPort> serialPort_;
+    QScopedPointer<PacketSynchronizer> patient_;
 };

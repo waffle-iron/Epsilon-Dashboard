@@ -34,15 +34,15 @@ class DisplayDashboardView : public QObject
     Q_OBJECT
 public:
     DisplayDashboardView(BatteryPresenter& batteryPresenter,
-                        BatteryFaultsPresenter& batteryFaultsPresenter,
-                        CMUPresenter& cmuPresenter,
-                        DriverControlsPresenter& driverControlsPresenter,
-                        KeyMotorPresenter& keyMotorPresenter,
-                        LightsPresenter& lightsPresenter,
-                        MPPTPresenter& mpptPresenter,
-                        MotorDetailsPresenter& motorDetailsPresenter,
-                        MotorFaultsPresenter& motorFaultsPresenter,
-                        I_DisplayDashboardUI& ui);
+                         BatteryFaultsPresenter& batteryFaultsPresenter,
+                         CMUPresenter& cmuPresenter,
+                         DriverControlsPresenter& driverControlsPresenter,
+                         KeyMotorPresenter& keyMotorPresenter,
+                         LightsPresenter& lightsPresenter,
+                         MPPTPresenter& mpptPresenter,
+                         MotorDetailsPresenter& motorDetailsPresenter,
+                         MotorFaultsPresenter& motorFaultsPresenter,
+                         I_DisplayDashboardUI& ui);
     ~DisplayDashboardView();
 
 private:

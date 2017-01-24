@@ -36,7 +36,7 @@ class BatteryFaultsPopulator : public QObject
     Q_OBJECT
 public:
     BatteryFaultsPopulator(I_JsonReceiver& jsonReceiver,
-                     I_BatteryFaultsData& batteryFaultsData);
+                           I_BatteryFaultsData& batteryFaultsData);
     virtual ~BatteryFaultsPopulator() {}
 
 public slots:

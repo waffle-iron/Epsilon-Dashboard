@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 MotorDetailsPopulator::MotorDetailsPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_MotorDetailsData& motorDetailsData)
+        I_MotorDetailsData& motorDetailsData)
     : jsonReceiver_(jsonReceiver)
     , motorDetailsData_(motorDetailsData)
 {
@@ -41,16 +41,13 @@ MotorDetailsPopulator::MotorDetailsPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void MotorDetailsPopulator::populateData(const QJsonObject& data)
-{   
+{
     MotorDetails motorDetailsZero;
     MotorDetails motorDetailsOne;
-
     QJsonValue value = data.value(JsonFormat::MOTORDETAILS);
     QJsonArray array = value.toArray();
-
     QJsonValue motorZeroJson = array.at(0);
     QJsonValue motorOneJson = array.at(1);
-
     motorDetailsZero.setPhaseCCurrent(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_PHASECCURRENT).toDouble());
     motorDetailsZero.setPhaseBCurrent(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_PHASEBCURRENT).toDouble());
     motorDetailsZero.setMotorVoltageReal(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_MOTORVOLTAGEREAL).toDouble());
@@ -67,7 +64,6 @@ void MotorDetailsPopulator::populateData(const QJsonObject& data)
     motorDetailsZero.setDcBusAmpHours(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_DCBUSAMPHOURS).toDouble());
     motorDetailsZero.setOdometer(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_ODOMETER).toDouble());
     motorDetailsZero.setSlipSpeed(motorZeroJson.toObject().value(JsonFormat::MOTORDETAILS_SLIPSPEED).toDouble());
-
     motorDetailsOne.setPhaseCCurrent(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_PHASECCURRENT).toDouble());
     motorDetailsOne.setPhaseBCurrent(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_PHASEBCURRENT).toDouble());
     motorDetailsOne.setMotorVoltageReal(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_MOTORVOLTAGEREAL).toDouble());
@@ -84,7 +80,6 @@ void MotorDetailsPopulator::populateData(const QJsonObject& data)
     motorDetailsOne.setDcBusAmpHours(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_DCBUSAMPHOURS).toDouble());
     motorDetailsOne.setOdometer(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_ODOMETER).toDouble());
     motorDetailsOne.setSlipSpeed(motorOneJson.toObject().value(JsonFormat::MOTORDETAILS_SLIPSPEED).toDouble());
-
     motorDetailsData_.setMotorZeroDetails(motorDetailsZero);
     motorDetailsData_.setMotorOneDetails(motorDetailsOne);
 }

@@ -9,5 +9,5 @@ BatteryFaultsPresenter::BatteryFaultsPresenter(const I_BatteryFaultsData& batter
 void BatteryFaultsPresenter::relayBatteryFaultsData()
 {
     connect(&batteryFaultsData_, SIGNAL(batteryFaultsReceived(BatteryFaults)),
-        this, SIGNAL(batteryFaultsReceived(BatteryFaults)));
+            this, SIGNAL(batteryFaultsReceived(BatteryFaults)));
 }

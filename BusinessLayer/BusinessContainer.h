@@ -10,11 +10,11 @@ class CommunicationContainer;
 class BusinessContainer
 {
 public:
-	explicit BusinessContainer(CommunicationContainer& communicationContainer, DataContainer& dataContainer);
-	~BusinessContainer();
+    explicit BusinessContainer(CommunicationContainer& communicationContainer, DataContainer& dataContainer);
+    ~BusinessContainer();
 
-	I_CommunicationsMonitoringService& communicationsMonitoringService();
+    I_CommunicationsMonitoringService& communicationsMonitoringService();
 private:
-   QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;
-   QScopedPointer<BusinessContainerPrivate> impl_;
+    QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;
+    QScopedPointer<BusinessContainerPrivate> impl_;
 };

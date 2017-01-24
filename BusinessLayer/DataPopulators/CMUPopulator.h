@@ -36,7 +36,7 @@ class CMUPopulator : public QObject
     Q_OBJECT
 public:
     CMUPopulator(I_JsonReceiver& jsonReceiver,
-                     I_CMUData& cmuData);
+                 I_CMUData& cmuData);
     virtual ~CMUPopulator() {}
 
 public slots:

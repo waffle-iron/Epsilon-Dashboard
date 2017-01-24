@@ -2,8 +2,8 @@
 
 namespace CommDefines
 {
-   enum Type
-   {
-      Udp
-   };
+    enum Type
+    {
+        Udp
+    };
 }

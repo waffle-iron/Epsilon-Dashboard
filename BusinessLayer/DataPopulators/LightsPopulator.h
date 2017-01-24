@@ -36,7 +36,7 @@ class LightsPopulator : public QObject
     Q_OBJECT
 public:
     LightsPopulator(I_JsonReceiver& jsonReceiver,
-                     I_LightsData& lightsData);
+                    I_LightsData& lightsData);
     virtual ~LightsPopulator() {}
 
 public slots:

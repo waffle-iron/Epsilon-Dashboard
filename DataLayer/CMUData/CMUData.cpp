@@ -72,13 +72,15 @@ double CMUData::findMaxCellTemp()
     allCellTemps.append(cmuTwo_.cellTemps());
     allCellTemps.append(cmuThree_.cellTemps());
     maxCellTemp = allCellTemps.at(0);
-    foreach(const double cellTemp, allCellTemps)
+
+    foreach (const double cellTemp, allCellTemps)
     {
-        if(cellTemp > maxCellTemp)
+        if (cellTemp > maxCellTemp)
         {
             maxCellTemp = cellTemp;
         }
     }
+
     return maxCellTemp;
 }
 double CMUData::findLowestVoltage()
@@ -90,13 +92,15 @@ double CMUData::findLowestVoltage()
     allVoltages.append(cmuTwo_.voltages());
     allVoltages.append(cmuThree_.voltages());
     minVoltage = allVoltages.at(0);
-    foreach(const double voltage, allVoltages)
+
+    foreach (const double voltage, allVoltages)
     {
-        if(voltage < minVoltage)
+        if (voltage < minVoltage)
         {
             minVoltage = voltage;
         }
     }
+
     return minVoltage;
 }
 double CMUData::findAverageCellTemp()
@@ -108,11 +112,13 @@ double CMUData::findAverageCellTemp()
     allCellTemps.append(cmuOne_.cellTemps());
     allCellTemps.append(cmuTwo_.cellTemps());
     allCellTemps.append(cmuThree_.cellTemps());
-    foreach(const double cellTemp, allCellTemps)
+
+    foreach (const double cellTemp, allCellTemps)
     {
         sumCellTemps += cellTemp;
         cellTempsCount++;
     }
+
     return sumCellTemps / cellTempsCount;
 }
 double CMUData::findAverageVoltage()
@@ -124,10 +130,12 @@ double CMUData::findAverageVoltage()
     allVoltages.append(cmuOne_.voltages());
     allVoltages.append(cmuTwo_.voltages());
     allVoltages.append(cmuThree_.voltages());
-    foreach(const double voltage, allVoltages)
+
+    foreach (const double voltage, allVoltages)
     {
         sumVoltages += voltage;
         voltagesCount++;
     }
+
     return sumVoltages / voltagesCount;
 }

@@ -36,7 +36,7 @@ class MotorFaultsPopulator : public QObject
     Q_OBJECT
 public:
     MotorFaultsPopulator(I_JsonReceiver& jsonReceiver,
-                     I_MotorFaultsData& motorFaultsData);
+                         I_MotorFaultsData& motorFaultsData);
     virtual ~MotorFaultsPopulator() {}
 
 public slots:

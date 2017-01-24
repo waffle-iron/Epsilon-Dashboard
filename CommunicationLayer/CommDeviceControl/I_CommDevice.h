@@ -5,10 +5,10 @@ class QByteArray;
 
 class I_CommDevice : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   virtual ~I_CommDevice() {}
+    virtual ~I_CommDevice() {}
 
 signals:
-   void dataReceived(QByteArray data);
+    void dataReceived(QByteArray data);
 };

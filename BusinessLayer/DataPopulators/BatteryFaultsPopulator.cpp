@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 BatteryFaultsPopulator::BatteryFaultsPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_BatteryFaultsData& batteryFaultsData)
+        I_BatteryFaultsData& batteryFaultsData)
     : jsonReceiver_(jsonReceiver)
     , batteryFaultsData_(batteryFaultsData)
 {
@@ -41,11 +41,9 @@ BatteryFaultsPopulator::BatteryFaultsPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void BatteryFaultsPopulator::populateData(const QJsonObject& data)
-{   
+{
     QJsonValue value = data.value(JsonFormat::BATTERYFAULTS);
-    
     BatteryFaults batteryFaults;
-
     batteryFaults.setCellOverVoltage(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLOVERVOLTAGE).toBool());
     batteryFaults.setCellUnderVoltage(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLUNDERVOLTAGE).toBool());
     batteryFaults.setCellOverTemperature(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLOVERTEMP).toBool());
@@ -58,6 +56,5 @@ void BatteryFaultsPopulator::populateData(const QJsonObject& data)
     batteryFaults.setCanSupplyIsLow(value.toObject().value(JsonFormat::BATTERYFAULTS_CAN12VSUPPLYLOW).toBool());
     batteryFaults.setContactorIsStuck(value.toObject().value(JsonFormat::BATTERYFAULTS_CONTACTORSTUCK).toBool());
     batteryFaults.setCmuDetectedExtraCellPresent(value.toObject().value(JsonFormat::BATTERYFAULTS_CMUDETECTEDEXTRACELL).toBool());
-
     batteryFaultsData_.setBatteryFaults(batteryFaults);
 }

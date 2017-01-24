@@ -36,7 +36,7 @@ class MPPTPopulator : public QObject
     Q_OBJECT
 public:
     MPPTPopulator(I_JsonReceiver& jsonReceiver,
-                     I_MPPTData& mpptData);
+                  I_MPPTData& mpptData);
     virtual ~MPPTPopulator() {}
 
 public slots:

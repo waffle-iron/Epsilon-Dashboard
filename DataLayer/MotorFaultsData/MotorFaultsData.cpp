@@ -11,39 +11,39 @@ MotorFaultsData::~MotorFaultsData()
 /* FaultData Gets */
 ErrorFlags MotorFaultsData::motorOneErrorFlags() const
 {
-   return motorOneErrorFlags_;
+    return motorOneErrorFlags_;
 }
 LimitFlags MotorFaultsData::motorOneLimitFlags() const
 {
-   return motorOneLimitFlags_;
+    return motorOneLimitFlags_;
 }
 ErrorFlags MotorFaultsData::motorTwoErrorFlags() const
 {
-   return motorTwoErrorFlags_;
+    return motorTwoErrorFlags_;
 }
 LimitFlags MotorFaultsData::motorTwoLimitFlags() const
 {
-   return motorTwoLimitFlags_;
+    return motorTwoLimitFlags_;
 }
 
 /* FaultData Sets */
 void MotorFaultsData::setMotorOneErrorFlags(ErrorFlags errorFlags)
 {
-   motorOneErrorFlags_ = errorFlags;
-   emit motorOneErrorFlagsReceived(motorOneErrorFlags_);
+    motorOneErrorFlags_ = errorFlags;
+    emit motorOneErrorFlagsReceived(motorOneErrorFlags_);
 }
 void MotorFaultsData::setMotorOneLimitFlags(LimitFlags limitFlags)
 {
-   motorOneLimitFlags_ = limitFlags;
-   emit motorOneLimitFlagsReceived(motorOneLimitFlags_);
+    motorOneLimitFlags_ = limitFlags;
+    emit motorOneLimitFlagsReceived(motorOneLimitFlags_);
 }
 void MotorFaultsData::setMotorTwoErrorFlags(ErrorFlags errorFlags)
 {
-   motorTwoErrorFlags_ = errorFlags;
-   emit motorTwoErrorFlagsReceived(motorTwoErrorFlags_);
+    motorTwoErrorFlags_ = errorFlags;
+    emit motorTwoErrorFlagsReceived(motorTwoErrorFlags_);
 }
 void MotorFaultsData::setMotorTwoLimitFlags(LimitFlags limitFlags)
 {
-   motorTwoLimitFlags_ = limitFlags;
-   emit motorTwoLimitFlagsReceived(motorTwoLimitFlags_);
+    motorTwoLimitFlags_ = limitFlags;
+    emit motorTwoLimitFlagsReceived(motorTwoLimitFlags_);
 }

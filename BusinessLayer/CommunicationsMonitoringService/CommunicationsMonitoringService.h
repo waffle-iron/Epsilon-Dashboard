@@ -25,7 +25,7 @@ private slots:
     void decrementInvalidPacketsReceivedInLastMinute();
 
 private:
-    I_JsonReceiver& jsonReceiver_;    
+    I_JsonReceiver& jsonReceiver_;
 
     QTimer updateTimer_;
     int secondsSinceLastPacketReceived_;

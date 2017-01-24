@@ -7,18 +7,18 @@ class I_MotorFaultsData;
 
 class MotorFaultsPresenter : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 public:
-   explicit MotorFaultsPresenter(const I_MotorFaultsData& motorFaultsData);
+    explicit MotorFaultsPresenter(const I_MotorFaultsData& motorFaultsData);
 
 private:
-   void relayMotorFaultsData();
+    void relayMotorFaultsData();
 
-   const I_MotorFaultsData& motorFaultsData_;
+    const I_MotorFaultsData& motorFaultsData_;
 
 signals:
-   void motorOneErrorFlagsReceived(ErrorFlags errorFlags);
-   void motorOneLimitFlagsReceived(LimitFlags limitFlags);
-   void motorTwoErrorFlagsReceived(ErrorFlags errorFlags);
-   void motorTwoLimitFlagsReceived(LimitFlags limitFlags);
+    void motorOneErrorFlagsReceived(ErrorFlags errorFlags);
+    void motorOneLimitFlagsReceived(LimitFlags limitFlags);
+    void motorTwoErrorFlagsReceived(ErrorFlags errorFlags);
+    void motorTwoLimitFlagsReceived(LimitFlags limitFlags);
 };

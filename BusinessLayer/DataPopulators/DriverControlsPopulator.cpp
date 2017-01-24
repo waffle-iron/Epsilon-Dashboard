@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 DriverControlsPopulator::DriverControlsPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_DriverControlsData& driverControlsData)
+        I_DriverControlsData& driverControlsData)
     : jsonReceiver_(jsonReceiver)
     , driverControlsData_(driverControlsData)
 {
@@ -41,9 +41,8 @@ DriverControlsPopulator::DriverControlsPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void DriverControlsPopulator::populateData(const QJsonObject& data)
-{   
+{
     QJsonValue value = data.value(JsonFormat::DRIVERCONTROLS);
-    
     driverControlsData_.setAlive(value.toObject().value(JsonFormat::DRIVERCONTROLS_ALIVE).toBool());
     driverControlsData_.setHeadlightsOff(value.toObject().value(JsonFormat::DRIVERCONTROLS_HEADLIGHTSOFF).toBool());
     driverControlsData_.setHeadlightsLow(value.toObject().value(JsonFormat::DRIVERCONTROLS_HEADLIGHTSLOW).toBool());

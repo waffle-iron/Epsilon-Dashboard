@@ -16,50 +16,50 @@ KeyMotor::~KeyMotor()
 
 bool KeyMotor::alive() const
 {
-	return alive_;
+    return alive_;
 }
 double KeyMotor::setCurrent() const
 {
-	return setCurrent_;
+    return setCurrent_;
 }
 double KeyMotor::setVelocity() const
 {
-	return setVelocity_;
+    return setVelocity_;
 }
 double KeyMotor::busCurrent() const
 {
-	return busCurrent_;
+    return busCurrent_;
 }
 double KeyMotor::busVoltage() const
 {
-	return busVoltage_;
+    return busVoltage_;
 }
 double KeyMotor::vehicleVelocity() const
 {
-	return vehicleVelocity_;
+    return vehicleVelocity_;
 }
 
 void KeyMotor::setAlive(bool alive)
 {
-	alive_ = alive;
+    alive_ = alive;
 }
 void KeyMotor::setSetCurrent(double setCurrent)
 {
-	setCurrent_ = setCurrent;
+    setCurrent_ = setCurrent;
 }
 void KeyMotor::setSetVelocity(double setVelocity)
 {
-	setVelocity_ = setVelocity;
+    setVelocity_ = setVelocity;
 }
 void KeyMotor::setBusCurrent(double busCurrent)
 {
-	busCurrent_ = busCurrent;
+    busCurrent_ = busCurrent;
 }
 void KeyMotor::setBusVoltage(double busVoltage)
 {
-	busVoltage_ = busVoltage;
+    busVoltage_ = busVoltage;
 }
 void KeyMotor::setVehicleVelocity(double vehicleVelocity)
 {
-	vehicleVelocity_ = vehicleVelocity;
+    vehicleVelocity_ = vehicleVelocity;
 }

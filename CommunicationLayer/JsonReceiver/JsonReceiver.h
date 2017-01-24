@@ -11,7 +11,7 @@ class JsonReceiver : public I_JsonReceiver
 public:
     JsonReceiver(I_CommDevice& inputDevice);
     virtual ~JsonReceiver() {}
-    
+
 public slots:
     void handleIncomingData(const QByteArray&);
 };

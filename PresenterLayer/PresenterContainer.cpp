@@ -30,38 +30,38 @@ PresenterContainer::~PresenterContainer()
 
 BatteryPresenter& PresenterContainer::batteryPresenter()
 {
-  return *batteryPresenter_;
+    return *batteryPresenter_;
 }
 BatteryFaultsPresenter& PresenterContainer::batteryFaultsPresenter()
 {
-  return *batteryFaultsPresenter_;
+    return *batteryFaultsPresenter_;
 }
 CMUPresenter& PresenterContainer::cmuPresenter()
 {
-  return *cmuPresenter_;
+    return *cmuPresenter_;
 }
 DriverControlsPresenter& PresenterContainer::driverControlsPresenter()
 {
-  return *driverControlsPresenter_;
+    return *driverControlsPresenter_;
 }
 KeyMotorPresenter& PresenterContainer::keyMotorPresenter()
 {
-  return *keyMotorPresenter_;
+    return *keyMotorPresenter_;
 }
 LightsPresenter& PresenterContainer::lightsPresenter()
 {
-  return *lightsPresenter_;
+    return *lightsPresenter_;
 }
 MPPTPresenter& PresenterContainer::mpptPresenter()
 {
-  return *mpptPresenter_;
+    return *mpptPresenter_;
 }
 MotorDetailsPresenter& PresenterContainer::motorDetailsPresenter()
 {
-  return *motorDetailsPresenter_;
+    return *motorDetailsPresenter_;
 }
 MotorFaultsPresenter& PresenterContainer::motorFaultsPresenter()
 {
-  return *motorFaultsPresenter_;
+    return *motorFaultsPresenter_;
 }
 

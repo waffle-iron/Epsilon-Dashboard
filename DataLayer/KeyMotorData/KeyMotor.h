@@ -9,14 +9,14 @@ public:
 
     virtual ~KeyMotor();
 
-   	bool alive() const;
+    bool alive() const;
     double setCurrent() const;
     double setVelocity() const;
     double busCurrent() const;
     double busVoltage() const;
     double vehicleVelocity() const;
 
-   	void setAlive(bool alive);
+    void setAlive(bool alive);
     void setSetCurrent(double setCurrent);
     void setSetVelocity(double setVelocity);
     void setBusCurrent(double busCurrent);
@@ -24,10 +24,10 @@ public:
     void setVehicleVelocity(double vehicleVelocity);
 
 private:
-	bool alive_;
-	double setCurrent_;
-	double setVelocity_;
-	double busCurrent_;
-	double busVoltage_;
-	double vehicleVelocity_;
+    bool alive_;
+    double setCurrent_;
+    double setVelocity_;
+    double busCurrent_;
+    double busVoltage_;
+    double vehicleVelocity_;
 };

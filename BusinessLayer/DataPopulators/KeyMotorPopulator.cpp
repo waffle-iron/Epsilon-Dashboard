@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 KeyMotorPopulator::KeyMotorPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_KeyMotorData& keyMotorData)
+                                     I_KeyMotorData& keyMotorData)
     : jsonReceiver_(jsonReceiver)
     , keyMotorData_(keyMotorData)
 {
@@ -41,20 +41,19 @@ KeyMotorPopulator::KeyMotorPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void KeyMotorPopulator::populateData(const QJsonObject& data)
-{   
+{
     KeyMotor motorZero;
     KeyMotor motorOne;
-
     QList<bool> aliveList;
     QList<double> setCurrentList;
     QList<double> setVelocityList;
     QList<double> busCurrentList;
     QList<double> busVoltageList;
     QList<double> vehicleVelocityList;
-
     QJsonValue value = data.value(JsonFormat::KEYMOTOR);
     QJsonArray array = value.toArray();
-    foreach(const QJsonValue & v, array)
+
+    foreach (const QJsonValue& v, array)
     {
         aliveList.append(v.toObject().value(JsonFormat::KEYMOTOR_ALIVE).toBool());
         setCurrentList.append(v.toObject().value(JsonFormat::KEYMOTOR_SETCURRENT).toDouble());
@@ -70,14 +69,12 @@ void KeyMotorPopulator::populateData(const QJsonObject& data)
     motorZero.setBusCurrent(busCurrentList.value(0));
     motorZero.setBusVoltage(busVoltageList.value(0));
     motorZero.setVehicleVelocity(vehicleVelocityList.value(0));
-
     motorOne.setAlive(aliveList.value(1));
     motorOne.setSetCurrent(setCurrentList.value(1));
     motorOne.setSetVelocity(setVelocityList.value(1));
     motorOne.setBusCurrent(busCurrentList.value(1));
     motorOne.setBusVoltage(busVoltageList.value(1));
     motorOne.setVehicleVelocity(vehicleVelocityList.value(1));
-
     keyMotorData_.setMotorZero(motorZero);
     keyMotorData_.setMotorOne(motorOne);
 }

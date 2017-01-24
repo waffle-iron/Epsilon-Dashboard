@@ -38,11 +38,13 @@ void JsonReceiver::handleIncomingData(const QByteArray& data)
 {
     QJsonParseError err;
     QJsonObject parsedData = QJsonDocument::fromJson(data, &err).object();
+
     if (err.error != QJsonParseError::NoError)
     {
         qDebug() << err.errorString();
         emit invalidDataReceived();
         return;
     }
+
     emit dataReceived(parsedData);
 }

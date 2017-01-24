@@ -36,7 +36,7 @@ class DriverControlsPopulator : public QObject
     Q_OBJECT
 public:
     DriverControlsPopulator(I_JsonReceiver& jsonReceiver,
-                     I_DriverControlsData& driverControlsData);
+                            I_DriverControlsData& driverControlsData);
     virtual ~DriverControlsPopulator() {}
 
 public slots:

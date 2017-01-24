@@ -32,7 +32,7 @@
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
 LightsPopulator::LightsPopulator(I_JsonReceiver& jsonReceiver,
-                                   I_LightsData& lightsData)
+                                 I_LightsData& lightsData)
     : jsonReceiver_(jsonReceiver)
     , lightsData_(lightsData)
 {
@@ -41,7 +41,7 @@ LightsPopulator::LightsPopulator(I_JsonReceiver& jsonReceiver,
 }
 
 void LightsPopulator::populateData(const QJsonObject& data)
-{   
+{
     QJsonValue value = data.value(JsonFormat::LIGHTS);
     lightsData_.setlowBeams(value.toObject().value(JsonFormat::LIGHTS_LOWBEAMS).toBool());
     lightsData_.sethighBeams(value.toObject().value(JsonFormat::LIGHTS_HIGHBEAMS).toBool());

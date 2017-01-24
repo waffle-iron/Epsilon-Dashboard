@@ -10,42 +10,42 @@ MPPT::~MPPT()
 
 bool MPPT::alive() const
 {
-	return alive_;
+    return alive_;
 }
 double MPPT::arrayVoltage() const
 {
-	return arrayVoltage_;
+    return arrayVoltage_;
 }
 double MPPT::arrayCurrent() const
 {
-	return arrayCurrent_;
+    return arrayCurrent_;
 }
 double MPPT::batteryVoltage() const
 {
-	return batteryVoltage_;
+    return batteryVoltage_;
 }
 double MPPT::temperature() const
 {
-	return temperature_;
+    return temperature_;
 }
 
 void MPPT::setAlive(bool alive)
 {
-	alive_ = alive;
+    alive_ = alive;
 }
 void MPPT::setArrayVoltage(double arrayVoltage)
 {
-	arrayVoltage_ = arrayVoltage;
+    arrayVoltage_ = arrayVoltage;
 }
 void MPPT::setArrayCurrent(double arrayCurrent)
 {
-	arrayCurrent_ = arrayCurrent;
+    arrayCurrent_ = arrayCurrent;
 }
 void MPPT::setBatteryVoltage(double batteryVoltage)
 {
-	batteryVoltage_ = batteryVoltage;
+    batteryVoltage_ = batteryVoltage;
 }
 void MPPT::setTemperature(double temperature)
 {
-	temperature_ = temperature;
+    temperature_ = temperature;
 }
