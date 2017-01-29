@@ -6,7 +6,7 @@
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
-TARGET = ../release/Gen5Dashboard
+TARGET = ../release/EpsilonDashboard
 TEMPLATE = app
 CONFIG += static
 
@@ -62,8 +62,8 @@ SOURCES += \
     PresenterLayer/MotorDetailsPresenter/MotorDetailsPresenter.cpp \
     PresenterLayer/MotorFaultsPresenter/MotorFaultsPresenter.cpp \
     PresenterLayer/PresenterContainer.cpp \
-    Gen5Dashboard/main.cpp \
-    Gen5Dashboard/Gen5Dashboard.cpp \
+    EpsilonDashboard/main.cpp \
+    EpsilonDashboard/EpsilonDashboard.cpp \
     ViewLayer/ViewContainer.cpp \
     ViewLayer/DisplayDashboardUI/DisplayDashboardUI.cpp \
     ViewLayer/DisplayDashboardView/DisplayDashboardView.cpp
@@ -127,7 +127,7 @@ HEADERS  += \
     PresenterLayer/MotorDetailsPresenter/MotorDetailsPresenter.h \ 
     PresenterLayer/MotorFaultsPresenter/MotorFaultsPresenter.h \ 
     PresenterLayer/PresenterContainer.h \
-    Gen5Dashboard/Gen5Dashboard.h \
+    EpsilonDashboard/EpsilonDashboard.h \
     ViewLayer/ViewContainer.h \
     ViewLayer/DisplayDashboardView/DisplayDashboardView.h \
     ViewLayer/DisplayDashboardUI/DisplayDashboardUI.h \

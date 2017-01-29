@@ -4,9 +4,9 @@
 #include "PresenterLayer/PresenterContainer.h"
 #include "ViewLayer/ViewContainer.h"
 
-#include "Gen5Dashboard.h"
+#include "EpsilonDashboard.h"
 
-Gen5Dashboard::Gen5Dashboard(int& argc, char** argv)
+EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     : QApplication(argc, argv)
     , dataContainer_(new DataContainer())
     , communicationContainer_(new CommunicationContainer())
@@ -16,6 +16,6 @@ Gen5Dashboard::Gen5Dashboard(int& argc, char** argv)
 {
 }
 
-Gen5Dashboard::~Gen5Dashboard()
+EpsilonDashboard::~EpsilonDashboard()
 {
 }

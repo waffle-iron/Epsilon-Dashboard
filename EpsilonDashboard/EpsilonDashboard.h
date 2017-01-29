@@ -9,11 +9,11 @@ class BusinessContainer;
 class PresenterContainer;
 class ViewContainer;
 
-class Gen5Dashboard : public QApplication
+class EpsilonDashboard : public QApplication
 {
 public:
-    Gen5Dashboard(int& argc, char** argv);
-    ~Gen5Dashboard();
+    EpsilonDashboard(int& argc, char** argv);
+    ~EpsilonDashboard();
 
 private:
     QScopedPointer<DataContainer> dataContainer_;
