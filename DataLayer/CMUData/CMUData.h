@@ -18,10 +18,7 @@ public:
     void setCmuTwo(CMU cmuTwo);
     void setCmuThree(CMU cmuThree);
 private:
-    CMU cmuZero_;
-    CMU cmuOne_;
-    CMU cmuTwo_;
-    CMU cmuThree_;
+    CMU cmuList[4];
 
     double findMaxCellTemp();
     double findLowestVoltage();
