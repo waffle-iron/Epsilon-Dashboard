@@ -17,8 +17,6 @@ public:
     void setMpptTwo(MPPT mpptZero);
 
 private:
-    MPPT mpptZero_;
-    MPPT mpptOne_;
-    MPPT mpptTwo_;
+    MPPT mpptList [3];
 };
 

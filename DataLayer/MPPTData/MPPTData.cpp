@@ -11,34 +11,34 @@ MPPTData::~MPPTData()
 
 MPPT MPPTData::mpptZero() const
 {
-    return mpptZero_;
+    return mpptList[0];
 }
 
 MPPT MPPTData::mpptOne() const
 {
-    return mpptOne_;
+    return mpptList[1];
 }
 
 MPPT MPPTData::mpptTwo() const
 {
-    return mpptTwo_;
+    return mpptList[2];
 }
 
 
 void MPPTData::setMpptZero(MPPT mpptZero)
 {
-    mpptZero_ = mpptZero;
-    emit mpptZeroReceived(mpptZero_);
+    mpptList[0] = mpptZero;
+    emit mpptZeroReceived(mpptList[0]);
 }
 
 void MPPTData::setMpptOne(MPPT mpptOne)
 {
-    mpptOne_ = mpptOne;
-    emit mpptOneReceived(mpptOne_);
+    mpptList[1] = mpptOne;
+    emit mpptOneReceived(mpptList[1]);
 }
 
 void MPPTData::setMpptTwo(MPPT mpptTwo)
 {
-    mpptTwo_ = mpptTwo;
-    emit mpptTwoReceived(mpptTwo_);
+    mpptList[2] = mpptTwo;
+    emit mpptTwoReceived(mpptList[2]);
 }
