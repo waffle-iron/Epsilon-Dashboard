@@ -1,6 +1,7 @@
 #include "DisplayDashboardView.h"
 
-namespace {
+namespace
+{
     const double SLOPE_R = -1;
     const double Y_INT_R = 250;
     const double SLOPE_G = 1.75;
@@ -144,8 +145,8 @@ void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
 
-    QString r = QString::number(SLOPE_R*packSocPercentage + Y_INT_R);
-    QString g = QString::number(SLOPE_G*packSocPercentage + Y_INT_G);
+    QString r = QString::number(SLOPE_R * packSocPercentage + Y_INT_R);
+    QString g = QString::number(SLOPE_G * packSocPercentage + Y_INT_G);
 
     QString rgb = "rgb(" + r + "," + g + "," + BLUE + ")";
     QString progressBarColour = "QProgressBar::chunk:horizontal{background: " + rgb + "}";
