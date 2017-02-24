@@ -1,32 +1,32 @@
-#include "CMUData.h"
+#include "CmuData.h"
 #include <QDebug>
 
-CMUData::CMUData()
+CmuData::CmuData()
 {
 }
 
-CMUData::~CMUData()
+CmuData::~CmuData()
 {
 }
 
-CMU CMUData::cmuZero() const
+Cmu CmuData::cmuZero() const
 {
     return cmuList[0];
 }
-CMU CMUData::cmuOne() const
+Cmu CmuData::cmuOne() const
 {
     return cmuList[1];
 }
-CMU CMUData::cmuTwo() const
+Cmu CmuData::cmuTwo() const
 {
     return cmuList[2];
 }
-CMU CMUData::cmuThree() const
+Cmu CmuData::cmuThree() const
 {
     return cmuList[3];
 }
 
-void CMUData::setCmuZero(CMU cmuZero)
+void CmuData::setCmuZero(Cmu cmuZero)
 {
     cmuList[0] = cmuZero;
     emit cmuZeroReceived(cmuList[0]);
@@ -35,7 +35,7 @@ void CMUData::setCmuZero(CMU cmuZero)
     emit cmuAverageCellTempReceived(findAverageCellTemp());
     emit cmuAverageVoltageReceived(findAverageVoltage());
 }
-void CMUData::setCmuOne(CMU cmuOne)
+void CmuData::setCmuOne(Cmu cmuOne)
 {
     cmuList[1] = cmuOne;
     emit cmuOneReceived(cmuList[1]);
@@ -44,7 +44,7 @@ void CMUData::setCmuOne(CMU cmuOne)
     emit cmuAverageCellTempReceived(findAverageCellTemp());
     emit cmuAverageVoltageReceived(findAverageVoltage());
 }
-void CMUData::setCmuTwo(CMU cmuTwo)
+void CmuData::setCmuTwo(Cmu cmuTwo)
 {
     cmuList[2] = cmuTwo;
     emit cmuTwoReceived(cmuList[2]);
@@ -53,7 +53,7 @@ void CMUData::setCmuTwo(CMU cmuTwo)
     emit cmuAverageCellTempReceived(findAverageCellTemp());
     emit cmuAverageVoltageReceived(findAverageVoltage());
 }
-void CMUData::setCmuThree(CMU cmuThree)
+void CmuData::setCmuThree(Cmu cmuThree)
 {
     cmuList[3] = cmuThree;
     emit cmuThreeReceived(cmuList[3]);
@@ -63,7 +63,7 @@ void CMUData::setCmuThree(CMU cmuThree)
     emit cmuAverageVoltageReceived(findAverageVoltage());
 }
 
-double CMUData::findMaxCellTemp()
+double CmuData::findMaxCellTemp()
 {
     QList<double> allCellTemps;
     double maxCellTemp;
@@ -83,7 +83,7 @@ double CMUData::findMaxCellTemp()
 
     return maxCellTemp;
 }
-double CMUData::findLowestVoltage()
+double CmuData::findLowestVoltage()
 {
     QList<double> allVoltages;
     double minVoltage;
@@ -103,7 +103,7 @@ double CMUData::findLowestVoltage()
 
     return minVoltage;
 }
-double CMUData::findAverageCellTemp()
+double CmuData::findAverageCellTemp()
 {
     QList<double> allCellTemps;
     double sumCellTemps = 0;
@@ -121,7 +121,7 @@ double CMUData::findAverageCellTemp()
 
     return sumCellTemps / cellTempsCount;
 }
-double CMUData::findAverageVoltage()
+double CmuData::findAverageVoltage()
 {
     QList<double> allVoltages;
     double sumVoltages = 0;

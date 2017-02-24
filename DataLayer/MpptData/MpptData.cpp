@@ -1,43 +1,43 @@
-#include "MPPTData.h"
+#include "MpptData.h"
 #include <QDebug>
 
-MPPTData::MPPTData()
+MpptData::MpptData()
 {
 }
 
-MPPTData::~MPPTData()
+MpptData::~MpptData()
 {
 }
 
-MPPT MPPTData::mpptZero() const
+Mppt MpptData::mpptZero() const
 {
     return mpptList[0];
 }
 
-MPPT MPPTData::mpptOne() const
+Mppt MpptData::mpptOne() const
 {
     return mpptList[1];
 }
 
-MPPT MPPTData::mpptTwo() const
+Mppt MpptData::mpptTwo() const
 {
     return mpptList[2];
 }
 
 
-void MPPTData::setMpptZero(MPPT mpptZero)
+void MpptData::setMpptZero(Mppt mpptZero)
 {
     mpptList[0] = mpptZero;
     emit mpptZeroReceived(mpptList[0]);
 }
 
-void MPPTData::setMpptOne(MPPT mpptOne)
+void MpptData::setMpptOne(Mppt mpptOne)
 {
     mpptList[1] = mpptOne;
     emit mpptOneReceived(mpptList[1]);
 }
 
-void MPPTData::setMpptTwo(MPPT mpptTwo)
+void MpptData::setMpptTwo(Mppt mpptTwo)
 {
     mpptList[2] = mpptTwo;
     emit mpptTwoReceived(mpptList[2]);
