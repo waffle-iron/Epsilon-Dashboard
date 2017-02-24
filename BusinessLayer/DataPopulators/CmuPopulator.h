@@ -25,24 +25,24 @@
 
 #pragma once
 
-#include "DataLayer/MPPTData/I_MPPTData.h"
+#include "DataLayer/CmuData/I_CmuData.h"
 #include <QObject>
 
 class I_JsonReceiver;
-class I_MPPTData;
+class I_CmuData;
 
-class MPPTPopulator : public QObject
+class CmuPopulator : public QObject
 {
     Q_OBJECT
 public:
-    MPPTPopulator(I_JsonReceiver& jsonReceiver,
-                  I_MPPTData& mpptData);
-    virtual ~MPPTPopulator() {}
+    CmuPopulator(I_JsonReceiver& jsonReceiver,
+                 I_CmuData& cmuData);
+    virtual ~CmuPopulator() {}
 
 public slots:
     void populateData(const QJsonObject&);
 
 private:
     I_JsonReceiver& jsonReceiver_;
-    I_MPPTData& mpptData_;
+    I_CmuData& cmuData_;
 };

@@ -26,13 +26,13 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
-#include "MPPTPopulator.h"
+#include "MpptPopulator.h"
 
 #include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
-MPPTPopulator::MPPTPopulator(I_JsonReceiver& jsonReceiver,
-                             I_MPPTData& mpptData)
+MpptPopulator::MpptPopulator(I_JsonReceiver& jsonReceiver,
+                             I_MpptData& mpptData)
     : jsonReceiver_(jsonReceiver)
     , mpptData_(mpptData)
 {
@@ -40,11 +40,11 @@ MPPTPopulator::MPPTPopulator(I_JsonReceiver& jsonReceiver,
             this, SLOT(populateData(const QJsonObject&)));
 }
 
-void MPPTPopulator::populateData(const QJsonObject& data)
+void MpptPopulator::populateData(const QJsonObject& data)
 {
-    MPPT mpptZero;
-    MPPT mpptOne;
-    MPPT mpptTwo;
+    Mppt mpptZero;
+    Mppt mpptOne;
+    Mppt mpptTwo;
     QList<bool> aliveList;
     QList<double> arrayVoltageList;
     QList<double> arrayCurrentList;

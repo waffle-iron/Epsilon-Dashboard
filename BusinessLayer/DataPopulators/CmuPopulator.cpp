@@ -26,13 +26,13 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
-#include "CMUPopulator.h"
+#include "CmuPopulator.h"
 
 #include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include "BusinessLayer/DataPopulators/JsonDefines.h"
 
-CMUPopulator::CMUPopulator(I_JsonReceiver& jsonReceiver,
-                           I_CMUData& cmuData)
+CmuPopulator::CmuPopulator(I_JsonReceiver& jsonReceiver,
+                           I_CmuData& cmuData)
     : jsonReceiver_(jsonReceiver)
     , cmuData_(cmuData)
 {
@@ -40,12 +40,12 @@ CMUPopulator::CMUPopulator(I_JsonReceiver& jsonReceiver,
             this, SLOT(populateData(const QJsonObject&)));
 }
 
-void CMUPopulator::populateData(const QJsonObject& data)
+void CmuPopulator::populateData(const QJsonObject& data)
 {
-    CMU cmuZero;
-    CMU cmuOne;
-    CMU cmuTwo;
-    CMU cmuThree;
+    Cmu cmuZero;
+    Cmu cmuOne;
+    Cmu cmuTwo;
+    Cmu cmuThree;
     QList<double> cmuZeroVoltages;
     QList<double> cmuOneVoltages;
     QList<double> cmuTwoVoltages;
