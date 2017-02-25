@@ -3,10 +3,18 @@
 namespace
 {
     const double SLOPE_R = -1;
-    const double Y_INT_R = 250;
-    const double SLOPE_G = 1.75;
-    const double Y_INT_G = 50;
-    const QString BLUE = "55";
+    const double Y_INT_R = 220;
+    const double SLOPE_G = 1.7;
+    const double Y_INT_G = 10;
+    const QString BLUE = "20";
+    const QString DEFAULT_SS = "QProgressBar:horizontal {\
+            border: 1px solid white;\
+            border-radius: 7px;\
+            background: black;\
+            }\
+            QProgressBar::chunk:horizontal{\
+            border-radius: 7px;\
+            background: ";
 }
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
@@ -144,14 +152,12 @@ void DisplayDashboardView::aliveReceived(bool)
 void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
-
     QString r = QString::number(SLOPE_R * packSocPercentage + Y_INT_R);
     QString g = QString::number(SLOPE_G * packSocPercentage + Y_INT_G);
 
-    QString rgb = "rgb(" + r + "," + g + "," + BLUE + ")";
-    QString progressBarColour = "QProgressBar::chunk:horizontal{background: " + rgb + "}";
+    QString rgb = "rgb(" + r + "," + g + "," + BLUE + ");}";
 
-    ui_.stateOfChargeCapacityWidget().setStyleSheet(progressBarColour);
+    ui_.stateOfChargeCapacityWidget().setStyleSheet(DEFAULT_SS + rgb);
 
 }
 void DisplayDashboardView::prechargeStateReceived(QString prechargeState)

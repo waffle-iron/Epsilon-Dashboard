@@ -1293,12 +1293,28 @@ color: white;
                   <bold>false</bold>
                  </font>
                 </property>
+                <property name="autoFillBackground">
+                 <bool>false</bool>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true">QProgressBar::chunk:horizontal{background: rgb(20,180,20);
+                 <string notr="true">QProgressBar:horizontal {
+border: 1px solid white;
+border-radius: 7px;
+background-color: black;
+}
+QProgressBar::chunk:horizontal{
+border-radius: 7px;
+background: rgb(20,180,20);
 }</string>
                 </property>
                 <property name="value">
                  <number>100</number>
+                </property>
+                <property name="textVisible">
+                 <bool>true</bool>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
