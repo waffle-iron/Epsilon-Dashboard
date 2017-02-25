@@ -84,8 +84,8 @@ void MotorFaultsPopulator::populateData(const QJsonObject& data)
     motorOneLimitFlags.setBusVoltageUpperLimit(motorOneLimitFlagsJson.toObject().value(JsonFormat::MOTORFAULTS_LIMITFLAGS_BUSVOLTAGEUPPER).toBool());
     motorOneLimitFlags.setBusVoltageLowerLimit(motorOneLimitFlagsJson.toObject().value(JsonFormat::MOTORFAULTS_LIMITFLAGS_BUSVOLTAGELOWER).toBool());
     motorOneLimitFlags.setIpmOrMotorTelemetryLimit(motorOneLimitFlagsJson.toObject().value(JsonFormat::MOTORFAULTS_LIMITFLAGS_IPMORMOTORTEMPERATURE).toBool());
-    motorFaultsData_.setMotorOneErrorFlags(motorZeroErrorFlags);
-    motorFaultsData_.setMotorOneLimitFlags(motorZeroLimitFlags);
-    motorFaultsData_.setMotorTwoErrorFlags(motorOneErrorFlags);
-    motorFaultsData_.setMotorTwoLimitFlags(motorOneLimitFlags);
+    motorFaultsData_.setMotorZeroErrorFlags(motorZeroErrorFlags);
+    motorFaultsData_.setMotorZeroLimitFlags(motorZeroLimitFlags);
+    motorFaultsData_.setMotorOneErrorFlags(motorOneErrorFlags);
+    motorFaultsData_.setMotorOneLimitFlags(motorOneLimitFlags);
 }

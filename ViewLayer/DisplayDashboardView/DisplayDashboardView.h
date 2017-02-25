@@ -100,8 +100,8 @@ private slots:
     void mpptTwoReceived(Mppt);
     void mpptPowerReceived(double);
 
+    void motorZeroErrorFlagsReceived(ErrorFlags);
+    void motorZeroLimitFlagsReceived(LimitFlags);
     void motorOneErrorFlagsReceived(ErrorFlags);
     void motorOneLimitFlagsReceived(LimitFlags);
-    void motorTwoErrorFlagsReceived(ErrorFlags);
-    void motorTwoLimitFlagsReceived(LimitFlags);
 };

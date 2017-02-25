@@ -120,14 +120,14 @@ void DisplayDashboardView::connectMotorDetails(MotorDetailsPresenter& motorDetai
 
 void DisplayDashboardView::connectMotorFaults(MotorFaultsPresenter& motorFaultsPresenter)
 {
+    connect(&motorFaultsPresenter, SIGNAL(motorZeroErrorFlagsReceived(ErrorFlags)),
+            this, SLOT(motorZeroErrorFlagsReceived(ErrorFlags)));
+    connect(&motorFaultsPresenter, SIGNAL(motorZeroLimitFlagsReceived(LimitFlags)),
+            this, SLOT(motorZeroLimitFlagsReceived(LimitFlags)));
     connect(&motorFaultsPresenter, SIGNAL(motorOneErrorFlagsReceived(ErrorFlags)),
             this, SLOT(motorOneErrorFlagsReceived(ErrorFlags)));
     connect(&motorFaultsPresenter, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)),
             this, SLOT(motorOneLimitFlagsReceived(LimitFlags)));
-    connect(&motorFaultsPresenter, SIGNAL(motorTwoErrorFlagsReceived(ErrorFlags)),
-            this, SLOT(motorTwoErrorFlagsReceived(ErrorFlags)));
-    connect(&motorFaultsPresenter, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)),
-            this, SLOT(motorTwoLimitFlagsReceived(LimitFlags)));
 }
 
 void DisplayDashboardView::aliveReceived(bool)
@@ -296,15 +296,15 @@ void DisplayDashboardView::mpptPowerReceived(double mpptPower)
     ui_.powerOutLabel().setNum(ui_.netPowerLabel().text().toDouble() - mpptPower);
 }
 
+void DisplayDashboardView::motorZeroErrorFlagsReceived(ErrorFlags motorZeroErrorFlags)
+{
+}
+void DisplayDashboardView::motorZeroLimitFlagsReceived(LimitFlags motorZeroLimitFlags)
+{
+}
 void DisplayDashboardView::motorOneErrorFlagsReceived(ErrorFlags motorOneErrorFlags)
 {
 }
 void DisplayDashboardView::motorOneLimitFlagsReceived(LimitFlags motorOneLimitFlags)
-{
-}
-void DisplayDashboardView::motorTwoErrorFlagsReceived(ErrorFlags motorTwoErrorFlags)
-{
-}
-void DisplayDashboardView::motorTwoLimitFlagsReceived(LimitFlags motorTwoLimitFlags)
 {
 }
