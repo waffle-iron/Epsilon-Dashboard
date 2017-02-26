@@ -152,6 +152,13 @@ void DisplayDashboardView::aliveReceived(bool)
 void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
+
+    // The rgb values for the progressbar are calculated using a two simple linear equations
+    // that were derived from defining maximum and minimum values for Red and Green values
+    // and determining a slope and an intercept. Blue will stay constant as there will be no need
+    // to change it as the progress bar will transition from Green to Red. Using this method for
+    // determining the rgb values eliminates the need for switch cases or big if-else statements.
+
     QString r = QString::number(SLOPE_R * packSocPercentage + Y_INT_R);
     QString g = QString::number(SLOPE_G * packSocPercentage + Y_INT_G);
 
