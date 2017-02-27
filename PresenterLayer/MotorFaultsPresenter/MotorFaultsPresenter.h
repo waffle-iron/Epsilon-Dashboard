@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "DataLayer/MotorFaultsData/I_MotorFaultsData.h"
+#include "../DataLayer/MotorFaultsData/I_MotorFaultsData.h"
 
 class I_MotorFaultsData;
 

@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include "DataLayer/BatteryFaultsData/I_BatteryFaultsData.h"
+#include "../DataLayer/BatteryFaultsData/I_BatteryFaultsData.h"
 #include <QObject>
 
 class I_JsonReceiver;

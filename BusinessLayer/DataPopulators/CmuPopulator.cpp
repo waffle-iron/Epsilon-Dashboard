@@ -28,8 +28,8 @@
 
 #include "CmuPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 CmuPopulator::CmuPopulator(I_JsonReceiver& jsonReceiver,
                            I_CmuData& cmuData)

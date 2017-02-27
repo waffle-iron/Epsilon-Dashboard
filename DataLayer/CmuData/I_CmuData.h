@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "DataLayer/CmuData/Cmu.h"
+#include "Cmu.h"
 
 class I_CmuData : public QObject
 {

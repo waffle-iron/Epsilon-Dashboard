@@ -2,8 +2,8 @@
 
 #include <QObject>
 
-#include "DataLayer/MotorFaultsData/ErrorFlags.h"
-#include "DataLayer/MotorFaultsData/LimitFlags.h"
+#include "ErrorFlags.h"
+#include "LimitFlags.h"
 
 class I_MotorFaultsData : public QObject
 {

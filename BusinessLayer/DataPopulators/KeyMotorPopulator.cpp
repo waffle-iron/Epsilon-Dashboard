@@ -28,8 +28,8 @@
 
 #include "KeyMotorPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 KeyMotorPopulator::KeyMotorPopulator(I_JsonReceiver& jsonReceiver,
                                      I_KeyMotorData& keyMotorData)
