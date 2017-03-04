@@ -28,8 +28,8 @@
 
 #include "MpptPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 MpptPopulator::MpptPopulator(I_JsonReceiver& jsonReceiver,
                              I_MpptData& mpptData)

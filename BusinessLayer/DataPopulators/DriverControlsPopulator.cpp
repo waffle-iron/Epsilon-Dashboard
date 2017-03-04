@@ -28,8 +28,8 @@
 
 #include "DriverControlsPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 DriverControlsPopulator::DriverControlsPopulator(I_JsonReceiver& jsonReceiver,
         I_DriverControlsData& driverControlsData)

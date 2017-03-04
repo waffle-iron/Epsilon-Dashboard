@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include "DataLayer/MpptData/I_MpptData.h"
+#include "../DataLayer/MpptData/I_MpptData.h"
 #include <QObject>
 
 class I_JsonReceiver;

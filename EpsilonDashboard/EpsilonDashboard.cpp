@@ -1,8 +1,8 @@
-#include "DataLayer/DataContainer.h"
-#include "CommunicationLayer/CommunicationContainer.h"
-#include "BusinessLayer/BusinessContainer.h"
-#include "PresenterLayer/PresenterContainer.h"
-#include "ViewLayer/ViewContainer.h"
+#include "../DataLayer/DataContainer.h"
+#include "../CommunicationLayer/CommunicationContainer.h"
+#include "../BusinessLayer/BusinessContainer.h"
+#include "../PresenterLayer/PresenterContainer.h"
+#include "../ViewLayer/ViewContainer.h"
 
 #include "EpsilonDashboard.h"
 

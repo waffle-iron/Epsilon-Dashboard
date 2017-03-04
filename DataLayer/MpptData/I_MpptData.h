@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "DataLayer/MpptData/Mppt.h"
+#include "Mppt.h"
 
 class I_MpptData : public QObject
 {

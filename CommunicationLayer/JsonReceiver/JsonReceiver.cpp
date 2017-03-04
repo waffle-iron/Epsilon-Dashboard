@@ -27,7 +27,7 @@
 
 #include "JsonReceiver.h"
 
-#include "CommunicationLayer/CommDeviceControl/I_CommDevice.h"
+#include "CommDeviceControl/I_CommDevice.h"
 
 JsonReceiver::JsonReceiver(I_CommDevice& inputDevice)
 {
