@@ -28,9 +28,9 @@
 
 #include "BatteryPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
-#include "DataLayer/BatteryData/I_BatteryData.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../DataLayer/BatteryData/I_BatteryData.h"
 
 BatteryPopulator::BatteryPopulator(I_JsonReceiver& jsonReceiver,
                                    I_BatteryData& batteryData)

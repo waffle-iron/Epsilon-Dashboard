@@ -28,8 +28,8 @@
 
 #include "MotorDetailsPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 MotorDetailsPopulator::MotorDetailsPopulator(I_JsonReceiver& jsonReceiver,
         I_MotorDetailsData& motorDetailsData)

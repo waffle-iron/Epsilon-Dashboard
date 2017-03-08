@@ -9,12 +9,12 @@ MotorFaultsPresenter::MotorFaultsPresenter(const I_MotorFaultsData& motorFaultsD
 
 void MotorFaultsPresenter::relayMotorFaultsData()
 {
+    connect(&motorFaultsData_, SIGNAL(motorZeroErrorFlagsReceived(ErrorFlags)),
+            this, SIGNAL(motorZeroErrorFlagsReceived(ErrorFlags)));
+    connect(&motorFaultsData_, SIGNAL(motorZeroLimitFlagsReceived(LimitFlags)),
+            this, SIGNAL(motorZeroLimitFlagsReceived(LimitFlags)));
     connect(&motorFaultsData_, SIGNAL(motorOneErrorFlagsReceived(ErrorFlags)),
             this, SIGNAL(motorOneErrorFlagsReceived(ErrorFlags)));
     connect(&motorFaultsData_, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)),
             this, SIGNAL(motorOneLimitFlagsReceived(LimitFlags)));
-    connect(&motorFaultsData_, SIGNAL(motorTwoErrorFlagsReceived(ErrorFlags)),
-            this, SIGNAL(motorTwoErrorFlagsReceived(ErrorFlags)));
-    connect(&motorFaultsData_, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)),
-            this, SIGNAL(motorTwoLimitFlagsReceived(LimitFlags)));
 }

@@ -3,7 +3,7 @@
 #include <QObject>
 #include "I_JsonReceiver.h"
 
-#include "CommunicationLayer/CommDeviceControl/I_CommDevice.h"
+#include "CommDeviceControl/I_CommDevice.h"
 
 class JsonReceiver : public I_JsonReceiver
 {

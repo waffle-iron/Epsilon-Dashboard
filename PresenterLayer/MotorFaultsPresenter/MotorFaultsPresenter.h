@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "DataLayer/MotorFaultsData/I_MotorFaultsData.h"
+#include "../DataLayer/MotorFaultsData/I_MotorFaultsData.h"
 
 class I_MotorFaultsData;
 
@@ -17,8 +17,8 @@ private:
     const I_MotorFaultsData& motorFaultsData_;
 
 signals:
+    void motorZeroErrorFlagsReceived(ErrorFlags errorFlags);
+    void motorZeroLimitFlagsReceived(LimitFlags limitFlags);
     void motorOneErrorFlagsReceived(ErrorFlags errorFlags);
     void motorOneLimitFlagsReceived(LimitFlags limitFlags);
-    void motorTwoErrorFlagsReceived(ErrorFlags errorFlags);
-    void motorTwoLimitFlagsReceived(LimitFlags limitFlags);
 };

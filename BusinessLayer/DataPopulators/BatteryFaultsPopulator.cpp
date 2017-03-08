@@ -28,8 +28,8 @@
 
 #include "BatteryFaultsPopulator.h"
 
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
-#include "BusinessLayer/DataPopulators/JsonDefines.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
 BatteryFaultsPopulator::BatteryFaultsPopulator(I_JsonReceiver& jsonReceiver,
         I_BatteryFaultsData& batteryFaultsData)

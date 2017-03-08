@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <QString>
-#include "DataLayer/BatteryFaultsData/BatteryFaults.h"
+#include "BatteryFaults.h"
 
 class I_BatteryFaultsData : public QObject
 {

@@ -1,5 +1,5 @@
 #include "CommunicationsMonitoringService.h"
-#include "CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include <QDebug>
 
 CommunicationsMonitoringService::CommunicationsMonitoringService(I_JsonReceiver& jsonReceiver)

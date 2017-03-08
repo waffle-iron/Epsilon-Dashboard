@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include "DataLayer/KeyMotorData/I_KeyMotorData.h"
+#include "../DataLayer/KeyMotorData/I_KeyMotorData.h"
 #include <QObject>
 
 class I_JsonReceiver;

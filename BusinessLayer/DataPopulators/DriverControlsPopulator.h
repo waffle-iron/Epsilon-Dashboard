@@ -25,7 +25,7 @@
 
 #pragma once
 
-#include "DataLayer/DriverControlsData/I_DriverControlsData.h"
+#include "../DataLayer/DriverControlsData/I_DriverControlsData.h"
 #include <QObject>
 
 class I_JsonReceiver;
