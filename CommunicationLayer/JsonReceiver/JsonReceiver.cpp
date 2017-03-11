@@ -43,8 +43,9 @@ void JsonReceiver::handleIncomingData(const QByteArray& data)
     {
         qDebug() << err.errorString();
         emit invalidDataReceived();
-        return;
     }
-
-    emit dataReceived(parsedData);
+    else
+    {
+        emit dataReceived(parsedData);        
+    }
 }
