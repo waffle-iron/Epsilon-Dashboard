@@ -22,7 +22,7 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
 
     parser.process(*this);
 
-    int mode = DISPLAY;
+    Mode mode = DISPLAY;
 
     if (parser.isSet(raceModeOption))
     {

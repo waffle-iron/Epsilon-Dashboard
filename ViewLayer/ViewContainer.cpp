@@ -4,7 +4,7 @@
 #include "../PresenterLayer/PresenterContainer.h"
 #include "ViewContainer.h"
 
-ViewContainer::ViewContainer(PresenterContainer& presenterContainer, int mode)
+ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
 {
     if (mode == DISPLAY)
     {
