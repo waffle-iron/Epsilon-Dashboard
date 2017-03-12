@@ -36,7 +36,7 @@ public:
     virtual void setContactorIsStuck(bool contactorIsStuck) = 0;
     virtual void setCmuDetectedExtraCellPresent(bool cmuDetectedExtraCellPresent) = 0;
 
-signals:   
+signals:
     void cellOverVoltageReceived(bool cellOverVoltage);
     void cellUnderVoltageReceived(bool cellUnderVoltage);
     void cellOverTemperatureReceived(bool cellOverTemperature);
