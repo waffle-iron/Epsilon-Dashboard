@@ -2,7 +2,7 @@
 
 #include <QScopedPointer>
 
-enum Mode { RACE , DISPLAY };
+enum Mode { RACE, DISPLAY };
 
 class DisplayDashboardView;
 class I_DisplayDashboardUI;
