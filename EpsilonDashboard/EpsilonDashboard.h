@@ -21,6 +21,4 @@ private:
     QScopedPointer<BusinessContainer> businessContainer_;
     QScopedPointer<PresenterContainer> presenterContainer_;
     QScopedPointer<ViewContainer> viewContainer_;
-
-    char parseCommandLineArgs();
 };

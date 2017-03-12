@@ -15,18 +15,6 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     , businessContainer_(new BusinessContainer(*communicationContainer_, *dataContainer_))
     , presenterContainer_(new PresenterContainer(*dataContainer_))
 {
-    char mode = parseCommandLineArgs();
-    viewContainer_.reset(new ViewContainer(*presenterContainer_, mode));
-}
-
-EpsilonDashboard::~EpsilonDashboard()
-{
-}
-
-char EpsilonDashboard::parseCommandLineArgs()
-{
-    //This function returns 'd' for display mode and 'r' for race mode
-    //The default mode is display mode
     QCommandLineParser parser;
 
     QCommandLineOption raceModeOption("r");
@@ -34,13 +22,16 @@ char EpsilonDashboard::parseCommandLineArgs()
 
     parser.process(*this);
 
-    char mode = 'd';
+    int mode = DISPLAY;
 
     if (parser.isSet(raceModeOption))
     {
-        mode = 'r';
+        mode = RACE;
     }
 
-    return mode;
+    viewContainer_.reset(new ViewContainer(*presenterContainer_, mode));
+}
 
+EpsilonDashboard::~EpsilonDashboard()
+{
 }
