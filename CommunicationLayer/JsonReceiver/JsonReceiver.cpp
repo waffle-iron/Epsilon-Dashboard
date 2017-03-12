@@ -46,6 +46,6 @@ void JsonReceiver::handleIncomingData(const QByteArray& data)
     }
     else
     {
-        emit dataReceived(parsedData);        
+        emit dataReceived(parsedData);
     }
 }
