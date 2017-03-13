@@ -1,11 +1,10 @@
+#include <QCommandLineParser>
+
 #include "../DataLayer/DataContainer.h"
 #include "../CommunicationLayer/CommunicationContainer.h"
 #include "../BusinessLayer/BusinessContainer.h"
 #include "../PresenterLayer/PresenterContainer.h"
 #include "../ViewLayer/ViewContainer.h"
-
-#include <QCommandLineParser>
-
 #include "EpsilonDashboard.h"
 
 EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
@@ -16,19 +15,14 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     , presenterContainer_(new PresenterContainer(*dataContainer_))
 {
     QCommandLineParser parser;
-
     QCommandLineOption raceModeOption("r");
     parser.addOption(raceModeOption);
-
     parser.process(*this);
-
     Mode mode = DISPLAY;
-
     if (parser.isSet(raceModeOption))
     {
         mode = RACE;
     }
-
     viewContainer_.reset(new ViewContainer(*presenterContainer_, mode));
 }
 
