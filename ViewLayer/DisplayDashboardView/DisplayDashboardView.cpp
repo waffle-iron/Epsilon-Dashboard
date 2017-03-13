@@ -56,8 +56,30 @@ void DisplayDashboardView::connectBattery(BatteryPresenter& batteryPresenter)
 
 void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryFaultsPresenter)
 {
-    connect(&batteryFaultsPresenter, SIGNAL(batteryFaultsReceived(BatteryFaults)),
-            this, SLOT(batteryFaultsReceived(BatteryFaults)));
+    connect(&batteryFaultsPresenter, SIGNAL(cellOverVoltageReceived(bool)),
+            this, SLOT(cellOverVoltageReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(cellUnderVoltageReceived(bool)),
+            this, SLOT(cellUnderVoltageReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(cellOverTemperatureReceived(bool)),
+            this, SLOT(cellOverTemperatureReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(measurementUntrustedReceived(bool)),
+            this, SLOT(measurementUntrustedReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(cmuCommTimeoutReceived(bool)),
+            this, SLOT(cmuCommTimeoutReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(bmuIsInSetupModeReceived(bool)),
+            this, SLOT(bmuIsInSetupModeReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(cmuCanBusPowerStatusReceived(bool)),
+            this, SLOT(cmuCanBusPowerStatusReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(packIsolationTestFailureReceived(bool)),
+            this, SLOT(packIsolationTestFailureReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(softwareOverCurrentMeasuredReceived(bool)),
+            this, SLOT(softwareOverCurrentMeasuredReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(canSupplyIsLowReceived(bool)),
+            this, SLOT(canSupplyIsLowReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(contactorIsStuckReceived(bool)),
+            this, SLOT(contactorIsStuckReceived(bool)));
+    connect(&batteryFaultsPresenter, SIGNAL(cmuDetectedExtraCellPresentReceived(bool)),
+            this, SLOT(cmuDetectedExtraCellPresentReceived(bool)));
 }
 
 void DisplayDashboardView::connectCmu(CmuPresenter& cmuPresenter)
@@ -182,8 +204,53 @@ void DisplayDashboardView::netPowerReceived(double netPower)
     ui_.powerOutLabel().setNum(netPower - ui_.powerInLabel().text().toDouble());
 }
 
-void DisplayDashboardView::batteryFaultsReceived(BatteryFaults)
+void DisplayDashboardView::cellOverVoltageReceived(bool cellOverVoltage)
 {
+
+}
+void DisplayDashboardView::cellUnderVoltageReceived(bool cellUnderVoltage)
+{
+
+}
+void DisplayDashboardView::cellOverTemperatureReceived(bool cellOverTemperature)
+{
+
+}
+void DisplayDashboardView::measurementUntrustedReceived(bool measurementUntrusted)
+{
+
+}
+void DisplayDashboardView::cmuCommTimeoutReceived(bool cmuCommTimeout)
+{
+
+}
+void DisplayDashboardView::bmuIsInSetupModeReceived(bool bmuIsInSetupMode)
+{
+
+}
+void DisplayDashboardView::cmuCanBusPowerStatusReceived(bool cmuCanBusPowerStatus)
+{
+
+}
+void DisplayDashboardView::packIsolationTestFailureReceived(bool packIsolationTestFailure)
+{
+
+}
+void DisplayDashboardView::softwareOverCurrentMeasuredReceived(bool softwareOverCurrentMeasured)
+{
+
+}
+void DisplayDashboardView::canSupplyIsLowReceived(bool canSupplyIsLow)
+{
+
+}
+void DisplayDashboardView::contactorIsStuckReceived(bool contactorIsStuck)
+{
+
+}
+void DisplayDashboardView::cmuDetectedExtraCellPresentReceived(bool cmuDetectedExtraCellPresent)
+{
+
 }
 
 void DisplayDashboardView::cmuMaxCellTempReceived(double maxCellTemp)

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QObject>
-#include "../../DataLayer/BatteryFaultsData/I_BatteryFaultsData.h"
 
 class I_BatteryFaultsData;
 
@@ -17,5 +16,16 @@ private:
     const I_BatteryFaultsData& batteryFaultsData_;
 
 signals:
-    void batteryFaultsReceived(BatteryFaults batteryFaults);
+    void cellOverVoltageReceived(bool cellOverVoltage);
+    void cellUnderVoltageReceived(bool cellUnderVoltage);
+    void cellOverTemperatureReceived(bool cellOverTemperature);
+    void measurementUntrustedReceived(bool measurementUntrusted);
+    void cmuCommTimeoutReceived(bool cmuCommTimeout);
+    void bmuIsInSetupModeReceived(bool bmuIsInSetupMode);
+    void cmuCanBusPowerStatusReceived(bool cmuCanBusPowerStatus);
+    void packIsolationTestFailureReceived(bool packIsolationTestFailure);
+    void softwareOverCurrentMeasuredReceived(bool softwareOverCurrentMeasured);
+    void canSupplyIsLowReceived(bool canSupplyIsLow);
+    void contactorIsStuckReceived(bool contactorIsStuck);
+    void cmuDetectedExtraCellPresentReceived(bool cmuDetectedExtraCellPresent);
 };

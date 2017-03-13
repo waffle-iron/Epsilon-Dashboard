@@ -3,7 +3,6 @@
 #include <QObject>
 #include <QLabel>
 
-#include "../DataLayer/BatteryFaultsData/BatteryFaults.h"
 #include "../DataLayer/MpptData/Mppt.h"
 #include "../DataLayer/MotorFaultsData/ErrorFlags.h"
 #include "../DataLayer/MotorFaultsData/LimitFlags.h"
@@ -76,7 +75,18 @@ private slots:
     void prechargeTimerCountReceived(double);
     void netPowerReceived(double);
 
-    void batteryFaultsReceived(BatteryFaults);
+    void cellOverVoltageReceived(bool);
+    void cellUnderVoltageReceived(bool);
+    void cellOverTemperatureReceived(bool);
+    void measurementUntrustedReceived(bool);
+    void cmuCommTimeoutReceived(bool);
+    void bmuIsInSetupModeReceived(bool);
+    void cmuCanBusPowerStatusReceived(bool);
+    void packIsolationTestFailureReceived(bool);
+    void softwareOverCurrentMeasuredReceived(bool);
+    void canSupplyIsLowReceived(bool);
+    void contactorIsStuckReceived(bool);
+    void cmuDetectedExtraCellPresentReceived(bool);
 
     void cmuMaxCellTempReceived(double);
     void cmuLowestCellVoltageReceived(double);

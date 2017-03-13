@@ -11,7 +11,6 @@ HEADERS += \
     BatteryData/BatteryData.h \
     BatteryData/I_BatteryData.h \
     BatteryFaultsData/BatteryFaultsData.h \
-    BatteryFaultsData/BatteryFaults.h \
     BatteryFaultsData/I_BatteryFaultsData.h \
     CmuData/CmuData.h \
     CmuData/I_CmuData.h \
@@ -38,7 +37,6 @@ HEADERS += \
 SOURCES += \ 
     BatteryData/BatteryData.cpp \
     BatteryFaultsData/BatteryFaultsData.cpp \
-    BatteryFaultsData/BatteryFaults.cpp \
     CmuData/CmuData.cpp \
     CmuData/Cmu.cpp \
     DriverControlsData/DriverControlsData.cpp \
