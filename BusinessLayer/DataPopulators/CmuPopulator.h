@@ -28,21 +28,18 @@
 #include "../DataLayer/CmuData/I_CmuData.h"
 #include <QObject>
 
-class I_JsonReceiver;
 class I_CmuData;
 
 class CmuPopulator : public QObject
 {
     Q_OBJECT
 public:
-    CmuPopulator(I_JsonReceiver& jsonReceiver,
-                 I_CmuData& cmuData);
+    CmuPopulator(I_CmuData& cmuData);
     virtual ~CmuPopulator() {}
 
 public slots:
     void populateData(const QJsonObject&);
 
 private:
-    I_JsonReceiver& jsonReceiver_;
     I_CmuData& cmuData_;
 };
