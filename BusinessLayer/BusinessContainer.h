@@ -23,15 +23,15 @@ public:
     explicit BusinessContainer(DataContainer& dataContainer);
     ~BusinessContainer();
 
-	BatteryPopulator& batteryPopulator();
-	BatteryFaultsPopulator& batteryFaultsPopulator();
-	CmuPopulator& cmuPopulator();
-	DriverControlsPopulator& driverControlsPopulator();
-	KeyMotorPopulator& keyMotorPopulator();
-	LightsPopulator& lightsPopulator();
-	MpptPopulator& mpptPopulator();
-	MotorDetailsPopulator& motorDetailsPopulator();
-	MotorFaultsPopulator& motorFaultsPopulator();
+    BatteryPopulator& batteryPopulator();
+    BatteryFaultsPopulator& batteryFaultsPopulator();
+    CmuPopulator& cmuPopulator();
+    DriverControlsPopulator& driverControlsPopulator();
+    KeyMotorPopulator& keyMotorPopulator();
+    LightsPopulator& lightsPopulator();
+    MpptPopulator& mpptPopulator();
+    MotorDetailsPopulator& motorDetailsPopulator();
+    MotorFaultsPopulator& motorFaultsPopulator();
     I_CommunicationsMonitoringService& communicationsMonitoringService();
 private:
     QScopedPointer<I_CommunicationsMonitoringService> communicationsMonitoringService_;

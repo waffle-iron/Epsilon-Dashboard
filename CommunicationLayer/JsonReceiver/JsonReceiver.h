@@ -33,23 +33,23 @@ class JsonReceiver : public I_JsonReceiver
     Q_OBJECT
 public:
     JsonReceiver(I_CommDevice& inputDevice,
-    	BatteryPopulator& batteryPopulator,
-	    BatteryFaultsPopulator& batteryFaultsPopulator,
-	    CmuPopulator& cmuPopulator,
-	    DriverControlsPopulator& driverControlsPopulator,
-	    KeyMotorPopulator& keyMotorPopulator,
-	    LightsPopulator& lightsPopulator,
-	    MpptPopulator& mpptPopulator,
-	    MotorDetailsPopulator& motorDetailsPopulator,
-	    MotorFaultsPopulator& motorFaultsPopulator,
-	    I_CommunicationsMonitoringService& communicationsMonitoringService); 
+                 BatteryPopulator& batteryPopulator,
+                 BatteryFaultsPopulator& batteryFaultsPopulator,
+                 CmuPopulator& cmuPopulator,
+                 DriverControlsPopulator& driverControlsPopulator,
+                 KeyMotorPopulator& keyMotorPopulator,
+                 LightsPopulator& lightsPopulator,
+                 MpptPopulator& mpptPopulator,
+                 MotorDetailsPopulator& motorDetailsPopulator,
+                 MotorFaultsPopulator& motorFaultsPopulator,
+                 I_CommunicationsMonitoringService& communicationsMonitoringService);
     virtual ~JsonReceiver() {}
 
 public slots:
     void handleIncomingData(const QByteArray&);
 
 private:
-	BatteryPopulator& batteryPopulator_;
+    BatteryPopulator& batteryPopulator_;
     BatteryFaultsPopulator& batteryFaultsPopulator_;
     CmuPopulator& cmuPopulator_;
     DriverControlsPopulator& driverControlsPopulator_;
