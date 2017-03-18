@@ -6,7 +6,7 @@
 
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
 {
-    if (mode == DISPLAY)
+    if (mode == Mode::DISPLAY)
     {
         DisplayDashboardUI_ = new DisplayDashboardUI();
         DisplayDashboardView_.reset(new DisplayDashboardView(
@@ -21,7 +21,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
                                         presenterContainer.motorFaultsPresenter(),
                                         *DisplayDashboardUI_));
     }
-    else if (mode == RACE)
+    else if (mode == Mode::RACE)
     {
         //TODO: Set up race mode UI here
         RaceModeDashboardUI_ = new RaceModeDashboardUI();

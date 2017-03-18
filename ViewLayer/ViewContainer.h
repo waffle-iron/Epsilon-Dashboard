@@ -2,12 +2,13 @@
 
 #include <QScopedPointer>
 
-enum Mode { RACE, DISPLAY };
-
 class DisplayDashboardView;
 class I_DisplayDashboardUI;
 class I_RaceModeDashboardUI;
 class PresenterContainer;
+
+
+enum class Mode { RACE, DISPLAY };
 
 class ViewContainer
 {
