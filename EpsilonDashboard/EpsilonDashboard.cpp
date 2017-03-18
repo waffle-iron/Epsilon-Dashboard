@@ -19,10 +19,12 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     parser.addOption(raceModeOption);
     parser.process(*this);
     Mode mode = Mode::DISPLAY;
+
     if (parser.isSet(raceModeOption))
     {
         mode = Mode::RACE;
     }
+
     viewContainer_.reset(new ViewContainer(*presenterContainer_, mode));
 }
 
