@@ -15,17 +15,17 @@ public:
         : udpConnectionService_(udpSocket_)
         , commDeviceManager_(udpSocket_)
         , connectionController_(udpConnectionService_)
-        , jsonReceiver_(commDeviceManager_
-                        , businessContainer.batteryPopulator()
-                        , businessContainer.batteryFaultsPopulator()
-                        , businessContainer.cmuPopulator()
-                        , businessContainer.driverControlsPopulator()
-                        , businessContainer.keyMotorPopulator()
-                        , businessContainer.lightsPopulator()
-                        , businessContainer.mpptPopulator()
-                        , businessContainer.motorDetailsPopulator()
-                        , businessContainer.motorFaultsPopulator()
-                        , businessContainer.communicationsMonitoringService())
+        , jsonReceiver_(commDeviceManager_,
+                        businessContainer.batteryPopulator(),
+                        businessContainer.batteryFaultsPopulator(),
+                        businessContainer.cmuPopulator(),
+                        businessContainer.driverControlsPopulator(),
+                        businessContainer.keyMotorPopulator(),
+                        businessContainer.lightsPopulator(),
+                        businessContainer.mpptPopulator(),
+                        businessContainer.motorDetailsPopulator(),
+                        businessContainer.motorFaultsPopulator(),
+                        businessContainer.communicationsMonitoringService())
     {
     }
     QUdpSocket udpSocket_;
