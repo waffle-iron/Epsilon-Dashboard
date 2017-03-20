@@ -6,15 +6,26 @@
 #include "CommDeviceControl/CommDeviceManager.h"
 #include "CommDeviceControl/UdpConnectionService.h"
 #include "JsonReceiver/JsonReceiver.h"
+#include "../BusinessLayer/BusinessContainer.h"
 
 class CommunicationContainerPrivate
 {
 public:
-    CommunicationContainerPrivate()
+    CommunicationContainerPrivate(BusinessContainer& businessContainer)
         : udpConnectionService_(udpSocket_)
         , commDeviceManager_(udpSocket_)
         , connectionController_(udpConnectionService_)
-        , jsonReceiver_(commDeviceManager_)
+        , jsonReceiver_(commDeviceManager_,
+                        businessContainer.batteryPopulator(),
+                        businessContainer.batteryFaultsPopulator(),
+                        businessContainer.cmuPopulator(),
+                        businessContainer.driverControlsPopulator(),
+                        businessContainer.keyMotorPopulator(),
+                        businessContainer.lightsPopulator(),
+                        businessContainer.mpptPopulator(),
+                        businessContainer.motorDetailsPopulator(),
+                        businessContainer.motorFaultsPopulator(),
+                        businessContainer.communicationsMonitoringService())
     {
     }
     QUdpSocket udpSocket_;
@@ -24,8 +35,8 @@ public:
     JsonReceiver jsonReceiver_;
 };
 
-CommunicationContainer::CommunicationContainer()
-    : impl_(new CommunicationContainerPrivate())
+CommunicationContainer::CommunicationContainer(BusinessContainer& businessContainer)
+    : impl_(new CommunicationContainerPrivate(businessContainer))
 {
 }
 

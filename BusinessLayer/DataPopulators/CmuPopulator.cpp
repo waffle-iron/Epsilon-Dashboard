@@ -28,16 +28,11 @@
 
 #include "CmuPopulator.h"
 
-#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
-CmuPopulator::CmuPopulator(I_JsonReceiver& jsonReceiver,
-                           I_CmuData& cmuData)
-    : jsonReceiver_(jsonReceiver)
-    , cmuData_(cmuData)
+CmuPopulator::CmuPopulator(I_CmuData& cmuData)
+    : cmuData_(cmuData)
 {
-    connect(&jsonReceiver_, SIGNAL(dataReceived(const QJsonObject&)),
-            this, SLOT(populateData(const QJsonObject&)));
 }
 
 void CmuPopulator::populateData(const QJsonObject& data)
