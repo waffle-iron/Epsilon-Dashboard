@@ -10,8 +10,8 @@
 EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     : QApplication(argc, argv)
     , dataContainer_(new DataContainer())
-    , communicationContainer_(new CommunicationContainer(*businessContainer_))
     , businessContainer_(new BusinessContainer(*dataContainer_))
+    , communicationContainer_(new CommunicationContainer(*businessContainer_))
     , presenterContainer_(new PresenterContainer(*dataContainer_))
 {
     QCommandLineParser parser;
