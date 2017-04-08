@@ -13,6 +13,24 @@ install:
     - tar -zxvf astyle
     - (cd astyle/build/gcc && make release && sudo make install)
     - rm astyle -rf
+    - git clone https://github.com/alanxz/rabbitmq-c
+    - cd rabbitmq-c
+    - sudo cp librabbitmq/*.h /usr/local/include/
+    - mkdir build && cd build
+    - cmake ..
+    - cmake --build .
+    - sudo cp librabbitmq/librabbitmq.a /usr/local/lib/
+    - sudo cp librabbitmq/*.so* /usr/local/lib/
+    - cd ../..
+    - git clone https://github.com/alanxz/SimpleAmqpClient
+    - cd SimpleAmqpClient
+    - mkdir build && cd build
+    - cmake -DRabbitmqc_INCLUDE_DIR=../../rabbitmq-c/librabbitmq -DRabbitmqc_LIBRARY=../../rabbitmq-c/build/librabbitmq ..
+    - make
+    - sudo mkdir /usr/local/include/SimpleAmqpClient
+    - sudo cp *.so* /usr/local/lib/
+    - sudo cp ../src/SimpleAmqpClient/*.h /usr/local/include/SimpleAmqpClient/
+    - cd ../..
 
 script: 
     - "! (astyle *.h *.cpp -r --dry-run --options=astylerc | grep Formatted)"
