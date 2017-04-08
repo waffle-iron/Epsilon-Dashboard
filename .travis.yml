@@ -9,7 +9,6 @@ before_install:
     - qt54-env.sh 
 
 install:
-    - sudo apt-get install cmake libboost-dev
     - wget 'https://s3-us-west-2.amazonaws.com/ucsolarteam.hostedfiles/astyle'
     - tar -zxvf astyle
     - (cd astyle/build/gcc && make release && sudo make install)
