@@ -7,12 +7,13 @@
 #include "CommDeviceControl/UdpConnectionService.h"
 #include "JsonReceiver/JsonReceiver.h"
 #include "../BusinessLayer/BusinessContainer.h"
+#include "../InfrastructureLayer/InfrastructureContainer.h"
 
 class CommunicationContainerPrivate
 {
 public:
-    CommunicationContainerPrivate(BusinessContainer& businessContainer)
-        : udpConnectionService_(udpSocket_)
+    CommunicationContainerPrivate(BusinessContainer& businessContainer, InfrastructureContainer& infrastructureContainer)
+        : udpConnectionService_(infrastructureContainer.settings())
         , commDeviceManager_(udpSocket_)
         , connectionController_(udpConnectionService_)
         , jsonReceiver_(commDeviceManager_,
@@ -35,8 +36,8 @@ public:
     JsonReceiver jsonReceiver_;
 };
 
-CommunicationContainer::CommunicationContainer(BusinessContainer& businessContainer)
-    : impl_(new CommunicationContainerPrivate(businessContainer))
+CommunicationContainer::CommunicationContainer(BusinessContainer& businessContainer, InfrastructureContainer& infrastructureContainer)
+    : impl_(new CommunicationContainerPrivate(businessContainer, infrastructureContainer))
 {
 }
 

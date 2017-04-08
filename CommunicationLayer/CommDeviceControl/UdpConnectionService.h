@@ -5,16 +5,18 @@
 #include <QString>
 #include <QUdpSocket>
 #include <QThread>
+#include "I_ConnectionService.h"
 
 class QUdpSocket;
+class I_Settings;
 
-#include "I_ConnectionService.h"
+
 
 class UdpConnectionService : public I_ConnectionService
 {
     Q_OBJECT
 public:
-    UdpConnectionService(QUdpSocket& socket);
+    UdpConnectionService(I_Settings& settings);
     virtual ~UdpConnectionService();
 
     void setMulticastNetwork(QHostAddress groupAddress, quint16 port);

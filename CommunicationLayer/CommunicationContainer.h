@@ -3,6 +3,7 @@
 #include <QScopedPointer>
 
 class BusinessContainer;
+class InfrastructureContainer;
 class CommunicationContainerPrivate;
 class ConnectionController;
 
@@ -13,7 +14,7 @@ class UdpConnectionService;
 class CommunicationContainer
 {
 public:
-    explicit CommunicationContainer(BusinessContainer&);
+    explicit CommunicationContainer(BusinessContainer&, InfrastructureContainer& infrastructureContainer);
     ~CommunicationContainer();
 
     I_JsonReceiver& jsonReceiver();

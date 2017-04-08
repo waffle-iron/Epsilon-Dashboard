@@ -2,19 +2,22 @@
 #include <QUdpSocket>
 #include "UdpConnectionService.h"
 #include <QDebug>
-
+#include "../../InfrastructureLayer/Settings/I_Settings.h"
+#include <QTextStream>
 namespace
 {
     quint32 TIMEOUT = 120;
     quint32 SLEEP_TIME = 2;
 }
 
-UdpConnectionService::UdpConnectionService(QUdpSocket& socket)
-    : exchangeName_("hermesExchange")
-    , ipAddress_("127.0.0.1")
-    , udpPort_(5672)
+
+UdpConnectionService::UdpConnectionService(I_Settings& settings)
 {
+    exchangeName_ = settings.exchangeName();
+    ipAddress_ = settings.ipAddress();
+    udpPort_ = settings.udpPort();
     setupChannel();
+
 }
 
 UdpConnectionService::~UdpConnectionService()
@@ -38,7 +41,7 @@ void UdpConnectionService::setupChannel()
     {
         if (i++)
         {
-            qWarning() << "UdpMessageForwarder: Attempting to reconnect";
+            qWarning() << "UdpMessageForwarder: Attempting to reconnect" << ipAddress_ << udpPort_;
         }
 
         try
