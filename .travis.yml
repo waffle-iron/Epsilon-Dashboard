@@ -7,11 +7,6 @@ before_install:
     - sudo apt-get -qq install g++-4.8 libc6-i386 qt54tools qt54svg qt54webkit qt54serialport
     - PATH="/opt/qt54/bin:$PATH"
     - qt54-env.sh 
-    - cd ..
-    - mv ./Epsilon-Dashboard ./src
-    - mkdir -p Epsilon-Dashboard/build/.lib/
-    - mv ./src ./Epsilon-Dashboard/
-    - cd ./Epsilon-Dashboard/src
 
 install:
     - sudo apt-get install cmake libboost-dev
