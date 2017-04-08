@@ -33,7 +33,7 @@ install:
     - cd ../..
 
 script: 
-    - "! (astyle *.h *.cpp -r --dry-run --options=astylerc | grep Formatted)"
+    - "! (astyle *.h *.cpp -r --dry-run --options=astylerc --exclude=SimpleAmqpClient --exclude=rabbitmq-c| grep Formatted)"
     - qmake
     - make
 
