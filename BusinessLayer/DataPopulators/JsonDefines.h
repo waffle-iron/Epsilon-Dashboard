@@ -27,12 +27,14 @@
 //TODO finish by adding voltages with all the numbers in them... ask managers how they want it formatted
 namespace JsonFormat
 {
+    // meta info
     const int DECIMAL_PRECISION = 2;
     const QString DATA_TYPE = "datatype";
 
     const QString PACKETTITLE = "PacketTitle";
     const QString TIMESTAMP = "TimeStamp";
 
+    // Key motor data
     const QString KEYMOTOR = "KeyMotor";
     const QString KEYMOTOR_ALIVE = "Alive";
     const QString KEYMOTOR_SETCURRENT = "SetCurrent";
@@ -41,6 +43,7 @@ namespace JsonFormat
     const QString KEYMOTOR_BUSVOLTAGE = "BusVoltage";
     const QString KEYMOTOR_VEHICLEVELOCITY = "VehicleVelocity";
 
+    // Motor details data
     const QString MOTORDETAILS = "MotorDetails";
     const QString MOTORDETAILS_PHASECCURRENT = "PhaseCCurrent";
     const QString MOTORDETAILS_PHASEBCURRENT = "PhaseBCurrent";
@@ -59,7 +62,7 @@ namespace JsonFormat
     const QString MOTORDETAILS_ODOMETER = "Odometer";
     const QString MOTORDETAILS_SLIPSPEED = "SlipSpeed";
 
-
+    // Driver controls data
     const QString DRIVERCONTROLS = "DriverControl";
     const QString DRIVERCONTROLS_ALIVE = "Alive";
     const QString DRIVERCONTROLS_HEADLIGHTSOFF = "HeadlightsOff";
@@ -83,7 +86,7 @@ namespace JsonFormat
     const QString DRIVERCONTROLS_HORN = "Horn";
     const QString DRIVERCONTROLS_RESET = "Reset";
 
-
+    // Motor faults data
     const QString MOTORFAULTS = "MotorFaults";
     const QString MOTORFAULTS_ERRORFLAGS = "ErrorFlags";
     const QString MOTORFAULTS_ERRORFLAGS_MOTOROVERSPEED = "MotorOverSpeed";
@@ -106,8 +109,33 @@ namespace JsonFormat
     const QString MOTORFAULTS_RXERRORCOUNT = "RxErrorCount";
     const QString MOTORFAULTS_TXERRORCOUNT = "TxErrorCount";
 
-
+    // Battery faults data (TODO)
     const QString BATTERYFAULTS = "BatteryFaults";
+
+    const QString BATTERYFAULTS_ERRORFLAGS = "ErrorFlags";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCOMMUNICATIONFAULT = "InternalCommununicationFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "InternalConversionFault";
+
+    const QString BATTERYFAULTS_ERRORFLAGS_WEAKCELLFAULT = "WeakCellFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_LOWCELLVOLTAGEFAULT = "LowCellVoltageFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_OPENWIRINGFAULT = "OpenWiringFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_CURRENTSENSORFAULT = "CurrentSensorFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_PACKVOLTAGESENSORFAULT = "PackVoltageSensorFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_WEAKPACKFAULT = "WeakPackFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_VOLTAGEREDUNDANCYFAULT = "VoltageRedundancyFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_FANMONITORFAULT = "FanMonitorFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_THERMISTORFAULT = "ThermistorFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "CANBUSCommunicationsFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "AlwaysOnSupplyFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "HighVoltageIsolationFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "PowerSupplyFault12V";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "ChargeLimitEnforcementFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "DischargeLimitEnforcementFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "ChargerSafetyRelayFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "InternalMemoryFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "InternalThermistorFault";
+    const QString BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT = "InternalLogicFault";
+
     const QString BATTERYFAULTS_CELLOVERVOLTAGE = "CellOverVoltage";
     const QString BATTERYFAULTS_CELLUNDERVOLTAGE = "CellUnderVoltage";
     const QString BATTERYFAULTS_CELLOVERTEMP = "CellOverTemp";
@@ -121,60 +149,50 @@ namespace JsonFormat
     const QString BATTERYFAULTS_CONTACTORSTUCK = "ContactorStuck";
     const QString BATTERYFAULTS_CMUDETECTEDEXTRACELL = "CMUDetectedExtraCell";
 
-
+    // Battery data
     const QString BATTERY = "Battery";
     const QString BATTERY_ALIVE = "Alive";
-    const QString BATTERY_PACKSOCAMPHOURS = "PackSocAmpHours";
-    const QString BATTERY_PACKSOCPERCENTAGE = "PackSocPercentage";
-    const QString BATTERY_PACKBALANCESOCAMPHOURS = "PackBalanceSocAmpHours";
-    const QString BATTERY_PACKBALANCESOCPERCENTAGE = "PackBalanceSocPercentage";
-    const QString BATTERY_CHARGINGCELLVOLTAGEERROR = "ChargingCellVoltageError";
-    const QString BATTERY_CELLTEMPMARGIN = "CellTempMargin";
-    const QString BATTERY_DISCHARGINGCELLVOLTAGEERROR = "DischargingCellVoltageError";
-    const QString BATTERY_TOTALPACKCAPACITY = "TotalPackCapacity";
-    const QString BATTERY_PRECHARGECONTACTOR0DRIVERSTATUS = "PrechargeContactor0DriverStatus";
-    const QString BATTERY_PRECHARGECONTACTOR1DRIVERSTATUS = "PrechargeContactor1DriverStatus";
-    const QString BATTERY_PRECHARGECONTACTOR2DRIVERSTATUS = "PrechargeContactor2DriverStatus";
-    const QString BATTERY_PRECHARGECONTACTOR0DRIVERERROR = "PrechargeContactor0DriverError";
-    const QString BATTERY_PRECHARGECONTACTOR1DRIVERERROR = "PrechargeContactor1DriverError";
-    const QString BATTERY_PRECHARGECONTACTOR2DRIVERERROR = "PrechargeContactor2DriverError";
-    const QString BATTERY_CONTACTORSUPPLYOK = "ContactorSupplyOk";
+
+    const QString BATTERY_BMSRELAYSTATUSFLAGS = "BMSRelayStatusFlags";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_DISCHARGERELAYENABLED = "DischargeRelayEnabled";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_CHARGERELAYENABLED = "ChargeRelayEnabled";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_CHARGERSAFETYENABLED = "ChargerSafetyEnabled";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_MALFUNCTIONINDICATORACTIVE = "MalfunctionIndicatorActive";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_MULTIPURPOSEINPUTSIGNALSTATUS = "MultiPurposeInputSignalStatus";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_ALWAYSONSIGNALSTATUS = "AlwaysOnSignalStatus";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_ISREADYSIGNALSTATUS = "IsReadySignalStatus";
+    const QString BATTERY_BMSRELAYSTATUSFLAGS_ISCHARGINGSIGNALSTATUS = "IsChargingSignalStatus";
+
+    const QString BATTERY_POPULATEDCELLS = "PopulatedCells";
+    const QString BATTERY_12VINPUTVOLTAGE = "12vInputVoltage";
+    const QString BATTERY_FANVOLTAGE = "FanVoltage";
+
+    const QString BATTERY_PACKCURRENT = "PackCurrent";
+    const QString BATTERY_PACKVOLTAGE = "PackVoltage";
+    const QString BATTERY_PACKSTATEOFCHARGE = "PackStateofCharge";
+    const QString BATTERY_PACKAMPHOURS = "PackAmphours";
+    const QString BATTERY_PACKDEPTHOFDISCHARGE = "PackDepthofDischarge";
+
+    const QString BATTERY_HIGHTEMPERATURE = "HighTemperature";
+    const QString BATTERY_HIGHTHERMISTORID = "HighThermistorId";
+    const QString BATTERY_LOWTEMPERATURE = "LowTemperature";
+    const QString BATTERY_LOWTHERMISTORID = "LowThermistorId";
+    const QString BATTERY_AVERAGETEMPERATURE = "AverageTemperature";
+    const QString BATTERY_INTERNALTEMPERATURE = "InternalTemperature";
+    const QString BATTERY_FANSPEED = "FanSpeed";
+    const QString BATTERY_REQUESTEDFANSPEED = "RequestedFanSpeed";
+
+    const QString BATTERY_LOWCELLVOLTAGE = "LowCellVoltage";
+    const QString BATTERY_LOWCELLVOLTAGEID = "LowCellVoltageId";
+    const QString BATTERY_HIGHCELLVOLTAGE = "HighCellVoltage";
+    const QString BATTERY_HIGHCELLVOLTAGEID = "HighCellVoltageId";
+    const QString BATTERY_AVERAGECELLVOLTAGE = "AverageCellVoltage";
+
     const QString BATTERY_PRECHARGESTATE = "PrechargeState";
-    const QString BATTERY_PRECHARGETIMERELAPSED = "PrechargeTimerElapsed";
-    const QString BATTERY_PRECHARGETIMERCOUNT = "PrechargeTimerCount";
+    const QString BATTERY_AUXVOLTAGE = "AuxVoltage";
+    const QString BATTERY_AUXBMSALIVE = "AuxBmsAlive";
 
-    const QString BATTERY_LOWESTCELLVOLTAGE = "LowestCellVoltage";
-    const QString BATTERY_LOWESTCELLVOLTAGE_VOLTAGE = "Voltage";
-    const QString BATTERY_LOWESTCELLVOLTAGE_CMUNUMBER = "CmuNumber";
-    const QString BATTERY_LOWESTCELLVOLTAGE_CELLNUMBER = "CellNumber";
-
-    const QString BATTERY_LOWESTCELLTEMP = "LowestCellTemp";
-    const QString BATTERY_LOWESTCELLTEMP_TEMPERATURE = "Temperature";
-    const QString BATTERY_LOWESTCELLTEMP_CMUNUMBER = "CmuNumber";
-    const QString BATTERY_LOWESTCELLTEMP_CELLNUMBER = "CellNumber";
-
-    const QString BATTERY_HIGHESTCELLVOLTAGE = "HighestCellVoltage";
-    const QString BATTERY_HIGHESTCELLVOLTAGE_VOLTAGE = "Voltage";
-    const QString BATTERY_HIGHESTCELLVOLTAGE_CMUNUMBER = "CmuNumber";
-    const QString BATTERY_HIGHESTCELLVOLTAGE_CELLNUMBER = "CellNumber";
-
-    const QString BATTERY_HIGHESTCELLTEMP = "HighestCellTemp";
-    const QString BATTERY_HIGHESTCELLTEMP_TEMPERATURE = "Temperature";
-    const QString BATTERY_HIGHESTCELLTEMP_CMUNUMBER = "CmuNumber";
-    const QString BATTERY_HIGHESTCELLTEMP_CELLNUMBER = "CellNumber";
-
-    const QString BATTERY_VOLTAGE = "Voltage";
-    const QString BATTERY_CURRENT = "Current";
-    const QString BATTERY_FAN0SPEED = "Fan0Speed";
-    const QString BATTERY_FAN1SPEED = "Fan1Speed";
-    const QString BATTERY_FANCONTACTORSCURRENT = "FanContactorsCurrent";
-    const QString BATTERY_CMUCURRENT = "CmuCurrent";
-
-    const QString CMU = "CMU";
-    const QString CMU_VOLTAGES = "Voltages";
-    const QString CMU_PCBTEMP = "PcbTemp";
-    const QString CMU_CELLTEMPS = "CellTemps";
-
+    // MPPT data
     const QString MPPT = "MPPT";
     const QString MPPT_ALIVE = "Alive";
     const QString MPPT_ARRAYVOLTAGE = "ArrayVoltage";
@@ -182,8 +200,9 @@ namespace JsonFormat
     const QString MPPT_BATTERYVOLTAGE = "BatteryVoltage";
     const QString MPPT_TEMPERATURE = "Temperature";
 
-
+    // Lights data
     const QString LIGHTS = "Lights";
+    const QString LIGHTS_ALIVE = "Alive";
     const QString LIGHTS_LOWBEAMS = "LowBeams";
     const QString LIGHTS_HIGHBEAMS = "HighBeams";
     const QString LIGHTS_BRAKES = "Brakes";

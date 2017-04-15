@@ -9,345 +9,301 @@ BatteryData::~BatteryData()
 {
 }
 
+// ------ data getter ------ //
+
 bool BatteryData::alive() const
 {
     return alive_;
 }
-double BatteryData::packSocAmpHours() const
+
+BmsRelayStatusFlags BatteryData::bmsRelayStatus() const
 {
-    return packSocAmpHours_;
+    return bmsRelayStatus_;
 }
-double BatteryData::packSocPercentage() const
+
+int BatteryData::populatedCells() const
 {
-    return packSocPercentage_;
+    return populatedCells_;
 }
-double BatteryData::packBalanceSocAmpHours() const
+
+double BatteryData::inputVoltage12() const
 {
-    return packBalanceSocAmpHours_;
+    return inputVoltage12_;
 }
-double BatteryData::packBalanceSocPercentage() const
+
+double BatteryData::fanVoltage() const
 {
-    return packBalanceSocPercentage_;
+    return fanVoltage_;
 }
-double BatteryData::chargingCellVoltageError() const
+
+double BatteryData::packCurrent() const
 {
-    return chargingCellVoltageError_;
+    return packCurrent_;
 }
-double BatteryData::cellTempMargin() const
+
+double BatteryData::packVoltage() const
 {
-    return cellTempMargin_;
+    return packVoltage_;
 }
-double BatteryData::dischargingCellVoltageError() const
+
+double BatteryData::packStateOfCharge() const
 {
-    return dischargingCellVoltageError_;
+    return packStateOfCharge_;
 }
-double BatteryData::totalPackCapacity() const
+
+double BatteryData::packAmphours() const
 {
-    return totalPackCapacity_;
+    return packAmphours_;
 }
-bool BatteryData::prechargeContactor0DriverStatus() const
+
+double BatteryData::packDepthOfDischarge() const
 {
-    return prechargeContactor0DriverStatus_;
+    return packDepthOfDischarge_;
 }
-bool BatteryData::prechargeContactor1DriverStatus() const
+
+int BatteryData::highTemperature() const
 {
-    return prechargeContactor1DriverStatus_;
+    return highTemperature_;
 }
-bool BatteryData::prechargeContactor2DriverStatus() const
+
+int BatteryData::highThermistorId() const
 {
-    return prechargeContactor2DriverStatus_;
+    return highThermistorId_;
 }
-bool BatteryData::prechargeContactor0DriverError() const
+
+int BatteryData::lowTemperature() const
 {
-    return prechargeContactor0DriverError_;
+    return lowTemperature_;
 }
-bool BatteryData::prechargeContactor1DriverError() const
+
+int BatteryData::lowThermistorId() const
 {
-    return prechargeContactor1DriverError_;
+    return lowThermistorId_;
 }
-bool BatteryData::prechargeContactor2DriverError() const
+
+int BatteryData::averageTemperature() const
 {
-    return prechargeContactor2DriverError_;
+    return averageTemperature_;
 }
-bool BatteryData::contactorSupplyOk() const
+
+int BatteryData::internalTemperature() const
 {
-    return contactorSupplyOk_;
+    return internalTemperature_;
 }
+
+int BatteryData::fanSpeed() const
+{
+    return fanSpeed_;
+}
+
+int BatteryData::requestedFanSpeed() const
+{
+    return requestedFanSpeed_;
+}
+
+int BatteryData::lowCellVoltage() const
+{
+    return lowCellVoltage_;
+}
+
+int BatteryData::lowCellVoltageId() const
+{
+    return lowCellVoltageId_;
+}
+
+int BatteryData::highCellVoltage() const
+{
+    return highCellVoltage_;
+}
+
+int BatteryData::highCellVoltageId() const
+{
+    return highCellVoltageId_;
+}
+
+int BatteryData::averageCellVoltage() const
+{
+    return averageCellVoltage_;
+}
+
 QString BatteryData::prechargeState() const
 {
     return prechargeState_;
 }
-bool BatteryData::prechargeTimerElapsed() const
+
+int BatteryData::auxVoltage() const
 {
-    return prechargeTimerElapsed_;
+    return auxVoltage_;
 }
-double BatteryData::prechargeTimerCount() const
+
+bool BatteryData::auxBmsAlive() const
 {
-    return prechargeTimerCount_;
+    return auxBmsAlive_;
 }
-double BatteryData::lowestCellVoltage_Voltage() const
+
+double BatteryData::packNetPower() const
 {
-    return lowestCellVoltage_Voltage_;
+    return packNetPower_;
 }
-int BatteryData::lowestCellVoltage_CmuNumber() const
-{
-    return lowestCellVoltage_CmuNumber_;
-}
-int BatteryData::lowestCellVoltage_CellNumber() const
-{
-    return lowestCellVoltage_CellNumber_;
-}
-double BatteryData::lowestCellTemp_Temperature() const
-{
-    return lowestCellTemp_Temperature_;
-}
-int BatteryData::lowestCellTemp_CmuNumber() const
-{
-    return lowestCellTemp_CmuNumber_;
-}
-int BatteryData::lowestCellTemp_CellNumber() const
-{
-    return lowestCellTemp_CellNumber_;
-}
-double BatteryData::highestCellVoltage_Voltage() const
-{
-    return highestCellVoltage_Voltage_;
-}
-int BatteryData::highestCellVoltage_CmuNumber() const
-{
-    return highestCellVoltage_CmuNumber_;
-}
-int BatteryData::highestCellVoltage_CellNumber() const
-{
-    return highestCellVoltage_CellNumber_;
-}
-double BatteryData::highestCellTemp_Temperature() const
-{
-    return highestCellTemp_Temperature_;
-}
-int BatteryData::highestCellTemp_CmuNumber() const
-{
-    return highestCellTemp_CmuNumber_;
-}
-int BatteryData::highestCellTemp_CellNumber() const
-{
-    return highestCellTemp_CellNumber_;
-}
-double BatteryData::voltage() const
-{
-    return voltage_;
-}
-double BatteryData::current() const
-{
-    return current_;
-}
-double BatteryData::netPower() const
-{
-    return netPower_;
-}
-double BatteryData::fan0Speed() const
-{
-    return fan0Speed_;
-}
-double BatteryData::fan1Speed() const
-{
-    return fan1Speed_;
-}
-double BatteryData::fanContactorsCurrent() const
-{
-    return fanContactorsCurrent_;
-}
-double BatteryData::cmuCurrent() const
-{
-    return cmuCurrent_;
-}
+
+// ------ data setter ------ //
 
 void BatteryData::setAlive(bool alive)
 {
     alive_ = alive;
     emit aliveReceived(alive_);
 }
-void BatteryData::setPackSocAmpHours(double packSocAmpHours)
+
+void BatteryData::setBmsRelayStatus(const BmsRelayStatusFlags &bmsRelayStatus)
 {
-    packSocAmpHours_ = packSocAmpHours;
-    emit packSocAmpHoursReceived(packSocAmpHours_);
+    bmsRelayStatus_ = bmsRelayStatus;
+    emit bmsRelayStatusReceived(bmsRelayStatus_);
 }
-void BatteryData::setPackSocPercentage(double packSocPercentage)
+
+void BatteryData::setPopulatedCells(int populatedCells)
 {
-    packSocPercentage_ = packSocPercentage;
-    emit packSocPercentageReceived(packSocPercentage_);
+    populatedCells_ = populatedCells;
+    emit populatedCellsReceived(populatedCells_);
 }
-void BatteryData::setPackBalanceSocAmpHours(double packBalanceSocAmpHours)
+
+void BatteryData::setInputVoltage12(double inputVoltage12)
 {
-    packBalanceSocAmpHours_ = packBalanceSocAmpHours;
-    emit packBalanceSocAmpHoursReceived(packBalanceSocAmpHours_);
+    inputVoltage12_ = inputVoltage12;
+    emit inputVoltage12VReceived(inputVoltage12_);
 }
-void BatteryData::setPackBalanceSocPercentage(double packBalanceSocPercentage)
+
+void BatteryData::setFanVoltage(double fanVoltage)
 {
-    packBalanceSocPercentage_ = packBalanceSocPercentage;
-    emit packBalanceSocPercentageReceived(packBalanceSocPercentage_);
+    fanVoltage_ = fanVoltage;
+    emit fanVoltageReceived(fanVoltage_);
 }
-void BatteryData::setChargingCellVoltageError(double chargingCellVoltageError)
+
+void BatteryData::setPackCurrent(double packCurrent)
 {
-    chargingCellVoltageError_ = chargingCellVoltageError;
-    emit chargingCellVoltageErrorReceived(chargingCellVoltageError_);
+    packCurrent_ = packCurrent;
+    packNetPower_ = packVoltage_ * packCurrent;
+    emit packCurrentReceived(packCurrent_);
+    emit packNetPowerReceived(packNetPower_);
 }
-void BatteryData::setCellTempMargin(double cellTempMargin)
+
+void BatteryData::setPackVoltage(double packVoltage)
 {
-    cellTempMargin_ = cellTempMargin;
-    emit cellTempMarginReceived(cellTempMargin_);
+    packVoltage_ = packVoltage;
+    packNetPower_ = packVoltage * packCurrent_;
+    emit packVoltageReceived(packVoltage_);
+    emit packNetPowerReceived(packNetPower_);
 }
-void BatteryData::setDischargingCellVoltageError(double dischargingCellVoltageError)
+
+void BatteryData::setPackStateOfCharge(double packStateOfCharge)
 {
-    dischargingCellVoltageError_ = dischargingCellVoltageError;
-    emit dischargingCellVoltageErrorReceived(dischargingCellVoltageError_);
+    packStateOfCharge_ = packStateOfCharge;
+    emit packStateOfChargeReceived(packStateOfCharge_);
 }
-void BatteryData::setTotalPackCapacity(double totalPackCapacity)
+
+void BatteryData::setPackAmphours(double packAmphours)
 {
-    totalPackCapacity_ = totalPackCapacity;
-    emit totalPackCapacityReceived(totalPackCapacity_);
+    packAmphours_ = packAmphours;
+    emit packAmphoursReceived(packAmphours_);
 }
-void BatteryData::setPrechargeContactor0DriverStatus(bool prechargeContactor0DriverStatus)
+
+void BatteryData::setPackDepthOfDischarge(double packDepthOfDischarge)
 {
-    prechargeContactor0DriverStatus_ = prechargeContactor0DriverStatus;
-    emit prechargeContactor0DriverStatusReceived(prechargeContactor0DriverStatus_);
+    packDepthOfDischarge_ = packDepthOfDischarge;
+    emit packDepthOfDischargeReceived(packDepthOfDischarge_);
 }
-void BatteryData::setPrechargeContactor1DriverStatus(bool prechargeContactor1DriverStatus)
+
+void BatteryData::setHighTemperature(int highTemperature)
 {
-    prechargeContactor1DriverStatus_ = prechargeContactor1DriverStatus;
-    emit prechargeContactor1DriverStatusReceived(prechargeContactor1DriverStatus_);
+    highTemperature_ = highTemperature;
+    emit highTemperatureReceived(highTemperature_);
 }
-void BatteryData::setPrechargeContactor2DriverStatus(bool prechargeContactor2DriverStatus)
+
+void BatteryData::setHighThermistorId(int highThermistorId)
 {
-    prechargeContactor2DriverStatus_ = prechargeContactor2DriverStatus;
-    emit prechargeContactor2DriverStatusReceived(prechargeContactor2DriverStatus_);
+    highThermistorId_ = highThermistorId;
+    emit highThermistorIdReceived(highThermistorId_);
 }
-void BatteryData::setPrechargeContactor0DriverError(bool prechargeContactor0DriverError)
+
+void BatteryData::setLowTemperature(int lowTemperature)
 {
-    prechargeContactor0DriverError_ = prechargeContactor0DriverError;
-    emit prechargeContactor0DriverErrorReceived(prechargeContactor0DriverError_);
+    lowTemperature_ = lowTemperature;
+    emit lowTemperatureReceived(lowTemperature_);
 }
-void BatteryData::setPrechargeContactor1DriverError(bool prechargeContactor1DriverError)
+
+void BatteryData::setLowThermistorId(int lowThermistorId)
 {
-    prechargeContactor1DriverError_ = prechargeContactor1DriverError;
-    emit prechargeContactor1DriverErrorReceived(prechargeContactor1DriverError_);
+    lowThermistorId_ = lowThermistorId;
+    emit lowThermistorIdReceived(lowThermistorId_);
 }
-void BatteryData::setPrechargeContactor2DriverError(bool prechargeContactor2DriverError)
+
+void BatteryData::setAverageTemperature(int averageTemperature)
 {
-    prechargeContactor2DriverError_ = prechargeContactor2DriverError;
-    emit prechargeContactor2DriverErrorReceived(prechargeContactor2DriverError_);
+    averageTemperature_ = averageTemperature;
+    emit averageTemperatureReceived(averageTemperature_);
 }
-void BatteryData::setContactorSupplyOk(bool contactorSupplyOk)
+
+void BatteryData::setInternalTemperature(int internalTemperature)
 {
-    contactorSupplyOk_ = contactorSupplyOk;
-    emit contactorSupplyOkReceived(contactorSupplyOk_);
+    internalTemperature_ = internalTemperature;
+    emit internalTemperatureReceived(internalTemperature_);
 }
-void BatteryData::setPrechargeState(QString prechargeState)
+
+void BatteryData::setFanSpeed(int fanSpeed)
+{
+    fanSpeed_ = fanSpeed;
+    emit fanSpeedReceived(fanSpeed_);
+}
+
+void BatteryData::setRequestedFanSpeed(int requestedFanSpeed)
+{
+    requestedFanSpeed_ = requestedFanSpeed;
+    emit requestedFanSpeedReceived(requestedFanSpeed_);
+}
+
+void BatteryData::setLowCellVoltage(int lowCellVoltage)
+{
+    lowCellVoltage_ = lowCellVoltage;
+    emit lowCellVoltageReceived(lowCellVoltage_);
+}
+
+void BatteryData::setLowCellVoltageId(int lowCellVoltageId)
+{
+    lowCellVoltageId_ = lowCellVoltageId;
+    emit lowCellVoltageIdReceived(lowCellVoltageId_);
+}
+
+void BatteryData::setHighCellVoltage(int highCellVoltage)
+{
+    highCellVoltage_ = highCellVoltage;
+    emit highCellVoltageReceived(highCellVoltage_);
+}
+
+void BatteryData::setHighCellVoltageId(int highCellVoltageId)
+{
+    highCellVoltageId_ = highCellVoltageId;
+    emit highCellVoltageIdReceived(highCellVoltageId_);
+}
+
+void BatteryData::setAverageCellVoltage(int averageCellVoltage)
+{
+    averageCellVoltage_ = averageCellVoltage;
+    emit averageCellVoltageReceived(averageCellVoltage_);
+}
+
+void BatteryData::setPrechargeState(const QString &prechargeState)
 {
     prechargeState_ = prechargeState;
     emit prechargeStateReceived(prechargeState_);
 }
-void BatteryData::setPrechargeTimerElapsed(bool prechargeTimerElapsed)
+
+void BatteryData::setAuxVoltage(int auxVoltage)
 {
-    prechargeTimerElapsed_ = prechargeTimerElapsed;
-    emit prechargeTimerElapsedReceived(prechargeTimerElapsed_);
+    auxVoltage_ = auxVoltage;
+    emit auxVoltageReceived(auxVoltage_);
 }
-void BatteryData::setPrechargeTimerCount(double prechargeTimerCount)
+
+void BatteryData::setAuxBmsAlive(bool auxBmsAlive)
 {
-    prechargeTimerCount_ = prechargeTimerCount;
-    emit prechargeTimerCountReceived(prechargeTimerCount_);
-}
-void BatteryData::setLowestCellVoltage_Voltage(double lowestCellVoltage_Voltage)
-{
-    lowestCellVoltage_Voltage_ = lowestCellVoltage_Voltage;
-    emit lowestCellVoltage_VoltageReceived(lowestCellVoltage_Voltage_);
-}
-void BatteryData::setLowestCellVoltage_CmuNumber(int lowestCellVoltage_CmuNumber)
-{
-    lowestCellVoltage_CmuNumber_ = lowestCellVoltage_CmuNumber;
-    emit lowestCellVoltage_CmuNumberReceived(lowestCellVoltage_CmuNumber_);
-}
-void BatteryData::setLowestCellVoltage_CellNumber(int lowestCellVoltage_CellNumber)
-{
-    lowestCellVoltage_CellNumber_ = lowestCellVoltage_CellNumber;
-    emit lowestCellVoltage_CellNumberReceived(lowestCellVoltage_CellNumber_);
-}
-void BatteryData::setLowestCellTemp_Temperature(double lowestCellTemp_Temperature)
-{
-    lowestCellTemp_Temperature_ = lowestCellTemp_Temperature;
-    emit lowestCellTemp_TemperatureReceived(lowestCellTemp_Temperature_);
-}
-void BatteryData::setLowestCellTemp_CmuNumber(int lowestCellTemp_CmuNumber)
-{
-    lowestCellTemp_CmuNumber_ = lowestCellTemp_CmuNumber;
-    emit lowestCellTemp_CmuNumberReceived(lowestCellTemp_CmuNumber_);
-}
-void BatteryData::setLowestCellTemp_CellNumber(int lowestCellTemp_CellNumber)
-{
-    lowestCellTemp_CellNumber_ = lowestCellTemp_CellNumber;
-    emit lowestCellTemp_CellNumberReceived(lowestCellTemp_CellNumber_);
-}
-void BatteryData::setHighestCellVoltage_Voltage(double highestCellVoltage_Voltage)
-{
-    highestCellVoltage_Voltage_ = highestCellVoltage_Voltage;
-    emit highestCellVoltage_VoltageReceived(highestCellVoltage_Voltage_);
-}
-void BatteryData::setHighestCellVoltage_CmuNumber(int highestCellVoltage_CmuNumber)
-{
-    highestCellVoltage_CmuNumber_ = highestCellVoltage_CmuNumber;
-    emit highestCellVoltage_CmuNumberReceived(highestCellVoltage_CmuNumber_);
-}
-void BatteryData::setHighestCellVoltage_CellNumber(int highestCellVoltage_CellNumber)
-{
-    highestCellVoltage_CellNumber_ = highestCellVoltage_CellNumber;
-    emit highestCellVoltage_CellNumberReceived(highestCellVoltage_CellNumber_);
-}
-void BatteryData::setHighestCellTemp_Temperature(double highestCellTemp_Temperature)
-{
-    highestCellTemp_Temperature_ = highestCellTemp_Temperature;
-    emit highestCellTemp_TemperatureReceived(highestCellTemp_Temperature_);
-}
-void BatteryData::setHighestCellTemp_CmuNumber(int highestCellTemp_CmuNumber)
-{
-    highestCellTemp_CmuNumber_ = highestCellTemp_CmuNumber;
-    emit highestCellTemp_CmuNumberReceived(highestCellTemp_CmuNumber_);
-}
-void BatteryData::setHighestCellTemp_CellNumber(int highestCellTemp_CellNumber)
-{
-    highestCellTemp_CellNumber_ = highestCellTemp_CellNumber;
-    emit highestCellTemp_CellNumberReceived(highestCellTemp_CellNumber_);
-}
-void BatteryData::setVoltage(double voltage)
-{
-    voltage_ = voltage;
-    netPower_ = voltage * current_;
-    emit voltageReceived(voltage_);
-    emit netPowerReceived(netPower_);
-}
-void BatteryData::setCurrent(double current)
-{
-    current_ = current;
-    netPower_ = voltage_ * current;
-    emit currentReceived(current_);
-    emit netPowerReceived(netPower_);
-}
-void BatteryData::setFan0Speed(double fan0Speed)
-{
-    fan0Speed_ = fan0Speed;
-    emit fan0SpeedReceived(fan0Speed_);
-}
-void BatteryData::setFan1Speed(double fan1Speed)
-{
-    fan1Speed_ = fan1Speed;
-    emit fan1SpeedReceived(fan1Speed_);
-}
-void BatteryData::setFanContactorsCurrent(double fanContactorsCurrent)
-{
-    fanContactorsCurrent_ = fanContactorsCurrent;
-    emit fanContactorsCurrentReceived(fanContactorsCurrent_);
-}
-void BatteryData::setCmuCurrent(double cmuCurrent)
-{
-    cmuCurrent_ = cmuCurrent;
-    emit cmuCurrentReceived(cmuCurrent_);
+    auxBmsAlive_ = auxBmsAlive;
+    emit auxBmsAliveReceived(auxBmsAlive_);
 }

@@ -32,7 +32,8 @@ HEADERS += \
     MpptData/Mppt.h \
     MotorDetailsData/MotorDetails.h \
     MotorFaultsData/ErrorFlags.h \
-    MotorFaultsData/LimitFlags.h
+    MotorFaultsData/LimitFlags.h \
+    BatteryData/BmsRelayStatusFlags.h
 
 SOURCES += \ 
     BatteryData/BatteryData.cpp \
@@ -50,4 +51,5 @@ SOURCES += \
     MotorFaultsData/MotorFaultsData.cpp \
     MotorFaultsData/ErrorFlags.cpp \
     MotorFaultsData/LimitFlags.cpp \
-    DataContainer.cpp
+    DataContainer.cpp \
+    BatteryData/BmsRelayStatusFlags.cpp

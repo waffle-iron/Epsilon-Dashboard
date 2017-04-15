@@ -33,6 +33,10 @@ bool LightsData::bmsStrobeLight() const
 {
     return bmsStrobeLight_;
 }
+bool LightsData::alive() const
+{
+    return alive_;
+}
 
 void LightsData::setlowBeams(bool lowBeams)
 {
@@ -63,4 +67,10 @@ void LightsData::setBmsStrobeLight(bool bmsStrobeLight)
 {
     bmsStrobeLight_ = bmsStrobeLight;
     emit bmsStrobeLightReceived(bmsStrobeLight_);
+}
+
+void LightsData::setAlive(bool alive)
+{
+    alive_ = alive;
+    emit bmsStrobeLightReceived(alive_);
 }

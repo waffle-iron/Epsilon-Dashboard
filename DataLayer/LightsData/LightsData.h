@@ -14,6 +14,7 @@ public:
     bool leftSignal() const;
     bool rightSignal() const;
     bool bmsStrobeLight() const;
+    bool alive() const;
 
     void setlowBeams(bool lowBeams);
     void sethighBeams(bool highBeams);
@@ -21,6 +22,7 @@ public:
     void setleftSignal(bool leftSignal);
     void setrightSignal(bool rightSignal);
     void setBmsStrobeLight(bool bmsStrobeLight);
+    void setAlive(bool alive);
 
 private:
     bool lowBeams_;
@@ -29,5 +31,6 @@ private:
     bool leftSignal_;
     bool rightSignal_;
     bool bmsStrobeLight_;
+    bool alive_;
 };
 
