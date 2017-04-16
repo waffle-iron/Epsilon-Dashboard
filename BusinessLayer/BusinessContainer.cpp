@@ -3,7 +3,6 @@
 #include "../DataLayer/DataContainer.h"
 #include "DataPopulators/BatteryFaultsPopulator.h"
 #include "DataPopulators/BatteryPopulator.h"
-#include "DataPopulators/CmuPopulator.h"
 #include "DataPopulators/DriverControlsPopulator.h"
 #include "DataPopulators/KeyMotorPopulator.h"
 #include "DataPopulators/LightsPopulator.h"
@@ -17,7 +16,6 @@ public:
     BusinessContainerPrivate(DataContainer& dataContainer)
         : batteryPopulator_(dataContainer.batteryData())
         , batteryFaultsPopulator_(dataContainer.batteryFaultsData())
-        , cmuPopulator_(dataContainer.cmuData())
         , driverControlsPopulator_(dataContainer.driverControlsData())
         , keyMotorPopulator_(dataContainer.keyMotorData())
         , lightsPopulator_(dataContainer.lightsData())
@@ -28,7 +26,6 @@ public:
     }
     BatteryPopulator batteryPopulator_;
     BatteryFaultsPopulator batteryFaultsPopulator_;
-    CmuPopulator cmuPopulator_;
     DriverControlsPopulator driverControlsPopulator_;
     KeyMotorPopulator keyMotorPopulator_;
     LightsPopulator lightsPopulator_;
@@ -54,11 +51,6 @@ BatteryPopulator& BusinessContainer::batteryPopulator()
 BatteryFaultsPopulator& BusinessContainer::batteryFaultsPopulator()
 {
     return impl_->batteryFaultsPopulator_;
-}
-
-CmuPopulator& BusinessContainer::cmuPopulator()
-{
-    return impl_->cmuPopulator_;
 }
 
 DriverControlsPopulator& BusinessContainer::driverControlsPopulator()

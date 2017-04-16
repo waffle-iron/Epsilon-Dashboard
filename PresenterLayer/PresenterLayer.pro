@@ -10,7 +10,6 @@ DESTDIR = ../../build/.lib
 HEADERS += \
     BatteryPresenter/BatteryPresenter.h \ 
     BatteryFaultsPresenter/BatteryFaultsPresenter.h \ 
-    CmuPresenter/CmuPresenter.h \
     DriverControlsPresenter/DriverControlsPresenter.h \ 
     KeyMotorPresenter/KeyMotorPresenter.h \ 
     LightsPresenter/LightsPresenter.h \ 
@@ -22,7 +21,6 @@ HEADERS += \
 SOURCES += \ 
     BatteryPresenter/BatteryPresenter.cpp \
     BatteryFaultsPresenter/BatteryFaultsPresenter.cpp \
-    CmuPresenter/CmuPresenter.cpp \
     DriverControlsPresenter/DriverControlsPresenter.cpp \
     KeyMotorPresenter/KeyMotorPresenter.cpp \
     LightsPresenter/LightsPresenter.cpp \

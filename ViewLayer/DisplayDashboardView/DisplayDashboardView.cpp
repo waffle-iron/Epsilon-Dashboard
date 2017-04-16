@@ -3,7 +3,6 @@
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
         BatteryFaultsPresenter& batteryFaultsPresenter,
-        CmuPresenter& cmuPresenter,
         DriverControlsPresenter& driverControlsPresenter,
         KeyMotorPresenter& keyMotorPresenter,
         LightsPresenter& lightsPresenter,
@@ -13,7 +12,6 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
         I_DisplayDashboardUI& ui)
     : batteryPresenter_(batteryPresenter)
     , batteryFaultsPresenter_(batteryFaultsPresenter)
-    , cmuPresenter_(cmuPresenter)
     , driverControlsPresenter_(driverControlsPresenter)
     , keyMotorPresenter_(keyMotorPresenter)
     , lightsPresenter_(lightsPresenter)
@@ -24,7 +22,6 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
 {
     connectBattery(batteryPresenter_);
     connectBatteryFaults(batteryFaultsPresenter_);
-    connectCmu(cmuPresenter_);
     connectDriverControls(driverControlsPresenter_);
     connectKeyMotor(keyMotorPresenter_);
     connectLights(lightsPresenter_);
@@ -80,18 +77,6 @@ void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryF
             this, SLOT(contactorIsStuckReceived(bool)));
     connect(&batteryFaultsPresenter, SIGNAL(cmuDetectedExtraCellPresentReceived(bool)),
             this, SLOT(cmuDetectedExtraCellPresentReceived(bool)));
-}
-
-void DisplayDashboardView::connectCmu(CmuPresenter& cmuPresenter)
-{
-    connect(&cmuPresenter, SIGNAL(cmuMaxCellTempReceived(double)),
-            this, SLOT(cmuMaxCellTempReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuLowestCellVoltageReceived(double)),
-            this, SLOT(cmuLowestCellVoltageReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuAverageCellTempReceived(double)),
-            this, SLOT(cmuAverageCellTempReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuCellVoltageReceived(double)),
-            this, SLOT(cmuCellVoltageReceived(double)));
 }
 
 void DisplayDashboardView::connectDriverControls(DriverControlsPresenter& driverControlsPresenter)

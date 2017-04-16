@@ -25,7 +25,6 @@ HEADERS += \
     MotorFaultsData/MotorFaultsData.h \
     MotorFaultsData/I_MotorFaultsData.h \
     DataContainer.h \
-    CmuData/Cmu.h \
     KeyMotorData/KeyMotor.h \
     MpptData/Mppt.h \
     MotorDetailsData/MotorDetails.h \

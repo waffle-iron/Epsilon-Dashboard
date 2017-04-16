@@ -5,7 +5,6 @@
 
 #include "../BusinessLayer/DataPopulators/BatteryFaultsPopulator.h"
 #include "../BusinessLayer/DataPopulators/BatteryPopulator.h"
-#include "../BusinessLayer/DataPopulators/CmuPopulator.h"
 #include "../BusinessLayer/DataPopulators/DriverControlsPopulator.h"
 #include "../BusinessLayer/DataPopulators/KeyMotorPopulator.h"
 #include "../BusinessLayer/DataPopulators/LightsPopulator.h"
@@ -19,7 +18,6 @@
 
 class BatteryPopulator;
 class BatteryFaultsPopulator;
-class CmuPopulator;
 class DriverControlsPopulator;
 class KeyMotorPopulator;
 class LightsPopulator;
@@ -35,7 +33,6 @@ public:
     JsonReceiver(I_CommDevice& inputDevice,
                  BatteryPopulator& batteryPopulator,
                  BatteryFaultsPopulator& batteryFaultsPopulator,
-                 CmuPopulator& cmuPopulator,
                  DriverControlsPopulator& driverControlsPopulator,
                  KeyMotorPopulator& keyMotorPopulator,
                  LightsPopulator& lightsPopulator,
@@ -51,7 +48,6 @@ public slots:
 private:
     BatteryPopulator& batteryPopulator_;
     BatteryFaultsPopulator& batteryFaultsPopulator_;
-    CmuPopulator& cmuPopulator_;
     DriverControlsPopulator& driverControlsPopulator_;
     KeyMotorPopulator& keyMotorPopulator_;
     LightsPopulator& lightsPopulator_;

@@ -8,7 +8,6 @@
 #include "../DataLayer/MotorFaultsData/LimitFlags.h"
 #include "../PresenterLayer/BatteryPresenter/BatteryPresenter.h"
 #include "../PresenterLayer/BatteryFaultsPresenter/BatteryFaultsPresenter.h"
-#include "../PresenterLayer/CmuPresenter/CmuPresenter.h"
 #include "../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
 #include "../PresenterLayer/KeyMotorPresenter/KeyMotorPresenter.h"
 #include "../PresenterLayer/LightsPresenter/LightsPresenter.h"
@@ -19,7 +18,6 @@
 
 class BatteryPresenter;
 class BatteryFaultsPresenter;
-class CmuPresenter;
 class DriverControlsPresenter;
 class I_DisplayDashboardUI;
 class KeyMotorPresenter;
@@ -34,7 +32,6 @@ class DisplayDashboardView : public QObject
 public:
     DisplayDashboardView(BatteryPresenter& batteryPresenter,
                          BatteryFaultsPresenter& batteryFaultsPresenter,
-                         CmuPresenter& cmuPresenter,
                          DriverControlsPresenter& driverControlsPresenter,
                          KeyMotorPresenter& keyMotorPresenter,
                          LightsPresenter& lightsPresenter,
@@ -47,7 +44,6 @@ public:
 private:
     void connectBattery(BatteryPresenter&);
     void connectBatteryFaults(BatteryFaultsPresenter&);
-    void connectCmu(CmuPresenter&);
     void connectDriverControls(DriverControlsPresenter&);
     void connectKeyMotor(KeyMotorPresenter&);
     void connectLights(LightsPresenter&);
@@ -57,7 +53,6 @@ private:
 
     BatteryPresenter& batteryPresenter_;
     BatteryFaultsPresenter& batteryFaultsPresenter_;
-    CmuPresenter& cmuPresenter_;
     DriverControlsPresenter& driverControlsPresenter_;
     KeyMotorPresenter& keyMotorPresenter_;
     LightsPresenter& lightsPresenter_;

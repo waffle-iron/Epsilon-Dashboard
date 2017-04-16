@@ -18,7 +18,6 @@ public:
         , jsonReceiver_(commDeviceManager_,
                         businessContainer.batteryPopulator(),
                         businessContainer.batteryFaultsPopulator(),
-                        businessContainer.cmuPopulator(),
                         businessContainer.driverControlsPopulator(),
                         businessContainer.keyMotorPopulator(),
                         businessContainer.lightsPopulator(),

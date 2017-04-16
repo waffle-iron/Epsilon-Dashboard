@@ -13,7 +13,6 @@ HEADERS += \
     CommunicationsMonitoringService/I_CommunicationsMonitoringService.h \
     DataPopulators/BatteryPopulator.h \
     DataPopulators/BatteryFaultsPopulator.h \
-    DataPopulators/CmuPopulator.h \
     DataPopulators/DriverControlsPopulator.h \
     DataPopulators/KeyMotorPopulator.h \
     DataPopulators/LightsPopulator.h \
@@ -27,7 +26,6 @@ SOURCES += \
     CommunicationsMonitoringService/CommunicationsMonitoringService.cpp \
     DataPopulators/BatteryPopulator.cpp \
     DataPopulators/BatteryFaultsPopulator.cpp \
-    DataPopulators/CmuPopulator.cpp \
     DataPopulators/DriverControlsPopulator.cpp \
     DataPopulators/KeyMotorPopulator.cpp \
     DataPopulators/LightsPopulator.cpp \
