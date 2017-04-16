@@ -91,8 +91,3 @@ void BmsRelayStatusFlags::setIsChargingSignalStatus(bool isChargingSignalStatus)
 {
     isChargingSignalStatus_ = isChargingSignalStatus;
 }
-
-bool BmsRelayStatusFlags::dischargeRelayEnabled() const
-{
-    return dischargeRelayEnabled_;
-}

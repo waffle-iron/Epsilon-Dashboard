@@ -54,7 +54,7 @@ void BatteryPopulator::populateData(const QJsonObject& data)
     batteryData_.setBmsRelayStatus(bmsRelayStatusFlagValues);
 
     batteryData_.setPopulatedCells(value.toObject().value(JsonFormat::BATTERY_POPULATEDCELLS).toInt());
-    batteryData_.set12VInputVoltage(value.toObject().value(JsonFormat::BATTERY_12VINPUTVOLTAGE).toDouble());
+    batteryData_.setInputVoltage12V(value.toObject().value(JsonFormat::BATTERY_12VINPUTVOLTAGE).toDouble());
     batteryData_.setFanVoltage(value.toObject().value(JsonFormat::BATTERY_FANVOLTAGE).toDouble());
     batteryData_.setPackCurrent(value.toObject().value(JsonFormat::BATTERY_PACKCURRENT).toDouble());
     batteryData_.setPackVoltage(value.toObject().value(JsonFormat::BATTERY_PACKVOLTAGE).toDouble());

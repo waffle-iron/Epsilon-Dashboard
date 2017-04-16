@@ -18,8 +18,8 @@ public:
     virtual BatteryLimitFlags limitFlags() const = 0;
 
     /* FaultData Sets */
-    virtual void setErrorFlags(BatteryErrorFlags errorFlags) = 0;
-    virtual void setLimitFlags(BatteryLimitFlags limitFlags) = 0;
+    virtual void setErrorFlags(const BatteryErrorFlags &errorFlags) = 0;
+    virtual void setLimitFlags(const BatteryLimitFlags &limitFlags) = 0;
 
 signals:
     void batteryErrorFlagsReceived(BatteryErrorFlags errorFlags);
