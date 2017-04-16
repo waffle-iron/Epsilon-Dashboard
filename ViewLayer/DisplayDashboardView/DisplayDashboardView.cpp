@@ -37,19 +37,19 @@ DisplayDashboardView::~DisplayDashboardView()
 
 void DisplayDashboardView::connectBattery(BatteryPresenter& batteryPresenter)
 {
-    // TODO update to new battery data (depends on what should be shown)
+    // TODO update to new battery data (depends on what should be shown in UI)
     connect(&batteryPresenter, SIGNAL(aliveReceived(bool)),
             this, SLOT(aliveReceived(bool)));
-    //connect(&batteryPresenter, SIGNAL(packSocPercentageReceived(double)),
-    //        this, SLOT(packSocPercentageReceived(double)));
     connect(&batteryPresenter, SIGNAL(prechargeStateReceived(QString)),
             this, SLOT(prechargeStateReceived(QString)));
+    connect(&batteryPresenter, SIGNAL(packNetPowerReceived(double)),
+            this, SLOT(packNetPowerReceived(double)));
+    //connect(&batteryPresenter, SIGNAL(packSocPercentageReceived(double)),
+    //        this, SLOT(packSocPercentageReceived(double)));
     //connect(&batteryPresenter, SIGNAL(prechargeTimerElapsedReceived(bool)),
     //        this, SLOT(prechargeTimerElapsedReceived(bool)));
     //connect(&batteryPresenter, SIGNAL(prechargeTimerCountReceived(double)),
     //        this, SLOT(prechargeTimerCountReceived(double)));
-    connect(&batteryPresenter, SIGNAL(packNetPowerReceived(double)),
-            this, SLOT(packNetPowerReceived(double)));
 }
 
 void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryFaultsPresenter)
