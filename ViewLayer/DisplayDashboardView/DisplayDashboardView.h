@@ -63,48 +63,40 @@ private:
     I_DisplayDashboardUI& ui_;
 
 private slots:
+    // battery data slots
     void aliveReceived(bool);
-    void packSocPercentageReceived(double);
     void prechargeStateReceived(QString);
-    void prechargeTimerElapsedReceived(bool);
-    void prechargeTimerCountReceived(double);
-    void netPowerReceived(double);
+    void packNetPowerReceived(double);
+    //void packSocPercentageReceived(double);
+    //void prechargeTimerElapsedReceived(bool);
+    //void prechargeTimerCountReceived(double);
 
-    void cellOverVoltageReceived(bool);
-    void cellUnderVoltageReceived(bool);
-    void cellOverTemperatureReceived(bool);
-    void measurementUntrustedReceived(bool);
-    void cmuCommTimeoutReceived(bool);
-    void bmuIsInSetupModeReceived(bool);
-    void cmuCanBusPowerStatusReceived(bool);
-    void packIsolationTestFailureReceived(bool);
-    void softwareOverCurrentMeasuredReceived(bool);
-    void canSupplyIsLowReceived(bool);
-    void contactorIsStuckReceived(bool);
-    void cmuDetectedExtraCellPresentReceived(bool);
-
-    void cmuMaxCellTempReceived(double);
-    void cmuLowestCellVoltageReceived(double);
-    void cmuAverageCellTempReceived(double);
-    void cmuAverageVoltageReceived(double);
+    // battery faults slots
+    void errorFlagsReceived(BatteryErrorFlags);
+    void limitFlagsReceived(BatteryLimitFlags);
 
     void resetReceived(bool);
 
+    // key motor slots
     void motorSetCurrentReceived(double);
     void motorActualSpeedReceived(double);
     void motorBusVoltageReceived(double);
     void motorBusCurrentReceived(double);
 
+    // lights slots
     void lowBeamsReceived(bool);
     void highBeamsReceived(bool);
     void leftSignalReceived(bool);
     void rightSignalReceived(bool);
+    void lightAliveReceived(bool);
 
+    // mppt slots
     void mpptZeroReceived(Mppt);
     void mpptOneReceived(Mppt);
     void mpptTwoReceived(Mppt);
     void mpptPowerReceived(double);
 
+    // motor faults slots
     void motorZeroErrorFlagsReceived(ErrorFlags);
     void motorZeroLimitFlagsReceived(LimitFlags);
     void motorOneErrorFlagsReceived(ErrorFlags);

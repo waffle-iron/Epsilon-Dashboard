@@ -21,4 +21,5 @@ signals:
     void leftSignalReceived(bool leftSignal);
     void rightSignalReceived(bool rightSignal);
     void bmsStrobeLightReceived(bool bmsStrobeLight);
+    void lightAliveReceived(bool);
 };
