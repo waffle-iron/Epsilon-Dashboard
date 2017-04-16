@@ -77,4 +77,4 @@ void BatteryPopulator::populateData(const QJsonObject& data)
     batteryData_.setPrechargeState(value.toObject().value(JsonFormat::BATTERY_PRECHARGESTATE).toString());
     batteryData_.setAuxVoltage(value.toObject().value(JsonFormat::BATTERY_AUXVOLTAGE).toInt());
     batteryData_.setAuxBmsAlive(value.toObject().value(JsonFormat::BATTERY_AUXBMSALIVE).toBool());
-    }
+}

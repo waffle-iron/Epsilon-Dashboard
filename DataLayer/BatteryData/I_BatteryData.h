@@ -42,7 +42,7 @@ public:
     virtual double packNetPower() const = 0;
 
     /* Data "Sets" */
-    virtual void setAlive(const bool &alive) = 0;
+    virtual void setAlive(const bool& alive) = 0;
     virtual void setBmsRelayStatus(const BmsRelayStatusFlags&) = 0;
     virtual void setPopulatedCells(const int&) = 0;
     virtual void setInputVoltage12V(const double&) = 0;

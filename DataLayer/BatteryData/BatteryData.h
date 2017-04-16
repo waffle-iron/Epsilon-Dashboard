@@ -38,32 +38,32 @@ public:
     double packNetPower() const;
 
     /* Data setter */
-    void setAlive(const bool &alive);
-    void setBmsRelayStatus(const BmsRelayStatusFlags &bmsRelayStatus);
-    void setPopulatedCells(const int &populatedCells);
-    void setInputVoltage12V(const double &inputVoltage12V);
-    void setFanVoltage(const double &fanVoltage);
-    void setPackCurrent(const double &packCurrent);
-    void setPackVoltage(const double &packVoltage);
-    void setPackStateOfCharge(const double &packStateOfCharge);
-    void setPackAmphours(const double &packAmphours);
-    void setPackDepthOfDischarge(const double &packDepthOfDischarge);
-    void setHighTemperature(const int &highTemperature);
-    void setHighThermistorId(const int &highThermistorId);
-    void setLowTemperature(const int &lowTemperature);
-    void setLowThermistorId(const int &lowThermistorId);
-    void setAverageTemperature(const int &averageTemperature);
-    void setInternalTemperature(const int &internalTemperature);
-    void setFanSpeed(const int &fanSpeed);
-    void setRequestedFanSpeed(const int &requestedFanSpeed);
-    void setLowCellVoltage(const int &lowCellVoltage);
-    void setLowCellVoltageId(const int &lowCellVoltageId);
-    void setHighCellVoltage(const int &highCellVoltage);
-    void setHighCellVoltageId(const int &highCellVoltageId);
-    void setAverageCellVoltage(const int &averageCellVoltage);
-    void setPrechargeState(const QString &prechargeState);
-    void setAuxVoltage(const int &auxVoltage);
-    void setAuxBmsAlive(const bool &auxBmsAlive);
+    void setAlive(const bool& alive);
+    void setBmsRelayStatus(const BmsRelayStatusFlags& bmsRelayStatus);
+    void setPopulatedCells(const int& populatedCells);
+    void setInputVoltage12V(const double& inputVoltage12V);
+    void setFanVoltage(const double& fanVoltage);
+    void setPackCurrent(const double& packCurrent);
+    void setPackVoltage(const double& packVoltage);
+    void setPackStateOfCharge(const double& packStateOfCharge);
+    void setPackAmphours(const double& packAmphours);
+    void setPackDepthOfDischarge(const double& packDepthOfDischarge);
+    void setHighTemperature(const int& highTemperature);
+    void setHighThermistorId(const int& highThermistorId);
+    void setLowTemperature(const int& lowTemperature);
+    void setLowThermistorId(const int& lowThermistorId);
+    void setAverageTemperature(const int& averageTemperature);
+    void setInternalTemperature(const int& internalTemperature);
+    void setFanSpeed(const int& fanSpeed);
+    void setRequestedFanSpeed(const int& requestedFanSpeed);
+    void setLowCellVoltage(const int& lowCellVoltage);
+    void setLowCellVoltageId(const int& lowCellVoltageId);
+    void setHighCellVoltage(const int& highCellVoltage);
+    void setHighCellVoltageId(const int& highCellVoltageId);
+    void setAverageCellVoltage(const int& averageCellVoltage);
+    void setPrechargeState(const QString& prechargeState);
+    void setAuxVoltage(const int& auxVoltage);
+    void setAuxBmsAlive(const bool& auxBmsAlive);
 
 private:
     bool alive_;

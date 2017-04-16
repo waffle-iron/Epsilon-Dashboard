@@ -11,8 +11,8 @@ public:
     BatteryErrorFlags errorFlags() const;
     BatteryLimitFlags limitFlags() const;
 
-    void setErrorFlags(const BatteryErrorFlags &errorFlags);
-    void setLimitFlags(const BatteryLimitFlags &limitFlags);
+    void setErrorFlags(const BatteryErrorFlags& errorFlags);
+    void setLimitFlags(const BatteryLimitFlags& limitFlags);
 
 private:
     BatteryErrorFlags batteryErrorFlags_;
