@@ -13,7 +13,7 @@ class UdpConnectionService;
 class CommunicationContainer
 {
 public:
-    explicit CommunicationContainer(BusinessContainer&);
+    explicit CommunicationContainer();
     ~CommunicationContainer();
 
     I_JsonReceiver& jsonReceiver();
