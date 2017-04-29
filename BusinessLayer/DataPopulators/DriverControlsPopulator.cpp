@@ -28,11 +28,16 @@
 
 #include "DriverControlsPopulator.h"
 
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include "../BusinessLayer/DataPopulators/JsonDefines.h"
 
-DriverControlsPopulator::DriverControlsPopulator(I_DriverControlsData& driverControlsData)
-    : driverControlsData_(driverControlsData)
+DriverControlsPopulator::DriverControlsPopulator(I_JsonReceiver& jsonReceiver,
+        I_DriverControlsData& driverControlsData)
+    : jsonReceiver_(jsonReceiver)
+    , driverControlsData_(driverControlsData)
 {
+    connect(&jsonReceiver_, SIGNAL(dataReceived(const QJsonObject&)),
+            this, SLOT(populateData(const QJsonObject&)));
 }
 
 void DriverControlsPopulator::populateData(const QJsonObject& data)

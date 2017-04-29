@@ -4,11 +4,13 @@
 #include <QObject>
 #include <QTimer>
 
+class I_JsonReceiver;
+
 class CommunicationsMonitoringService : public I_CommunicationsMonitoringService
 {
     Q_OBJECT
 public:
-    CommunicationsMonitoringService();
+    CommunicationsMonitoringService(I_JsonReceiver& jsonReceiver);
     virtual ~CommunicationsMonitoringService() {}
 
     void start();
@@ -23,6 +25,8 @@ private slots:
     void decrementInvalidPacketsReceivedInLastMinute();
 
 private:
+    I_JsonReceiver& jsonReceiver_;
+
     QTimer updateTimer_;
     int secondsSinceLastPacketReceived_;
     int packetsReceivedInLastMinute_;
