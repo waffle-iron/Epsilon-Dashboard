@@ -3,6 +3,7 @@
 
 CmuData::CmuData()
 {
+    cmuList_.reserve(4);
 }
 
 CmuData::~CmuData()
@@ -28,7 +29,7 @@ Cmu CmuData::cmuThree() const
 
 void CmuData::setCmuZero(Cmu cmuZero)
 {
-    cmuList_.append(cmuZero);
+    cmuList_.replace(0, cmuZero);
     emit cmuZeroReceived(cmuList_.at(0));
     emit cmuMaxCellTempReceived(findMaxCellTemp());
     emit cmuLowestCellVoltageReceived(findLowestVoltage());
@@ -37,7 +38,7 @@ void CmuData::setCmuZero(Cmu cmuZero)
 }
 void CmuData::setCmuOne(Cmu cmuOne)
 {
-    cmuList_.append(cmuOne);
+    cmuList_.replace(1, cmuOne);
     emit cmuOneReceived(cmuList_.at(1));
     emit cmuMaxCellTempReceived(findMaxCellTemp());
     emit cmuLowestCellVoltageReceived(findLowestVoltage());
@@ -46,7 +47,7 @@ void CmuData::setCmuOne(Cmu cmuOne)
 }
 void CmuData::setCmuTwo(Cmu cmuTwo)
 {
-    cmuList_.append(cmuTwo);
+    cmuList_.replace(2, cmuTwo);
     emit cmuTwoReceived(cmuList_.at(2));
     emit cmuMaxCellTempReceived(findMaxCellTemp());
     emit cmuLowestCellVoltageReceived(findLowestVoltage());
@@ -55,7 +56,7 @@ void CmuData::setCmuTwo(Cmu cmuTwo)
 }
 void CmuData::setCmuThree(Cmu cmuThree)
 {
-    cmuList_.append(cmuThree);
+    cmuList_.replace(3, cmuThree);
     emit cmuThreeReceived(cmuList_.at(3));
     emit cmuMaxCellTempReceived(findMaxCellTemp());
     emit cmuLowestCellVoltageReceived(findLowestVoltage());

@@ -3,6 +3,7 @@
 
 MpptData::MpptData()
 {
+    mpptList_.reserve(3);
 }
 
 MpptData::~MpptData()
@@ -27,18 +28,18 @@ Mppt MpptData::mpptTwo() const
 
 void MpptData::setMpptZero(Mppt mpptZero)
 {
-    mpptList_.append(mpptZero);
+    mpptList_.replace(0, mpptZero);
     emit mpptZeroReceived(mpptList_.at(0));
 }
 
 void MpptData::setMpptOne(Mppt mpptOne)
 {
-    mpptList_.append(mpptOne);
+    mpptList_.replace(1, mpptOne);
     emit mpptOneReceived(mpptList_.at(1));
 }
 
 void MpptData::setMpptTwo(Mppt mpptTwo)
 {
-    mpptList_.append(mpptTwo);
+    mpptList_.replace(2, mpptTwo);
     emit mpptTwoReceived(mpptList_.at(2));
 }
