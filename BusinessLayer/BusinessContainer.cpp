@@ -5,6 +5,7 @@
 #include "../DataLayer/DataContainer.h"
 #include "DataPopulators/BatteryFaultsPopulator.h"
 #include "DataPopulators/BatteryPopulator.h"
+#include "DataPopulators/CmuPopulator.h"
 #include "DataPopulators/DriverControlsPopulator.h"
 #include "DataPopulators/KeyMotorPopulator.h"
 #include "DataPopulators/LightsPopulator.h"
@@ -49,6 +50,7 @@ public:
     I_JsonReceiver& jsonReceiver_;
     BatteryPopulator batteryPopulator_;
     BatteryFaultsPopulator batteryFaultsPopulator_;
+    CmuPopulator cmuPopulator_;
     DriverControlsPopulator driverControlsPopulator_;
     KeyMotorPopulator keyMotorPopulator_;
     LightsPopulator lightsPopulator_;
