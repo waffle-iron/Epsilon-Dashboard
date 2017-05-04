@@ -23,29 +23,26 @@
  *  For further contact, email <software@calgarysolarcar.ca>
  */
 
+#pragma once
 
+#include "../DataLayer/CmuData/I_CmuData.h"
+#include <QObject>
 
-#include "JsonReceiver.h"
+class I_JsonReceiver;
+class I_CmuData;
 
-#include "CommDeviceControl/I_CommDevice.h"
-
-JsonReceiver::JsonReceiver(I_CommDevice& inputDevice)
+class CmuPopulator : public QObject
 {
-    Q_UNUSED(inputDevice);
-}
+    Q_OBJECT
+public:
+    CmuPopulator(I_JsonReceiver& jsonReceiver,
+                 I_CmuData& cmuData);
+    virtual ~CmuPopulator() {}
 
-void JsonReceiver::handleIncomingData(const QByteArray& data)
-{
-    QJsonParseError err;
-    QJsonObject parsedData = QJsonDocument::fromJson(data, &err).object();
+public slots:
+    void populateData(const QJsonObject&);
 
-    if (err.error != QJsonParseError::NoError)
-    {
-        qDebug() << err.errorString();
-        emit invalidDataReceived();
-    }
-    else
-    {
-        emit dataReceived(parsedData);
-    }
-}
+private:
+    I_JsonReceiver& jsonReceiver_;
+    I_CmuData& cmuData_;
+};

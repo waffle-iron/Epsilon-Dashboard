@@ -1,8 +1,10 @@
 #include "CommunicationsMonitoringService.h"
+#include "../CommunicationLayer/JsonReceiver/I_JsonReceiver.h"
 #include <QDebug>
 
-CommunicationsMonitoringService::CommunicationsMonitoringService()
-    : secondsSinceLastPacketReceived_(0)
+CommunicationsMonitoringService::CommunicationsMonitoringService(I_JsonReceiver& jsonReceiver)
+    : jsonReceiver_(jsonReceiver)
+    , secondsSinceLastPacketReceived_(0)
     , packetsReceivedInLastMinute_(0)
     , secondsSinceLastValidPacketReceived_(0)
     , validPacketsReceivedInLastMinute_(0)
@@ -19,6 +21,8 @@ CommunicationsMonitoringService::CommunicationsMonitoringService()
             this, SLOT(validPacketReceived()));
     connect(&jsonReceiver_, SIGNAL(packetInterpreted(const CmuDataMessage&)),
             this, SLOT(validPacketReceived()));*/
+    connect(&jsonReceiver_, SIGNAL(invalidDataReceived()),
+            this, SLOT(invalidPacketReceived()));
     connect(&updateTimer_, SIGNAL(timeout()),
             this, SLOT(update()));
     updateTimer_.setInterval(1000); // update every second
