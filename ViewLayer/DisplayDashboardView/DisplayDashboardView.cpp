@@ -2,12 +2,12 @@
 
 namespace
 {
-    const double SLOPE_R = -1;
-    const double Y_INT_R = 220;
-    const double SLOPE_G = 1.7;
-    const double Y_INT_G = 10;
-    const QString BLUE = "20";
-    const QString DEFAULT_SS = "QProgressBar:horizontal {\
+    const int RED_SLOPE = -1;
+    const int RED_INITIAL = 220;
+    const double GREEN_SLOPE = 1.7;
+    const int GREEN_INITIAL = 10;
+    const int BLUE_INITIAL = 20;
+    const QString DEFAULT_STYLESHEET = "QProgressBar:horizontal {\
             border: 1px solid white;\
             border-radius: 7px;\
             background: black;\
@@ -153,18 +153,26 @@ void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
 
-    // The rgb values for the progressbar are calculated using a two simple linear equations
-    // that were derived from defining maximum and minimum values for Red and Green values
-    // and determining a slope and an intercept. Blue will stay constant as there will be no need
-    // to change it as the progress bar will transition from Green to Red. Using this method for
-    // determining the rgb values eliminates the need for switch cases or big if-else statements.
+    // The rgb values for the progressbar are calculated with the intention of displaying a colour closer to red
+    // for low values and a colour closer to green for higher values. These are calculated using linear equations
+    // with a slope and intercept.
 
-    QString r = QString::number(SLOPE_R * packSocPercentage + Y_INT_R);
-    QString g = QString::number(SLOPE_G * packSocPercentage + Y_INT_G);
+    // Default colour
+    int red = RED_INITIAL;
+    int green = GREEN_INITIAL;
+    int blue = BLUE_INITIAL;
 
-    QString rgb = "rgb(" + r + "," + g + "," + BLUE + ");}";
+    // Calculated color
+    red += int(RED_SLOPE * packSocPercentage);
+    green += int(GREEN_SLOPE * packSocPercentage);
 
-    ui_.stateOfChargeCapacityWidget().setStyleSheet(DEFAULT_SS + rgb);
+    QString r = QString::number(red);
+    QString g = QString::number(green);
+    QString b = QString::number(blue);
+
+    QString rgb = "rgb(" + r + "," + g + "," + b + ");";
+
+    ui_.stateOfChargeCapacityWidget().setStyleSheet(DEFAULT_STYLESHEET + rgb + "}");
 
 }
 void DisplayDashboardView::prechargeStateReceived(QString prechargeState)
