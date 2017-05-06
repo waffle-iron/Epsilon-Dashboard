@@ -7,7 +7,7 @@ packetTitle=Gen5
 
 [SerialPort]
 portName=/dev/pts/7
-baudrate=9600
+baudrate=115200
 
 [UdpAddress]
 ipAddress=127.0.0.1

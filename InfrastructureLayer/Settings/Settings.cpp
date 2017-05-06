@@ -6,6 +6,16 @@
 namespace
 {
     const QSettings::Format SETTINGS_FILE_FORMAT = QSettings::IniFormat;
+    const QString SERIAL_PORT_NAME = "SerialPort/portName";
+    const QString BAUDRATE = "SerialPort/baudrate";
+    const QString IP_ADDRESS = "UdpAddress/ipAddress";
+    const QString DEFAULT_IP = "127.0.0.1";
+    const QString PORT = "UdpAddress/port";
+    const QString DEFAULT_PORT = "5672";
+    const QString FORWARD_PERIOD = "forwardPeriod";
+    const QString PACKET_TITLE = "JsonFormat/packetTitle";
+    const QString EXCHANGE_NAME = "rabbitMQ/exchangeName";
+
 }
 
 Settings::Settings(QString filepath)
@@ -15,50 +25,35 @@ Settings::Settings(QString filepath)
 
 QString Settings::serialPortName() const
 {
-    return settings_.value("SerialPort/portName").toString();
+    return settings_.value(SERIAL_PORT_NAME).toString();
 }
 
 int Settings::baudrate() const
 {
-    return settings_.value("SerialPort/baudrate").toInt();
+    return settings_.value(BAUDRATE).toInt();
 }
 
 QString Settings::ipAddress() const
 {
-    return QString(settings_.value("UdpAddress/ipAddress", "127.0.0.1").toString());
+    return QString(settings_.value(IP_ADDRESS, DEFAULT_IP).toString());
 }
 
 quint16 Settings::udpPort() const
 {
-    return (quint16)settings_.value("UdpAddress/port", "5672").toInt();
+    return (quint16)settings_.value(PORT, DEFAULT_PORT).toInt();
 }
 
 int Settings::forwardPeriod() const
 {
-    return settings_.value("forwardPeriod").toInt();
+    return settings_.value(FORWARD_PERIOD).toInt();
 }
 
 QString Settings::packetTitle() const
 {
-    return settings_.value("JsonFormat/packetTitle").toString();
+    return settings_.value(PACKET_TITLE).toString();
 }
 
 QString Settings::exchangeName() const
 {
-    return QString(settings_.value("rabbitMQ/exchangeName").toString());
-}
-
-int Settings::numberOfCmus() const
-{
-    return settings_.value("UnitNumbers/numberOfCmus").toInt();
-}
-
-int Settings::numberOfMotors() const
-{
-    return settings_.value("UnitNumbers/numberOfMotors").toInt();
-}
-
-int Settings::numberOfMppts() const
-{
-    return settings_.value("UnitNumbers/numberOfMppts").toInt();
+    return QString(settings_.value(EXCHANGE_NAME).toString());
 }

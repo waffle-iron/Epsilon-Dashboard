@@ -8,7 +8,11 @@ SUBDIRS = \
     ViewLayer \
     PresenterLayer \ 
     BusinessLayer \ 
+    InfrastructureLayer \
     CommunicationLayer \
     DataLayer \
-    InfrastructureLayer \
     EpsilonDashboard
+
+DISTFILES += \
+    config.ini.example \
+    .travis.yml

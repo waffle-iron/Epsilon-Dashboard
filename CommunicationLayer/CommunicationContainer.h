@@ -9,7 +9,8 @@ class ConnectionController;
 
 class CommDeviceManager;
 class I_JsonReceiver;
-class UdpConnectionService;
+class InternetConnectionService;
+
 
 class CommunicationContainer
 {
@@ -19,7 +20,7 @@ public:
 
     I_JsonReceiver& jsonReceiver();
     ConnectionController& connectionController();
-    UdpConnectionService& udpConnectionService();
+    InternetConnectionService& internetConnectionService();
     CommDeviceManager& commDeviceManager();
 
 private:

@@ -9,6 +9,7 @@ before_install:
     - qt54-env.sh 
 
 install:
+    - cd ..
     - wget 'https://s3-us-west-2.amazonaws.com/ucsolarteam.hostedfiles/astyle'
     - tar -zxvf astyle
     - (cd astyle/build/gcc && make release && sudo make install)
@@ -30,10 +31,10 @@ install:
     - sudo mkdir /usr/local/include/SimpleAmqpClient
     - sudo cp *.so* /usr/local/lib/
     - sudo cp ../src/SimpleAmqpClient/*.h /usr/local/include/SimpleAmqpClient/
-    - cd ../..
+    - cd $TRAVIS_BUILD_DIR
 
 script: 
-    - "! (astyle *.h *.cpp -r --dry-run --options=astylerc --exclude=SimpleAmqpClient --exclude=rabbitmq-c| grep Formatted)"
+    - "! (astyle *.h *.cpp -r --dry-run --options=astylerc | grep Formatted)"
     - qmake
     - make
 
