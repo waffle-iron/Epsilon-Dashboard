@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QScopedPointer>
+#include "CommDeviceControl/InternetConnectionService.h"
 
 class BusinessContainer;
 class InfrastructureContainer;
@@ -9,7 +10,7 @@ class ConnectionController;
 
 class CommDeviceManager;
 class I_JsonReceiver;
-class InternetConnectionService;
+
 
 
 class CommunicationContainer

@@ -4,21 +4,27 @@
 #include <QDebug>
 #include "../../InfrastructureLayer/Settings/I_Settings.h"
 #include <QTextStream>
+#include <QTimer>
 namespace
 {
-    quint32 TIMEOUT_SECONDS = 120;
-    quint32 SLEEP_TIME_SECONDS = 2;
+    quint32 TIMEOUT_MILLISECONDS = 120000;
+    quint32 SLEEP_TIME_MILLISECONDS = 2000;
 }
 
 
 InternetConnectionService::InternetConnectionService(QString exchangeName,
         QString ipAddress,
         quint16 udpPort)
-    : channel_(NULL),
-      exchangeName_(exchangeName),
+    : exchangeName_(exchangeName),
       ipAddress_(ipAddress),
       udpPort_(udpPort)
 {
+    QObject::connect(this, SIGNAL(setupChannelSignal()), this, SLOT(setupChannel()));
+
+    qtimer_ = new QTimer(this);
+    qtimer_->setSingleShot(true);
+    connect(qtimer_, SIGNAL(timeout()), this, SLOT(setupChannel()));
+    connectToDataSource();
 }
 
 InternetConnectionService::~InternetConnectionService()
@@ -28,41 +34,39 @@ InternetConnectionService::~InternetConnectionService()
 
 void InternetConnectionService::setupChannel()
 {
-    quint32 i = 0;
+    qWarning() << "UdpMessageForwarder: Attempting to connect" << ipAddress_ << udpPort_;
 
-    do
+    try
     {
-        if (i)
-        {
-            qWarning() << "UdpMessageForwarder: Attempting to reconnect" << ipAddress_ << udpPort_;
-        }
-
-        i++;
-
-        try
-        {
-            channel_ = AmqpClient::Channel::Create(ipAddress_.toStdString(), udpPort_);
-        }
-        catch (std::exception&)
-        {
-            if (channel_ == NULL)
-            {
-                if (i == (TIMEOUT_SECONDS / SLEEP_TIME_SECONDS))
-                {
-                    qWarning() << "UdpMessageForwarder timed out waiting for connection to broker";
-                    throw;
-                }
-
-                qWarning() << "UdpMessageForwarder: error creating channel";
-                QThread::sleep(SLEEP_TIME_SECONDS);
-            }
-            else
-            {
-                throw;
-            }
-        }
+        channel_ = AmqpClient::Channel::Create(ipAddress_.toStdString(), udpPort_);
     }
-    while (channel_ == NULL);
+    catch (std::exception&)
+    {
+        if (channel_ == NULL)
+        {
+            /*if (numberOfCalls == (TIMEOUT_SECONDS / SLEEP_TIME_SECONDS))
+            {
+                qWarning() << "UdpMessageForwarder timed out waiting for connection to broker";
+                throw;
+            }*/
+
+        }
+        else
+        {
+            throw;
+        }
+
+        qWarning() << "UdpMessageForwarder: error creating channel";
+        qtimer_->start(SLEEP_TIME_MILLISECONDS);
+        return;
+    }
+
+    if (channel_ == NULL)
+    {
+        qWarning() << "UdpMessageForwarder: error creating channel";
+        qtimer_->start(SLEEP_TIME_MILLISECONDS);
+        return;
+    }
 
     channel_->DeclareExchange(exchangeName_.toStdString(), AmqpClient::Channel::EXCHANGE_TYPE_FANOUT);
     queueName_ = channel_->DeclareQueue("");
@@ -86,5 +90,4 @@ bool InternetConnectionService::connectToDataSource()
 void InternetConnectionService::disconnectFromDataSource()
 {
     channel_->UnbindQueue(queueName_, exchangeName_.toStdString());
-    channel_ = NULL;
 }

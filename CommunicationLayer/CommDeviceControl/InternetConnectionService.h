@@ -6,12 +6,9 @@
 #include <QUdpSocket>
 #include <QThread>
 #include "I_ConnectionService.h"
-
+#include <QTimer>
 
 class QUdpSocket;
-
-
-
 
 class InternetConnectionService : public I_ConnectionService
 {
@@ -22,9 +19,16 @@ public:
                               quint16 udpPort);
     virtual ~InternetConnectionService();
 
-    void setupChannel();
     bool connectToDataSource();
     void disconnectFromDataSource();
+
+signals:
+    void setupChannelSignal();
+
+public slots:
+    void setupChannel();
+
+
 
 private:
 
@@ -33,5 +37,5 @@ private:
     QString ipAddress_;
     quint16 udpPort_;
     std::string queueName_;
-
+    QTimer* qtimer_;
 };

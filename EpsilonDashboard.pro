@@ -14,5 +14,5 @@ SUBDIRS = \
     EpsilonDashboard
 
 DISTFILES += \
-    config.ini.example \
-    .travis.yml
+    .travis.yml \
+    config.ini.example

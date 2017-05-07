@@ -10,9 +10,9 @@
 #include "../InfrastructureLayer/InfrastructureContainer.h"
 #include "../InfrastructureLayer/Settings/I_Settings.h"
 
-
 class CommunicationContainerPrivate
 {
+
 public:
     CommunicationContainerPrivate(BusinessContainer& businessContainer,
                                   InfrastructureContainer& infrastructureContainer)
