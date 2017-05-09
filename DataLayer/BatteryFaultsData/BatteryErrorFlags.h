@@ -1,6 +1,4 @@
-#ifndef BATTERYERRORFLAGS_H
-#define BATTERYERRORFLAGS_H
-
+#pragma once
 
 class BatteryErrorFlags
 {
@@ -76,5 +74,3 @@ private:
     bool internalThermistorFault_;
     bool internalLogicFault_;
 };
-
-#endif // BATTERYERRORFLAGS_H

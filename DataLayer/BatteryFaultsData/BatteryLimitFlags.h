@@ -1,6 +1,4 @@
-#ifndef BATTERYLIMITFLAGS_H
-#define BATTERYLIMITFLAGS_H
-
+#pragma once
 
 class BatteryLimitFlags
 {
@@ -55,5 +53,3 @@ private:
     bool cclReducedDueToChargerLatch_;
     bool cclReducedDueToAlternateCurrentLimit_;
 };
-
-#endif // BATTERYLIMITFLAGS_H

@@ -44,12 +44,6 @@ void DisplayDashboardView::connectBattery(BatteryPresenter& batteryPresenter)
             this, SLOT(prechargeStateReceived(QString)));
     connect(&batteryPresenter, SIGNAL(packNetPowerReceived(double)),
             this, SLOT(packNetPowerReceived(double)));
-    //connect(&batteryPresenter, SIGNAL(packSocPercentageReceived(double)),
-    //        this, SLOT(packSocPercentageReceived(double)));
-    //connect(&batteryPresenter, SIGNAL(prechargeTimerElapsedReceived(bool)),
-    //        this, SLOT(prechargeTimerElapsedReceived(bool)));
-    //connect(&batteryPresenter, SIGNAL(prechargeTimerCountReceived(double)),
-    //        this, SLOT(prechargeTimerCountReceived(double)));
 }
 
 void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryFaultsPresenter)

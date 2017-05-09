@@ -67,9 +67,6 @@ private slots:
     void aliveReceived(bool);
     void prechargeStateReceived(QString);
     void packNetPowerReceived(double);
-    //void packSocPercentageReceived(double);
-    //void prechargeTimerElapsedReceived(bool);
-    //void prechargeTimerCountReceived(double);
 
     // battery faults slots
     void errorFlagsReceived(BatteryErrorFlags);

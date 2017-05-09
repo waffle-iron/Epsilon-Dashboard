@@ -1,6 +1,4 @@
-#ifndef BMSRELAYSTATUSFLAGS_H
-#define BMSRELAYSTATUSFLAGS_H
-
+#pragma once
 
 class BmsRelayStatusFlags
 {
@@ -35,5 +33,3 @@ private:
     bool isReadySignalStatus_;
     bool isChargingSignalStatus_;
 };
-
-#endif // BMSRELAYSTATUSFLAGS_H
