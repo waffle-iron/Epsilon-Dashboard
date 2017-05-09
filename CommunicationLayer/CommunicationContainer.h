@@ -16,7 +16,7 @@ class I_JsonReceiver;
 class CommunicationContainer
 {
 public:
-    explicit CommunicationContainer(BusinessContainer&, InfrastructureContainer& infrastructureContainer);
+    explicit CommunicationContainer(InfrastructureContainer& infrastructureContainer);
     ~CommunicationContainer();
 
     I_JsonReceiver& jsonReceiver();

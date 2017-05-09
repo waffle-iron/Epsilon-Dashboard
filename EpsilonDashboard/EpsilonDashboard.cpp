@@ -12,8 +12,8 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     : QApplication(argc, argv)
     , infrastructureContainer_(new InfrastructureContainer())
     , dataContainer_(new DataContainer())
-    , businessContainer_(new BusinessContainer(*dataContainer_))
-    , communicationContainer_(new CommunicationContainer(*businessContainer_, *infrastructureContainer_))
+    , communicationContainer_(new CommunicationContainer(*infrastructureContainer_))
+    , businessContainer_(new BusinessContainer(*communicationContainer_, *dataContainer_))
     , presenterContainer_(new PresenterContainer(*dataContainer_))
 {
     QCommandLineParser parser;
