@@ -3,7 +3,6 @@
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
         BatteryFaultsPresenter& batteryFaultsPresenter,
-        CmuPresenter& cmuPresenter,
         DriverControlsPresenter& driverControlsPresenter,
         KeyMotorPresenter& keyMotorPresenter,
         LightsPresenter& lightsPresenter,
@@ -13,7 +12,6 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
         I_DisplayDashboardUI& ui)
     : batteryPresenter_(batteryPresenter)
     , batteryFaultsPresenter_(batteryFaultsPresenter)
-    , cmuPresenter_(cmuPresenter)
     , driverControlsPresenter_(driverControlsPresenter)
     , keyMotorPresenter_(keyMotorPresenter)
     , lightsPresenter_(lightsPresenter)
@@ -24,7 +22,6 @@ DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
 {
     connectBattery(batteryPresenter_);
     connectBatteryFaults(batteryFaultsPresenter_);
-    connectCmu(cmuPresenter_);
     connectDriverControls(driverControlsPresenter_);
     connectKeyMotor(keyMotorPresenter_);
     connectLights(lightsPresenter_);
@@ -40,58 +37,21 @@ DisplayDashboardView::~DisplayDashboardView()
 
 void DisplayDashboardView::connectBattery(BatteryPresenter& batteryPresenter)
 {
+    // TODO update to new battery data (depends on what should be shown in UI)
     connect(&batteryPresenter, SIGNAL(aliveReceived(bool)),
             this, SLOT(aliveReceived(bool)));
-    connect(&batteryPresenter, SIGNAL(packSocPercentageReceived(double)),
-            this, SLOT(packSocPercentageReceived(double)));
     connect(&batteryPresenter, SIGNAL(prechargeStateReceived(QString)),
             this, SLOT(prechargeStateReceived(QString)));
-    connect(&batteryPresenter, SIGNAL(prechargeTimerElapsedReceived(bool)),
-            this, SLOT(prechargeTimerElapsedReceived(bool)));
-    connect(&batteryPresenter, SIGNAL(prechargeTimerCountReceived(double)),
-            this, SLOT(prechargeTimerCountReceived(double)));
-    connect(&batteryPresenter, SIGNAL(netPowerReceived(double)),
-            this, SLOT(netPowerReceived(double)));
+    connect(&batteryPresenter, SIGNAL(packNetPowerReceived(double)),
+            this, SLOT(packNetPowerReceived(double)));
 }
 
 void DisplayDashboardView::connectBatteryFaults(BatteryFaultsPresenter& batteryFaultsPresenter)
 {
-    connect(&batteryFaultsPresenter, SIGNAL(cellOverVoltageReceived(bool)),
-            this, SLOT(cellOverVoltageReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(cellUnderVoltageReceived(bool)),
-            this, SLOT(cellUnderVoltageReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(cellOverTemperatureReceived(bool)),
-            this, SLOT(cellOverTemperatureReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(measurementUntrustedReceived(bool)),
-            this, SLOT(measurementUntrustedReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(cmuCommTimeoutReceived(bool)),
-            this, SLOT(cmuCommTimeoutReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(bmuIsInSetupModeReceived(bool)),
-            this, SLOT(bmuIsInSetupModeReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(cmuCanBusPowerStatusReceived(bool)),
-            this, SLOT(cmuCanBusPowerStatusReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(packIsolationTestFailureReceived(bool)),
-            this, SLOT(packIsolationTestFailureReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(softwareOverCurrentMeasuredReceived(bool)),
-            this, SLOT(softwareOverCurrentMeasuredReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(canSupplyIsLowReceived(bool)),
-            this, SLOT(canSupplyIsLowReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(contactorIsStuckReceived(bool)),
-            this, SLOT(contactorIsStuckReceived(bool)));
-    connect(&batteryFaultsPresenter, SIGNAL(cmuDetectedExtraCellPresentReceived(bool)),
-            this, SLOT(cmuDetectedExtraCellPresentReceived(bool)));
-}
-
-void DisplayDashboardView::connectCmu(CmuPresenter& cmuPresenter)
-{
-    connect(&cmuPresenter, SIGNAL(cmuMaxCellTempReceived(double)),
-            this, SLOT(cmuMaxCellTempReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuLowestCellVoltageReceived(double)),
-            this, SLOT(cmuLowestCellVoltageReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuAverageCellTempReceived(double)),
-            this, SLOT(cmuAverageCellTempReceived(double)));
-    connect(&cmuPresenter, SIGNAL(cmuCellVoltageReceived(double)),
-            this, SLOT(cmuCellVoltageReceived(double)));
+    connect(&batteryFaultsPresenter, SIGNAL(errorFlagsReceived(BatteryErrorFlags)),
+            this, SLOT(errorFlagsReceived(BatteryErrorFlags)));
+    connect(&batteryFaultsPresenter, SIGNAL(limitFlagsReceived(BatteryLimitFlags)),
+            this, SLOT(limitFlagsReceived(BatteryLimitFlags)));
 }
 
 void DisplayDashboardView::connectDriverControls(DriverControlsPresenter& driverControlsPresenter)
@@ -122,6 +82,8 @@ void DisplayDashboardView::connectLights(LightsPresenter& lightsPresenter)
             this, SLOT(leftSignalReceived(bool)));
     connect(&lightsPresenter, SIGNAL(rightSignalReceived(bool)),
             this, SLOT(rightSignalReceived(bool)));
+    connect(&lightsPresenter, SIGNAL(lightAliveReceived(bool)),
+            this, SLOT(lightAliveReceived(bool)));
 }
 
 void DisplayDashboardView::connectMppt(MpptPresenter& mpptPresenter)
@@ -155,6 +117,20 @@ void DisplayDashboardView::connectMotorFaults(MotorFaultsPresenter& motorFaultsP
 void DisplayDashboardView::aliveReceived(bool)
 {
 }
+void DisplayDashboardView::prechargeStateReceived(QString prechargeState)
+{
+}
+
+void DisplayDashboardView::packNetPowerReceived(double netPower)
+{
+    ui_.netPowerLabel().setNum(netPower);
+    ui_.powerOutLabel().setNum(netPower - ui_.powerInLabel().text().toDouble());
+}
+
+/*
+ * TODO UI has to be updated w.r.t. the changes in the protocol
+ */
+/*
 void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
@@ -188,71 +164,12 @@ void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
         ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,20,20)");
     }
 }
-void DisplayDashboardView::prechargeStateReceived(QString prechargeState)
-{
-}
 void DisplayDashboardView::prechargeTimerElapsedReceived(bool prechargeTimerElapsed)
 {
 }
 void DisplayDashboardView::prechargeTimerCountReceived(double prechargeTimerCount)
 {
 }
-
-void DisplayDashboardView::netPowerReceived(double netPower)
-{
-    ui_.netPowerLabel().setNum(netPower);
-    ui_.powerOutLabel().setNum(netPower - ui_.powerInLabel().text().toDouble());
-}
-
-void DisplayDashboardView::cellOverVoltageReceived(bool cellOverVoltage)
-{
-
-}
-void DisplayDashboardView::cellUnderVoltageReceived(bool cellUnderVoltage)
-{
-
-}
-void DisplayDashboardView::cellOverTemperatureReceived(bool cellOverTemperature)
-{
-
-}
-void DisplayDashboardView::measurementUntrustedReceived(bool measurementUntrusted)
-{
-
-}
-void DisplayDashboardView::cmuCommTimeoutReceived(bool cmuCommTimeout)
-{
-
-}
-void DisplayDashboardView::bmuIsInSetupModeReceived(bool bmuIsInSetupMode)
-{
-
-}
-void DisplayDashboardView::cmuCanBusPowerStatusReceived(bool cmuCanBusPowerStatus)
-{
-
-}
-void DisplayDashboardView::packIsolationTestFailureReceived(bool packIsolationTestFailure)
-{
-
-}
-void DisplayDashboardView::softwareOverCurrentMeasuredReceived(bool softwareOverCurrentMeasured)
-{
-
-}
-void DisplayDashboardView::canSupplyIsLowReceived(bool canSupplyIsLow)
-{
-
-}
-void DisplayDashboardView::contactorIsStuckReceived(bool contactorIsStuck)
-{
-
-}
-void DisplayDashboardView::cmuDetectedExtraCellPresentReceived(bool cmuDetectedExtraCellPresent)
-{
-
-}
-
 void DisplayDashboardView::cmuMaxCellTempReceived(double maxCellTemp)
 {
     ui_.maxCellTemperatureLabel().setNum(maxCellTemp);
@@ -269,7 +186,16 @@ void DisplayDashboardView::cmuAverageVoltageReceived(double averageVoltage)
 {
     ui_.avgCellVoltageLabel().setNum(averageVoltage);
 }
+*/
 
+void DisplayDashboardView::errorFlagsReceived(BatteryErrorFlags)
+{
+    // TODO
+}
+void DisplayDashboardView::limitFlagsReceived(BatteryLimitFlags)
+{
+    // TODO
+}
 void DisplayDashboardView::resetReceived(bool reset)
 {
     if (reset)
@@ -341,6 +267,10 @@ void DisplayDashboardView::rightSignalReceived(bool rightSignal)
     {
         ui_.rightTurnSignalWidget().setStyleSheet("");
     }
+}
+void DisplayDashboardView::lightAliveReceived(bool)
+{
+    // TODO
 }
 void DisplayDashboardView::mpptZeroReceived(Mppt mpptZero)
 {

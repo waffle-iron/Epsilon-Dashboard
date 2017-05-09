@@ -12,7 +12,6 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
         DisplayDashboardView_.reset(new DisplayDashboardView(
                                         presenterContainer.batteryPresenter(),
                                         presenterContainer.batteryFaultsPresenter(),
-                                        presenterContainer.cmuPresenter(),
                                         presenterContainer.driverControlsPresenter(),
                                         presenterContainer.keyMotorPresenter(),
                                         presenterContainer.lightsPresenter(),

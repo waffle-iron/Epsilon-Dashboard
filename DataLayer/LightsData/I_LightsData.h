@@ -15,6 +15,7 @@ public:
     virtual bool leftSignal() const = 0;
     virtual bool rightSignal() const = 0;
     virtual bool bmsStrobeLight() const = 0;
+    virtual bool alive() const = 0;
 
     virtual void setlowBeams(bool lowBeams) = 0;
     virtual void sethighBeams(bool highBeams) = 0;
@@ -22,6 +23,7 @@ public:
     virtual void setleftSignal(bool leftSignal) = 0;
     virtual void setrightSignal(bool rightSignal) = 0;
     virtual void setBmsStrobeLight(bool bmsStrobeLight) = 0;
+    virtual void setAlive(bool alive) = 0;
 
 signals:
     void lowBeamsReceived(bool lowBeams);
@@ -30,4 +32,5 @@ signals:
     void leftSignalReceived(bool leftSignal);
     void rightSignalReceived(bool rightSignal);
     void bmsStrobeLightReceived(bool bmsStrobeLight);
+    void aliveReceived(bool alive);
 };

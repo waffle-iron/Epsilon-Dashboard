@@ -21,4 +21,6 @@ void LightsPresenter::relayLightsData()
             this, SIGNAL(rightSignalReceived(bool)));
     connect(&lightsData_, SIGNAL(bmsStrobeLightReceived(bool)),
             this, SIGNAL(bmsStrobeLightReceived(bool)));
+    connect(&lightsData_, SIGNAL(aliveReceived(bool)),
+            this, SIGNAL(lightAliveReceived(bool)));
 }

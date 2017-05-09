@@ -42,17 +42,48 @@ BatteryFaultsPopulator::BatteryFaultsPopulator(I_JsonReceiver& jsonReceiver,
 
 void BatteryFaultsPopulator::populateData(const QJsonObject& data)
 {
+    BatteryErrorFlags errorFlags;
+    BatteryLimitFlags limitFlags;
     QJsonValue value = data.value(JsonFormat::BATTERYFAULTS);
-    batteryFaultsData_.setCellOverVoltage(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLOVERVOLTAGE).toBool());
-    batteryFaultsData_.setCellUnderVoltage(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLUNDERVOLTAGE).toBool());
-    batteryFaultsData_.setCellOverTemperature(value.toObject().value(JsonFormat::BATTERYFAULTS_CELLOVERTEMP).toBool());
-    batteryFaultsData_.setMeasurementUntrusted(value.toObject().value(JsonFormat::BATTERYFAULTS_MEASUREMENTUNTRUSTED).toBool());
-    batteryFaultsData_.setCmuCommTimeout(value.toObject().value(JsonFormat::BATTERYFAULTS_CMUCOMMTIMEOUT).toBool());
-    batteryFaultsData_.setBmuIsInSetupMode(value.toObject().value(JsonFormat::BATTERYFAULTS_BMUSETUPMODE).toBool());
-    batteryFaultsData_.setCmuCanBusPowerStatus(value.toObject().value(JsonFormat::BATTERYFAULTS_CMUCANBUSPOWERSTATUS).toBool());
-    batteryFaultsData_.setPackIsolationTestFailure(value.toObject().value(JsonFormat::BATTERYFAULTS_PACKISOLATIONFAILURE).toBool());
-    batteryFaultsData_.setSoftwareOverCurrentMeasured(value.toObject().value(JsonFormat::BATTERYFAULTS_SOFTWAREOVERCURRENT).toBool());
-    batteryFaultsData_.setCanSupplyIsLow(value.toObject().value(JsonFormat::BATTERYFAULTS_CAN12VSUPPLYLOW).toBool());
-    batteryFaultsData_.setContactorIsStuck(value.toObject().value(JsonFormat::BATTERYFAULTS_CONTACTORSTUCK).toBool());
-    batteryFaultsData_.setCmuDetectedExtraCellPresent(value.toObject().value(JsonFormat::BATTERYFAULTS_CMUDETECTEDEXTRACELL).toBool());
+
+    QJsonObject errorFlagsSubValue = value.toObject().value(JsonFormat::BATTERYFAULTS_ERRORFLAGS).toObject();
+    errorFlags.setInternalCommununicationFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_INTERNALCOMMUNICATIONFAULT).toBool());
+    errorFlags.setInternalConversionFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_INTERNALCONVERSIONFAULT).toBool());
+    errorFlags.setWeakCellFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_WEAKCELLFAULT).toBool());
+    errorFlags.setLowCellVoltageFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_LOWCELLVOLTAGEFAULT).toBool());
+    errorFlags.setOpenWiringFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_OPENWIRINGFAULT).toBool());
+    errorFlags.setCurrentSensorFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_CURRENTSENSORFAULT).toBool());
+    errorFlags.setPackVoltageSensorFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_PACKVOLTAGESENSORFAULT).toBool());
+    errorFlags.setWeakPackFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_WEAKPACKFAULT).toBool());
+    errorFlags.setVoltageRedundancyFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_VOLTAGEREDUNDANCYFAULT).toBool());
+    errorFlags.setFanMonitorFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_FANMONITORFAULT).toBool());
+    errorFlags.setThermistorFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_THERMISTORFAULT).toBool());
+    errorFlags.setCanbusCommunicationsFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_CANBUSCOMMUNICATIONSFAULT).toBool());
+    errorFlags.setAlwaysOnSupplyFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_ALWAYSONSUPPLYFAULT).toBool());
+    errorFlags.setHighVoltageIsolationFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_HIGHVOLTAGEISOLATIONFAULT).toBool());
+    errorFlags.setPowerSupplyFault12V(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_POWERSUPPLYFAULT12V).toBool());
+    errorFlags.setChargeLimitEnforcementFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_CHARELIMITENFORCEMENTFAULT).toBool());
+    errorFlags.setDischargeLimitEnforcementFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_DISCHARGELIMITENFORCEMENTFAULT).toBool());
+    errorFlags.setChargerSafetyRelayFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_CHARGERSAFETYRELAYFAULT).toBool());
+    errorFlags.setInternalMemoryFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_INTERNALMEMORYFAULT).toBool());
+    errorFlags.setInternalThermistorFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_INTERNALTHERMISTORFAULT).toBool());
+    errorFlags.setInternalLogicFault(errorFlagsSubValue.value(JsonFormat::BATTERYFAULTS_ERRORFLAGS_INTERNALLOGICFAULT).toBool());
+    batteryFaultsData_.setErrorFlags(errorFlags);
+
+    QJsonObject limitFlagsSubValue = value.toObject().value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS).toObject();
+    limitFlags.setDclReducedDueToLowSoc(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLREDUCEDDUETOLOWSOC).toBool());
+    limitFlags.setDclReducedDueToHighCellResistance(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLREDUCEDDUETOHIGHCELLRESISTANCE).toBool());
+    limitFlags.setDclReducedDueToTemperature(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLREDUCEDDUETOTEMPERATURE).toBool());
+    limitFlags.setDclReducedDueToLowCellVoltage(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLREDUCEDDUETOLOWCELLVOLTAGE).toBool());
+    limitFlags.setDclReducedDueToLowPackVoltage(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLREDUCEDDUETOLOWPACKVOLTAGE).toBool());
+    limitFlags.setDclandCclReducedDueToVoltageFailsafe(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLANDCCLREDUCEDDUETOVOLTAGEFAILSAFE).toBool());
+    limitFlags.setDclandCclReducedDueToCommunicationFailsafe(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_DCLANDCCLREDUCEDDUETOCOMMUNICATIONFAILSAFE).toBool());
+    limitFlags.setCclReducedDueToHighSoc(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOHIGHSOC).toBool());
+    limitFlags.setCclReducedDueToHighCellResistance(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOHIGHCELLRESISTANCE).toBool());
+    limitFlags.setCclReducedDueToTemperature(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOTEMPERATURE).toBool());
+    limitFlags.setCclReducedDueToHighCellVoltage(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOHIGHCELLVOLTAGE).toBool());
+    limitFlags.setCclReducedDueToHighPackVoltage(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOHIGHPACKVOLTAGE).toBool());
+    limitFlags.setCclReducedDueToChargerLatch(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOCHARGERLATCH).toBool());
+    limitFlags.setCclReducedDueToAlternateCurrentLimit(limitFlagsSubValue.value(JsonFormat::BATTERYFAULTS_LIMITSFLAGS_CCLREDUCEDDUETOALTERNATECURRENTLIMIT).toBool());
+    batteryFaultsData_.setLimitFlags(limitFlags);
 }
