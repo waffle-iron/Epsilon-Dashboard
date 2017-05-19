@@ -2,7 +2,7 @@
 
 namespace
 {
-    const int RED_SLOPE = -1;
+    const double RED_SLOPE = -1;
     const int RED_INITIAL = 220;
     const double GREEN_SLOPE = 1.7;
     const int GREEN_INITIAL = 10;
@@ -170,7 +170,7 @@ void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
     QString g = QString::number(green);
     QString b = QString::number(blue);
 
-    QString rgb = "rgb(" + r + "," + g + "," + b + ");";
+    QString rgb = QString("rgb(%1,%2,%3);").arg(r, g, b);
 
     ui_.stateOfChargeCapacityWidget().setStyleSheet(DEFAULT_STYLESHEET + rgb + "}");
 
