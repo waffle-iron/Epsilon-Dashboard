@@ -2,8 +2,9 @@
 
 #include "I_HomePageUi.h"
 
-namespace Ui {
-class HomePageUi;
+namespace Ui
+{
+    class HomePageUi;
 }
 
 class HomePageUi : public I_HomePageUi
@@ -21,7 +22,7 @@ public:
     QPushButton& mpptButton();
 
 private:
-    Ui::HomePageUi *ui_;
+    Ui::HomePageUi* ui_;
 
 };
 

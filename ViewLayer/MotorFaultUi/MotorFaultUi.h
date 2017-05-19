@@ -1,7 +1,8 @@
 #pragma once
 #include "I_MotorFaultUi.h"
-namespace Ui {
-class MotorFaultUi;
+namespace Ui
+{
+    class MotorFaultUi;
 }
 class MotorFaultUi : public I_MotorFaultUi
 {
@@ -11,5 +12,5 @@ public:
     ~MotorFaultUi();
     QLabel& titleLabel();
 private:
-    Ui::MotorFaultUi *ui_;
+    Ui::MotorFaultUi* ui_;
 };

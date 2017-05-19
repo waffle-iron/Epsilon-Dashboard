@@ -59,8 +59,8 @@ OverlordWidget::OverlordWidget(I_BatteryUi& batteryUi
     connect(&tabUi_.mpptButton(), SIGNAL(clicked()),
             this, SLOT(handleMPPTButtonClicked()));
     resize(683, 768);
-    QVBoxLayout    *overlordLayout = new QVBoxLayout;
-    overlordLayout->setContentsMargins(0,0,0,0);
+    QVBoxLayout*    overlordLayout = new QVBoxLayout;
+    overlordLayout->setContentsMargins(0, 0, 0, 0);
     overlordLayout->addWidget(&tabUi_);
     overlordLayout->addWidget(menu_);
     tabUi_.hide();
@@ -77,24 +77,27 @@ OverlordWidget::~OverlordWidget()
 
 void OverlordWidget::handleBatteryButtonClicked()
 {
-    if(!tabUi_.isVisible())
+    if (!tabUi_.isVisible())
     {
         tabUi_.show();
     }
+
     menu_->setCurrentWidget(&batteryUi_);
 }
 void OverlordWidget::handleControlButtonClicked()
 {
-    if(!tabUi_.isVisible())
+    if (!tabUi_.isVisible())
     {
         tabUi_.show();
     }
+
     menu_->setCurrentWidget(&controlUi_);
 }
 void OverlordWidget::handleHomepageButtonClicked()
 {
     menu_->setCurrentWidget(&homepageUi_);
-    if(tabUi_.isVisible())
+
+    if (tabUi_.isVisible())
     {
         tabUi_.hide();
     }
@@ -102,7 +105,7 @@ void OverlordWidget::handleHomepageButtonClicked()
 
 void OverlordWidget::handleMotorFaultButtonClicked()
 {
-    if(!tabUi_.isVisible())
+    if (!tabUi_.isVisible())
     {
         tabUi_.show();
     }
@@ -111,18 +114,20 @@ void OverlordWidget::handleMotorFaultButtonClicked()
 }
 void OverlordWidget::handleMotorButtonClicked()
 {
-    if(!tabUi_.isVisible())
+    if (!tabUi_.isVisible())
     {
         tabUi_.show();
     }
+
     menu_->setCurrentWidget(&motorUi_);
 }
 void OverlordWidget::handleMPPTButtonClicked()
 {
-    if(!tabUi_.isVisible())
+    if (!tabUi_.isVisible())
     {
         tabUi_.show();
     }
+
     menu_->setCurrentWidget(&mpptUi_);
 }
 

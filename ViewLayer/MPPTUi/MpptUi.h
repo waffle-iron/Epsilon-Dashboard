@@ -1,8 +1,9 @@
 #pragma once
 #include "I_MpptUi.h"
 
-namespace Ui{
-class MpptUi;
+namespace Ui
+{
+    class MpptUi;
 }
 
 class MpptUi : public I_MpptUi
@@ -13,6 +14,6 @@ public:
     ~MpptUi();
     QLabel& titleLabel();
 private:
-    Ui::MpptUi *ui_;
+    Ui::MpptUi* ui_;
 };
 

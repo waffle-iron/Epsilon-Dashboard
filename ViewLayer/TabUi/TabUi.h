@@ -1,7 +1,8 @@
 #pragma once
 #include "I_TabUi.h"
-namespace Ui{
-class TabUi;
+namespace Ui
+{
+    class TabUi;
 }
 class TabUi : public I_TabUi
 {
@@ -16,5 +17,5 @@ public:
     QPushButton& motorButton();
     QPushButton& mpptButton();
 private:
-    Ui::TabUi *ui_;
+    Ui::TabUi* ui_;
 };

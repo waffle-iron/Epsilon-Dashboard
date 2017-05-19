@@ -43,8 +43,8 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
         mpptUi_ = new MpptUi();
         tabUi_ = new TabUi();
         overlordWidget_.reset(new OverlordWidget(*batteryUi_, *controlUi_,
-                                                 *homepageUi_, *motorFaultUi_,
-                                                 *motorUi_, *mpptUi_, *tabUi_));
+                              *homepageUi_, *motorFaultUi_,
+                              *motorUi_, *mpptUi_, *tabUi_));
     }
 }
 

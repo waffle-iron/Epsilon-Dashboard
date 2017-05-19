@@ -1,7 +1,8 @@
 #pragma once
 #include "I_BatteryUi.h"
-namespace Ui {
-class BatteryUi;
+namespace Ui
+{
+    class BatteryUi;
 }
 
 class BatteryUi : public I_BatteryUi
@@ -13,6 +14,6 @@ public:
     ~BatteryUi();
     QLabel& titleLabel();
 private:
-    Ui::BatteryUi *ui_;
+    Ui::BatteryUi* ui_;
 };
 

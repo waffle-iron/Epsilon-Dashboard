@@ -1,7 +1,8 @@
 #pragma once
 #include "I_ControlUi.h"
-namespace Ui {
-class ControlUi;
+namespace Ui
+{
+    class ControlUi;
 }
 
 class ControlUi : public I_ControlUi
@@ -10,8 +11,8 @@ class ControlUi : public I_ControlUi
 public:
     explicit ControlUi();
     ~ControlUi();
-     QLabel& titleLabel();
+    QLabel& titleLabel();
 private:
-    Ui::ControlUi *ui_;
+    Ui::ControlUi* ui_;
 };
 

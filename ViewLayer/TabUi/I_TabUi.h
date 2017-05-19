@@ -5,7 +5,7 @@
 class I_TabUi: public QWidget
 {
 public:
-    virtual ~I_TabUi(){}
+    virtual ~I_TabUi() {}
     virtual QPushButton& homepageButton() = 0;
     virtual QPushButton& batteryButton() = 0;
     virtual QPushButton& controlButton() = 0;
