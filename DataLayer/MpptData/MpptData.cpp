@@ -3,7 +3,7 @@
 
 MpptData::MpptData()
 {
-        mpptList_.reserve(3);
+    mpptList_.reserve(3);
 }
 
 MpptData::~MpptData()
