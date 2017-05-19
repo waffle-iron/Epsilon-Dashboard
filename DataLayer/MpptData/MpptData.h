@@ -8,15 +8,12 @@ public:
     MpptData();
     virtual ~MpptData();
 
-    Mppt mpptZero() const;
-    Mppt mpptOne() const;
-    Mppt mpptTwo() const;
+    Mppt getMppt(int i) const;
 
-    void setMpptZero(Mppt mpptZero);
-    void setMpptOne(Mppt mpptZero);
-    void setMpptTwo(Mppt mpptZero);
+    void setMppt(int i, Mppt mppt);
+
 
 private:
-    Mppt mpptList [3];
+    QList<Mppt> mpptList_;
 };
 
