@@ -7,8 +7,7 @@ public:
 
     //configured by values in config.ini
     virtual QString ipAddress() const = 0;
-    virtual quint16 udpPort() const = 0;
-    virtual int forwardPeriod() const = 0;
+    virtual quint16 port() const = 0;
     virtual QString packetTitle() const = 0;
-    virtual QString exchangeName() const = 0;
+    virtual QString exchange() const = 0;
 };

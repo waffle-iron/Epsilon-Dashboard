@@ -11,8 +11,6 @@ public:
 
     I_Settings& settings();
 
-
-
 private:
     QScopedPointer<I_Settings> settings_;
 };

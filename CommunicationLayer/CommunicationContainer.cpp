@@ -15,9 +15,9 @@ class CommunicationContainerPrivate
 
 public:
     CommunicationContainerPrivate(InfrastructureContainer& infrastructureContainer)
-        : internetConnectionService_(infrastructureContainer.settings().exchangeName(),
+        : internetConnectionService_(infrastructureContainer.settings().exchange(),
                                      infrastructureContainer.settings().ipAddress(),
-                                     infrastructureContainer.settings().udpPort())
+                                     infrastructureContainer.settings().port())
         , commDeviceManager_(udpSocket_)
         , connectionController_(internetConnectionService_)
         , jsonReceiver_(commDeviceManager_)

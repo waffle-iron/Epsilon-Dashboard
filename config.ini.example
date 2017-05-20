@@ -1,15 +1,9 @@
 ; Schulich Delta Hermes Specification File
 
-forwardPeriod=500
-
 [JsonFormat]
 packetTitle=Gen5
 
-[SerialPort]
-portName=/dev/pts/7
-baudrate=115200
-
-[UdpAddress]
+[TcpAddress]
 ipAddress=127.0.0.1
 port=5672
 

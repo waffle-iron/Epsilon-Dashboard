@@ -9,13 +9,10 @@ class Settings : public I_Settings
 public:
     Settings(QString filepath);
     virtual ~Settings() {}
-    QString serialPortName() const;
-    int baudrate() const;
     QString ipAddress() const;
-    quint16 udpPort() const;
-    int forwardPeriod() const;
+    quint16 port() const;
     QString packetTitle() const;
-    QString exchangeName() const;
+    QString exchange() const;
 
 private:
     QSettings settings_ ;
