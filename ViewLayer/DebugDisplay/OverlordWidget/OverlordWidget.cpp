@@ -1,20 +1,19 @@
 #include <QVBoxLayout>
 #include "OverlordWidget.h"
-#include "BatteryUi/I_BatteryUi.h"
-#include "ControlUi/I_ControlUi.h"
-#include "HomePageUi/I_HomePageUi.h"
-#include "MotorFaultUi/I_MotorFaultUi.h"
-#include "MotorUi/I_MotorUi.h"
-#include "MPPTUi/I_MpptUi.h"
-#include "TabUi/I_TabUi.h"
-OverlordWidget::OverlordWidget(I_BatteryUi& batteryUi
-                               , I_ControlUi& controlUi
-                               , I_HomePageUi& homepageUi
-                               , I_MotorFaultUi& motorFaultUi
-                               , I_MotorUi& motorUi
-                               , I_MpptUi& mpptUi
-                               , I_TabUi& tabUi
-                              )
+#include "../BatteryPage/BatteryUi/I_BatteryUi.h"
+#include "../ControlPage/ControlUi/I_ControlUi.h"
+#include "../HomePage/HomePageUi/I_HomePageUi.h"
+#include "../MotorFaultPage/MotorFaultUi/I_MotorFaultUi.h"
+#include "../MotorPage/MotorUi/I_MotorUi.h"
+#include "../MPPTPage/MPPTUi/I_MpptUi.h"
+#include "../Tab/TabUi/I_TabUi.h"
+OverlordWidget::OverlordWidget(I_BatteryUi& batteryUi, \
+        I_ControlUi& controlUi,
+        I_HomePageUi& homepageUi,
+        I_MotorFaultUi& motorFaultUi,
+        I_MotorUi& motorUi,
+        I_MpptUi& mpptUi,
+        I_TabUi& tabUi)
     : batteryUi_(batteryUi)
     , controlUi_(controlUi)
     , homepageUi_(homepageUi)
@@ -59,7 +58,7 @@ OverlordWidget::OverlordWidget(I_BatteryUi& batteryUi
     connect(&tabUi_.mpptButton(), SIGNAL(clicked()),
             this, SLOT(handleMPPTButtonClicked()));
     resize(683, 768);
-    QVBoxLayout*    overlordLayout = new QVBoxLayout;
+    QVBoxLayout* overlordLayout = new QVBoxLayout;
     overlordLayout->setContentsMargins(0, 0, 0, 0);
     overlordLayout->addWidget(&tabUi_);
     overlordLayout->addWidget(menu_);
@@ -84,6 +83,7 @@ void OverlordWidget::handleBatteryButtonClicked()
 
     menu_->setCurrentWidget(&batteryUi_);
 }
+
 void OverlordWidget::handleControlButtonClicked()
 {
     if (!tabUi_.isVisible())
@@ -93,6 +93,7 @@ void OverlordWidget::handleControlButtonClicked()
 
     menu_->setCurrentWidget(&controlUi_);
 }
+
 void OverlordWidget::handleHomepageButtonClicked()
 {
     menu_->setCurrentWidget(&homepageUi_);
@@ -112,6 +113,7 @@ void OverlordWidget::handleMotorFaultButtonClicked()
 
     menu_->setCurrentWidget(&motorFaultUi_);
 }
+
 void OverlordWidget::handleMotorButtonClicked()
 {
     if (!tabUi_.isVisible())
@@ -121,6 +123,7 @@ void OverlordWidget::handleMotorButtonClicked()
 
     menu_->setCurrentWidget(&motorUi_);
 }
+
 void OverlordWidget::handleMPPTButtonClicked()
 {
     if (!tabUi_.isVisible())

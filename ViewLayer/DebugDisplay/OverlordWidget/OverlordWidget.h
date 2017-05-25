@@ -16,14 +16,13 @@ class OverlordWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit OverlordWidget( I_BatteryUi& batteryUi
-                             , I_ControlUi& controlUi
-                             , I_HomePageUi& homepageUi
-                             , I_MotorFaultUi& motorFaultUi
-                             , I_MotorUi& motorUi
-                             , I_MpptUi& mpptUi
-                             , I_TabUi& tabUi
-                           );
+    explicit OverlordWidget( I_BatteryUi& batteryUi,
+        I_ControlUi& controlUi,
+        I_HomePageUi& homepageUi,
+        I_MotorFaultUi& motorFaultUi,
+        I_MotorUi& motorUi,
+        I_MpptUi& mpptUi,
+        I_TabUi& tabUi);
     ~OverlordWidget();
     QStackedWidget* menu_;
 public slots:

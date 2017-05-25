@@ -5,6 +5,7 @@ MotorUi::MotorUi():
 {
     ui_->setupUi(this);
 }
+
 MotorUi::~MotorUi()
 {
     delete ui_;

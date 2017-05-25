@@ -5,6 +5,7 @@ HomePageUi::HomePageUi() :
 {
     ui_->setupUi(this);
 }
+
 HomePageUi::~HomePageUi()
 {
     delete ui_;
@@ -29,6 +30,7 @@ QPushButton& HomePageUi::motorButton()
 {
     return *ui_->motorButton;
 }
+
 QPushButton& HomePageUi::mpptButton()
 {
     return *ui_->MPPT;

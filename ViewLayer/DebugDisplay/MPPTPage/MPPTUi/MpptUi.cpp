@@ -6,10 +6,12 @@ MpptUi::MpptUi() :
 {
     ui_->setupUi(this);
 }
+
 MpptUi::~MpptUi()
 {
     delete ui_;
 }
+
 QLabel& MpptUi::titleLabel()
 {
     return *ui_->title;

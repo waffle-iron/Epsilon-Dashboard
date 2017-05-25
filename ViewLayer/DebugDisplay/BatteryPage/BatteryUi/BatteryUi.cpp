@@ -5,10 +5,12 @@ BatteryUi::BatteryUi() :
 {
     ui_->setupUi(this);
 }
+
 BatteryUi::~BatteryUi()
 {
     delete ui_;
 }
+
 QLabel& BatteryUi::titleLabel()
 {
     return *ui_->title;
