@@ -10,10 +10,8 @@ class I_MpptData : public QObject
 public:
     virtual ~I_MpptData() {}
 
-    virtual Mppt getMppt(int i) const = 0;
-
     virtual void setMppt(int i, Mppt mppt) = 0;
 
 signals:
-    void mpptReceived(int i, Mppt mpptZero);
+    void mpptReceived(int i, Mppt mppt);
 };

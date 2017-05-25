@@ -8,8 +8,6 @@ public:
     MpptData();
     virtual ~MpptData();
 
-    Mppt getMppt(int i) const;
-
     void setMppt(int i, Mppt mppt);
 
 

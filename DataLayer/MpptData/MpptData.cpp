@@ -10,11 +10,6 @@ MpptData::~MpptData()
 {
 }
 
-Mppt MpptData::getMppt(int i) const
-{
-    return mpptList_.at(i);
-}
-
 void MpptData::setMppt(int i, Mppt mppt)
 {
     mpptList_.replace(i, mppt);
