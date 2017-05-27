@@ -5,8 +5,9 @@
 #include <QString>
 #include <QUdpSocket>
 #include <QThread>
-#include "I_ConnectionService.h"
 #include <QTimer>
+
+#include "I_ConnectionService.h"
 
 class QUdpSocket;
 
@@ -16,7 +17,7 @@ class InternetConnectionService : public I_ConnectionService
 public:
     InternetConnectionService(QString exchangeName,
                               QString ipAddress,
-                              quint16 udpPort);
+                              quint16 port);
     virtual ~InternetConnectionService();
 
     bool connectToDataSource();
@@ -35,7 +36,7 @@ private:
     AmqpClient::Channel::ptr_t channel_;
     QString exchangeName_;
     QString ipAddress_;
-    quint16 udpPort_;
+    quint16 port_;
     std::string queueName_;
-    QTimer* qtimer_;
+    QTimer connectionRetryTimer_;
 };
