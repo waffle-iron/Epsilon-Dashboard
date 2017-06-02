@@ -34,7 +34,7 @@ SOURCES += \
     ViewContainer.cpp \
     DisplayDashboard/DisplayDashboardUI/DisplayDashboardUI.cpp \
     DisplayDashboard/DisplayDashboardView/DisplayDashboardView.cpp \
-    DisplayDashBoard/DisplayDashboardUI/RaceModeDashboardUI.cpp \
+    DisplayDashboard/DisplayDashboardUI/RaceModeDashboardUI.cpp \
     DebugDisplay/HomePage/HomePageUi/HomePageUi.cpp\
     DebugDisplay/BatteryPage/BatteryUi/BatteryUi.cpp \
     DebugDisplay/ControlPage/ControlUi/ControlUi.cpp \
