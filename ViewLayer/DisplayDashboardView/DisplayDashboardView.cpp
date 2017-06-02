@@ -104,12 +104,8 @@ void DisplayDashboardView::connectLights(LightsPresenter& lightsPresenter)
 
 void DisplayDashboardView::connectMppt(MpptPresenter& mpptPresenter)
 {
-    connect(&mpptPresenter, SIGNAL(mpptZeroReceived(Mppt)),
-            this, SLOT(mpptZeroReceived(Mppt)));
-    connect(&mpptPresenter, SIGNAL(mpptOneReceived(Mppt)),
-            this, SLOT(mpptOneReceived(Mppt)));
-    connect(&mpptPresenter, SIGNAL(mpptTwoReceived(Mppt)),
-            this, SLOT(mpptTwoReceived(Mppt)));
+    connect(&mpptPresenter, SIGNAL(mpptReceived(int, Mppt)),
+            this, SLOT(mpptReceived(int, Mppt)));
     connect(&mpptPresenter, SIGNAL(mpptPowerReceived(double)),
             this, SLOT(mpptPowerReceived(double)));
 }
