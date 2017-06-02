@@ -8,12 +8,12 @@
 #include "../MPPTPage/MPPTUi/I_MpptUi.h"
 #include "../Tab/TabUi/I_TabUi.h"
 OverlordWidget::OverlordWidget(I_BatteryUi& batteryUi, \
-        I_ControlUi& controlUi,
-        I_HomePageUi& homepageUi,
-        I_MotorFaultUi& motorFaultUi,
-        I_MotorUi& motorUi,
-        I_MpptUi& mpptUi,
-        I_TabUi& tabUi)
+                               I_ControlUi& controlUi,
+                               I_HomePageUi& homepageUi,
+                               I_MotorFaultUi& motorFaultUi,
+                               I_MotorUi& motorUi,
+                               I_MpptUi& mpptUi,
+                               I_TabUi& tabUi)
     : batteryUi_(batteryUi)
     , controlUi_(controlUi)
     , homepageUi_(homepageUi)
