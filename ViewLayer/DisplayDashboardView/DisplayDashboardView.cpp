@@ -277,21 +277,25 @@ void DisplayDashboardView::lightAliveReceived(bool)
 {
     // TODO
 }
-void DisplayDashboardView::mpptZeroReceived(Mppt mpptZero)
+void DisplayDashboardView::mpptReceived(int i, Mppt mppt)
 {
-    ui_.array0CurrentLabel().setNum(mpptZero.arrayCurrent());
-    ui_.array0VoltageLabel().setNum(mpptZero.arrayVoltage());
+    if (i == 0)
+    {
+        ui_.array0CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array0VoltageLabel().setNum(mppt.arrayVoltage());
+    }
+    else if (i == 1)
+    {
+        ui_.array1CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array1VoltageLabel().setNum(mppt.arrayVoltage());
+    }
+    else if (i == 2)
+    {
+        ui_.array2CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array2VoltageLabel().setNum(mppt.arrayVoltage());
+    }
 }
-void DisplayDashboardView::mpptOneReceived(Mppt mpptOne)
-{
-    ui_.array1CurrentLabel().setNum(mpptOne.arrayCurrent());
-    ui_.array1VoltageLabel().setNum(mpptOne.arrayVoltage());
-}
-void DisplayDashboardView::mpptTwoReceived(Mppt mpptTwo)
-{
-    ui_.array2CurrentLabel().setNum(mpptTwo.arrayCurrent());
-    ui_.array2VoltageLabel().setNum(mpptTwo.arrayVoltage());
-}
+
 void DisplayDashboardView::mpptPowerReceived(double mpptPower)
 {
     ui_.powerInLabel().setNum(mpptPower);
