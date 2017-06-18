@@ -88,9 +88,7 @@ private slots:
     void lightAliveReceived(bool);
 
     // mppt slots
-    void mpptZeroReceived(Mppt);
-    void mpptOneReceived(Mppt);
-    void mpptTwoReceived(Mppt);
+    void mpptReceived(int, Mppt);
     void mpptPowerReceived(double);
 
     // motor faults slots
