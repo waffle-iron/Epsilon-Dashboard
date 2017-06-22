@@ -8,12 +8,8 @@ MpptPresenter::MpptPresenter(const I_MpptData& mpptData)
 
 void MpptPresenter::relayMpptData()
 {
-    connect(&mpptData_, SIGNAL(mpptZeroReceived(Mppt)),
-            this, SIGNAL(mpptZeroReceived(Mppt)));
-    connect(&mpptData_, SIGNAL(mpptOneReceived(Mppt)),
-            this, SIGNAL(mpptOneReceived(Mppt)));
-    connect(&mpptData_, SIGNAL(mpptTwoReceived(Mppt)),
-            this, SIGNAL(mpptTwoReceived(Mppt)));
+    connect(&mpptData_, SIGNAL(mpptReceived(int, Mppt)),
+            this, SIGNAL(mpptReceived(int, Mppt)));
     connect(&mpptData_, SIGNAL(mpptPowerReceived(double)),
             this, SIGNAL(mpptPowerReceived(double)));
 }

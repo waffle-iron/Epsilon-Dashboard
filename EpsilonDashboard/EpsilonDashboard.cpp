@@ -18,13 +18,20 @@ EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
 {
     QCommandLineParser parser;
     QCommandLineOption raceModeOption("r");
+    QCommandLineOption debugModeOption("d");
     parser.addOption(raceModeOption);
+    parser.addOption(debugModeOption);
     parser.process(*this);
     Mode mode = Mode::DISPLAY;
 
     if (parser.isSet(raceModeOption))
     {
         mode = Mode::RACE;
+    }
+
+    if (parser.isSet(debugModeOption))
+    {
+        mode = Mode::DEBUG;
     }
 
     viewContainer_.reset(new ViewContainer(*presenterContainer_, mode));

@@ -1,5 +1,5 @@
 #pragma once
-#include "../../DataLayer/MpptData/I_MpptData.h"
+#include "../DataLayer/MpptData/I_MpptData.h"
 
 #include <QObject>
 class I_MpptData;
@@ -16,8 +16,6 @@ private:
     const I_MpptData& mpptData_;
 
 signals:
-    void mpptZeroReceived(Mppt mpptZero);
-    void mpptOneReceived(Mppt mpptOne);
-    void mpptTwoReceived(Mppt mpptTwo);
+    void mpptReceived(int i, Mppt mppt);
     void mpptPowerReceived(double mpptPower);
 };

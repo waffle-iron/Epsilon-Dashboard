@@ -1,5 +1,21 @@
 #include "DisplayDashboardView.h"
 
+namespace
+{
+    const double RED_SLOPE = -1;
+    const int RED_INITIAL = 220;
+    const double GREEN_SLOPE = 1.7;
+    const int GREEN_INITIAL = 10;
+    const int BLUE_INITIAL = 20;
+    const QString DEFAULT_STYLESHEET = "QProgressBar:horizontal {\
+            border: 1px solid white;\
+            border-radius: 7px;\
+            background: black;\
+            }\
+            QProgressBar::chunk:horizontal{\
+            border-radius: 7px;\
+            background: ";
+}
 
 DisplayDashboardView::DisplayDashboardView(BatteryPresenter& batteryPresenter,
         BatteryFaultsPresenter& batteryFaultsPresenter,
@@ -88,12 +104,8 @@ void DisplayDashboardView::connectLights(LightsPresenter& lightsPresenter)
 
 void DisplayDashboardView::connectMppt(MpptPresenter& mpptPresenter)
 {
-    connect(&mpptPresenter, SIGNAL(mpptZeroReceived(Mppt)),
-            this, SLOT(mpptZeroReceived(Mppt)));
-    connect(&mpptPresenter, SIGNAL(mpptOneReceived(Mppt)),
-            this, SLOT(mpptOneReceived(Mppt)));
-    connect(&mpptPresenter, SIGNAL(mpptTwoReceived(Mppt)),
-            this, SLOT(mpptTwoReceived(Mppt)));
+    connect(&mpptPresenter, SIGNAL(mpptReceived(int, Mppt)),
+            this, SLOT(mpptReceived(int, Mppt)));
     connect(&mpptPresenter, SIGNAL(mpptPowerReceived(double)),
             this, SLOT(mpptPowerReceived(double)));
 }
@@ -135,34 +147,27 @@ void DisplayDashboardView::packSocPercentageReceived(double packSocPercentage)
 {
     ui_.stateOfChargeCapacityWidget().setValue(packSocPercentage);
 
-    if (packSocPercentage > 85)
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(20,180,20)");
-    }
-    else if ((packSocPercentage > 70) && (packSocPercentage <= 85))
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(90,190,20)");
-    }
-    else if ((packSocPercentage > 55) && (packSocPercentage <= 70))
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(160,200,20)");
-    }
-    else if ((packSocPercentage > 40) && (packSocPercentage <= 55))
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,210,20)");
-    }
-    else if ((packSocPercentage > 25) && (packSocPercentage <= 40))
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,150,20)");
-    }
-    else if ((packSocPercentage > 10) && (packSocPercentage <= 25))
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,90,20)");
-    }
-    else
-    {
-        ui_.stateOfChargeCapacityWidget().setStyleSheet("QProgressBar::chunk:horizontal{background: rgb(240,20,20)");
-    }
+    // The rgb values for the progressbar are calculated with the intention of displaying a colour closer to red
+    // for low values and a colour closer to green for higher values. These are calculated using linear equations
+    // with a slope and intercept.
+
+    // Default colour
+    int red = RED_INITIAL;
+    int green = GREEN_INITIAL;
+    int blue = BLUE_INITIAL;
+
+    // Calculated color
+    red += int(RED_SLOPE * packSocPercentage);
+    green += int(GREEN_SLOPE * packSocPercentage);
+
+    QString r = QString::number(red);
+    QString g = QString::number(green);
+    QString b = QString::number(blue);
+
+    QString rgb = QString("rgb(%1,%2,%3);").arg(r, g, b);
+
+    ui_.stateOfChargeCapacityWidget().setStyleSheet(DEFAULT_STYLESHEET + rgb + "}");
+
 }
 void DisplayDashboardView::prechargeTimerElapsedReceived(bool prechargeTimerElapsed)
 {
@@ -272,21 +277,25 @@ void DisplayDashboardView::lightAliveReceived(bool)
 {
     // TODO
 }
-void DisplayDashboardView::mpptZeroReceived(Mppt mpptZero)
+void DisplayDashboardView::mpptReceived(int i, Mppt mppt)
 {
-    ui_.array0CurrentLabel().setNum(mpptZero.arrayCurrent());
-    ui_.array0VoltageLabel().setNum(mpptZero.arrayVoltage());
+    if (i == 0)
+    {
+        ui_.array0CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array0VoltageLabel().setNum(mppt.arrayVoltage());
+    }
+    else if (i == 1)
+    {
+        ui_.array1CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array1VoltageLabel().setNum(mppt.arrayVoltage());
+    }
+    else if (i == 2)
+    {
+        ui_.array2CurrentLabel().setNum(mppt.arrayCurrent());
+        ui_.array2VoltageLabel().setNum(mppt.arrayVoltage());
+    }
 }
-void DisplayDashboardView::mpptOneReceived(Mppt mpptOne)
-{
-    ui_.array1CurrentLabel().setNum(mpptOne.arrayCurrent());
-    ui_.array1VoltageLabel().setNum(mpptOne.arrayVoltage());
-}
-void DisplayDashboardView::mpptTwoReceived(Mppt mpptTwo)
-{
-    ui_.array2CurrentLabel().setNum(mpptTwo.arrayCurrent());
-    ui_.array2VoltageLabel().setNum(mpptTwo.arrayVoltage());
-}
+
 void DisplayDashboardView::mpptPowerReceived(double mpptPower)
 {
     ui_.powerInLabel().setNum(mpptPower);
