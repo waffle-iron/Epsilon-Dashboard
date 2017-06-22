@@ -10,4 +10,4 @@ SUBDIRS = \
     BusinessLayer \ 
     CommunicationLayer \
     DataLayer \
-    EpsilonDashboard
+    EpsilonDashboard \
