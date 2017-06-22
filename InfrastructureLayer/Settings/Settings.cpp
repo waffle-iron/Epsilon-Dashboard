@@ -6,9 +6,9 @@
 namespace
 {
     const QSettings::Format SETTINGS_FILE_FORMAT = QSettings::IniFormat;
-    const QString IP_ADDRESS = "TcpAddress/ipAddress";
+    const QString IP_ADDRESS = "SourceAddress/ipAddress";
     const QString DEFAULT_IP = "127.0.0.1";
-    const QString PORT = "TcpAddress/port";
+    const QString PORT = "SourceAddress/port";
     const QString DEFAULT_PORT = "5672";
     const QString PACKET_TITLE = "JsonFormat/packetTitle";
     const QString EXCHANGE_NAME = "rabbitMQ/exchangeName";

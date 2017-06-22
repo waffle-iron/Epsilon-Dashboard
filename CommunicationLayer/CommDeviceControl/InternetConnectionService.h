@@ -29,8 +29,6 @@ signals:
 public slots:
     void setupChannel();
 
-
-
 private:
 
     AmqpClient::Channel::ptr_t channel_;

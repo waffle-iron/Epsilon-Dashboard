@@ -1,11 +1,10 @@
 #include <SimpleAmqpClient/SimpleAmqpClient.h>
-#include <QUdpSocket>
 #include <QDebug>
-#include <QTextStream>
 #include <QTimer>
 
 #include "../../InfrastructureLayer/Settings/I_Settings.h"
 #include "InternetConnectionService.h"
+
 namespace
 {
     quint32 SLEEP_TIME_MILLISECONDS = 2000;
@@ -22,7 +21,6 @@ InternetConnectionService::InternetConnectionService(
 {
     QObject::connect(this, SIGNAL(setupChannelSignal()), this, SLOT(setupChannel()));
 
-    //connectionRetryTimer_& = new QTimer(this);
     connectionRetryTimer_.setSingleShot(true);
     connect(&connectionRetryTimer_, SIGNAL(timeout()), this, SLOT(setupChannel()));
     connectToDataSource();
@@ -45,12 +43,12 @@ void InternetConnectionService::setupChannel()
     {
         if (channel_ == NULL)
         {
-            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS / 1000 << "seconds";
+            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
             connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
         }
         else
         {
-            qWarning() << " InternetConnectionService: Error creating channel, quitting program";
+            qWarning() << " InternetConnectionService: Error creating channel, unknown error";
             throw;
         }
 
@@ -60,7 +58,7 @@ void InternetConnectionService::setupChannel()
     channel_->DeclareExchange(exchangeName_.toStdString(), AmqpClient::Channel::EXCHANGE_TYPE_FANOUT);
     queueName_ = channel_->DeclareQueue("Dashboard Queue");
     channel_->BindQueue(queueName_, exchangeName_.toStdString());
-
+    qDebug("Successful connection to RabbitMQ Server");
 }
 
 bool InternetConnectionService::connectToDataSource()
