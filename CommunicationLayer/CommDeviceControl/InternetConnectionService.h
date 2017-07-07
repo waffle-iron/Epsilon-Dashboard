@@ -16,6 +16,7 @@ class InternetConnectionService : public I_ConnectionService
     Q_OBJECT
 public:
     InternetConnectionService(QString exchangeName,
+                              QString queueName,
                               QString ipAddress,
                               quint16 port);
     virtual ~InternetConnectionService();
@@ -33,8 +34,8 @@ private:
 
     AmqpClient::Channel::ptr_t channel_;
     QString exchangeName_;
+    std::string queueName_;
     QString ipAddress_;
     quint16 port_;
-    std::string queueName_;
     QTimer connectionRetryTimer_;
 };

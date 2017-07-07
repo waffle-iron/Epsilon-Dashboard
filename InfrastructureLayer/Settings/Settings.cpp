@@ -12,6 +12,7 @@ namespace
     const QString DEFAULT_PORT = "5672";
     const QString PACKET_TITLE = "JsonFormat/packetTitle";
     const QString EXCHANGE_NAME = "rabbitMQ/exchangeName";
+    const QString QUEUE_NAME = "rabbitMQ/queueName";
 
 }
 
@@ -38,4 +39,9 @@ QString Settings::packetTitle() const
 QString Settings::exchange() const
 {
     return QString(settings_.value(EXCHANGE_NAME).toString());
+}
+
+QString Settings::queue() const
+{
+    return QString(settings_.value(QUEUE_NAME).toString());
 }

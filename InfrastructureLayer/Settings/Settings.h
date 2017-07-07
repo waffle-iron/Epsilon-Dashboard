@@ -13,6 +13,7 @@ public:
     quint16 port() const;
     QString packetTitle() const;
     QString exchange() const;
+    QString queue() const;
 
 private:
     QSettings settings_ ;
