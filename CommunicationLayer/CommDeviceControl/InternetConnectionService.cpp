@@ -16,7 +16,7 @@ InternetConnectionService::InternetConnectionService(
     ,  QString ipAddress
     ,  quint16 port)
     : exchangeName_(exchangeName)
-    , queueName_(queueName.toStdString())
+    , queueName_(queueName)
     , ipAddress_(ipAddress)
     , port_(port)
     , connectionRetryTimer_(new QTimer(this))
@@ -41,8 +41,8 @@ void InternetConnectionService::setupChannel()
     {
         channel_ = AmqpClient::Channel::Create(ipAddress_.toStdString(), port_);
         channel_->DeclareExchange(exchangeName_.toStdString(), AmqpClient::Channel::EXCHANGE_TYPE_FANOUT);
-        channel_->DeclareQueue(queueName_);
-        channel_->BindQueue(queueName_, exchangeName_.toStdString());
+        channel_->DeclareQueue(queueName_.toStdString());
+        channel_->BindQueue(queueName_.toStdString(), exchangeName_.toStdString());
     }
     catch (AmqpClient::ChannelException&)
     {
@@ -68,7 +68,7 @@ void InternetConnectionService::setupChannel()
         }
         else
         {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel Errror Exception";
+            qWarning() << " InternetConnectionService: Error creating channel, Channel Error Exception";
             throw;
         }
     }
@@ -76,7 +76,7 @@ void InternetConnectionService::setupChannel()
     {
         if (channel_ == NULL)
         {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel is unuseable; Amqp Resonse Library Exception";
+            qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Amqp Response Library Exception";
             throw;
         }
     }
@@ -84,7 +84,7 @@ void InternetConnectionService::setupChannel()
     {
         if (channel_ == NULL)
         {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel is unuseable; Connection Exception";
+            qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Connection Exception";
             throw;
         }
     }
@@ -112,26 +112,6 @@ bool InternetConnectionService::connectToDataSource()
     {
         setupChannel();
     }
-    catch (AmqpClient::ChannelException&)
-    {
-        qWarning() << "Channel could not be created exiting program";
-        exit(EXIT_FAILURE);
-    }
-    catch (AmqpClient::ChannelErrorException&)
-    {
-        qWarning() << "Channel could not be created exiting program";
-        exit(EXIT_FAILURE);
-    }
-    catch (AmqpClient::ConnectionException&)
-    {
-        qWarning() << "Channel could not be created exiting program";
-        exit(EXIT_FAILURE);
-    }
-    catch (AmqpClient::AmqpResponseLibraryException&)
-    {
-        qWarning() << "Channel could not be created exiting program";
-        exit(EXIT_FAILURE);
-    }
     catch (AmqpClient::AmqpException::exception&)
     {
         qWarning() << "Channel could not be created exiting program";
@@ -148,6 +128,6 @@ bool InternetConnectionService::connectToDataSource()
 
 void InternetConnectionService::disconnectFromDataSource()
 {
-    channel_->UnbindQueue(queueName_, exchangeName_.toStdString());
+    channel_->UnbindQueue(queueName_.toStdString(), exchangeName_.toStdString());
     channel_.reset();
 }

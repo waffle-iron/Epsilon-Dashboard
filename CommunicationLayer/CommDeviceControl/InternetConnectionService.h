@@ -34,7 +34,7 @@ private:
 
     AmqpClient::Channel::ptr_t channel_;
     QString exchangeName_;
-    std::string queueName_;
+    QString queueName_;
     QString ipAddress_;
     quint16 port_;
     QTimer connectionRetryTimer_;
