@@ -99,8 +99,8 @@ bool InternetConnectionService::connectToDataSource()
         }
         else
         {
-        qWarning() << "Channel could not be created exiting program";
-        exit(EXIT_FAILURE);
+            qWarning() << "Channel could not be created exiting program";
+            exit(EXIT_FAILURE);
         }
     }
 
