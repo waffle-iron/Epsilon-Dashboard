@@ -21,10 +21,10 @@ InternetConnectionService::InternetConnectionService(
     , port_(port)
     , connectionRetryTimer_(new QTimer(this))
 {
-    QObject::connect(this, SIGNAL(setupChannelSignal()), this, SLOT(setupChannel()));
+    QObject::connect(this, SIGNAL(setupChannelSignal()), this, SLOT(connectToDataSource()));
 
     connectionRetryTimer_.setSingleShot(true);
-    connect(&connectionRetryTimer_, SIGNAL(timeout()), this, SLOT(setupChannel()));
+    connect(&connectionRetryTimer_, SIGNAL(timeout()), this, SLOT(connectToDataSource()));
     connectToDataSource();
 }
 
@@ -60,47 +60,23 @@ void InternetConnectionService::setupChannel()
     }
     catch (AmqpClient::ChannelErrorException&)
     {
-        if (channel_ == NULL)
-        {
-            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
-            connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
-            return;
-        }
-        else
-        {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel Error Exception";
-            throw;
-        }
+        qWarning() << " InternetConnectionService: Error creating channel, Channel Error Exception";
+        throw;
     }
     catch (AmqpClient::AmqpResponseLibraryException&)
     {
-        if (channel_ == NULL)
-        {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Amqp Response Library Exception";
-            throw;
-        }
+        qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Amqp Response Library Exception";
+        throw;
     }
     catch (AmqpClient::ConnectionException&)
     {
-        if (channel_ == NULL)
-        {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Connection Exception";
-            throw;
-        }
+        qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Connection Exception";
+        throw;
     }
     catch (AmqpClient::AmqpException::exception&)
     {
-        if (channel_ == NULL)
-        {
-            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
-            connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
-            return;
-        }
-        else
-        {
-            qWarning() << " InternetConnectionService: Error creating channel, Unknown Exception";
-            throw;
-        }
+        qWarning() << " InternetConnectionService: Error creating channel, Unknown Exception";
+        throw;
     }
 
     qDebug("Successful connection to RabbitMQ Server");
@@ -114,13 +90,18 @@ bool InternetConnectionService::connectToDataSource()
     }
     catch (AmqpClient::AmqpException::exception&)
     {
+
+        if (channel_ == NULL)
+        {
+            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
+            connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
+            return false;
+        }
+        else
+        {
         qWarning() << "Channel could not be created exiting program";
         exit(EXIT_FAILURE);
-    }
-
-    if (channel_ == NULL)
-    {
-        return false;
+        }
     }
 
     return true;

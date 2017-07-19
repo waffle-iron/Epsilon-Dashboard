@@ -21,14 +21,14 @@ public:
                               quint16 port);
     virtual ~InternetConnectionService();
 
-    bool connectToDataSource();
+    void setupChannel();
     void disconnectFromDataSource();
 
 signals:
     void setupChannelSignal();
 
 public slots:
-    void setupChannel();
+    bool connectToDataSource();
 
 private:
 
