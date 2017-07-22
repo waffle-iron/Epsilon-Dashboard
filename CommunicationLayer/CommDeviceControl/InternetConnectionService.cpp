@@ -35,7 +35,7 @@ InternetConnectionService::~InternetConnectionService()
 
 void InternetConnectionService::setupChannel()
 {
-    qWarning() << "InternetConnectionService: Attempting to connect to " << ipAddress_ << port_;
+    qWarning() << "InternetConnectionService: Attempting to connect to exchange" << exchangeName_ << "at" << ipAddress_ << port_;
 
     try
     {
@@ -54,7 +54,7 @@ void InternetConnectionService::setupChannel()
         }
         else
         {
-            qWarning() << " InternetConnectionService: Error creating channel, Channel Exception";
+            qWarning() << " InternetConnectionService: Error declaring/binding exchange or queue, Channel Exception";
             throw;
         }
     }
@@ -65,13 +65,15 @@ void InternetConnectionService::setupChannel()
     }
     catch (AmqpClient::AmqpResponseLibraryException&)
     {
-        qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Amqp Response Library Exception";
-        throw;
+        qWarning() << " InternetConnectionService: Severe error declaring/binding exchange or queue, Channel is unusable; Amqp Response Library Exception";
+        qWarning() << " Exiting Program";
+        exit(EXIT_FAILURE);
     }
-    catch (AmqpClient::ConnectionException&)
+    catch (AmqpClient::ConnectionException& e)
     {
-        qWarning() << " InternetConnectionService: Error creating channel, Channel is unusable; Connection Exception";
-        throw;
+        qWarning() << " InternetConnectionService: Severe error declaring/binding exchange or queue, Channel is unusable; Connection Exception";
+        qWarning() << " Exiting Program";
+        exit(EXIT_FAILURE);
     }
     catch (AmqpClient::AmqpException::exception&)
     {
@@ -88,20 +90,11 @@ bool InternetConnectionService::connectToDataSource()
     {
         setupChannel();
     }
-    catch (AmqpClient::AmqpException::exception&)
+    catch (AmqpClient::AmqpException::exception& e)
     {
-
-        if (channel_ == NULL)
-        {
-            qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
-            connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
-            return false;
-        }
-        else
-        {
-            qWarning() << "Channel could not be created exiting program";
-            exit(EXIT_FAILURE);
-        }
+        qWarning() << "Connection failed, retrying in" << SLEEP_TIME_MILLISECONDS << "ms";
+        connectionRetryTimer_.start(SLEEP_TIME_MILLISECONDS);
+        return false;
     }
 
     return true;
