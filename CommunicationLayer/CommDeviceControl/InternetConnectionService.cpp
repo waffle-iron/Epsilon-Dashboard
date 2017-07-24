@@ -97,6 +97,7 @@ bool InternetConnectionService::connectToDataSource()
         return false;
     }
 
+    test();
     return true;
 }
 
@@ -104,4 +105,14 @@ void InternetConnectionService::disconnectFromDataSource()
 {
     channel_->UnbindQueue(queueName_.toStdString(), exchangeName_.toStdString());
     channel_.reset();
+}
+
+void InternetConnectionService::test()
+{
+    while (1)
+    {
+        std::string consumer_tag = channel_->BasicConsume("dashboardQueue", "", false, false, false);
+        AmqpClient::Envelope::ptr_t envelope = channel_->BasicConsumeMessage(consumer_tag);
+        qWarning() << "test";
+    }
 }
