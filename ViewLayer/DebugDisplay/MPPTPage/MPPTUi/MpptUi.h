@@ -12,7 +12,6 @@ class MpptUi : public I_MpptUi
 public:
     explicit MpptUi();
     ~MpptUi();
-    QLabel& titleLabel();
 private:
     Ui::MpptUi* ui_;
 };
