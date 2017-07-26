@@ -23,7 +23,7 @@ public:
 
     void setupChannel();
     void disconnectFromDataSource();
-void test();
+    void test();
 signals:
     void setupChannelSignal();
 
