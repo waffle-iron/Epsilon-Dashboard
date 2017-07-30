@@ -5,12 +5,14 @@
 #include "../BusinessLayer/BusinessContainer.h"
 #include "../PresenterLayer/PresenterContainer.h"
 #include "../ViewLayer/ViewContainer.h"
+#include "../InfrastructureLayer/InfrastructureContainer.h"
 #include "EpsilonDashboard.h"
 
 EpsilonDashboard::EpsilonDashboard(int& argc, char** argv)
     : QApplication(argc, argv)
+    , infrastructureContainer_(new InfrastructureContainer())
     , dataContainer_(new DataContainer())
-    , communicationContainer_(new CommunicationContainer())
+    , communicationContainer_(new CommunicationContainer(*infrastructureContainer_))
     , businessContainer_(new BusinessContainer(*communicationContainer_, *dataContainer_))
     , presenterContainer_(new PresenterContainer(*dataContainer_))
 {

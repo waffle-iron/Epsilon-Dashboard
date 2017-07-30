@@ -4,28 +4,35 @@
 #include "CommunicationContainer.h"
 #include "CommDeviceControl/ConnectionController.h"
 #include "CommDeviceControl/CommDeviceManager.h"
-#include "CommDeviceControl/UdpConnectionService.h"
+#include "CommDeviceControl/InternetConnectionService.h"
 #include "JsonReceiver/JsonReceiver.h"
+#include "../BusinessLayer/BusinessContainer.h"
+#include "../InfrastructureLayer/InfrastructureContainer.h"
+#include "../InfrastructureLayer/Settings/I_Settings.h"
 
 class CommunicationContainerPrivate
 {
+
 public:
-    CommunicationContainerPrivate()
-        : udpConnectionService_(udpSocket_)
+    CommunicationContainerPrivate(InfrastructureContainer& infrastructureContainer)
+        : internetConnectionService_(infrastructureContainer.settings().exchange(),
+                                     infrastructureContainer.settings().queue(),
+                                     infrastructureContainer.settings().ipAddress(),
+                                     infrastructureContainer.settings().port())
         , commDeviceManager_(udpSocket_)
-        , connectionController_(udpConnectionService_)
+        , connectionController_(internetConnectionService_)
         , jsonReceiver_(commDeviceManager_)
     {
     }
     QUdpSocket udpSocket_;
-    UdpConnectionService udpConnectionService_;
+    InternetConnectionService internetConnectionService_;
     CommDeviceManager commDeviceManager_;
     ConnectionController connectionController_;
     JsonReceiver jsonReceiver_;
 };
 
-CommunicationContainer::CommunicationContainer()
-    : impl_(new CommunicationContainerPrivate())
+CommunicationContainer::CommunicationContainer(InfrastructureContainer& infrastructureContainer)
+    : impl_(new CommunicationContainerPrivate(infrastructureContainer))
 {
 }
 
@@ -38,9 +45,9 @@ ConnectionController& CommunicationContainer::connectionController()
     return impl_->connectionController_;
 }
 
-UdpConnectionService& CommunicationContainer::udpConnectionService()
+InternetConnectionService& CommunicationContainer::internetConnectionService()
 {
-    return impl_->udpConnectionService_;
+    return impl_->internetConnectionService_;
 }
 
 I_JsonReceiver& CommunicationContainer::jsonReceiver()
