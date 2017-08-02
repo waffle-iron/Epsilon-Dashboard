@@ -12,20 +12,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
-    <height>786</height>
+    <width>575</width>
+    <height>575</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>683</width>
-    <height>786</height>
+    <width>565</width>
+    <height>571</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>683</width>
-    <height>786</height>
+    <width>575</width>
+    <height>575</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
    <item>
     <layout class="QHBoxLayout" name="MpptArraysSection">
      <item>
-      <widget class="QWidget" name="MPPT0" native="true">
+      <widget class="QWidget" name="mppt0" native="true">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -53,23 +53,23 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QWidget#MPPT0{
+        <string notr="true">QWidget#mppt0{
 border-radius:15px;
 background-color:rgb(119, 119, 119);
 }</string>
        </property>
-       <widget class="QLabel" name="MPPT0Header">
+       <widget class="QLabel" name="mppt0Header">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -97,7 +97,7 @@ background-color:rgb(119, 119, 119);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT0Header{
+         <string notr="true">QLabel#mppt0Header{
 font: 18pt &quot;Arial&quot;;
 color:white;
 border-top-left-radius:15px;
@@ -112,7 +112,7 @@ background-color:rgb(255, 187, 0);
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0AliveLabel">
+       <widget class="QLabel" name="mppt0AliveLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -140,7 +140,7 @@ background-color:rgb(255, 187, 0);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT0AliveLabel{
+         <string notr="true">QLabel#mppt0AliveLabel{
 font: 16pt &quot;Arial&quot;;
 color:white;
 background-color:rgb(56, 56, 56);
@@ -156,40 +156,7 @@ background-color:rgb(56, 56, 56);
          <number>50</number>
         </property>
        </widget>
-       <widget class="QWidget" name="MPPT0AliveIndicator" native="true">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>40</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>16</width>
-          <height>16</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16</width>
-          <height>16</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:green;
-border-radius:8px;
-border: 1px solid white;</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="MPPT0ArrayVoltageLabel">
+       <widget class="QLabel" name="mppt0ArrayVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -228,7 +195,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0ArrayCurrentLabel">
+       <widget class="QLabel" name="mppt0ArrayCurrentLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -267,7 +234,7 @@ Current</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0ArrayPowerLabel">
+       <widget class="QLabel" name="mppt0ArrayPowerLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -306,7 +273,7 @@ Power</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0BatteryVoltageLabel">
+       <widget class="QLabel" name="mppt0BatteryVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -345,7 +312,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0TemperatureLabel">
+       <widget class="QLabel" name="mppt0TemperatureLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -377,10 +344,10 @@ color:rgb(219, 219, 219);</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0ArrayVoltage">
+       <widget class="QLabel" name="mppt0ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>80</x>
           <y>70</y>
           <width>110</width>
           <height>80</height>
@@ -406,11 +373,10 @@ color:rgb(219, 219, 219);</string>
         </property>
         <property name="styleSheet">
          <string notr="true">font:24pt &quot;Arial&quot;;
-
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;V&lt;/sub&gt;</string>
+         <string>100</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -422,10 +388,10 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0ArrayCurrent">
+       <widget class="QLabel" name="mppt0ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>80</x>
           <y>150</y>
           <width>110</width>
           <height>80</height>
@@ -454,7 +420,7 @@ color:white;</string>
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;A&lt;/sub&gt;</string>
+         <string>100</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -466,10 +432,10 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0ArrayPower">
+       <widget class="QLabel" name="mppt0ArrayPower">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>80</x>
           <y>230</y>
           <width>110</width>
           <height>80</height>
@@ -499,7 +465,7 @@ color:white;</string>
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;W&lt;/sub&gt;</string>
+         <string>100</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -511,10 +477,10 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0BatteryVoltage">
+       <widget class="QLabel" name="mppt0BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>80</x>
           <y>310</y>
           <width>110</width>
           <height>80</height>
@@ -543,7 +509,7 @@ color:white;</string>
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;V&lt;/sub&gt;</string>
+         <string>100</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -555,7 +521,7 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT0Temperature">
+       <widget class="QLabel" name="mppt0Temperature">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -581,29 +547,123 @@ color:white;</string>
 color:white;</string>
         </property>
         <property name="text">
-         <string>50&lt;sup&gt;o&lt;/sup&gt;C</string>
+         <string>50</string>
         </property>
         <property name="margin">
          <number>10</number>
         </property>
        </widget>
-       <zorder>MPPT0AliveLabel</zorder>
-       <zorder>MPPT0Header</zorder>
-       <zorder>MPPT0AliveIndicator</zorder>
-       <zorder>MPPT0ArrayVoltageLabel</zorder>
-       <zorder>MPPT0ArrayCurrentLabel</zorder>
-       <zorder>MPPT0ArrayPowerLabel</zorder>
-       <zorder>MPPT0BatteryVoltageLabel</zorder>
-       <zorder>MPPT0TemperatureLabel</zorder>
-       <zorder>MPPT0ArrayVoltage</zorder>
-       <zorder>MPPT0ArrayCurrent</zorder>
-       <zorder>MPPT0ArrayPower</zorder>
-       <zorder>MPPT0BatteryVoltage</zorder>
-       <zorder>MPPT0Temperature</zorder>
+       <widget class="QLabel" name="mppt0ArrayVoltageUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>100</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sub&gt;V&lt;/sub&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt0ArrayCurrentUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>180</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;A&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt0ArrayPowerUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>260</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt0BatteryVoltageUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>340</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sub&gt;V&lt;/sub&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt0TemperatureUnit">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>420</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sup&gt;o&lt;/sup&gt;C</string>
+        </property>
+       </widget>
+       <zorder>mppt0AliveLabel</zorder>
+       <zorder>mppt0Header</zorder>
+       <zorder>mppt0ArrayVoltageLabel</zorder>
+       <zorder>mppt0ArrayCurrentLabel</zorder>
+       <zorder>mppt0ArrayPowerLabel</zorder>
+       <zorder>mppt0BatteryVoltageLabel</zorder>
+       <zorder>mppt0TemperatureLabel</zorder>
+       <zorder>mppt0ArrayVoltage</zorder>
+       <zorder>mppt0ArrayCurrent</zorder>
+       <zorder>mppt0ArrayPower</zorder>
+       <zorder>mppt0BatteryVoltage</zorder>
+       <zorder>mppt0Temperature</zorder>
+       <zorder>mppt0ArrayVoltageUnit</zorder>
+       <zorder>mppt0ArrayCurrentUnit</zorder>
+       <zorder>mppt0ArrayPowerUnit</zorder>
+       <zorder>mppt0BatteryVoltageUnit</zorder>
+       <zorder>mppt0TemperatureUnit</zorder>
       </widget>
      </item>
      <item>
-      <widget class="QWidget" name="MPPT1" native="true">
+      <widget class="QWidget" name="mppt1" native="true">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -612,23 +672,23 @@ color:white;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QWidget#MPPT1{
+        <string notr="true">QWidget#mppt1{
 border-radius:15px;
 background-color:rgb(119, 119, 119);
 }</string>
        </property>
-       <widget class="QLabel" name="MPPT1Header">
+       <widget class="QLabel" name="mppt1Header">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -656,7 +716,7 @@ background-color:rgb(119, 119, 119);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT1Header{
+         <string notr="true">QLabel#mppt1Header{
 font: 18pt &quot;Arial&quot;;
 color:white;
 border-top-left-radius:15px;
@@ -671,7 +731,7 @@ background-color:rgb(255, 187, 0);
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1AliveLabel">
+       <widget class="QLabel" name="mppt1AliveLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -699,7 +759,7 @@ background-color:rgb(255, 187, 0);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT1AliveLabel{
+         <string notr="true">QLabel#mppt1AliveLabel{
 font: 16pt &quot;Arial&quot;;
 color:white;
 background-color:rgb(56, 56, 56);
@@ -715,7 +775,7 @@ background-color:rgb(56, 56, 56);
          <number>50</number>
         </property>
        </widget>
-       <widget class="QWidget" name="MPPT1AliveIndicator" native="true">
+       <widget class="QWidget" name="mppt1AliveIndicator" native="true">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -748,7 +808,7 @@ border-radius:8px;
 border: 1px solid white;</string>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1ArrayVoltageLabel">
+       <widget class="QLabel" name="mppt1ArrayVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -787,7 +847,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1ArrayCurrentLabel">
+       <widget class="QLabel" name="mppt1ArrayCurrentLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -826,7 +886,7 @@ Current</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1ArrayPowerLabel">
+       <widget class="QLabel" name="mppt1ArrayPowerLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -865,7 +925,7 @@ Power</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1BatteryVoltageLabel">
+       <widget class="QLabel" name="mppt1BatteryVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -904,7 +964,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1TemperatureLabel">
+       <widget class="QLabel" name="mppt1TemperatureLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -936,180 +996,10 @@ color:rgb(219, 219, 219);</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT1Temperature">
+       <widget class="QLabel" name="mppt1ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>410</y>
-          <width>101</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>101</width>
-          <height>81</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>101</width>
-          <height>81</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font:24pt &quot;Arial&quot;;
-color:white;</string>
-        </property>
-        <property name="text">
-         <string>50&lt;sup&gt;o&lt;/sup&gt;C</string>
-        </property>
-        <property name="margin">
-         <number>10</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="MPPT1BatteryVoltage">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>310</y>
-          <width>110</width>
-          <height>80</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font:24pt &quot;Arial&quot;;
-color:white;</string>
-        </property>
-        <property name="text">
-         <string>100&lt;sub&gt;V&lt;/sub&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="margin">
-         <number>10</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="MPPT1ArrayPower">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>230</y>
-          <width>110</width>
-          <height>80</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font:24pt &quot;Arial&quot;;
-color:white;</string>
-        </property>
-        <property name="text">
-         <string>100&lt;sub&gt;W&lt;/sub&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="margin">
-         <number>10</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="MPPT1ArrayCurrent">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>150</y>
-          <width>110</width>
-          <height>80</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>110</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font:24pt &quot;Arial&quot;;
-color:white;</string>
-        </property>
-        <property name="text">
-         <string>100&lt;sub&gt;A&lt;/sub&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::AutoText</enum>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="margin">
-         <number>10</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="MPPT1ArrayVoltage">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
+          <x>80</x>
           <y>70</y>
           <width>110</width>
           <height>80</height>
@@ -1138,7 +1028,7 @@ color:white;</string>
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;V&lt;/sub&gt;</string>
+         <string>100</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
@@ -1150,10 +1040,265 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
+       <widget class="QLabel" name="mppt1ArrayVoltageUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>100</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sub&gt;V&lt;/sub&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1ArrayCurrent">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>110</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>10</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1ArrayCurrentUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>180</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;A&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1ArrayPower">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>230</y>
+          <width>110</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>10</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1ArrayPowerUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>260</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1BatteryVoltage">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>310</y>
+          <width>110</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>100</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="margin">
+         <number>10</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1BatteryVoltageUnit">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>340</y>
+          <width>21</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sub&gt;V&lt;/sub&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1Temperature">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>410</y>
+          <width>101</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>101</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>101</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>50</string>
+        </property>
+        <property name="margin">
+         <number>10</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mppt1TemperatureUnit">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>420</y>
+          <width>41</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font:24pt &quot;Arial&quot;;
+
+color:white;</string>
+        </property>
+        <property name="text">
+         <string>&lt;sup&gt;o&lt;/sup&gt;C</string>
+        </property>
+       </widget>
       </widget>
      </item>
      <item>
-      <widget class="QWidget" name="MPPT2" native="true">
+      <widget class="QWidget" name="mppt2" native="true">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -1162,23 +1307,23 @@ color:white;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>211</width>
-         <height>507</height>
+         <width>181</width>
+         <height>486</height>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">QWidget#MPPT2{
+        <string notr="true">QWidget#mppt2{
 border-radius:15px;
 background-color:rgb(119, 119, 119);
 }</string>
        </property>
-       <widget class="QLabel" name="MPPT2Header">
+       <widget class="QLabel" name="mppt2Header">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1206,7 +1351,7 @@ background-color:rgb(119, 119, 119);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT2Header{
+         <string notr="true">QLabel#mppt2Header{
 font: 18pt &quot;Arial&quot;;
 color:white;
 border-top-left-radius:15px;
@@ -1221,7 +1366,7 @@ background-color:rgb(255, 187, 0);
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2AliveLabel">
+       <widget class="QLabel" name="mppt2AliveLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1249,7 +1394,7 @@ background-color:rgb(255, 187, 0);
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLabel#MPPT2AliveLabel{
+         <string notr="true">QLabel#mppt2AliveLabel{
 font:16pt &quot;Arial&quot;;
 color:white;
 background-color:rgb(56, 56, 56);
@@ -1265,7 +1410,7 @@ background-color:rgb(56, 56, 56);
          <number>50</number>
         </property>
        </widget>
-       <widget class="QWidget" name="MPPT2AliveIndicator" native="true">
+       <widget class="QWidget" name="mppt2AliveIndicator" native="true">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -1298,7 +1443,7 @@ border-radius:8px;
 border: 1px solid white;</string>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayVoltageLabel">
+       <widget class="QLabel" name="mppt2ArrayVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1337,7 +1482,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayCurrentLabel">
+       <widget class="QLabel" name="mppt2ArrayCurrentLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1376,7 +1521,7 @@ Current</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayPowerLabel">
+       <widget class="QLabel" name="mppt2ArrayPowerLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1415,7 +1560,7 @@ Power</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2BatteryVoltageLabel">
+       <widget class="QLabel" name="mppt2BatteryVoltageLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1454,7 +1599,7 @@ Voltage</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2TemperatureLabel">
+       <widget class="QLabel" name="mppt2TemperatureLabel">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1486,7 +1631,7 @@ color:rgb(219, 219, 219);</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2Temperature">
+       <widget class="QLabel" name="mppt2Temperature">
         <property name="geometry">
          <rect>
           <x>90</x>
@@ -1518,7 +1663,7 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2BatteryVoltage">
+       <widget class="QLabel" name="mppt2BatteryVoltage">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1562,7 +1707,7 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayPower">
+       <widget class="QLabel" name="mppt2ArrayPower">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1606,7 +1751,7 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayCurrent">
+       <widget class="QLabel" name="mppt2ArrayCurrent">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1650,7 +1795,7 @@ color:white;</string>
          <number>10</number>
         </property>
        </widget>
-       <widget class="QLabel" name="MPPT2ArrayVoltage">
+       <widget class="QLabel" name="mppt2ArrayVoltage">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -1701,7 +1846,7 @@ color:white;</string>
    <item>
     <layout class="QHBoxLayout" name="TotalArrayPowerSection">
      <item>
-      <widget class="QLabel" name="TotalArrayPowerLabel">
+      <widget class="QLabel" name="totalArrayPowerLabel">
        <property name="styleSheet">
         <string notr="true">font: 16pt &quot;Arial&quot;;
 color:white;</string>
@@ -1718,7 +1863,7 @@ color:white;</string>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="TotalArrayPower">
+      <widget class="QLabel" name="totalArrayPower">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>

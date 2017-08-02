@@ -26,5 +26,5 @@ private:
 
 private slots:
     void mpptReceived(int, Mppt);
-    void mpptPowerReceived(double);
+    //void mpptPowerReceived(double);
 };

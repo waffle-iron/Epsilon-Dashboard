@@ -13,64 +13,64 @@ public:
     explicit MpptUi();
     ~MpptUi();
 
-    QWidget& MPPT0();
-    QWidget& MPPT1();
-    QWidget& MPPT2();
+    QWidget& mppt0();
+    QWidget& mppt1();
+    QWidget& mppt2();
 
-    QLabel& MPPT0Header();
-    QLabel& MPPT1Header();
-    QLabel& MPPT2Header();
+    QLabel& mppt0Header();
+    QLabel& mppt1Header();
+    QLabel& mppt2Header();
 
-    QWidget& MPPT0AliveIndicator();
-    QWidget& MPPT1AliveIndicator();
-    QWidget& MPPT2AliveIndicator();
+    QWidget& mppt0AliveIndicator();
+    QWidget& mppt1AliveIndicator();
+    QWidget& mppt2AliveIndicator();
 
-    QLabel& MPPT0AliveLabel();
-    QLabel& MPPT1AliveLabel();
-    QLabel& MPPT2AliveLabel();
+    QLabel& mppt0AliveLabel();
+    QLabel& mppt1AliveLabel();
+    QLabel& mppt2AliveLabel();
 
-    QLabel& MPPT0ArrayVoltageLabel();
-    QLabel& MPPT1ArrayVoltageLabel();
-    QLabel& MPPT2ArrayVoltageLabel();
+    QLabel& mppt0ArrayVoltageLabel();
+    QLabel& mppt1ArrayVoltageLabel();
+    QLabel& mppt2ArrayVoltageLabel();
 
-    QLabel& MPPT0ArrayVoltage();
-    QLabel& MPPT1ArrayVoltage();
-    QLabel& MPPT2ArrayVoltage();
+    QLabel& mppt0ArrayVoltage();
+    QLabel& mppt1ArrayVoltage();
+    QLabel& mppt2ArrayVoltage();
 
-    QLabel& MPPT0ArrayCurrentLabel();
-    QLabel& MPPT1ArrayCurrentLabel();
-    QLabel& MPPT2ArrayCurrentLabel();
+    QLabel& mppt0ArrayCurrentLabel();
+    QLabel& mppt1ArrayCurrentLabel();
+    QLabel& mppt2ArrayCurrentLabel();
 
-    QLabel& MPPT0ArrayCurrent();
-    QLabel& MPPT1ArrayCurrent();
-    QLabel& MPPT2ArrayCurrent();
+    QLabel& mppt0ArrayCurrent();
+    QLabel& mppt1ArrayCurrent();
+    QLabel& mppt2ArrayCurrent();
 
-    QLabel& MPPT0ArrayPowerLabel();
-    QLabel& MPPT1ArrayPowerLabel();
-    QLabel& MPPT2ArrayPowerLabel();
+    QLabel& mppt0ArrayPowerLabel();
+    QLabel& mppt1ArrayPowerLabel();
+    QLabel& mppt2ArrayPowerLabel();
 
-    QLabel& MPPT0ArrayPower();
-    QLabel& MPPT1ArrayPower();
-    QLabel& MPPT2ArrayPower();
+    QLabel& mppt0ArrayPower();
+    QLabel& mppt1ArrayPower();
+    QLabel& mppt2ArrayPower();
 
-    QLabel& MPPT0BatteryVoltageLabel();
-    QLabel& MPPT1BatteryVoltageLabel();
-    QLabel& MPPT2BatteryVoltageLabel();
+    QLabel& mppt0BatteryVoltageLabel();
+    QLabel& mppt1BatteryVoltageLabel();
+    QLabel& mppt2BatteryVoltageLabel();
 
-    QLabel& MPPT0BatteryVoltage();
-    QLabel& MPPT1BatteryVoltage();
-    QLabel& MPPT2BatteryVoltage();
+    QLabel& mppt0BatteryVoltage();
+    QLabel& mppt1BatteryVoltage();
+    QLabel& mppt2BatteryVoltage();
 
-    QLabel& MPPT0TemperatureLabel();
-    QLabel& MPPT1TemperatureLabel();
-    QLabel& MPPT2TemperatureLabel();
+    QLabel& mppt0TemperatureLabel();
+    QLabel& mppt1TemperatureLabel();
+    QLabel& mppt2TemperatureLabel();
 
-    QLabel& MPPT0Temperature();
-    QLabel& MPPT1Temperature();
-    QLabel& MPPT2Temperature();
+    QLabel& mppt0Temperature();
+    QLabel& mppt1Temperature();
+    QLabel& mppt2Temperature();
 
-    QLabel& TotalArrayPowerLabel();
-    QLabel& TotalArrayPower();
+    QLabel& totalArrayPowerLabel();
+    QLabel& totalArrayPower();
 private:
     Ui::MpptUi* ui_;
 };

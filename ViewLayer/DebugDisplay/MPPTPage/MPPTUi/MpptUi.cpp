@@ -18,9 +18,9 @@ MpptUi::MpptUi() :
     opacity0->setOpacity(0.85);
     opacity1->setOpacity(0.85);
     opacity2->setOpacity(0.85);
-    ui_->MPPT0->setGraphicsEffect(opacity0);
-    ui_->MPPT1->setGraphicsEffect(opacity1);
-    ui_->MPPT2->setGraphicsEffect(opacity2);
+    ui_->mppt0->setGraphicsEffect(opacity0);
+    ui_->mppt1->setGraphicsEffect(opacity1);
+    ui_->mppt2->setGraphicsEffect(opacity2);
 }
 
 MpptUi::~MpptUi()
@@ -28,223 +28,223 @@ MpptUi::~MpptUi()
     delete ui_;
 }
 
-QWidget& MpptUi::MpptUi::MPPT0()
+QWidget& MpptUi::MpptUi::mppt0()
 {
-    return *ui_->MPPT0;
+    return *ui_->mppt0;
 }
 
-QWidget& MpptUi::MPPT1()
+QWidget& MpptUi::mppt1()
 {
-    return *ui_->MPPT1;
+    return *ui_->mppt1;
 }
 
-QWidget& MpptUi::MPPT2()
+QWidget& MpptUi::mppt2()
 {
-    return *ui_->MPPT2;
+    return *ui_->mppt2;
 }
 
-QLabel& MpptUi::MPPT0Header()
+QLabel& MpptUi::mppt0Header()
 {
-    return *ui_->MPPT0Header;
+    return *ui_->mppt0Header;
 }
 
-QLabel& MpptUi::MPPT1Header()
+QLabel& MpptUi::mppt1Header()
 {
-    return *ui_->MPPT1Header;
+    return *ui_->mppt1Header;
 }
 
-QLabel& MpptUi::MPPT2Header()
+QLabel& MpptUi::mppt2Header()
 {
-    return *ui_->MPPT2Header;
+    return *ui_->mppt2Header;
 }
 
-QWidget& MpptUi::MPPT0AliveIndicator()
+QWidget& MpptUi::mppt0AliveIndicator()
 {
-    return *ui_->MPPT0AliveIndicator;
+    return *ui_->mppt0AliveIndicator;
 }
 
-QWidget& MpptUi::MPPT1AliveIndicator()
+QWidget& MpptUi::mppt1AliveIndicator()
 {
-    return *ui_->MPPT1AliveIndicator;
+    return *ui_->mppt1AliveIndicator;
 }
 
-QWidget& MpptUi::MPPT2AliveIndicator()
+QWidget& MpptUi::mppt2AliveIndicator()
 {
-    return *ui_->MPPT2AliveIndicator;
+    return *ui_->mppt2AliveIndicator;
 }
 
-QLabel& MpptUi::MPPT0AliveLabel()
+QLabel& MpptUi::mppt0AliveLabel()
 {
-    return *ui_->MPPT0AliveLabel;
+    return *ui_->mppt0AliveLabel;
 }
 
-QLabel& MpptUi::MPPT1AliveLabel()
+QLabel& MpptUi::mppt1AliveLabel()
 {
-    return *ui_->MPPT1AliveLabel;
+    return *ui_->mppt1AliveLabel;
 }
 
-QLabel& MpptUi::MPPT2AliveLabel()
+QLabel& MpptUi::mppt2AliveLabel()
 {
-    return *ui_->MPPT2AliveLabel;
+    return *ui_->mppt2AliveLabel;
 }
 
-QLabel& MpptUi::MPPT0ArrayVoltageLabel()
+QLabel& MpptUi::mppt0ArrayVoltageLabel()
 {
-    return *ui_->MPPT0ArrayVoltageLabel;
+    return *ui_->mppt0ArrayVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT1ArrayVoltageLabel()
+QLabel& MpptUi::mppt1ArrayVoltageLabel()
 {
-    return *ui_->MPPT1ArrayVoltageLabel;
+    return *ui_->mppt1ArrayVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT2ArrayVoltageLabel()
+QLabel& MpptUi::mppt2ArrayVoltageLabel()
 {
-    return *ui_->MPPT2ArrayVoltageLabel;
+    return *ui_->mppt2ArrayVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT0ArrayVoltage()
+QLabel& MpptUi::mppt0ArrayVoltage()
 {
-    return *ui_->MPPT0ArrayVoltage;
+    return *ui_->mppt0ArrayVoltage;
 }
 
-QLabel& MpptUi::MPPT1ArrayVoltage()
+QLabel& MpptUi::mppt1ArrayVoltage()
 {
-    return *ui_->MPPT1ArrayVoltage;
+    return *ui_->mppt1ArrayVoltage;
 }
 
-QLabel& MpptUi::MPPT2ArrayVoltage()
+QLabel& MpptUi::mppt2ArrayVoltage()
 {
-    return *ui_->MPPT2ArrayVoltage;
+    return *ui_->mppt2ArrayVoltage;
 }
 
-QLabel& MpptUi::MPPT0ArrayCurrentLabel()
+QLabel& MpptUi::mppt0ArrayCurrentLabel()
 {
-    return *ui_->MPPT0ArrayCurrentLabel;
+    return *ui_->mppt0ArrayCurrentLabel;
 }
 
-QLabel& MpptUi::MPPT1ArrayCurrentLabel()
+QLabel& MpptUi::mppt1ArrayCurrentLabel()
 {
-    return *ui_->MPPT1ArrayCurrentLabel;
+    return *ui_->mppt1ArrayCurrentLabel;
 }
 
-QLabel& MpptUi::MPPT2ArrayCurrentLabel()
+QLabel& MpptUi::mppt2ArrayCurrentLabel()
 {
-    return *ui_->MPPT2ArrayCurrentLabel;
+    return *ui_->mppt2ArrayCurrentLabel;
 }
 
-QLabel& MpptUi::MPPT0ArrayCurrent()
+QLabel& MpptUi::mppt0ArrayCurrent()
 {
-    return *ui_->MPPT0ArrayCurrent;
+    return *ui_->mppt0ArrayCurrent;
 }
 
-QLabel& MpptUi::MPPT1ArrayCurrent()
+QLabel& MpptUi::mppt1ArrayCurrent()
 {
-    return *ui_->MPPT1ArrayCurrent;
+    return *ui_->mppt1ArrayCurrent;
 }
 
-QLabel& MpptUi::MPPT2ArrayCurrent()
+QLabel& MpptUi::mppt2ArrayCurrent()
 {
-    return *ui_->MPPT2ArrayCurrent;
+    return *ui_->mppt2ArrayCurrent;
 }
 
-QLabel& MpptUi::MPPT0ArrayPowerLabel()
+QLabel& MpptUi::mppt0ArrayPowerLabel()
 {
-    return *ui_->MPPT0ArrayPowerLabel;
+    return *ui_->mppt0ArrayPowerLabel;
 }
 
-QLabel& MpptUi::MPPT1ArrayPowerLabel()
+QLabel& MpptUi::mppt1ArrayPowerLabel()
 {
-    return *ui_->MPPT1ArrayPowerLabel;
+    return *ui_->mppt1ArrayPowerLabel;
 }
 
-QLabel& MpptUi::MPPT2ArrayPowerLabel()
+QLabel& MpptUi::mppt2ArrayPowerLabel()
 {
-    return *ui_->MPPT2ArrayPowerLabel;
+    return *ui_->mppt2ArrayPowerLabel;
 }
 
-QLabel& MpptUi::MPPT0ArrayPower()
+QLabel& MpptUi::mppt0ArrayPower()
 {
-    return *ui_->MPPT0ArrayPower;
+    return *ui_->mppt0ArrayPower;
 }
 
-QLabel& MpptUi::MPPT1ArrayPower()
+QLabel& MpptUi::mppt1ArrayPower()
 {
-    return *ui_->MPPT1ArrayPower;
+    return *ui_->mppt1ArrayPower;
 }
 
-QLabel& MpptUi::MPPT2ArrayPower()
+QLabel& MpptUi::mppt2ArrayPower()
 {
-    return *ui_->MPPT2ArrayPower;
+    return *ui_->mppt2ArrayPower;
 }
 
-QLabel& MpptUi::MPPT0BatteryVoltageLabel()
+QLabel& MpptUi::mppt0BatteryVoltageLabel()
 {
-    return *ui_->MPPT0BatteryVoltageLabel;
+    return *ui_->mppt0BatteryVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT1BatteryVoltageLabel()
+QLabel& MpptUi::mppt1BatteryVoltageLabel()
 {
-    return *ui_->MPPT1BatteryVoltageLabel;
+    return *ui_->mppt1BatteryVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT2BatteryVoltageLabel()
+QLabel& MpptUi::mppt2BatteryVoltageLabel()
 {
-    return *ui_->MPPT2BatteryVoltageLabel;
+    return *ui_->mppt2BatteryVoltageLabel;
 }
 
-QLabel& MpptUi::MPPT0BatteryVoltage()
+QLabel& MpptUi::mppt0BatteryVoltage()
 {
-    return *ui_->MPPT0BatteryVoltage;
+    return *ui_->mppt0BatteryVoltage;
 }
 
-QLabel& MpptUi::MPPT1BatteryVoltage()
+QLabel& MpptUi::mppt1BatteryVoltage()
 {
-    return *ui_->MPPT1BatteryVoltage;
+    return *ui_->mppt1BatteryVoltage;
 }
 
-QLabel& MpptUi::MPPT2BatteryVoltage()
+QLabel& MpptUi::mppt2BatteryVoltage()
 {
-    return *ui_->MPPT2BatteryVoltage;
+    return *ui_->mppt2BatteryVoltage;
 }
 
-QLabel& MpptUi::MPPT0TemperatureLabel()
+QLabel& MpptUi::mppt0TemperatureLabel()
 {
-    return *ui_->MPPT0TemperatureLabel;
+    return *ui_->mppt0TemperatureLabel;
 }
 
-QLabel& MpptUi::MPPT1TemperatureLabel()
+QLabel& MpptUi::mppt1TemperatureLabel()
 {
-    return *ui_->MPPT1TemperatureLabel;
+    return *ui_->mppt1TemperatureLabel;
 }
 
-QLabel& MpptUi::MPPT2TemperatureLabel()
+QLabel& MpptUi::mppt2TemperatureLabel()
 {
-    return *ui_->MPPT2TemperatureLabel;
+    return *ui_->mppt2TemperatureLabel;
 }
 
-QLabel& MpptUi::MPPT0Temperature()
+QLabel& MpptUi::mppt0Temperature()
 {
-    return *ui_->MPPT0Temperature;
+    return *ui_->mppt0Temperature;
 }
 
-QLabel& MpptUi::MPPT1Temperature()
+QLabel& MpptUi::mppt1Temperature()
 {
-    return *ui_->MPPT1Temperature;
+    return *ui_->mppt1Temperature;
 }
 
-QLabel& MpptUi::MPPT2Temperature()
+QLabel& MpptUi::mppt2Temperature()
 {
-    return *ui_->MPPT2Temperature;
+    return *ui_->mppt2Temperature;
 }
 
-QLabel& MpptUi::TotalArrayPowerLabel()
+QLabel& MpptUi::totalArrayPowerLabel()
 {
-    return *ui_->TotalArrayPowerLabel;
+    return *ui_->totalArrayPowerLabel;
 }
 
-QLabel& MpptUi::TotalArrayPower()
+QLabel& MpptUi::totalArrayPower()
 {
-    return *ui_->TotalArrayPower;
+    return *ui_->totalArrayPower;
 }
 
