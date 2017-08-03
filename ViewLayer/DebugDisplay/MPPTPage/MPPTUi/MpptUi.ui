@@ -366,7 +366,7 @@ color:rgb(219, 219, 219);</string>
        <widget class="QLabel" name="mppt0ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>70</y>
           <width>110</width>
           <height>80</height>
@@ -410,7 +410,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt0ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>150</y>
           <width>110</width>
           <height>80</height>
@@ -454,7 +454,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt0ArrayPower">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>230</y>
           <width>110</width>
           <height>80</height>
@@ -499,7 +499,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt0BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>310</y>
           <width>110</width>
           <height>80</height>
@@ -924,7 +924,7 @@ color:rgb(219, 219, 219);</string>
        <widget class="QLabel" name="mppt1ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>70</y>
           <width>110</width>
           <height>80</height>
@@ -968,7 +968,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt1ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>150</y>
           <width>110</width>
           <height>80</height>
@@ -1012,7 +1012,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt1ArrayPower">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>230</y>
           <width>110</width>
           <height>80</height>
@@ -1057,7 +1057,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt1BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>310</y>
           <width>110</width>
           <height>80</height>
@@ -1469,7 +1469,7 @@ color:rgb(219, 219, 219);</string>
        <widget class="QLabel" name="mppt2ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>70</y>
           <width>110</width>
           <height>80</height>
@@ -1513,7 +1513,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt2ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>150</y>
           <width>110</width>
           <height>80</height>
@@ -1557,7 +1557,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt2ArrayPower">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>230</y>
           <width>110</width>
           <height>80</height>
@@ -1602,7 +1602,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt2BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>80</x>
+          <x>70</x>
           <y>310</y>
           <width>110</width>
           <height>80</height>
@@ -1737,7 +1737,7 @@ color:white;</string>
      <item>
       <widget class="QLabel" name="totalArrayPower">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1750,8 +1750,8 @@ color:white;</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>80</width>
-         <height>40</height>
+         <width>100</width>
+         <height>45</height>
         </size>
        </property>
        <property name="styleSheet">

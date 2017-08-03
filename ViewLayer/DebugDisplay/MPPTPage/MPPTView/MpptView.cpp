@@ -1,5 +1,18 @@
 #include "MpptView.h"
-#include <iostream>
+
+namespace
+{
+    const QString VOLTAGE_UNIT = "<sub>V</sub";
+    const QString CURRENT_UNIT = "<sub>A</sub>";
+    const QString POWER_UNIT = "<sub>W</sub>";
+    const QString TEMPERATURE_UNIT = "<sup>o</sup>C";
+    const QString MPPT_ALIVE = "background:green; \
+                                border-radius:8px; \
+                                border: 1px solid white;";
+    const QString MPPT_DEAD = "background:grey; \
+                               border-radius:8px; \
+                               border: 1px solid white;";
+}
 
 MpptView::MpptView(MpptPresenter &mpptPresenter,
                    I_MpptUi &ui)
@@ -7,15 +20,6 @@ MpptView::MpptView(MpptPresenter &mpptPresenter,
     , ui_(ui)
 {
     connectMppt(mpptPresenter_);
-
-    Mppt mppt0Test;
-    mppt0Test.setAlive(false);
-    mppt0Test.setArrayCurrent(10);
-    mppt0Test.setArrayVoltage(10);
-    mppt0Test.setBatteryVoltage(50);
-    mppt0Test.setTemperature(100);
-
-    mpptReceived(0, mppt0Test);
 }
 
 MpptView::~MpptView()
@@ -40,71 +44,59 @@ void MpptView::mpptReceived(int i, Mppt mppt)
     {
         if (mppt.alive())
         {
-            ui_.mppt0AliveIndicator().setStyleSheet("background:green; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt0AliveIndicator().setStyleSheet(MPPT_ALIVE);
         }
         else
         {
-            ui_.mppt0AliveIndicator().setStyleSheet("background:grey; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt0AliveIndicator().setStyleSheet(MPPT_DEAD);
         }
 
         mpptZeroPower = mppt.arrayCurrent() * mppt.arrayVoltage();
 
-        ui_.mppt0ArrayVoltage().setNum(mppt.arrayVoltage());
-        ui_.mppt0ArrayCurrent().setNum(mppt.arrayCurrent());
-        ui_.mppt0ArrayPower().setNum(mpptZeroPower);
-        ui_.mppt0BatteryVoltage().setNum(mppt.batteryVoltage());
-        ui_.mppt0Temperature().setNum(mppt.temperature());
+        ui_.mppt0ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt0ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
+        ui_.mppt0ArrayPower().setText(QString::number(mpptZeroPower) + POWER_UNIT);
+        ui_.mppt0BatteryVoltage().setText(QString::number(mppt.batteryVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt0Temperature().setText(QString::number(mppt.temperature()) + TEMPERATURE_UNIT);
     }
     else if (i == 1)
     {
         if (mppt.alive())
         {
-            ui_.mppt1AliveIndicator().setStyleSheet("background:green; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt1AliveIndicator().setStyleSheet(MPPT_ALIVE);
         }
         else
         {
-            ui_.mppt1AliveIndicator().setStyleSheet("background:grey; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt1AliveIndicator().setStyleSheet(MPPT_DEAD);
         }
 
         mpptOnePower = mppt.arrayCurrent() * mppt.arrayVoltage();
 
-        ui_.mppt1ArrayVoltage().setNum(mppt.arrayVoltage());
-        ui_.mppt1ArrayCurrent().setNum(mppt.arrayCurrent());
-        ui_.mppt1ArrayPower().setNum(mpptOnePower);
-        ui_.mppt1BatteryVoltage().setNum(mppt.batteryVoltage());
-        ui_.mppt1Temperature().setNum(mppt.temperature());
+        ui_.mppt1ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt1ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
+        ui_.mppt1ArrayPower().setText(QString::number(mpptOnePower) + POWER_UNIT);
+        ui_.mppt1BatteryVoltage().setText(QString::number(mppt.batteryVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt1Temperature().setText(QString::number(mppt.temperature()) + TEMPERATURE_UNIT);
     }
     else if (i == 2)
     {
         if (mppt.alive())
         {
-            ui_.mppt2AliveIndicator().setStyleSheet("background:green; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt2AliveIndicator().setStyleSheet(MPPT_ALIVE);
         }
         else
         {
-            ui_.mppt2AliveIndicator().setStyleSheet("background:grey; \
-                                                    border-radius:8px; \
-                                                    border: 1px solid white;");
+            ui_.mppt2AliveIndicator().setStyleSheet(MPPT_DEAD);
         }
 
         mpptTwoPower = mppt.arrayCurrent() * mppt.arrayVoltage();
 
-        ui_.mppt2ArrayVoltage().setNum(mppt.arrayVoltage());
-        ui_.mppt2ArrayCurrent().setNum(mppt.arrayCurrent());
-        ui_.mppt2ArrayPower().setNum(mpptTwoPower);
-        ui_.mppt2BatteryVoltage().setNum(mppt.batteryVoltage());
-        ui_.mppt2Temperature().setNum(mppt.temperature());
+        ui_.mppt2ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt2ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
+        ui_.mppt2ArrayPower().setText(QString::number(mpptTwoPower) + POWER_UNIT);
+        ui_.mppt2BatteryVoltage().setText(QString::number(mppt.batteryVoltage()) + VOLTAGE_UNIT);
+        ui_.mppt2Temperature().setText(QString::number(mppt.temperature()) + TEMPERATURE_UNIT);
     }
 
-    ui_.totalArrayPower().setText(QString::number(mpptZeroPower + mpptOnePower + mpptTwoPower) + "<sub>W</sub>");
+    ui_.totalArrayPower().setText(QString::number(mpptZeroPower + mpptOnePower + mpptTwoPower) + POWER_UNIT);
 }
