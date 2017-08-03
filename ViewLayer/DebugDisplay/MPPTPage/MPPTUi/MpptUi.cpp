@@ -2,25 +2,30 @@
 #include "ui_MpptUi.h"
 #include <QGraphicsOpacityEffect>
 
+namespace
+{
+    const double OPACITY = 0.85;
+}
+
 MpptUi::MpptUi() :
     ui_(new Ui::MpptUi)
 {
     ui_->setupUi(this);
 
-    QPalette pal = this->palette();
-    pal.setColor(QPalette::Window, Qt::black);
-    this->setPalette(pal);
-    //Setting the opacity
+    QPalette background = this->palette();
+    background.setColor(QPalette::Window, Qt::black);
+    this->setPalette(background);
 
-    QGraphicsOpacityEffect *opacity0 = new QGraphicsOpacityEffect;
-    QGraphicsOpacityEffect *opacity1 = new QGraphicsOpacityEffect;
-    QGraphicsOpacityEffect *opacity2 = new QGraphicsOpacityEffect;
-    opacity0->setOpacity(0.85);
-    opacity1->setOpacity(0.85);
-    opacity2->setOpacity(0.85);
-    ui_->mppt0->setGraphicsEffect(opacity0);
-    ui_->mppt1->setGraphicsEffect(opacity1);
-    ui_->mppt2->setGraphicsEffect(opacity2);
+    // Setting the opacity
+    QGraphicsOpacityEffect *mppt0Opacity = new QGraphicsOpacityEffect;
+    QGraphicsOpacityEffect *mppt1Opacity = new QGraphicsOpacityEffect;
+    QGraphicsOpacityEffect *mppt2Opacity = new QGraphicsOpacityEffect;
+    mppt0Opacity->setOpacity(OPACITY);
+    mppt1Opacity->setOpacity(OPACITY);
+    mppt2Opacity->setOpacity(OPACITY);
+    ui_->mppt0->setGraphicsEffect(mppt0Opacity);
+    ui_->mppt1->setGraphicsEffect(mppt1Opacity);
+    ui_->mppt2->setGraphicsEffect(mppt2Opacity);
 }
 
 MpptUi::~MpptUi()
@@ -237,6 +242,7 @@ QLabel& MpptUi::mppt2Temperature()
 {
     return *ui_->mppt2Temperature;
 }
+
 
 QLabel& MpptUi::totalArrayPowerLabel()
 {
