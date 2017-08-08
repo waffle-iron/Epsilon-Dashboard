@@ -1,6 +1,5 @@
 #include"MpptUi.h"
 #include "ui_MpptUi.h"
-#include <QGraphicsOpacityEffect>
 
 namespace
 {
@@ -11,21 +10,11 @@ MpptUi::MpptUi() :
     ui_(new Ui::MpptUi)
 {
     ui_->setupUi(this);
-
-    QPalette background = this->palette();
-    background.setColor(QPalette::Window, Qt::black);
+    QPixmap bkgnd(":/Resources/Background.png");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette background;
+    background.setBrush(QPalette::Background, bkgnd);
     this->setPalette(background);
-
-    // Setting the opacity
-    QGraphicsOpacityEffect *mppt0Opacity = new QGraphicsOpacityEffect;
-    QGraphicsOpacityEffect *mppt1Opacity = new QGraphicsOpacityEffect;
-    QGraphicsOpacityEffect *mppt2Opacity = new QGraphicsOpacityEffect;
-    mppt0Opacity->setOpacity(OPACITY);
-    mppt1Opacity->setOpacity(OPACITY);
-    mppt2Opacity->setOpacity(OPACITY);
-    ui_->mppt0->setGraphicsEffect(mppt0Opacity);
-    ui_->mppt1->setGraphicsEffect(mppt1Opacity);
-    ui_->mppt2->setGraphicsEffect(mppt2Opacity);
 }
 
 MpptUi::~MpptUi()
