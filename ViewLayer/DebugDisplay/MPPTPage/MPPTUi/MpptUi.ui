@@ -216,7 +216,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt0ArrayCurrentLabel">
@@ -255,7 +255,7 @@ color:rgb(219, 219, 219);</string>
 Current</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt0ArrayPowerLabel">
@@ -294,7 +294,7 @@ color:rgb(219, 219, 219);</string>
 Power</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt0BatteryVoltageLabel">
@@ -333,7 +333,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt0TemperatureLabel">
@@ -365,13 +365,13 @@ color:rgb(219, 219, 219);</string>
          <string>Temperature</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt0ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>100</y>
           <width>110</width>
           <height>80</height>
@@ -396,8 +396,8 @@ color:rgb(219, 219, 219);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -407,7 +407,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -416,7 +416,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt0ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>180</y>
           <width>110</width>
           <height>80</height>
@@ -441,8 +441,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -452,7 +452,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -461,9 +461,9 @@ color:white;</string>
        <widget class="QLabel" name="mppt0ArrayPower">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>270</y>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </rect>
         </property>
@@ -475,29 +475,29 @@ color:white;</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
-         <string>100&lt;sub&gt;W&lt;/sub&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;100&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -506,7 +506,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt0BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>360</y>
           <width>110</width>
           <height>80</height>
@@ -531,8 +531,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -542,7 +542,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -553,29 +553,29 @@ color:white;</string>
          <rect>
           <x>100</x>
           <y>460</y>
-          <width>110</width>
+          <width>130</width>
           <height>81</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;50&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>50&lt;sup&gt;o&lt;/sup&gt;C</string>
         </property>
         <property name="margin">
          <number>10</number>
@@ -778,7 +778,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt1ArrayCurrentLabel">
@@ -817,7 +817,7 @@ color:rgb(219, 219, 219);</string>
 Current</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt1ArrayPowerLabel">
@@ -856,7 +856,7 @@ color:rgb(219, 219, 219);</string>
 Power</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt1BatteryVoltageLabel">
@@ -895,7 +895,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt1TemperatureLabel">
@@ -927,13 +927,13 @@ color:rgb(219, 219, 219);</string>
          <string>Temperature</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt1ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>100</y>
           <width>110</width>
           <height>80</height>
@@ -958,8 +958,8 @@ color:rgb(219, 219, 219);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -969,7 +969,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -978,7 +978,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt1ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>180</y>
           <width>110</width>
           <height>80</height>
@@ -1003,8 +1003,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1014,7 +1014,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1023,9 +1023,9 @@ color:white;</string>
        <widget class="QLabel" name="mppt1ArrayPower">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>270</y>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </rect>
         </property>
@@ -1037,19 +1037,19 @@ color:white;</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1059,7 +1059,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1068,7 +1068,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt1BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>360</y>
           <width>110</width>
           <height>80</height>
@@ -1093,8 +1093,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1104,7 +1104,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1115,25 +1115,25 @@ color:white;</string>
          <rect>
           <x>100</x>
           <y>460</y>
-          <width>110</width>
+          <width>130</width>
           <height>81</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1176,20 +1176,6 @@ border-radius:10px;
 border: 1px solid white;</string>
         </property>
        </widget>
-       <zorder>mppt1Header</zorder>
-       <zorder>mppt1AliveLabel</zorder>
-       <zorder>mppt1ArrayVoltageLabel</zorder>
-       <zorder>mppt1ArrayCurrentLabel</zorder>
-       <zorder>mppt1ArrayPowerLabel</zorder>
-       <zorder>mppt1BatteryVoltageLabel</zorder>
-       <zorder>mppt1TemperatureLabel</zorder>
-       <zorder>mppt1ArrayVoltage</zorder>
-       <zorder>mppt1ArrayCurrent</zorder>
-       <zorder>mppt1ArrayPower</zorder>
-       <zorder>mppt1BatteryVoltage</zorder>
-       <zorder>mppt1Temperature</zorder>
-       <zorder>mppt1AliveIndicator</zorder>
-       <zorder>mppt0</zorder>
       </widget>
      </item>
      <item>
@@ -1341,7 +1327,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt2ArrayCurrentLabel">
@@ -1380,7 +1366,7 @@ color:rgb(219, 219, 219);</string>
 Current</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt2ArrayPowerLabel">
@@ -1419,7 +1405,7 @@ color:rgb(219, 219, 219);</string>
 Power</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt2BatteryVoltageLabel">
@@ -1458,7 +1444,7 @@ color:rgb(219, 219, 219);</string>
 Voltage</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt2TemperatureLabel">
@@ -1490,13 +1476,13 @@ color:rgb(219, 219, 219);</string>
          <string>Temperature</string>
         </property>
         <property name="margin">
-         <number>10</number>
+         <number>15</number>
         </property>
        </widget>
        <widget class="QLabel" name="mppt2ArrayVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>100</y>
           <width>110</width>
           <height>80</height>
@@ -1521,8 +1507,8 @@ color:rgb(219, 219, 219);</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1532,7 +1518,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1541,7 +1527,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt2ArrayCurrent">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>180</y>
           <width>110</width>
           <height>80</height>
@@ -1566,8 +1552,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1577,7 +1563,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1586,9 +1572,9 @@ color:white;</string>
        <widget class="QLabel" name="mppt2ArrayPower">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>270</y>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </rect>
         </property>
@@ -1600,19 +1586,19 @@ color:white;</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>115</width>
+          <width>120</width>
           <height>80</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1622,7 +1608,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1631,7 +1617,7 @@ color:white;</string>
        <widget class="QLabel" name="mppt2BatteryVoltage">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>360</y>
           <width>110</width>
           <height>80</height>
@@ -1656,8 +1642,8 @@ color:white;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1667,7 +1653,7 @@ color:white;</string>
          <enum>Qt::AutoText</enum>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <property name="margin">
          <number>10</number>
@@ -1678,25 +1664,25 @@ color:white;</string>
          <rect>
           <x>100</x>
           <y>460</y>
-          <width>110</width>
+          <width>130</width>
           <height>81</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>110</width>
+          <width>130</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">font:30pt &quot;Arial&quot;;
-margin-bottom:5px;
+         <string notr="true">font:35pt &quot;Arial&quot;;
+margin-bottom:7px;
 color:white;</string>
         </property>
         <property name="text">
@@ -1735,7 +1721,7 @@ color:white;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color:rgb(93, 234, 140);
-border-radius:8px;
+border-radius:10px;
 border: 1px solid white;</string>
         </property>
        </widget>
