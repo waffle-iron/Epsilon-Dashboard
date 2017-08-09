@@ -1,11 +1,6 @@
 #include"MpptUi.h"
 #include "ui_MpptUi.h"
 
-namespace
-{
-    const double OPACITY = 0.85;
-}
-
 MpptUi::MpptUi() :
     ui_(new Ui::MpptUi)
 {
