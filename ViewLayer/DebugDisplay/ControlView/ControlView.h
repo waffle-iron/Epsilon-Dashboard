@@ -1,0 +1,4 @@
+#ifndef CONTROLVIEW_H
+#define CONTROLVIEW_H
+
+#endif // CONTROLVIEW_H
