@@ -17,97 +17,97 @@ ControlUi::~ControlUi()
     delete ui_;
 }
 
-QLabel& ControlUi::headlightsHigh()
+QLabel& ControlUi::highHeadlightsLabel()
 {
     return *ui_->high;
 }
 
-QLabel& ControlUi::headlightsLow()
+QLabel& ControlUi::lowHeadlightsLabel()
 {
     return *ui_->low;
 }
 
-QLabel& ControlUi::signalLeft()
+QLabel& ControlUi::leftSignalLabel()
 {
     return *ui_->left;
 }
 
-QLabel& ControlUi::signalRight()
+QLabel& ControlUi::rightSignalLabel()
 {
     return *ui_->right;
 }
 
-QLabel& ControlUi::hazard()
+QLabel& ControlUi::hazardLabel()
 {
     return *ui_->hazardOn;
 }
 
-QLabel& ControlUi::interior()
+QLabel& ControlUi::interiorLabel()
 {
    return *ui_->interiorOn;
 }
 
-QLabel& ControlUi::pushToTalk()
+QLabel& ControlUi::pushToTalkLabel()
 {
    return *ui_->pushToTalkOn;
 }
 
-QLabel& ControlUi::horn()
+QLabel& ControlUi::hornLabel()
 {
     return *ui_->hornOn;
 }
 
-QLabel& ControlUi::aux()
+QLabel& ControlUi::auxLabel()
 {
     return *ui_->auxOn;
 }
 
-QLabel& ControlUi::nextSong()
+QLabel& ControlUi::nextSongLabel()
 {
     return *ui_->next;
 }
 
-QLabel& ControlUi::prevSong()
+QLabel& ControlUi::prevSongLabel()
 {
     return *ui_->prev;
 }
 
-QLabel& ControlUi::volumeUp()
+QLabel& ControlUi::volumeUpLabel()
 {
     return *ui_->up;
 }
 
-QLabel& ControlUi::volumeDown()
+QLabel& ControlUi::volumeDownLabel()
 {
     return *ui_->down;
 }
 
-QLabel& ControlUi::brakes()
+QLabel& ControlUi::brakesLabel()
 {
     return *ui_->brakesOn;
 }
 
-QLabel& ControlUi::forward()
+QLabel& ControlUi::forwardLabel()
 {
     return *ui_->forwardOn;
 }
 
-QLabel& ControlUi::reverse()
+QLabel& ControlUi::reverseLabel()
 {
     return *ui_->reverseOn;
 }
 
-QLabel& ControlUi::reset()
+QLabel& ControlUi::resetLabel()
 {
     return *ui_->resetOn;
 }
 
-QProgressBar& ControlUi::acceleration()
+QProgressBar& ControlUi::accelerationProgressBar()
 {
     return *ui_->accelerationBar;
 }
 
-QProgressBar& ControlUi::regenBraking()
+QProgressBar& ControlUi::regenBrakingProgressBar()
 {
     return *ui_->regenBrakingBar;
 }

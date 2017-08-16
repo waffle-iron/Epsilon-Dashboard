@@ -71,3 +71,44 @@ void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsP
     connect(&driverControlsPresenter, SIGNAL(regenBrakingReceived(double)),
             this, SLOT(regenBrakingReceived(double)));
 }
+
+void ControlView::aliveReceived(bool alive)
+{
+}
+
+void ControlView::lowHeadlightsReceived(bool lowBeams)
+{
+    if (lowBeams)
+    {
+        ui_.lowHeadlightsLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+    }
+    else
+    {
+        ui_.lowHeadlightsLabel().setStyleSheet("");
+    }
+}
+
+void ControlView::highHeadlightsReceived(bool highBeams)
+{
+    if (highBeams)
+    {
+        ui_.highHeadlightsLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+    }
+    else
+    {
+        ui_.highHeadlightsLabel().setStyleSheet("");
+    }
+}
+
+void ControlView::leftSignalReceived(bool leftSignal)
+{
+    if (leftSignal)
+    {
+        ui_.leftSignalLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+    }
+    else
+    {
+        ui_.leftSignalLabel().setStyleSheet("");
+    }
+}
+
