@@ -22,7 +22,35 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QPushButton" name="motorButton">
+     <property name="text">
+      <string>Motor</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="batteryButton">
+     <property name="text">
+      <string>Battery</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="motorFaultButton">
+     <property name="text">
+      <string>Motor Fault</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="controlButton">
+     <property name="text">
+      <string>Control</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QPushButton" name="MPPT">
      <property name="focusPolicy">
@@ -44,34 +72,6 @@
        <width>80</width>
        <height>22</height>
       </size>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="controlButton">
-     <property name="text">
-      <string>Control</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="motorFaultButton">
-     <property name="text">
-      <string>Motor Fault</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="batteryButton">
-     <property name="text">
-      <string>Battery</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="motorButton">
-     <property name="text">
-      <string>Motor</string>
      </property>
     </widget>
    </item>

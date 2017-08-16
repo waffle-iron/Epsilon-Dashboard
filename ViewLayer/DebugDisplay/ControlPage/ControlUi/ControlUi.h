@@ -11,8 +11,25 @@ class ControlUi : public I_ControlUi
 public:
     explicit ControlUi();
     ~ControlUi();
-    QLabel& titleLabel();
+    QLabel& headlightsHigh();
+    QLabel& headlightsLow();
+    QLabel& signalLeft();
+    QLabel& signalRight();
+    QLabel& hazard();
+    QLabel& interior();
+    QLabel& pushToTalk();
+    QLabel& horn();
+    QLabel& aux();
+    QLabel& nextSong();
+    QLabel& prevSong();
+    QLabel& volumeUp();
+    QLabel& volumeDown();
+    QLabel& brakes();
+    QLabel& forward();
+    QLabel& reverse();
+    QLabel& reset();
+    QProgressBar& acceleration();
+    QProgressBar& regenBraking();
 private:
     Ui::ControlUi* ui_;
 };
-
