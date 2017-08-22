@@ -14,8 +14,8 @@ namespace
                                border: 1px solid white;";
 }
 
-MpptView::MpptView(MpptPresenter &mpptPresenter,
-                   I_MpptUi &ui)
+MpptView::MpptView(MpptPresenter& mpptPresenter,
+                   I_MpptUi& ui)
     : mpptPresenter_(mpptPresenter)
     , ui_(ui)
 {
@@ -28,8 +28,8 @@ MpptView::~MpptView()
 
 void MpptView::connectMppt(MpptPresenter& mpptPresenter)
 {
-    connect(&mpptPresenter, SIGNAL(mpptReceived(int,Mppt)),
-            this, SLOT(mpptReceived(int,Mppt)));
+    connect(&mpptPresenter, SIGNAL(mpptReceived(int, Mppt)),
+            this, SLOT(mpptReceived(int, Mppt)));
     connect(&mpptPresenter, SIGNAL(mpptPowerReceived(double)),
             this, SLOT(mpptPowerReceived(double)));
 }

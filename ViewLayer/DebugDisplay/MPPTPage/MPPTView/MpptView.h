@@ -22,7 +22,7 @@ private:
 
     MpptPresenter& mpptPresenter_;
 
-    I_MpptUi & ui_;
+    I_MpptUi& ui_;
 
 private slots:
     void mpptReceived(int, Mppt);
