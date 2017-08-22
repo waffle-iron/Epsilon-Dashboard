@@ -17,7 +17,7 @@ MpptUi::~MpptUi()
     delete ui_;
 }
 
-QWidget& MpptUi::MpptUi::mppt0()
+QWidget& MpptUi::mppt0()
 {
     return *ui_->mppt0;
 }
