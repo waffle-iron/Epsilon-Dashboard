@@ -18,4 +18,4 @@ To run the application in race mode, add the -r flag at the end:
 In this repo, there are dependencies needed for Rabbitmq before you will be able to build or run anything.
 
 To install these dependencies, run the command:
-	`./rabbitmq-setup.sh`
+	`./EpsilonDashboardSetup.sh`
