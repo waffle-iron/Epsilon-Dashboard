@@ -51,7 +51,7 @@ void MpptView::mpptReceived(int i, Mppt mppt)
         }
 
         mpptPower = mppt.arrayCurrent() * mppt.arrayVoltage();
-        mpptTotalPower+=mpptPower;
+        mpptTotalPower += mpptPower;
 
         ui_.mppt0ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
         ui_.mppt0ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
@@ -71,7 +71,7 @@ void MpptView::mpptReceived(int i, Mppt mppt)
         }
 
         mpptPower = mppt.arrayCurrent() * mppt.arrayVoltage();
-        mpptTotalPower+=mpptPower;
+        mpptTotalPower += mpptPower;
 
         ui_.mppt1ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
         ui_.mppt1ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
@@ -91,7 +91,7 @@ void MpptView::mpptReceived(int i, Mppt mppt)
         }
 
         mpptPower = mppt.arrayCurrent() * mppt.arrayVoltage();
-        mpptTotalPower+=mpptPower;
+        mpptTotalPower += mpptPower;
 
         ui_.mppt2ArrayVoltage().setText(QString::number(mppt.arrayVoltage()) + VOLTAGE_UNIT);
         ui_.mppt2ArrayCurrent().setText(QString::number(mppt.arrayCurrent()) + CURRENT_UNIT);
