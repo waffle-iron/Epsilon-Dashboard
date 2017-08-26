@@ -227,7 +227,6 @@ QLabel& MpptUi::mppt2Temperature()
     return *ui_->mppt2Temperature;
 }
 
-
 QLabel& MpptUi::totalArrayPowerLabel()
 {
     return *ui_->totalArrayPowerLabel;
@@ -237,4 +236,3 @@ QLabel& MpptUi::totalArrayPower()
 {
     return *ui_->totalArrayPower;
 }
-
