@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>833</width>
-    <height>548</height>
+    <height>553</height>
    </rect>
   </property>
   <property name="font">
@@ -123,7 +123,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_18">
                <item>
-                <widget class="QLabel" name="headights">
+                <widget class="QLabel" name="headightsLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -142,7 +142,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item>
-                <widget class="QLabel" name="low">
+                <widget class="QLabel" name="lowHeadlightsLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -154,7 +154,7 @@ border-radius: 10px;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="high">
+                <widget class="QLabel" name="highHeadlightsLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -199,7 +199,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_24">
                <item>
-                <widget class="QLabel" name="interior">
+                <widget class="QLabel" name="interiorLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -215,7 +215,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_6">
                <item>
-                <widget class="QLabel" name="interiorOn">
+                <widget class="QLabel" name="interiorOnLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -248,7 +248,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_20">
                <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="signalLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -264,7 +264,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_7">
                <item>
-                <widget class="QLabel" name="left">
+                <widget class="QLabel" name="leftSignalLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -276,7 +276,7 @@ border-radius: 10px;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="right">
+                <widget class="QLabel" name="rightSignalLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -321,7 +321,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_22">
                <item>
-                <widget class="QLabel" name="pushToTalk">
+                <widget class="QLabel" name="pushToTalkLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -337,7 +337,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_8">
                <item>
-                <widget class="QLabel" name="pushToTalkOn">
+                <widget class="QLabel" name="pushToTalkOnLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -370,7 +370,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_21">
                <item>
-                <widget class="QLabel" name="hazard">
+                <widget class="QLabel" name="hazardLabel">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -386,7 +386,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
-                <widget class="QLabel" name="hazardOn">
+                <widget class="QLabel" name="hazardOnLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -431,7 +431,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_23">
                <item>
-                <widget class="QLabel" name="horn">
+                <widget class="QLabel" name="hornLabel">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Horn&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -442,7 +442,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
-                <widget class="QLabel" name="hornOn">
+                <widget class="QLabel" name="hornOnLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -525,7 +525,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_25">
                <item>
-                <widget class="QLabel" name="Aux">
+                <widget class="QLabel" name="auxLabel">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Aux&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -536,7 +536,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_17">
                <item>
-                <widget class="QLabel" name="auxOn">
+                <widget class="QLabel" name="auxOnLabel">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#888a85;&quot;&gt;On&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -564,7 +564,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_26">
                <item>
-                <widget class="QLabel" name="song">
+                <widget class="QLabel" name="songLabel">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Song&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -575,7 +575,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
-                <widget class="QLabel" name="prev">
+                <widget class="QLabel" name="prevSongLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -587,7 +587,7 @@ border-radius: 10px;
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="next">
+                <widget class="QLabel" name="nextSongLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -620,7 +620,7 @@ border-radius: 10px;
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_27">
                <item>
-                <widget class="QLabel" name="label_9">
+                <widget class="QLabel" name="volumeLabel">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Volume&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -661,7 +661,7 @@ max-height: 10px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="up">
+                <widget class="QLabel" name="volumeUpLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -673,7 +673,7 @@ max-height: 10px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="down">
+                <widget class="QLabel" name="volumeDownLabel">
                  <property name="font">
                   <font>
                    <pointsize>9</pointsize>
@@ -736,7 +736,7 @@ border-radius: 10px;
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QLabel" name="brakes">
+              <widget class="QLabel" name="brakesLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Brakes&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
@@ -755,14 +755,14 @@ border-radius: 10px;
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="acceleration">
+              <widget class="QLabel" name="accelerationLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Acceleration&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QProgressBar" name="accelerationBar">
+              <widget class="QProgressBar" name="accelerationProgressBar">
                <property name="layoutDirection">
                 <enum>Qt::LeftToRight</enum>
                </property>
@@ -776,14 +776,14 @@ border-radius: 10px;
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QLabel" name="forward">
+              <widget class="QLabel" name="forwardLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Forward&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="forwardOn">
+              <widget class="QLabel" name="forwardOnLabel">
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
@@ -795,14 +795,14 @@ border-radius: 10px;
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="regenBraking">
+              <widget class="QLabel" name="regenBrakingLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Regen Braking&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QProgressBar" name="regenBrakingBar">
+              <widget class="QProgressBar" name="regenBrakingProgressBar">
                <property name="value">
                 <number>24</number>
                </property>
@@ -813,14 +813,14 @@ border-radius: 10px;
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <widget class="QLabel" name="reverse">
+              <widget class="QLabel" name="reverseLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Reverse&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="reverseOn">
+              <widget class="QLabel" name="reverseOnLabel">
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
@@ -845,14 +845,14 @@ border-radius: 10px;
               </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="reset">
+              <widget class="QLabel" name="resetLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Reset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="resetOn">
+              <widget class="QLabel" name="resetOnLabel">
                <property name="text">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#888a85;&quot;&gt;On&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>

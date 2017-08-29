@@ -19,95 +19,95 @@ ControlUi::~ControlUi()
 
 QLabel& ControlUi::highHeadlightsLabel()
 {
-    return *ui_->high;
+    return *ui_->highHeadlightsLabel;
 }
 
 QLabel& ControlUi::lowHeadlightsLabel()
 {
-    return *ui_->low;
+    return *ui_->lowHeadlightsLabel;
 }
 
 QLabel& ControlUi::leftSignalLabel()
 {
-    return *ui_->left;
+    return *ui_->leftSignalLabel;
 }
 
 QLabel& ControlUi::rightSignalLabel()
 {
-    return *ui_->right;
+    return *ui_->rightSignalLabel;
 }
 
-QLabel& ControlUi::hazardLabel()
+QLabel& ControlUi::hazardOnLabel()
 {
-    return *ui_->hazardOn;
+    return *ui_->hazardOnLabel;
 }
 
-QLabel& ControlUi::interiorLabel()
+QLabel& ControlUi::interiorOnLabel()
 {
-   return *ui_->interiorOn;
+   return *ui_->interiorOnLabel;
 }
 
-QLabel& ControlUi::pushToTalkLabel()
+QLabel& ControlUi::pushToTalkOnLabel()
 {
-   return *ui_->pushToTalkOn;
+   return *ui_->pushToTalkOnLabel;
 }
 
-QLabel& ControlUi::hornLabel()
+QLabel& ControlUi::hornOnLabel()
 {
-    return *ui_->hornOn;
+    return *ui_->hornOnLabel;
 }
 
-QLabel& ControlUi::auxLabel()
+QLabel& ControlUi::auxOnLabel()
 {
-    return *ui_->auxOn;
+    return *ui_->auxOnLabel;
 }
 
 QLabel& ControlUi::nextSongLabel()
 {
-    return *ui_->next;
+    return *ui_->nextSongLabel;
 }
 
 QLabel& ControlUi::prevSongLabel()
 {
-    return *ui_->prev;
+    return *ui_->prevSongLabel;
 }
 
 QLabel& ControlUi::volumeUpLabel()
 {
-    return *ui_->up;
+    return *ui_->volumeUpLabel;
 }
 
 QLabel& ControlUi::volumeDownLabel()
 {
-    return *ui_->down;
+    return *ui_->volumeDownLabel;
 }
 
-QLabel& ControlUi::brakesLabel()
+QLabel& ControlUi::brakesOnLabel()
 {
-    return *ui_->brakesOn;
+    return *ui_->brakesOnLabel;
 }
 
-QLabel& ControlUi::forwardLabel()
+QLabel& ControlUi::forwardOnLabel()
 {
-    return *ui_->forwardOn;
+    return *ui_->forwardOnLabel;
 }
 
-QLabel& ControlUi::reverseLabel()
+QLabel& ControlUi::reverseOnLabel()
 {
-    return *ui_->reverseOn;
+    return *ui_->reverseOnLabel;
 }
 
-QLabel& ControlUi::resetLabel()
+QLabel& ControlUi::resetOnLabel()
 {
-    return *ui_->resetOn;
+    return *ui_->resetOnLabel;
 }
 
 QProgressBar& ControlUi::accelerationProgressBar()
 {
-    return *ui_->accelerationBar;
+    return *ui_->accelerationProgressBar;
 }
 
 QProgressBar& ControlUi::regenBrakingProgressBar()
 {
-    return *ui_->regenBrakingBar;
+    return *ui_->regenBrakingProgressBar;
 }

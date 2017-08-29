@@ -2,9 +2,9 @@
 #include <QObject>
 #include <QLabel>
 
-#include "../../../../DataLayer/DriverControlsData/DriverControlsData.h"
-#include "../../../../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
-#include "../MPPTUi/I_MpptUi.h"
+#include "../../../DataLayer/DriverControlsData/DriverControlsData.h"
+#include "../../../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
+#include "ControlUi/I_ControlUi.h"
 
 class DriverControlsPresenter;
 
@@ -34,12 +34,14 @@ private slots:
     void hazardReceived(bool);
 
     void interiorReceived(bool);
-    void talkReceived(bool);
+    void pushToTalkReceived(bool);
     void hornReceived(bool);
 
     void auxReceived(bool);
-    void songReceived(bool);
-    void volumeReceived(bool);
+    void prevSongReceived(bool);
+    void nextSongReceived(bool);
+    void volumeUpReceived(bool);
+    void volumeDownReceived(bool);
 
     void brakesReceived(bool);
     void forwardReceived(bool);

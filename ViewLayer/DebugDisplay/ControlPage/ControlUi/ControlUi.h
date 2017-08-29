@@ -15,19 +15,19 @@ public:
     QLabel& lowHeadlightsLabel();
     QLabel& leftSignalLabel();
     QLabel& rightSignalLabel();
-    QLabel& hazardLabel();
-    QLabel& interiorLabel();
-    QLabel& pushToTalkLabel();
-    QLabel& hornLabel();
-    QLabel& auxLabel();
+    QLabel& hazardOnLabel();
+    QLabel& interiorOnLabel();
+    QLabel& pushToTalkOnLabel();
+    QLabel& hornOnLabel();
+    QLabel& auxOnLabel();
     QLabel& nextSongLabel();
     QLabel& prevSongLabel();
     QLabel& volumeUpLabel();
     QLabel& volumeDownLabel();
-    QLabel& brakesLabel();
-    QLabel& forwardLabel();
-    QLabel& reverseLabel();
-    QLabel& resetLabel();
+    QLabel& brakesOnLabel();
+    QLabel& forwardOnLabel();
+    QLabel& reverseOnLabel();
+    QLabel& resetOnLabel();
     QProgressBar& accelerationProgressBar();
     QProgressBar& regenBrakingProgressBar();
 private:

@@ -5,6 +5,7 @@
 #include "ViewContainer.h"
 #include "DebugDisplay/BatteryPage/BatteryUi/BatteryUi.h"
 #include "DebugDisplay/ControlPage/ControlUi/ControlUi.h"
+#include "DebugDisplay/ControlView/ControlView.h"
 #include "DebugDisplay/HomePage/HomePageUi/HomePageUi.h"
 #include "DebugDisplay/MotorFaultPage/MotorFaultUi/MotorFaultUi.h"
 #include "DebugDisplay/MotorPage/MotorUi/MotorUi.h"

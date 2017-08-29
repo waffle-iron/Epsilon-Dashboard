@@ -1,4 +1,4 @@
-﻿
+
 #include "ControlView.h"
 
 namespace
@@ -44,17 +44,21 @@ void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsP
 
     connect(&driverControlsPresenter, SIGNAL(interiorReceived(bool)),
             this, SLOT(interiorReceived(bool)));
-    connect(&driverControlsPresenter, SIGNAL(talkReceived(bool)),
-            this, SLOT(talkReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(pushToTalkReceived(bool)),
+            this, SLOT(pushToTalkReceived(bool)));
     connect(&driverControlsPresenter, SIGNAL(hornReceived(bool)),
             this, SLOT(hornReceived(bool)));
 
     connect(&driverControlsPresenter, SIGNAL(auxReceived(bool)),
             this, SLOT(auxReceived(bool)));
-    connect(&driverControlsPresenter, SIGNAL(songReceived(bool)),
-            this, SLOT(songReceived(bool)));
-    connect(&driverControlsPresenter, SIGNAL(volumeReceived(bool)),
-            this, SLOT(volumeReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(prevSongReceived(bool)),
+            this, SLOT(prevSongReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(nextSongReceived(bool)),
+            this, SLOT(nextSongReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(volumeUpReceived(bool)),
+            this, SLOT(volumeUpReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(volumeDownReceived(bool)),
+            this, SLOT(volumeDownReceived(bool)));
 
     connect(&driverControlsPresenter, SIGNAL(brakesReceived(bool)),
             this, SLOT(brakesReceived(bool)));
@@ -80,11 +84,11 @@ void ControlView::lowHeadlightsReceived(bool lowBeams)
 {
     if (lowBeams)
     {
-        ui_.lowHeadlightsLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+        ui_.lowHeadlightsLabel().setStyleSheet("color: orange");
     }
     else
     {
-        ui_.lowHeadlightsLabel().setStyleSheet("");
+        ui_.lowHeadlightsLabel().setStyleSheet("color: grey");
     }
 }
 
@@ -92,11 +96,11 @@ void ControlView::highHeadlightsReceived(bool highBeams)
 {
     if (highBeams)
     {
-        ui_.highHeadlightsLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+        ui_.highHeadlightsLabel().setStyleSheet("color: orange");
     }
     else
     {
-        ui_.highHeadlightsLabel().setStyleSheet("");
+        ui_.highHeadlightsLabel().setStyleSheet("color: grey");
     }
 }
 
@@ -104,11 +108,188 @@ void ControlView::leftSignalReceived(bool leftSignal)
 {
     if (leftSignal)
     {
-        ui_.leftSignalLabel().setStyleSheet("background: url(:/Resources/LowHeadlightIndicator.png)");
+        ui_.leftSignalLabel().setStyleSheet("color: orange");
     }
     else
     {
-        ui_.leftSignalLabel().setStyleSheet("");
+        ui_.leftSignalLabel().setStyleSheet("color: grey");
     }
 }
 
+void ControlView::rightSignalReceived(bool rightSignal)
+{
+    if (rightSignal)
+    {
+        ui_.rightSignalLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.rightSignalLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::hazardReceived(bool hazard)
+{
+    if (hazard)
+    {
+        ui_.hazardOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.hazardOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::inetriorReceived(bool interior)
+{
+    if (interior)
+    {
+        ui_.interiorOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.interiorOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView:pushToTalkReceived(bool pushToTalk)
+{
+    if (pushToTalk)
+    {
+        ui_.pushToTalkOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.pushToTalkOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::hornReceived(bool horn)
+{
+    if (horn)
+    {
+        ui_.hornOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.hornOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView:auxReceived(bool aux)
+{
+    if (aux)
+    {
+        ui_.auxOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.auxOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::prevSongReceived(bool prevSong)
+{
+    if (prevSong)
+    {
+        ui_.prevSongLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.prevSongLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::nextSongReceived(bool nextSong)
+{
+    if (nextSong)
+    {
+        ui_.nextSongLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.nextSongLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::volumeUpReceived(bool volumeUp)
+{
+    if (volumeUp)
+    {
+        ui_.volumeUpLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.volumeUpLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::volumeDownReceived(bool volumeDown)
+{
+    if (volumeDown)
+    {
+        ui_.volumeDownLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.volumeDownLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::brakesReceived(bool brakes)
+{
+    if (brakes)
+    {
+        ui_.brakesOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.brakesOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::forwardReceived(bool forward)
+{
+    if (forward)
+    {
+        ui_.forwardOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.forwardOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::reverseReceived(bool reverse)
+{
+    if (reverse)
+    {
+        ui_.reverseOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.reverseOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::resetReceived(bool reset)
+{
+    if (reset)
+    {
+        ui_.resetOnLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.resetOnLabel().setStyleSheet("color: grey");
+    }
+}
+
+void ControlView::accelerationReceived(double acceleration)
+{
+
+}
+
+void ControlView::regenBrakingReceived(double regenBraking)
+{
+
+}
