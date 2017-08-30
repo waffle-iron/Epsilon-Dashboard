@@ -8,6 +8,7 @@
 #include "../MPPTUi/I_MpptUi.h"
 
 class MpptPresenter;
+class I_MpptUi;
 
 class MpptView : public QObject
 {
