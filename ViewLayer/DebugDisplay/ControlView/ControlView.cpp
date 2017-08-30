@@ -3,6 +3,9 @@
 
 namespace
 {
+  const double MAX_ACCELERATION = 150;
+  const double MAX_REGEN_BRAKING = 60;
+
   const QString MPPT_ALIVE = "background-color:rgb(93, 234, 140); \
                               border-radius:8px; \
                               border: 1px solid white;";
@@ -12,7 +15,7 @@ namespace
 
 }
 
-ControlView:ControlView(DriverControlsPresenter &driverControlsPresenter,
+ControlView::ControlView(DriverControlsPresenter &driverControlsPresenter,
                          I_ControlUi &ui)
     : driverControlsPresenter_(driverControlsPresenter)
     , ui_(ui)
@@ -78,6 +81,16 @@ void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsP
 
 void ControlView::aliveReceived(bool alive)
 {
+   if (alive)
+   {
+       ui_.aliveIndicator().setStyleSheet(MPPT_ALIVE);
+   }
+   else
+   {
+       ui_.aliveIndicator().setStyleSheet(MPPT_DEAD);
+   }
+
+
 }
 
 void ControlView::lowHeadlightsReceived(bool lowBeams)
@@ -140,7 +153,7 @@ void ControlView::hazardReceived(bool hazard)
     }
 }
 
-void ControlView::inetriorReceived(bool interior)
+void ControlView::interiorReceived(bool interior)
 {
     if (interior)
     {
@@ -152,7 +165,7 @@ void ControlView::inetriorReceived(bool interior)
     }
 }
 
-void ControlView:pushToTalkReceived(bool pushToTalk)
+void ControlView::pushToTalkReceived(bool pushToTalk)
 {
     if (pushToTalk)
     {
@@ -176,7 +189,7 @@ void ControlView::hornReceived(bool horn)
     }
 }
 
-void ControlView:auxReceived(bool aux)
+void ControlView::auxReceived(bool aux)
 {
     if (aux)
     {
@@ -286,10 +299,12 @@ void ControlView::resetReceived(bool reset)
 
 void ControlView::accelerationReceived(double acceleration)
 {
-
+    double accelerationPercentage = (acceleration / MAX_ACCELERATION) * 100;
+    ui_.accelerationProgressBar().setValue(accelerationPercentage);
 }
 
 void ControlView::regenBrakingReceived(double regenBraking)
 {
-
+    double regenBrakingPercentage = (regenBraking / MAX_REGEN_BRAKING) * 100;
+    ui_.regenBrakingProgressBar().setValue(regenBrakingPercentage);
 }

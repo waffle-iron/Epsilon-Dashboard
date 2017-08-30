@@ -17,6 +17,11 @@ ControlUi::~ControlUi()
     delete ui_;
 }
 
+QWidget& ControlUi::aliveIndicator()
+{
+    return *ui_->aliveIndicator;
+}
+
 QLabel& ControlUi::highHeadlightsLabel()
 {
     return *ui_->highHeadlightsLabel;

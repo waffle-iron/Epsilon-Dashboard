@@ -11,6 +11,7 @@ class ControlUi : public I_ControlUi
 public:
     explicit ControlUi();
     ~ControlUi();
+    QWidget& aliveIndicator();
     QLabel& highHeadlightsLabel();
     QLabel& lowHeadlightsLabel();
     QLabel& leftSignalLabel();

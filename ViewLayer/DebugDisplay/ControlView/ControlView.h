@@ -4,7 +4,7 @@
 
 #include "../../../DataLayer/DriverControlsData/DriverControlsData.h"
 #include "../../../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
-#include "ControlUi/I_ControlUi.h"
+#include "../ControlPage/ControlUi/I_ControlUi.h"
 
 class DriverControlsPresenter;
 
@@ -51,4 +51,4 @@ private slots:
 
     void accelerationReceived(double);
     void regenBrakingReceived(double);
-}
+};
