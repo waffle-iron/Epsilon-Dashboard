@@ -7,6 +7,7 @@
 #include "DebugDisplay/ControlPage/ControlUi/ControlUi.h"
 #include "DebugDisplay/HomePage/HomePageUi/HomePageUi.h"
 #include "DebugDisplay/MotorFaultPage/MotorFaultUi/MotorFaultUi.h"
+#include "DebugDisplay/MotorFaultPage/MotorFaultView/MotorFaultView.h"
 #include "DebugDisplay/MotorPage/MotorUi/MotorUi.h"
 #include "DebugDisplay/OverlordWidget/OverlordWidget.h"
 #include "DebugDisplay/Tab/TabUi/TabUi.h"
@@ -45,6 +46,9 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
         overlordWidget_.reset(new OverlordWidget(*batteryUi_, *controlUi_,
                               *homepageUi_, *motorFaultUi_,
                               *motorUi_, *mpptUi_, *tabUi_));
+        MotorFaultView_.reset(new MotorFaultView(presenterContainer.motorFaultsPresenter(),
+                                                 presenterContainer.batteryFaultsPresenter(),
+                                                 *motorFaultUi_));
     }
 }
 

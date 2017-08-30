@@ -9,6 +9,7 @@ class BatteryUi;
 class ControlUi;
 class HomePageUi;
 class MotorFaultUi;
+class MotorFaultView;
 class MotorUi;
 class MpptUi;
 class OverlordWidget;
@@ -34,6 +35,7 @@ private:
     MotorUi* motorUi_;
     MpptUi* mpptUi_;
     TabUi* tabUi_;
+    QScopedPointer<MotorFaultView> MotorFaultView_;
     QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
     QScopedPointer<OverlordWidget> overlordWidget_;
 };
