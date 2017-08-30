@@ -11,6 +11,18 @@ public:
     explicit MotorFaultUi();
     ~MotorFaultUi();
 
+    QWidget& motor1ContentsWidget();
+
+    QWidget& motor1ContentsWidget();
+    QWidget& motor2ContentsWidget();
+    QWidget& batteryContentsWidget();
+
+    QLabel& motor1Label();
+    QLabel& motor2Label();
+    QLabel& batteryLabel();
+
+    QLabel& showHistoryLabel();
+
 private:
     Ui::MotorFaultUi* ui_;
 };
