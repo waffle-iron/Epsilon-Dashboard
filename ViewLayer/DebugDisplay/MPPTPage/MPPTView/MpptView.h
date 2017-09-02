@@ -1,14 +1,14 @@
 #pragma once
 
-#include <QObject>
 #include <QLabel>
+#include <QObject>
 
 #include "../../../../DataLayer/MpptData/Mppt.h"
 #include "../../../../PresenterLayer/MpptPresenter/MpptPresenter.h"
 #include "../MPPTUi/I_MpptUi.h"
 
-class MpptPresenter;
 class I_MpptUi;
+class MpptPresenter;
 
 class MpptView : public QObject
 {
@@ -23,9 +23,12 @@ private:
 
     MpptPresenter& mpptPresenter_;
 
+    double mpptZeroPower_;
+    double mpptOnePower_;
+    double mpptTwoPower_;
+
     I_MpptUi& ui_;
 
 private slots:
     void mpptReceived(int, Mppt);
-    //void mpptPowerReceived(double);
 };
