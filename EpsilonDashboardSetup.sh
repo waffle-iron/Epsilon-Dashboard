@@ -4,7 +4,7 @@ echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sour
 sudo apt-get install cmake libboost-dev openssl libssl-dev libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev software-properties-common build-essential mesa-common-dev libgl1-mesa-dev
 
 cd /tmp/
-if [ ls /usr/local/librabbitmq.* 1> /dev/null 2>&1 ];
+if ls /usr/local/lib/librabbitmq.* 1> /dev/null 2>&1 ;
 then
 echo "Rabbitmq already setup"
 else
@@ -17,7 +17,7 @@ sudo cp librabbitmq/*.so* /usr/local/lib/
 fi
 
 cd /tmp/
-if [ ls /usr/local/libSimpleAmqpClient.* 1> /dev/null 2>&1 ] || [ -d /usr/local/include/SimpleAmqpClient];
+if ls /usr/local/libSimpleAmqpClient.* 1> /dev/null 2>&1 || [ -d /usr/local/include/SimpleAmqpClient ];
 then
 echo "SimpleAmqpClient already setup"
 else
