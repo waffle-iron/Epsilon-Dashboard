@@ -225,21 +225,6 @@ void RaceModeDashboardView::lightAliveReceived(bool)
 }
 void RaceModeDashboardView::mpptReceived(int i, Mppt mppt)
 {
-    if (i == 0)
-    {
-        ui_.array0CurrentLabel().setNum(mppt.arrayCurrent());
-        ui_.array0VoltageLabel().setNum(mppt.arrayVoltage());
-    }
-    else if (i == 1)
-    {
-        ui_.array1CurrentLabel().setNum(mppt.arrayCurrent());
-        ui_.array1VoltageLabel().setNum(mppt.arrayVoltage());
-    }
-    else if (i == 2)
-    {
-        ui_.array2CurrentLabel().setNum(mppt.arrayCurrent());
-        ui_.array2VoltageLabel().setNum(mppt.arrayVoltage());
-    }
 }
 
 void RaceModeDashboardView::mpptPowerReceived(double mpptPower)

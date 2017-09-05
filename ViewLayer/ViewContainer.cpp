@@ -30,7 +30,6 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
     }
     else if (mode == Mode::RACE)
     {
-        //TODO: Set up race mode UI here
         RaceModeDashboardUI_ = new RaceModeDashboardUI();
         RaceModeDashboardView_.reset(new RaceModeDashboardView(
                                          presenterContainer.batteryPresenter(),

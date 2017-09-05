@@ -17,13 +17,7 @@ public:
 
     QLabel& actualSpeedLabel();
 
-    QLabel& array0VoltageLabel();
-    QLabel& array1VoltageLabel();
-    QLabel& array2VoltageLabel();
-
-    QLabel& array0CurrentLabel();
-    QLabel& array1CurrentLabel();
-    QLabel& array2CurrentLabel();
+    QLabel& auxVoltageLabel();
 
     QLabel& setCurrentLabel();
     QLabel& motorPowerLabel();

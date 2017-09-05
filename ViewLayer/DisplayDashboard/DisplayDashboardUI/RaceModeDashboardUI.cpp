@@ -5,7 +5,6 @@ RaceModeDashboardUI::RaceModeDashboardUI()
     : ui_(new Ui::RaceModeDashboardUI)
 {
     ui_->setupUi(this);
-    QWidget::setWindowFlags(Qt::FramelessWindowHint);
 }
 
 RaceModeDashboardUI::~RaceModeDashboardUI()
@@ -18,34 +17,9 @@ QLabel& RaceModeDashboardUI::actualSpeedLabel()
     return *ui_->actualSpeedLabel;
 }
 
-QLabel& RaceModeDashboardUI::array0VoltageLabel()
+QLabel& RaceModeDashboardUI::auxVoltageLabel()
 {
-    return *ui_->array0VoltageLabel;
-}
-
-QLabel& RaceModeDashboardUI::array1VoltageLabel()
-{
-    return *ui_->array1VoltageLabel;
-}
-
-QLabel& RaceModeDashboardUI::array2VoltageLabel()
-{
-    return *ui_->array2VoltageLabel;
-}
-
-QLabel& RaceModeDashboardUI::array0CurrentLabel()
-{
-    return *ui_->array0CurrentLabel;
-}
-
-QLabel& RaceModeDashboardUI::array1CurrentLabel()
-{
-    return *ui_->array1CurrentLabel;
-}
-
-QLabel& RaceModeDashboardUI::array2CurrentLabel()
-{
-    return *ui_->array2CurrentLabel;
+    return *ui_->auxVoltageLabel;
 }
 
 QLabel& RaceModeDashboardUI::setCurrentLabel()
