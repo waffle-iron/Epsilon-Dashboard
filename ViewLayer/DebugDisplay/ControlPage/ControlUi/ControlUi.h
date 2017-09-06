@@ -23,6 +23,7 @@ public:
     QLabel& auxOnLabel();
     QLabel& nextSongLabel();
     QLabel& prevSongLabel();
+    QLabel& playPauseLabel();
     QLabel& volumeUpLabel();
     QLabel& volumeDownLabel();
     QLabel& brakesOnLabel();

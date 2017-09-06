@@ -3,16 +3,12 @@
 
 namespace
 {
-  const double MAX_ACCELERATION = 150;
-  const double MAX_REGEN_BRAKING = 60;
-
-  const QString MPPT_ALIVE = "background-color:rgb(93, 234, 140); \
+    const QString MPPT_ALIVE = "background-color:rgb(93, 234, 140); \
                               border-radius:8px; \
                               border: 1px solid white;";
-  const QString MPPT_DEAD = "background-color:rgb(147, 147, 147); \
+    const QString MPPT_DEAD = "background-color:rgb(147, 147, 147); \
                              border-radius:8px; \
                              border: 1px solid white;";
-
 }
 
 ControlView::ControlView(DriverControlsPresenter &driverControlsPresenter,
@@ -58,6 +54,8 @@ void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsP
             this, SLOT(prevSongReceived(bool)));
     connect(&driverControlsPresenter, SIGNAL(nextSongReceived(bool)),
             this, SLOT(nextSongReceived(bool)));
+    connect(&driverControlsPresenter, SIGNAL(playPauseReceived(bool)),
+            this, SLOT(playPauseReceived(bool)));
     connect(&driverControlsPresenter, SIGNAL(volumeUpReceived(bool)),
             this, SLOT(volumeUpReceived(bool)));
     connect(&driverControlsPresenter, SIGNAL(volumeDownReceived(bool)),
@@ -225,6 +223,18 @@ void ControlView::nextSongReceived(bool nextSong)
     }
 }
 
+void ControlView::playPauseReceived(bool playPause)
+{
+    if (playPause)
+    {
+        ui_.playPauseLabel().setStyleSheet("color: orange");
+    }
+    else
+    {
+        ui_.playPauseLabel().setStyleSheet("color: grey");
+    }
+}
+
 void ControlView::volumeUpReceived(bool volumeUp)
 {
     if (volumeUp)
@@ -299,12 +309,12 @@ void ControlView::resetReceived(bool reset)
 
 void ControlView::accelerationReceived(double acceleration)
 {
-    double accelerationPercentage = (acceleration / MAX_ACCELERATION) * 100;
-    ui_.accelerationProgressBar().setValue(accelerationPercentage);
+  int accelerationPercentage = acceleration * 100;
+  ui_.accelerationProgressBar().setValue(accelerationPercentage);
 }
 
 void ControlView::regenBrakingReceived(double regenBraking)
 {
-    double regenBrakingPercentage = (regenBraking / MAX_REGEN_BRAKING) * 100;
-    ui_.regenBrakingProgressBar().setValue(regenBrakingPercentage);
+  int regenBrakingPercentage = regenBraking * 100;
+  ui_.regenBrakingProgressBar().setValue(regenBrakingPercentage);
 }

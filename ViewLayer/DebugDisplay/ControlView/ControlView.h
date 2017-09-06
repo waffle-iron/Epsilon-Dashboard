@@ -40,6 +40,7 @@ private slots:
     void auxReceived(bool);
     void prevSongReceived(bool);
     void nextSongReceived(bool);
+    void playPauseReceived(bool);
     void volumeUpReceived(bool);
     void volumeDownReceived(bool);
 
