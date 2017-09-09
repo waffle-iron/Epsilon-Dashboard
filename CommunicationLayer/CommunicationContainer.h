@@ -1,24 +1,27 @@
 #pragma once
 
 #include <QScopedPointer>
+#include "CommDeviceControl/InternetConnectionService.h"
 
 class BusinessContainer;
+class InfrastructureContainer;
 class CommunicationContainerPrivate;
 class ConnectionController;
 
 class CommDeviceManager;
 class I_JsonReceiver;
-class UdpConnectionService;
+
+
 
 class CommunicationContainer
 {
 public:
-    explicit CommunicationContainer();
+    explicit CommunicationContainer(InfrastructureContainer& infrastructureContainer);
     ~CommunicationContainer();
 
     I_JsonReceiver& jsonReceiver();
     ConnectionController& connectionController();
-    UdpConnectionService& udpConnectionService();
+    InternetConnectionService& internetConnectionService();
     CommDeviceManager& commDeviceManager();
 
 private:

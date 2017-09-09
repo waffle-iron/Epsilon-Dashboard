@@ -12,7 +12,6 @@ class HomePageUi;
 class MotorFaultUi;
 class MotorUi;
 class MpptUi;
-class MpptView;
 class OverlordWidget;
 class TabUi;
 class PresenterContainer;
@@ -37,7 +36,6 @@ private:
     MpptUi* mpptUi_;
     TabUi* tabUi_;
     QScopedPointer<ControlView> ControlView_;
-    QScopedPointer<MpptView> MpptView_;
     QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
     QScopedPointer<OverlordWidget> overlordWidget_;
 };

@@ -23,7 +23,6 @@ ControlView::~ControlView()
 {
 }
 
-
 void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsPresenter)
 {
     connect(&driverControlsPresenter, SIGNAL(aliveReceived(bool)),
@@ -87,8 +86,6 @@ void ControlView::aliveReceived(bool alive)
    {
        ui_.aliveIndicator().setStyleSheet(MPPT_DEAD);
    }
-
-
 }
 
 void ControlView::lowHeadlightsReceived(bool lowBeams)

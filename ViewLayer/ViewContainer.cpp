@@ -12,6 +12,7 @@
 #include "DebugDisplay/OverlordWidget/OverlordWidget.h"
 #include "DebugDisplay/Tab/TabUi/TabUi.h"
 #include "DebugDisplay/MPPTPage/MPPTUi/MpptUi.h"
+#include "DebugDisplay/MPPTPage/MPPTView/MpptView.h"
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
 {
     if (mode == Mode::DISPLAY)
@@ -46,6 +47,8 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
         overlordWidget_.reset(new OverlordWidget(*batteryUi_, *controlUi_,
                               *homepageUi_, *motorFaultUi_,
                               *motorUi_, *mpptUi_, *tabUi_));
+        MpptView_.reset(new MpptView(presenterContainer.mpptPresenter(), *mpptUi_));
+        ControlView_.reset(new ControlView(presenterContainer.driverControlsPresenter(), *controlUi_));
     }
 }
 
