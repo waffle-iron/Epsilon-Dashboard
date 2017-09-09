@@ -11,8 +11,8 @@ namespace
                              border: 1px solid white;";
 }
 
-ControlView::ControlView(DriverControlsPresenter &driverControlsPresenter,
-                         I_ControlUi &ui)
+ControlView::ControlView(DriverControlsPresenter& driverControlsPresenter,
+                         I_ControlUi& ui)
     : driverControlsPresenter_(driverControlsPresenter)
     , ui_(ui)
 {
@@ -78,14 +78,14 @@ void ControlView::connectDriverControls(DriverControlsPresenter& driverControlsP
 
 void ControlView::aliveReceived(bool alive)
 {
-   if (alive)
-   {
-       ui_.aliveIndicator().setStyleSheet(MPPT_ALIVE);
-   }
-   else
-   {
-       ui_.aliveIndicator().setStyleSheet(MPPT_DEAD);
-   }
+    if (alive)
+    {
+        ui_.aliveIndicator().setStyleSheet(MPPT_ALIVE);
+    }
+    else
+    {
+        ui_.aliveIndicator().setStyleSheet(MPPT_DEAD);
+    }
 }
 
 void ControlView::lowHeadlightsReceived(bool lowBeams)
@@ -306,12 +306,12 @@ void ControlView::resetReceived(bool reset)
 
 void ControlView::accelerationReceived(double acceleration)
 {
-  int accelerationPercentage = acceleration * 100;
-  ui_.accelerationProgressBar().setValue(accelerationPercentage);
+    int accelerationPercentage = acceleration * 100;
+    ui_.accelerationProgressBar().setValue(accelerationPercentage);
 }
 
 void ControlView::regenBrakingReceived(double regenBraking)
 {
-  int regenBrakingPercentage = regenBraking * 100;
-  ui_.regenBrakingProgressBar().setValue(regenBrakingPercentage);
+    int regenBrakingPercentage = regenBraking * 100;
+    ui_.regenBrakingProgressBar().setValue(regenBrakingPercentage);
 }

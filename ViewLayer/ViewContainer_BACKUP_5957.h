@@ -36,11 +36,11 @@ private:
     MotorUi* motorUi_;
     MpptUi* mpptUi_;
     TabUi* tabUi_;
-<<<<<<< HEAD
+    <<< <<< < HEAD
     QScopedPointer<ControlView> ControlView_;
-=======
-    QScopedPointer<MpptView> MpptView_;
->>>>>>> master
+    == == == =
+        QScopedPointer<MpptView> MpptView_;
+    >>> >>> > master
     QScopedPointer<DisplayDashboardView> DisplayDashboardView_;
     QScopedPointer<OverlordWidget> overlordWidget_;
 };

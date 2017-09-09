@@ -12,8 +12,8 @@ class ControlView : public QObject
 {
     Q_OBJECT
 public:
-   ControlView(DriverControlsPresenter& driverControlsPresenter,
-             I_ControlUi& ui);
+    ControlView(DriverControlsPresenter& driverControlsPresenter,
+                I_ControlUi& ui);
     ~ControlView();
 
 private:
@@ -21,7 +21,7 @@ private:
 
     DriverControlsPresenter& driverControlsPresenter_;
 
-    I_ControlUi & ui_;
+    I_ControlUi& ui_;
 
 private slots:
     void aliveReceived(bool);

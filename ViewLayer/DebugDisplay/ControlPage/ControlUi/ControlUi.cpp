@@ -49,12 +49,12 @@ QLabel& ControlUi::hazardOnLabel()
 
 QLabel& ControlUi::interiorOnLabel()
 {
-   return *ui_->interiorOnLabel;
+    return *ui_->interiorOnLabel;
 }
 
 QLabel& ControlUi::pushToTalkOnLabel()
 {
-   return *ui_->pushToTalkOnLabel;
+    return *ui_->pushToTalkOnLabel;
 }
 
 QLabel& ControlUi::hornOnLabel()
