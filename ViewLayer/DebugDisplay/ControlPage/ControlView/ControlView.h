@@ -2,9 +2,9 @@
 #include <QObject>
 #include <QLabel>
 
-#include "../../../DataLayer/DriverControlsData/DriverControlsData.h"
-#include "../../../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
-#include "../ControlPage/ControlUi/I_ControlUi.h"
+#include "../../../../DataLayer/DriverControlsData/DriverControlsData.h"
+#include "../../../../PresenterLayer/DriverControlsPresenter/DriverControlsPresenter.h"
+#include "../../ControlPage/ControlUi/I_ControlUi.h"
 
 class DriverControlsPresenter;
 
