@@ -11,7 +11,6 @@ class MotorUi : public I_MotorUi
 public:
     explicit MotorUi();
     ~MotorUi();
-    QLabel& titleLabel();
 
 private:
     Ui::MotorUi* ui_;
