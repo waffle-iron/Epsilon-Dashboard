@@ -9,9 +9,9 @@ namespace
     const QString DRIVER_CONTROL_DEAD = "background-color:rgb(147, 147, 147); \
                              border-radius:8px; \
                              border: 1px solid white;";
-    const QString ORANGE = "color: orange;";
+    const QString ON = "color: orange;";
 
-    const QString GREY = "color: grey;";
+    const QString OFF = "color: grey;";
 }
 
 ControlView::ControlView(DriverControlsPresenter& driverControlsPresenter,
@@ -95,11 +95,11 @@ void ControlView::lowHeadlightsReceived(bool lowBeams)
 {
     if (lowBeams)
     {
-        ui_.lowHeadlightsLabel().setStyleSheet(ORANGE);
+        ui_.lowHeadlightsLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.lowHeadlightsLabel().setStyleSheet(GREY);
+        ui_.lowHeadlightsLabel().setStyleSheet(OFF);
     }
 }
 
@@ -107,11 +107,11 @@ void ControlView::highHeadlightsReceived(bool highBeams)
 {
     if (highBeams)
     {
-        ui_.highHeadlightsLabel().setStyleSheet(ORANGE);
+        ui_.highHeadlightsLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.highHeadlightsLabel().setStyleSheet(GREY);
+        ui_.highHeadlightsLabel().setStyleSheet(OFF);
     }
 }
 
@@ -119,11 +119,11 @@ void ControlView::leftSignalReceived(bool leftSignal)
 {
     if (leftSignal)
     {
-        ui_.leftSignalLabel().setStyleSheet(ORANGE);
+        ui_.leftSignalLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.leftSignalLabel().setStyleSheet(GREY);
+        ui_.leftSignalLabel().setStyleSheet(OFF);
     }
 }
 
@@ -131,11 +131,11 @@ void ControlView::rightSignalReceived(bool rightSignal)
 {
     if (rightSignal)
     {
-        ui_.rightSignalLabel().setStyleSheet(ORANGE);
+        ui_.rightSignalLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.rightSignalLabel().setStyleSheet(GREY);
+        ui_.rightSignalLabel().setStyleSheet(OFF);
     }
 }
 
@@ -143,11 +143,11 @@ void ControlView::hazardReceived(bool hazard)
 {
     if (hazard)
     {
-        ui_.hazardOnLabel().setStyleSheet(ORANGE);
+        ui_.hazardOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.hazardOnLabel().setStyleSheet(GREY);
+        ui_.hazardOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -155,11 +155,11 @@ void ControlView::interiorReceived(bool interior)
 {
     if (interior)
     {
-        ui_.interiorOnLabel().setStyleSheet(ORANGE);
+        ui_.interiorOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.interiorOnLabel().setStyleSheet(GREY);
+        ui_.interiorOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -167,11 +167,11 @@ void ControlView::pushToTalkReceived(bool pushToTalk)
 {
     if (pushToTalk)
     {
-        ui_.pushToTalkOnLabel().setStyleSheet(ORANGE);
+        ui_.pushToTalkOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.pushToTalkOnLabel().setStyleSheet(GREY);
+        ui_.pushToTalkOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -179,11 +179,11 @@ void ControlView::hornReceived(bool horn)
 {
     if (horn)
     {
-        ui_.hornOnLabel().setStyleSheet(ORANGE);
+        ui_.hornOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.hornOnLabel().setStyleSheet(GREY);
+        ui_.hornOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -191,11 +191,11 @@ void ControlView::auxReceived(bool aux)
 {
     if (aux)
     {
-        ui_.auxOnLabel().setStyleSheet(ORANGE);
+        ui_.auxOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.auxOnLabel().setStyleSheet(GREY);
+        ui_.auxOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -203,11 +203,11 @@ void ControlView::prevSongReceived(bool prevSong)
 {
     if (prevSong)
     {
-        ui_.prevSongLabel().setStyleSheet(ORANGE);
+        ui_.prevSongLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.prevSongLabel().setStyleSheet(GREY);
+        ui_.prevSongLabel().setStyleSheet(OFF);
     }
 }
 
@@ -215,11 +215,11 @@ void ControlView::nextSongReceived(bool nextSong)
 {
     if (nextSong)
     {
-        ui_.nextSongLabel().setStyleSheet(ORANGE);
+        ui_.nextSongLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.nextSongLabel().setStyleSheet(GREY);
+        ui_.nextSongLabel().setStyleSheet(OFF);
     }
 }
 
@@ -227,11 +227,11 @@ void ControlView::playPauseReceived(bool playPause)
 {
     if (playPause)
     {
-        ui_.playPauseLabel().setStyleSheet(ORANGE);
+        ui_.playPauseLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.playPauseLabel().setStyleSheet(GREY);
+        ui_.playPauseLabel().setStyleSheet(OFF);
     }
 }
 
@@ -239,11 +239,11 @@ void ControlView::volumeUpReceived(bool volumeUp)
 {
     if (volumeUp)
     {
-        ui_.volumeUpLabel().setStyleSheet(ORANGE);
+        ui_.volumeUpLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.volumeUpLabel().setStyleSheet(GREY);
+        ui_.volumeUpLabel().setStyleSheet(OFF);
     }
 }
 
@@ -251,11 +251,11 @@ void ControlView::volumeDownReceived(bool volumeDown)
 {
     if (volumeDown)
     {
-        ui_.volumeDownLabel().setStyleSheet(ORANGE);
+        ui_.volumeDownLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.volumeDownLabel().setStyleSheet(GREY);
+        ui_.volumeDownLabel().setStyleSheet(OFF);
     }
 }
 
@@ -263,11 +263,11 @@ void ControlView::brakesReceived(bool brakes)
 {
     if (brakes)
     {
-        ui_.brakesOnLabel().setStyleSheet(ORANGE);
+        ui_.brakesOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.brakesOnLabel().setStyleSheet(GREY);
+        ui_.brakesOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -275,11 +275,11 @@ void ControlView::forwardReceived(bool forward)
 {
     if (forward)
     {
-        ui_.forwardOnLabel().setStyleSheet(ORANGE);
+        ui_.forwardOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.forwardOnLabel().setStyleSheet(GREY);
+        ui_.forwardOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -287,11 +287,11 @@ void ControlView::reverseReceived(bool reverse)
 {
     if (reverse)
     {
-        ui_.reverseOnLabel().setStyleSheet(ORANGE);
+        ui_.reverseOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.reverseOnLabel().setStyleSheet(GREY);
+        ui_.reverseOnLabel().setStyleSheet(OFF);
     }
 }
 
@@ -299,11 +299,11 @@ void ControlView::resetReceived(bool reset)
 {
     if (reset)
     {
-        ui_.resetOnLabel().setStyleSheet(ORANGE);
+        ui_.resetOnLabel().setStyleSheet(ON);
     }
     else
     {
-        ui_.resetOnLabel().setStyleSheet(GREY);
+        ui_.resetOnLabel().setStyleSheet(OFF);
     }
 }
 
