@@ -14,7 +14,7 @@
 #include "DebugDisplay/MPPTPage/MPPTUi/MpptUi.h"
 ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
 {
-    if (false)
+    if (mode == Mode::DISPLAY)
     {
         DisplayDashboardUI_ = new DisplayDashboardUI();
         DisplayDashboardView_.reset(new DisplayDashboardView(
@@ -28,7 +28,7 @@ ViewContainer::ViewContainer(PresenterContainer& presenterContainer, Mode mode)
                                         presenterContainer.motorFaultsPresenter(),
                                         *DisplayDashboardUI_));
     }
-    else if (true)
+    else if (mode == Mode::RACE)
     {
         RaceModeDashboardUI_ = new RaceModeDashboardUI();
         RaceModeDashboardView_.reset(new RaceModeDashboardView(

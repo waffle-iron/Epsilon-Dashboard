@@ -15,4 +15,4 @@ SUBDIRS = \
 
 DISTFILES += \
     .travis.yml \
-    config.ini
+    config.ini.example
