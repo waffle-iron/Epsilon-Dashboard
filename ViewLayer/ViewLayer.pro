@@ -29,6 +29,7 @@ HEADERS += \
     DebugDisplay/Tab/TabUi/I_TabUi.h \
     DebugDisplay/MPPTPage/MPPTUi/MpptUi.h \
     DebugDisplay/MPPTPage/MPPTUi/I_MpptUi.h \
+    DebugDisplay/MPPTPage/MPPTView/MpptView.h \
     RaceModeDisplay/RaceModeDashboardView.h
 
 SOURCES += \ 
@@ -44,6 +45,7 @@ SOURCES += \
     DebugDisplay/MotorPage/MotorUi/MotorUi.cpp \
     DebugDisplay/Tab/TabUi/TabUi.cpp \
     DebugDisplay/MPPTPage/MPPTUi/MpptUi.cpp \
+        DebugDisplay/MPPTPage/MPPTView/MpptView.cpp \
     RaceModeDisplay/RaceModeDashboardView.cpp
 
 FORMS += \
