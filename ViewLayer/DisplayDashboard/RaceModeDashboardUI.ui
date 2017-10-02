@@ -676,6 +676,7 @@ color: white;</string>
 border: 1px solid white;
 border-radius: 7px;
 background-color: black;
+text-align: center;
 }
 QProgressBar::chunk:horizontal{
 border-radius: 7px;
@@ -1003,8 +1004,6 @@ padding-bottom: 20px;
         </item>
        </layout>
       </widget>
-      <zorder>gridLayoutWidget_4</zorder>
-      <zorder>BottomRightCorner</zorder>
      </widget>
      <widget class="QWidget" name="BottomLeftCorner" native="true">
       <property name="geometry">
