@@ -5,7 +5,7 @@ namespace Ui
 {
     class MotorUi;
 }
-class MotorUi : public I_MotorUi
+class MotorUi: public I_MotorUi
 {
     Q_OBJECT
 public:
@@ -26,12 +26,12 @@ public:
     QLabel& vehicleVelocityLeftLabel();
     QLabel& vehicleVelocityAvgLabel();
     QLabel& vehicleVelocityRightLabel();
-    QLabel& phaseCCurrentLeftLabe();
+    QLabel& phaseCCurrentLeftLabel();
     QLabel& phaseCCurrentAvgLabel();
     QLabel& phaseCCurrentRightLabel();
     QLabel& phaseBCurrentLeftLabel();
     QLabel& phaseBCurrentAvgLabel();
-    QLabel& phaseBCurrentRIghtLabel();
+    QLabel& phaseBCurrentRightLabel();
     QLabel& motorVoltageRealLeftLabel();
     QLabel& motorVoltageRealAvgLabel();
     QLabel& motorVoltageRealRightLabel();
@@ -40,7 +40,6 @@ public:
     QLabel& motorVoltageImaginarRightLabel();
     QLabel& motorCurrentRealLeftLabel();
     QLabel& motorCurrentRealAvgLabel();
-    QLabel& motorCurrentRealLeftLabel();
     QLabel& motorCurrentRealRightLabel();
     QLabel& motorCurrentImaginaryLeftLabel();
     QLabel& motorCurrentImaginaryAvgLabel();
@@ -52,11 +51,11 @@ public:
     QLabel& voltageRail15VSupplyAvgLabel();
     QLabel& voltageRail15VSupplyRightLabel();
 	QLabel& voltageRail3VSupplyLeftLabel();
-    QLabel& voltageRail3VSupplyLeftLabel();
-    QLabel& voltageRail3VSupplyLeftLabel();
+    QLabel& voltageRail3VSupplyAvgLabel();
+    QLabel& voltageRail3VSupplyRightLabel();
 	QLabel& voltageRail1VSupplyLeftLabel();
-    QLabel& voltageRail1VSupplyLeftLabel();
-    QLabel& voltageRail1VSupplyLeftLabel();
+    QLabel& voltageRail1VSupplyAvgLabel();
+    QLabel& voltageRail1VSupplyRightLabel();
     QLabel& heatSinkTempLeftLabel();
     QLabel& heatSinkTempAvgLabel();
     QLabel& heatSinkTempRightLabel();

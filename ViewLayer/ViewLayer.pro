@@ -29,7 +29,8 @@ HEADERS += \
     DebugDisplay/Tab/TabUi/I_TabUi.h \
     DebugDisplay/MPPTPage/MPPTUi/MpptUi.h \
     DebugDisplay/MPPTPage/MPPTUi/I_MpptUi.h \
-    DebugDisplay/MPPTPage/MPPTView/MpptView.h
+    DebugDisplay/MPPTPage/MPPTView/MpptView.h \
+    DebugDisplay/MotorPage/MotorUi/MotorView.h
 
 SOURCES += \ 
     ViewContainer.cpp \
@@ -44,7 +45,8 @@ SOURCES += \
     DebugDisplay/MotorPage/MotorUi/MotorUi.cpp \
     DebugDisplay/Tab/TabUi/TabUi.cpp \
     DebugDisplay/MPPTPage/MPPTUi/MpptUi.cpp \
-    DebugDisplay/MPPTPage/MPPTView/MpptView.cpp
+    DebugDisplay/MPPTPage/MPPTView/MpptView.cpp \
+    DebugDisplay/MotorPage/MotorUi/MotorView.cpp
 
 FORMS += \
     DisplayDashboard/DisplayDashboardUI.ui \
