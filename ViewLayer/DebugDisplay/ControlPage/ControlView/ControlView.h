@@ -37,7 +37,7 @@ private slots:
     void pushToTalkReceived(bool);
     void hornReceived(bool);
 
-    void auxReceived(bool);
+
     void prevSongReceived(bool);
     void nextSongReceived(bool);
     void playPauseReceived(bool);
@@ -47,6 +47,7 @@ private slots:
     void brakesReceived(bool);
     void forwardReceived(bool);
     void reverseReceived(bool);
+    void auxReceived(bool);
 
     void resetReceived(bool);
 

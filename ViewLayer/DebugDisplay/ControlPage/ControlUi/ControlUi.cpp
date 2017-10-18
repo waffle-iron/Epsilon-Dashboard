@@ -62,10 +62,6 @@ QLabel& ControlUi::hornOnLabel()
     return *ui_->hornOnLabel;
 }
 
-QLabel& ControlUi::auxOnLabel()
-{
-    return *ui_->auxOnLabel;
-}
 
 QLabel& ControlUi::nextSongLabel()
 {
@@ -105,6 +101,11 @@ QLabel& ControlUi::forwardOnLabel()
 QLabel& ControlUi::reverseOnLabel()
 {
     return *ui_->reverseOnLabel;
+}
+
+QLabel& ControlUi::auxOnLabel()
+{
+    return *ui_->auxOnLabel;
 }
 
 QLabel& ControlUi::resetOnLabel()

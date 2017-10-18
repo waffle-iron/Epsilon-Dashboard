@@ -16,7 +16,6 @@ public:
     virtual QLabel& interiorOnLabel() = 0;
     virtual QLabel& pushToTalkOnLabel() = 0;
     virtual QLabel& hornOnLabel() = 0;
-    virtual QLabel& auxOnLabel() = 0;
     virtual QLabel& nextSongLabel() = 0;
     virtual QLabel& prevSongLabel() = 0;
     virtual QLabel& playPauseLabel() = 0;
@@ -25,6 +24,7 @@ public:
     virtual QLabel& brakesOnLabel() = 0;
     virtual QLabel& forwardOnLabel() = 0;
     virtual QLabel& reverseOnLabel() = 0;
+    virtual QLabel& auxOnLabel() = 0;
     virtual QLabel& resetOnLabel() = 0;
     virtual QProgressBar& accelerationProgressBar() = 0;
     virtual QProgressBar& regenBrakingProgressBar() = 0;

@@ -20,7 +20,6 @@ public:
     QLabel& interiorOnLabel();
     QLabel& pushToTalkOnLabel();
     QLabel& hornOnLabel();
-    QLabel& auxOnLabel();
     QLabel& nextSongLabel();
     QLabel& prevSongLabel();
     QLabel& playPauseLabel();
@@ -29,6 +28,7 @@ public:
     QLabel& brakesOnLabel();
     QLabel& forwardOnLabel();
     QLabel& reverseOnLabel();
+    QLabel& auxOnLabel();
     QLabel& resetOnLabel();
     QProgressBar& accelerationProgressBar();
     QProgressBar& regenBrakingProgressBar();
