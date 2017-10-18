@@ -15,12 +15,6 @@ public:
     QWidget& motor1ContentsWidget();
     QWidget& batteryContentsWidget();
 
-    QLabel& motor0Label();
-    QLabel& motor1Label();
-    QLabel& batteryLabel();
-
-    QLabel& showHistoryLabel();
-
 private:
     Ui::MotorFaultUi* ui_;
 };

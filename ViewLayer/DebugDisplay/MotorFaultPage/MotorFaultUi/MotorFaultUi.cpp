@@ -31,23 +31,4 @@ QWidget& MotorFaultUi::batteryContentsWidget()
     return *ui_->batteryContentsWidget;
 }
 
-QLabel& MotorFaultUi::motor0Label()
-{
-    return *ui_->motor0Label;
-}
-
-QLabel& MotorFaultUi::motor1Label()
-{
-    return *ui_->motor1Label;
-}
-
-QLabel& MotorFaultUi::batteryLabel()
-{
-    return *ui_->batteryLabel;
-}
-
-QLabel& MotorFaultUi::showHistoryLabel()
-{
-    return *ui_->showHistoryLabel;
-}
 
