@@ -16,317 +16,317 @@ MotorUi::~MotorUi()
     delete ui_;
 }
 
-QLabel& ControlUi::setCurrentLeftLabel()
+QLabel& MotorUi::setCurrentLeftLabel()
 {
     return *ui_->setCurrentLeftLabel;
 }
 
-QLabel& ControlUi::setCurrentAvgLabel()
+QLabel& MotorUi::setCurrentAvgLabel()
 {
     return *ui_->setCurrentAvgLabel;
 }
 
-QLabel& ControlUi::setCurrentRightLabel()
+QLabel& MotorUi::setCurrentRightLabel()
 {
     return *ui_->setCurrentLeftLabel;
 }
 
-QLabel& ControlUi::setVelocityLeftLabel()
+QLabel& MotorUi::setVelocityLeftLabel()
 {
     return *ui_->setVelocityLeftLabel;
 }
 
-QLabel& ControlUi::setVelocityAvgLabel()
+QLabel& MotorUi::setVelocityAvgLabel()
 {
     return *ui_->setVelocityAvgLabel;
 }
 
-QLabel& ControlUi::setVelocityRightLabel()
+QLabel& MotorUi::setVelocityRightLabel()
 {
     return *ui_->setVelocityRightLabel;
 }
 
-QLabel& ControlUi::busCurrentLeftLabel()
+QLabel& MotorUi::busCurrentLeftLabel()
 {
     return *ui_->busCurrentLeftLabel;
 }
 
-QLabel& ControlUi::busCurrentAvgLabel()
+QLabel& MotorUi::busCurrentAvgLabel()
 {
     return *ui_->busCurrentAvgLabel;
 }
 
-QLabel& ControlUi::busCurrentRightLabel()
+QLabel& MotorUi::busCurrentRightLabel()
 {
     return *ui_->busCurrentRightLabel;
 }
 
-QLabel& ControlUi::busVoltageLeftLabel()
+QLabel& MotorUi::busVoltageLeftLabel()
 {
     return *ui_->busVoltageLeftLabel;
 }
 
-QLabel& ControlUi::busVoltageAvgLabel()
+QLabel& MotorUi::busVoltageAvgLabel()
 {
     return *ui_->busVoltageAvgLabel;
 }
 
-QLabel& ControlUi::busVoltageRightLabel()
+QLabel& MotorUi::busVoltageRightLabel()
 {
     return *ui_->busVoltageRightLabel;
 }
 
-QLabel& ControlUi::vehicleVelocityLeftLabel()
+QLabel& MotorUi::vehicleVelocityLeftLabel()
 {
     return *ui_->vehicleVelocityLeftLabel;
 }
 
-QLabel& ControlUi::vehicleVelocityAvgLabel()
+QLabel& MotorUi::vehicleVelocityAvgLabel()
 {
     return *ui_->vehicleVelocityAvgLabel;
 }
 
-QLabel& ControlUi::vehicleVelocityRightLabel()
+QLabel& MotorUi::vehicleVelocityRightLabel()
 {
     return *ui_->vehicleVelocityRightLabel;
 }
 
-QLabel& ControlUi::phaseCCurrentLeftLabel()
+QLabel& MotorUi::phaseCCurrentLeftLabel()
 {
     return *ui_->phaseCCurrentLeftLabel;
 }
 
-QLabel& ControlUi::phaseCCurrentAvgLabel()
+QLabel& MotorUi::phaseCCurrentAvgLabel()
 {
     return *ui_->phaseCCurrentAvgLabel;
 }
 
-QLabel& ControlUi::phaseCCurrentRightLabel()
+QLabel& MotorUi::phaseCCurrentRightLabel()
 {
     return *ui_->phaseCCurrentRightLabel;
 }
 
-QLabel& ControlUi::phaseBCurrentLeftLabel()
+QLabel& MotorUi::phaseBCurrentLeftLabel()
 {
     return *ui_->phaseBCurrentLeftLabel;
 }
 
-QLabel& ControlUi::phaseBCurrentAvgLabel()
+QLabel& MotorUi::phaseBCurrentAvgLabel()
 {
     return *ui_->phaseBCurrentAvgLabel;
 }
 
-QLabel& ControlUi::phaseBCurrentRightLabel()
+QLabel& MotorUi::phaseBCurrentRightLabel()
 {
     return *ui_->phaseBCurrentRightLabel;
 }
 
-QLabel& ControlUi::motorVoltageRealLeftLabel()
+QLabel& MotorUi::motorVoltageRealLeftLabel()
 {
     return *ui_->motorVoltageRealLeftLabel;
 }
 
-QLabel& ControlUi::motorVoltageRealAvgLabel()
+QLabel& MotorUi::motorVoltageRealAvgLabel()
 {
     return *ui_->motorVoltageRealAvgLabel;
 }
 
-QLabel& ControlUi::motorVoltageRealRightLabel()
+QLabel& MotorUi::motorVoltageRealRightLabel()
 {
     return *ui_->motorVoltageRealRightLabel;
 }
 
-QLabel& ControlUi::motorVoltageImaginaryLeftLabel()
+QLabel& MotorUi::motorVoltageImaginaryLeftLabel()
 {
     return *ui_->motorVoltageImaginaryLeftLabel;
 }
 
-QLabel& ControlUi::motorVoltageImaginaryAvgLabel()
+QLabel& MotorUi::motorVoltageImaginaryAvgLabel()
 {
     return *ui_->motorVoltageImaginaryAvgLabel;
 }
 
-QLabel& ControlUi::motorVoltageImaginaryRightLabel()
+QLabel& MotorUi::motorVoltageImaginaryRightLabel()
 {
     return *ui_->motorVoltageImaginaryRightLabel;
 }
 
-QLabel& ControlUi::motorCurrentRealLeftLabel()
+QLabel& MotorUi::motorCurrentRealLeftLabel()
 {
     return *ui_->motorCurrentRealLeftLabel;
 }
 
-QLabel& ControlUi::motorCurrentRealAvgLabel()
+QLabel& MotorUi::motorCurrentRealAvgLabel()
 {
     return *ui_->motorCurrentRealAvgLabel;
 }
 
-QLabel& ControlUi::motorCurrentRealRightLabel()
+QLabel& MotorUi::motorCurrentRealRightLabel()
 {
     return *ui_->motorCurrentRealRightLabel;
 }
 
-QLabel& ControlUi::motorCurrentImaginaryLeftLabel()
+QLabel& MotorUi::motorCurrentImaginaryLeftLabel()
 {
     return *ui_->motorCurrentImaginaryLeftLabel;
 }
 
-QLabel& ControlUi::motorCurrentImaginaryAvgLabel()
+QLabel& MotorUi::motorCurrentImaginaryAvgLabel()
 {
     return *ui_->motorCurrentImaginaryAvgLabel;
 }
 
-QLabel& ControlUi::motorCurrentImaginaryRightLabel()
+QLabel& MotorUi::motorCurrentImaginaryRightLabel()
 {
     return *ui_->motorCurrentImaginaryRightLabel;
 }
 
-QLabel& ControlUi::backEmfRealLeftLabel()
+QLabel& MotorUi::backEmfRealLeftLabel()
 {
     return *ui_->backEmfRealLeftLabel;
 }
 
-QLabel& ControlUi::backEmfRealAvgLabel()
+QLabel& MotorUi::backEmfRealAvgLabel()
 {
     return *ui_->backEmfRealAvgLabel;
 }
 
-QLabel& ControlUi::backEmfRealRightLabel()
+QLabel& MotorUi::backEmfRealRightLabel()
 {
     return *ui_->backEmfRealRightLabel;
 }
 
-QLabel& ControlUi::voltageRail15VSupplyLeftLabel()
+QLabel& MotorUi::voltageRail15VSupplyLeftLabel()
 {
     return *ui_->voltageRail15VSupplyLeftLabel;
 }
 
-QLabel& ControlUi::voltageRail15VSupplyAvgLabel()
+QLabel& MotorUi::voltageRail15VSupplyAvgLabel()
 {
     return *ui_->voltageRail15VSupplyAvgLabel;
 }
 
-QLabel& ControlUi::voltageRail15VSupplyRightLabel()
+QLabel& MotorUi::voltageRail15VSupplyRightLabel()
 {
     return *ui_->voltageRail15VSupplyRightLabel;
 }
 
-QLabel& ControlUi::voltageRail3VSupplyLeftLabel()
+QLabel& MotorUi::voltageRail3VSupplyLeftLabel()
 {
     return *ui_->voltageRail3VSupplyLeftLabel;
 }
 
-QLabel& ControlUi::voltageRail3VSupplyAvgLabel()
+QLabel& MotorUi::voltageRail3VSupplyAvgLabel()
 {
     return *ui_->voltageRail3VSupplyAvgLabel;
 }
 
-QLabel& ControlUi::voltageRail3VSupplyRightLabel()
+QLabel& MotorUi::voltageRail3VSupplyRightLabel()
 {
     return *ui_->voltageRail3VSupplyRightLabel;
 }
 
-QLabel& ControlUi::voltageRail1VSupplyLeftLabel()
+QLabel& MotorUi::voltageRail1VSupplyLeftLabel()
 {
     return *ui_->voltageRail1VSupplyLeftLabel;
 }
 
-QLabel& ControlUi::voltageRail1VSupplyAvgLabel()
+QLabel& MotorUi::voltageRail1VSupplyAvgLabel()
 {
     return *ui_->voltageRail1VSupplyAvgLabel;
 }
 
-QLabel& ControlUi::voltageRail1VSupplyRightLabel()
+QLabel& MotorUi::voltageRail1VSupplyRightLabel()
 {
     return *ui_->voltageRail1VSupplyRightLabel;
 }
 
-QLabel& ControlUi::heatSinkTempLeftLabel()
+QLabel& MotorUi::heatSinkTempLeftLabel()
 {
     return *ui_->heatSinkTempLeftLabel;
 }
 
-QLabel& ControlUi::heatSinkTempAvgLabel()
+QLabel& MotorUi::heatSinkTempAvgLabel()
 {
     return *ui_->heatSinkTempAvgLabel;
 }
 
-QLabel& ControlUi::heatSinkTempRightLabel()
+QLabel& MotorUi::heatSinkTempRightLabel()
 {
     return *ui_->heatSinkTempRightLabel;
 }
 
-QLabel& ControlUi::motorTempLeftLabel()
+QLabel& MotorUi::motorTempLeftLabel()
 {
     return *ui_->motorTempLeftLabel;
 }
 
-QLabel& ControlUi::motorTempAvgLabel()
+QLabel& MotorUi::motorTempAvgLabel()
 {
     return *ui_->motorTempAvgLabel;
 }
 
-QLabel& ControlUi::motorTempRightLabel()
+QLabel& MotorUi::motorTempRightLabel()
 {
     return *ui_->motorTempRightLabel;
 }
 
-QLabel& ControlUi::dspBoardTempLeftLabel()
+QLabel& MotorUi::dspBoardTempLeftLabel()
 {
     return *ui_->dspBoardTempLeftLabel;
 }
 
-QLabel& ControlUi::dspBoardTempAvgLabel()
+QLabel& MotorUi::dspBoardTempAvgLabel()
 {
     return *ui_->dspBoardTempAvgLabel;
 }
 
-QLabel& ControlUi::dspBoardTempRightLabel()
+QLabel& MotorUi::dspBoardTempRightLabel()
 {
-    return *ui_-dspBoardTempRightLabel;
+    return *ui_->dspBoardTempRightLabel;
 }
 
-QLabel& ControlUi::dcBusAmpHoursLeftLabel()
+QLabel& MotorUi::dcBusAmpHoursLeftLabel()
 {
     return *ui_->dcBusAmpHoursLeftLabel;
 }
 
-QLabel& ControlUi::dcBusAmpHoursAvgLabel()
+QLabel& MotorUi::dcBusAmpHoursAvgLabel()
 {
     return *ui_->dcBusAmpHoursAvgLabel;
 }
 
-QLabel& ControlUi::dcBusAmpHoursRightLabel()
+QLabel& MotorUi::dcBusAmpHoursRightLabel()
 {
-    return *ui_-dcBusAmpHoursRightLabel;
+    return *ui_->dcBusAmpHoursRightLabel;
 }
 
-QLabel& ControlUi::odometerLeftLabel()
+QLabel& MotorUi::odometerLeftLabel()
 {
     return *ui_->odometerLeftLabel;
 }
 
-QLabel& ControlUi::odometerAvgLabel()
+QLabel& MotorUi::odometerAvgLabel()
 {
     return *ui_->odometerAvgLabel;
 }
 
-QLabel& ControlUi::odometerRightLabel()
+QLabel& MotorUi::odometerRightLabel()
 {
     return *ui_->odometerRightLabel;
 }
 
-QLabel& ControlUi::slipSpeedLeftLabel()
+QLabel& MotorUi::slipSpeedLeftLabel()
 {
     return *ui_->slipSpeedLeftLabel;
 }
 
-QLabel& ControlUi::slipSpeedAvgLabel()
+QLabel& MotorUi::slipSpeedAvgLabel()
 {
     return *ui_->slipSpeedAvgLabel;
 }
 
-QLabel& ControlUi::slipSpeedRightLabel()
+QLabel& MotorUi::slipSpeedRightLabel()
 {
     return *ui_->slipSpeedRightLabel;
 }

@@ -12,7 +12,7 @@ public:
     explicit MotorUi();
     ~MotorUi();
     QLabel& setCurrentLeftLabel();
-    QLabel& setCurrenttAvgLabel();
+    QLabel& setCurrentAvgLabel();
     QLabel& setCurrentRightLabel();
     QLabel& setVelocityLeftLabel();
     QLabel& setVelocityAvgLabel();
@@ -20,9 +20,9 @@ public:
     QLabel& busCurrentLeftLabel();
     QLabel& busCurrentAvgLabel();
     QLabel& busCurrentRightLabel();
-    QLabel& busVelocityLeftLabel();
-    QLabel& busVelocityAvgLabel();
-    QLabel& busVelocityRightLabel();
+    QLabel& busVoltageLeftLabel();
+    QLabel& busVoltageAvgLabel();
+    QLabel& busVoltageRightLabel();
     QLabel& vehicleVelocityLeftLabel();
     QLabel& vehicleVelocityAvgLabel();
     QLabel& vehicleVelocityRightLabel();
@@ -36,8 +36,8 @@ public:
     QLabel& motorVoltageRealAvgLabel();
     QLabel& motorVoltageRealRightLabel();
     QLabel& motorVoltageImaginaryLeftLabel();
-    QLabel& motorVolategImaginaryAvgLabel();
-    QLabel& motorVoltageImaginarRightLabel();
+    QLabel& motorVoltageImaginaryAvgLabel();
+    QLabel& motorVoltageImaginaryRightLabel();
     QLabel& motorCurrentRealLeftLabel();
     QLabel& motorCurrentRealAvgLabel();
     QLabel& motorCurrentRealRightLabel();

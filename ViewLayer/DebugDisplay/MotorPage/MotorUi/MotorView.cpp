@@ -1,19 +1,19 @@
-#include "MotorView.h"
+//#include "MotorView.h"
 
-MotorView::MotorView(KeyMotorPresenter& KeyMotorPresenter,
-                         I_MotorUi& ui)
-    : keyMotorPresenter_(keyMotorPresenter)
-    , ui_(ui)
-{
-    connectMotor(keyMotorPresenter_);
-}
+//MotorView::MotorView(KeyMotorPresenter& KeyMotorPresenter,
+//                         I_MotorUi& ui)
+//    : keyMotorPresenter_(keyMotorPresenter)
+//    , ui_(ui)
+//{
+//    connectMotor(keyMotorPresenter_);
+//}
 
-MotorView::~MotorView()
-{
-}
+//MotorView::~MotorView()
+//{
+//}
 
-void MotorView::connectKeyMotor(KeyMotorPresenter& KeyMotorPresenter)
-{
+//void MotorView::connectKeyMotor(KeyMotorPresenter& KeyMotorPresenter)
+//{
 
-}
+//}
 

@@ -50,7 +50,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 87, 83);</string>
+         <string notr="true">background-color: rgb(46, 52, 54);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_22">
          <item>
@@ -157,7 +157,7 @@
       <item row="2" column="0">
        <widget class="QWidget" name="widget_7" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 87, 83);</string>
+         <string notr="true">background-color: rgb(46, 52, 54);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
@@ -255,7 +255,7 @@
       <item row="4" column="0">
        <widget class="QWidget" name="widget_8" native="true">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 87, 83);</string>
+         <string notr="true">background-color: rgb(46, 52, 54);</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
@@ -264,12 +264,12 @@
             <string notr="true">color: white;</string>
            </property>
            <property name="text">
-            <string>Bus Velocity</string>
+            <string>Bus Voltage</string>
            </property>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="busVelocityLeftLabel">
+          <widget class="QLabel" name="busVoltageLeftLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -279,7 +279,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="busVelocityAvgLabel">
+          <widget class="QLabel" name="busVoltageAvgLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -289,7 +289,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="busVelocityRightLabel">
+          <widget class="QLabel" name="busVoltageRightLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -341,7 +341,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="vehicleVelocityRIghtLabel">
+          <widget class="QLabel" name="vehicleVelocityRightLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -352,22 +352,6 @@
          </item>
         </layout>
        </widget>
-      </item>
-      <item row="2" column="1">
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>14</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </widget>
@@ -574,7 +558,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="voltageRail3VSupplyRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -623,7 +607,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_9">
+          <widget class="QLabel" name="odometerRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -672,7 +656,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="heatSinkTempRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -721,7 +705,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_5">
+          <widget class="QLabel" name="dspBoardTempRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -761,7 +745,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="motorCurrenRealAvgLabel">
+          <widget class="QLabel" name="motorCurrentRealAvgLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -810,7 +794,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="voltageRail15VSupplyAvgLable">
+          <widget class="QLabel" name="voltageRail15VSupplyAvgLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -859,7 +843,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="phaseBcurrentAvgLabel">
+          <widget class="QLabel" name="phaseBCurrentAvgLabel">
            <property name="styleSheet">
             <string notr="true">color: white;</string>
            </property>
@@ -918,7 +902,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_6">
+          <widget class="QLabel" name="dcBusAmpHoursRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -969,7 +953,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_7">
+          <widget class="QLabel" name="slipSpeedRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -1018,7 +1002,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="motorTempRightLabel">
            <property name="styleSheet">
             <string notr="true">color:white;</string>
            </property>
@@ -1077,25 +1061,6 @@
           </widget>
          </item>
         </layout>
-       </widget>
-      </item>
-      <item row="0" column="1" rowspan="4">
-       <widget class="QScrollBar" name="verticalScrollBar">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>570</height>
-         </size>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
        </widget>
       </item>
       <item row="2" column="0">
@@ -1197,6 +1162,25 @@
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QScrollBar" name="verticalScrollBar">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>800</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
     </widget>
    </item>
   </layout>

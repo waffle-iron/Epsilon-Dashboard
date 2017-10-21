@@ -8,7 +8,7 @@ class I_MotorUi: public QWidget
 public:
     virtual ~I_MotorUi() {}
     virtual QLabel& setCurrentLeftLabel() = 0;
-    virtual QLabel& setCurrenttAvgLabel() = 0;
+    virtual QLabel& setCurrentAvgLabel() = 0;
     virtual QLabel& setCurrentRightLabel() = 0;
     virtual QLabel& setVelocityLeftLabel()= 0;
     virtual QLabel& setVelocityAvgLabel() = 0;
@@ -16,13 +16,13 @@ public:
     virtual QLabel& busCurrentLeftLabel() = 0;
     virtual QLabel& busCurrentAvgLabel() = 0;
     virtual QLabel& busCurrentRightLabel() = 0;
-    virtual QLabel& busVelocityLeftLabel() = 0;
-    virtual QLabel& busVelocityAvgLabel() = 0;
-    virtual QLabel& busVelocityRightLabel() = 0;
+    virtual QLabel& busVoltageLeftLabel() = 0;
+    virtual QLabel& busVoltageAvgLabel() = 0;
+    virtual QLabel& busVoltageRightLabel() = 0;
     virtual QLabel& vehicleVelocityLeftLabel() = 0;
     virtual QLabel& vehicleVelocityAvgLabel() = 0;
     virtual QLabel& vehicleVelocityRightLabel() = 0;
-    virtual QLabel& phaseCCurrentLeftLabe() = 0;
+    virtual QLabel& phaseCCurrentLeftLabel() = 0;
     virtual QLabel& phaseCCurrentAvgLabel()= 0;
     virtual QLabel& phaseCCurrentRightLabel() = 0;
     virtual QLabel& phaseBCurrentLeftLabel() = 0;
@@ -33,7 +33,7 @@ public:
     virtual QLabel& motorVoltageRealRightLabel()= 0;
     virtual QLabel& motorVoltageImaginaryLeftLabel() = 0;
     virtual QLabel& motorVoltageImaginaryAvgLabel() = 0;
-    virtual QLabel& motorVoltageImaginarRightLabel() = 0;
+    virtual QLabel& motorVoltageImaginaryRightLabel() = 0;
     virtual QLabel& motorCurrentRealLeftLabel() = 0;
     virtual QLabel& motorCurrentRealAvgLabel() = 0;
     virtual QLabel& motorCurrentRealRightLabel() = 0;
