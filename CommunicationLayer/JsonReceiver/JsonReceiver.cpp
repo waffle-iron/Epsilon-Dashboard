@@ -38,7 +38,8 @@ JsonReceiver::JsonReceiver(I_CommDevice& inputDevice,
                            MotorDetailsPopulator& motorDetailsPopulator,
                            MotorFaultsPopulator& motorFaultsPopulator,
                            I_CommunicationsMonitoringService& communicationsMonitoringService)
-    : batteryPopulator_(batteryPopulator)
+    : inputDevice_(inputDevice)
+    , batteryPopulator_(batteryPopulator)
     , batteryFaultsPopulator_(batteryFaultsPopulator)
     , driverControlsPopulator_(driverControlsPopulator)
     , keyMotorPopulator_(keyMotorPopulator)
@@ -48,7 +49,8 @@ JsonReceiver::JsonReceiver(I_CommDevice& inputDevice,
     , motorFaultsPopulator_(motorFaultsPopulator)
     , communicationsMonitoringService_(communicationsMonitoringService)
 {
-    Q_UNUSED(inputDevice);
+    //Q_UNUSED(inputDevice);
+    connect(&inputDevice_, SIGNAL(dataReceived(QByteArray)), this, SLOT(handleIncomingData(QByteArray)));
 
     connect(this, SIGNAL(dataReceived(const QJsonObject&)),
             &batteryPopulator_, SLOT(populateData(const QJsonObject&)));
@@ -77,11 +79,14 @@ void JsonReceiver::handleIncomingData(const QByteArray& data)
 
     if (err.error != QJsonParseError::NoError)
     {
+        qDebug("I received bad data!");
         qDebug() << err.errorString();
         emit invalidDataReceived();
     }
     else
     {
+        qDebug("I received good data!");
         emit dataReceived(parsedData);
+        qDebug("I emitted good data!");
     }
 }
